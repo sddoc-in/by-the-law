@@ -51,6 +51,7 @@ export const AppProvider = ({ children }: any) => {
       tmpuser.access_token !== "undefined" &&
       tmpuser.uid !== "undefined"      
     ) {
+      localStorage.setItem("user", JSON.stringify(tmpuser));
       setUser(tmpuser);
       setLoggedIn(true);
     }
@@ -74,7 +75,6 @@ export const AppProvider = ({ children }: any) => {
   }
 
   React.useEffect(() => {
-    // if(!loggedIn)
     fetchUserCookies();
   }, []);
 

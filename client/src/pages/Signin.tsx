@@ -9,15 +9,18 @@ import InputName from "../components/input/InputName";
 import { LoginUser } from "../api/User";
 
 export default function Signin() {
-  const { loggedIn, setCookies } = React.useContext(AppContext);
+  const { loggedIn, setCookies ,user} = React.useContext(AppContext);
 
   // React.useEffect(() => {
-  //   if (loggedIn) {
+  //   if(localStorage.getItem("user")){
+  //     window.location.href = "/dashboard";
+  //   } else if(loggedIn){
   //     window.location.href = "/dashboard";
   //   }
+     
   // }, [loggedIn]);
 
-  const [user, setUser] = React.useState({
+  const [usern, setUser] = React.useState({
     password: "",
     user: "",
   });

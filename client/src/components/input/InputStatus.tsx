@@ -1,19 +1,19 @@
 import React from "react";
 import Input from "../../interface/Input";
 
-export default function InputRole(props: Input) {
+export default function InputStatus(props: Input) {
   return (
     <div className={"text-start my-2 " + props.inputClassName}>
       {props.label && (
         <label
-          htmlFor={props.name ? props.name : "role"}
+          htmlFor={props.name ? props.name : "status"}
           className="text-[16px] block leading-[24px] text-[#23262F] font-[700] my-1 md:my-2"
         >
           {props.label}
         </label>
       )}
       <select
-        name={props.name ? props.name : "role"}
+        name={props.name ? props.name : "status"}
         disabled={props.disabled ? true : false}
         defaultValue={props.defValue}
         onChange={(e) => props.onChangeHandler!(e)}
@@ -22,11 +22,14 @@ export default function InputRole(props: Input) {
         }
         style={{ borderColor: "rgb(189, 189, 189)" }}
       >
-        <option value="user" className="text-black font-black">
-          User
+        <option value="active" className="text-black font-black">
+          Active
         </option>
-        <option value="admin" className="text-black font-black">
-          Admin
+        <option value="inactive" className="text-black font-black">
+          Inactive
+        </option>
+        <option value="disabled" className="text-black font-black">
+          Disabled
         </option>
       </select>
       {props.error && (

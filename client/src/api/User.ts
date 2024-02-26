@@ -5,6 +5,8 @@ import UserInterface from "../interface/NewUser";
 import UserErrorInterface from "../interface/Error";
 import validateUser from "../functions/validateUserSignup";
 
+// used in files
+// client/src/components/dashboard/user/ViewUser.tsx
 export async function GetUser(uid: string) {
   const { user } = React.useContext(AppContext);
   const params = new URLSearchParams();
@@ -17,7 +19,10 @@ export async function GetUser(uid: string) {
   return response.json();
 }
 
-export async function useRegisterUser(userNew: UserInterface) {
+// used in files
+// client/src/components/dashboard/user/NewUser.tsx
+
+export async function RegisterUser(userNew: UserInterface) {
   const { user } = React.useContext(AppContext);
   const tmpuser = {
     ...userNew,
@@ -49,7 +54,11 @@ export async function LoginUser(user: any) {
   return response.json();
 }
 
-export async function useUpdateUser(user: UserInterface) {
+
+// used in files
+// client/src/components/dashboard/user/UpdateUser.tsx
+
+export async function UpdateUser(user: UserInterface) {
   const { user: userState } = React.useContext(AppContext);
 
   let errors: UserErrorInterface = validateUser(user, "", false);

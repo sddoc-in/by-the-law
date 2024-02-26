@@ -19,7 +19,7 @@ export default function InputEmail(props: Input) {
         placeholder={props.placeholder ? props.placeholder : `Enter Email`}
         onChange={(e) => props.onChangeHandler!(e)}
         className={
-          "input w-full text-[14px] text-black font-[900] placeholder:font-[900] placeholder:text-[black] bg-white "
+          "input w-full text-[14px] text-black font-[900] placeholder:font-[900] placeholder:text-[black] bg-white disabled:bg-white disabled:text-black"
         }
         style={{ borderColor: "rgb(189, 189, 189)" }}
       />

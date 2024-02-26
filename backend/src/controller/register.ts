@@ -120,7 +120,7 @@ export async function register(req: Request, res: Response) {
     };
     res
       .status(201)
-      .json({ user: tmpuser, message: "User registered successfully" });
+      .json({ user: tmpuser, message: "User created successfully" });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Internal server error" });

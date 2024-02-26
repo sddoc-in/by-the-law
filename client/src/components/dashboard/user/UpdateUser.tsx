@@ -3,23 +3,29 @@ import InputName from "../../input/InputName";
 import UserErrorInterface from "../../../interface/Error";
 import InputEmail from "../../input/InputEmail";
 import InputRole from "../../input/InputRole";
-import { GetUser, useUpdateUser } from "../../../api/User";
 import { useParams } from "react-router-dom";
 import { AppContext } from "../../../context/Context";
 import { API_URL } from "../../../constants/data";
+import validateUser from "../../../functions/validateUserSignup";
+import InputStatus from "../../input/InputStatus";
+import UserInterface from "../../../interface/NewUser";
+import InputPass from "../../input/InputPass";
 
-export default function UpdateUser() {
-    const { user,fetchUserCookies } = React.useContext(AppContext);
+export default function UpdateUser(props: UserInterface) {
+  const { user: currentUser } = React.useContext(AppContext);
+  const params = useParams()
 
-    const uid = useParams().uid || "";
-    const getUser = React.useRef(() => {});
+  const getUser = React.useRef(() => {});
 
+  const [uid, setUid] = React.useState("");
   const [userUpdate, setUserUpdate] = React.useState({
+    userId: uid,
     email: "",
     name: "",
     username: "",
     role: "user",
     password: "",
+    status: "active",
   });
   const [error, setError] = React.useState<UserErrorInterface>({
     message: "",
@@ -35,32 +41,66 @@ export default function UpdateUser() {
     setUserUpdate({ ...userUpdate, [e.target.name]: e.target.value });
   }
 
-async function useUpdate() {
-    const response = await useUpdateUser(userUpdate);
-    console.log(response);
-    if (response.errors && response.errors.hasError) {
-        setError(response.errors);
-        return;
-    }    
-}
+  async function update() {
+    let errors: UserErrorInterface = validateUser(userUpdate, "", false);
+    console.log(errors);
+    if (errors.hasError) {
+      setError(errors);
+      return;
+    }
+    setError({ message: "", hasError: false, field: "" });
+
+    // creating a temp user object
+    const tmpuser = {
+      ...userUpdate,
+      session: currentUser.session,
+      access_token: currentUser.access_token,
+      uid: currentUser.uid,
+    };
+
+    console.log(tmpuser);
+
+    const response = await fetch(`${API_URL}/update-user`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(tmpuser),
+    }).then((res) => res.json());
+
+    alert(response.message);
+    if (response.message === "User updated") {
+      window.location.href = "/dashboard/users";
+    }
+  }
 
   getUser.current = async () => {
-    fetchUserCookies();
+    if (props.uid) {
+      return;
+    }
+    if (!currentUser.uid) {
+      return;
+    }
     const params = new URLSearchParams();
-    params.append("uid", user.uid);
-    params.append("session", user.session);
+    params.append("uid", currentUser.uid);
+    params.append("session", currentUser.session);
     params.append("userId", uid);
-    params.append("token", user.access_token);
-  
+    params.append("token", currentUser.access_token);
+
     const response = await fetch(`${API_URL}/get-user?${params}`);
     const data = await response.json();
-    console.log(data);
-    //   const response = await GetUser(uid);
-    //   console.log(response);
-
-    // if (uid !== undefined && uid !== null && uid !== "") {
-    //   setUserUpdate(response);
-    // }
+    setUserUpdate(
+      (prev) =>
+        (prev = {
+          ...prev,
+          email: data.email,
+          name: data.name,
+          username: data.username,
+          role: data.role,
+          userId: data.uid,
+          status: data.status,
+        })
+    );
   };
 
   React.useEffect(() => {
@@ -69,6 +109,24 @@ async function useUpdate() {
 
   React.useEffect(() => {
     getUser.current();
+  }, [currentUser]);
+
+  React.useEffect(() => {
+    let tmpuser = {
+      email: props.email || "",
+      name: props.name || "",
+      username: props.username || "",
+      role: props.role || "",
+      userId: props.uid || "",
+      status: props.status || "",
+      password: "",
+    };
+    setUserUpdate(tmpuser);
+  }, [props]);
+
+  React.useEffect(() => {
+    const uid = params.uid || "";
+    setUid(uid);
   }, []);
 
   return (
@@ -107,6 +165,7 @@ async function useUpdate() {
               error.field === "email" && error.hasError ? error.message : ""
             }
           />
+
           <InputRole
             defValue={userUpdate.role}
             onChangeHandler={handleChanges}
@@ -115,8 +174,16 @@ async function useUpdate() {
               error.field === "role" && error.hasError ? error.message : ""
             }
           />
+          <InputStatus
+            defValue={userUpdate.status}
+            onChangeHandler={handleChanges}
+            name="status"
+            error={
+              error.field === "status" && error.hasError ? error.message : ""
+            }
+          />
           <button
-            onClick={useUpdate}
+            onClick={update}
             className="w-full bg-[#002F53] text-white text-[16px] font-[600] leading-[20px] py-4 rounded-xl mt-4 flex justify-center items-center"
           >
             Update User

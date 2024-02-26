@@ -5,8 +5,11 @@ import { AppContext } from "../../context/Context";
 
 export default function GlobalLayout(props: { children: React.ReactNode }) {
   const { loggedIn } = React.useContext(AppContext);
+
   // React.useEffect(() => {
-  //   if (!loggedIn) {
+  //   if (!localStorage.getItem("user")) {
+  //     window.location.href = "/";
+  //   } else if (!loggedIn) {
   //     window.location.href = "/";
   //   }
   // }, [loggedIn]);

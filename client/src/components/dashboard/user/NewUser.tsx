@@ -5,9 +5,13 @@ import validateUser from "../../../functions/validateUserSignup";
 import InputEmail from "../../input/InputEmail";
 import InputPass from "../../input/InputPass";
 import InputRole from "../../input/InputRole";
+import { AppContext } from "../../../context/Context";
+import { API_URL } from "../../../constants/data";
 // import { useRegisterUser } from "../../../api/User";
 
 export default function NewUser() {
+  const { user: currentUser } = React.useContext(AppContext);
+
   const [userNew, setUserNew] = React.useState({
     email: "",
     name: "",
@@ -35,15 +39,30 @@ export default function NewUser() {
     setUserNew({ ...userNew, [e.target.name]: e.target.value });
   }
 
-  // async function useRegister() {
-  //   let errors: UserErrorInterface = validateUser(userNew, cPassword);
-  //   if (errors.hasError) {
-  //     setError(errors);
-  //     return;
-  //   }
-  //   const response = await useRegisterUser(userNew);
-  //   console.log(response);
-  // }
+  async function register() {
+    let errors: UserErrorInterface = validateUser(userNew, cPassword);
+    if (errors.hasError) {
+      setError(errors);
+      return;
+    }
+    const tmpuser = {
+      ...userNew,
+      session: currentUser.session,
+      access_token: currentUser.access_token,
+      uid: currentUser.uid,
+    };
+    console.log(tmpuser);
+    const response = await fetch(`${API_URL}/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(tmpuser),
+    });
+    const data = await response.json();
+    alert(data.message);
+    window.location.href = "/dashboard/users";
+  }
 
   React.useEffect(() => {
     setError({ message: "", hasError: false, field: "" });
@@ -113,7 +132,7 @@ export default function NewUser() {
             }
           />
           <button
-            // onClick={useRegister}
+            onClick={register}
             className="w-full bg-[#002F53] text-white text-[16px] font-[600] leading-[20px] py-4 rounded-xl mt-4 flex justify-center items-center"
           >
             Create User
