@@ -271,10 +271,10 @@ export async function updateUser(req: Request, res: Response) {
 }
 
 export async function deleteUser(req: Request, res: Response) {
-  const session = req.query.session as string;
-  const uid = req.query.uid as string;
-  const userId = req.query.userId as string;
-  const token = req.query.token as string;
+  const session = req.body.session as string;
+  const uid = req.body.uid as string;
+  const userId = req.body.userId as string;
+  const token = req.body.access_token as string;
 
   try {
     if (session === undefined) {

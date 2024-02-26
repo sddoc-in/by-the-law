@@ -3,6 +3,7 @@ import NewUser from "../components/dashboard/user/NewUser";
 import UpdateUser from "../components/dashboard/user/UpdateUser";
 import ViewUser from "../components/dashboard/user/ViewUser";
 
+
 export const UserOptions = [
   {
     title: "Create New User",

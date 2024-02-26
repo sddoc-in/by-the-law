@@ -6,10 +6,13 @@ export default function Clients() {
     <>
       <div className="flex justify-between items-center mt-4 md:mt-7 w-[95%] mx-auto">
         <h1 className="font-black text-3xl text-start text-black ">Clients</h1>
-        {/* <a href="/dashboard/users/new-users" className="bg-[#002F53] text-white text-[16px] font-[600] leading-[20px] py-4 rounded-xl flex justify-center px-3 items-center">
-        <IoMdAdd className="mr-3 text-[20px]" />
-          Create User
-        </a> */}
+        <button
+        //   href="/dashboard/users/new-users"
+          className="bg-[#002F53] text-white text-[16px] font-[600] leading-[20px] py-4 rounded-xl flex justify-center px-3 items-center"
+        >
+          <IoMdAdd className="mr-3 text-[20px]" />
+          Create Client
+        </button>
       </div>
       <p className="ml-8 my-8 text-black font-extrabold">No Clients</p>
       {/* <div className="flex flex-col md:flex-row mt-10">

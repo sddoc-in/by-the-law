@@ -6,10 +6,10 @@ import InputPass from "../components/input/InputPass";
 import { IoIosSend } from "react-icons/io";
 import { AppContext } from "../context/Context";
 import InputName from "../components/input/InputName";
-import { LoginUser } from "../api/User";
+import { API_URL } from "../constants/data";
 
 export default function Signin() {
-  const { loggedIn, setCookies ,user} = React.useContext(AppContext);
+  const {  setCookies } = React.useContext(AppContext);
 
   // React.useEffect(() => {
   //   if(localStorage.getItem("user")){
@@ -20,7 +20,7 @@ export default function Signin() {
      
   // }, [loggedIn]);
 
-  const [usern, setUser] = React.useState({
+  const [user, setUser] = React.useState({
     password: "",
     user: "",
   });
@@ -30,9 +30,18 @@ export default function Signin() {
   }
 
   async function login() {
-    const response = await LoginUser(user);
-    if (response.user.uid) {
-      setCookies(response.user);
+    const params = new URLSearchParams();
+    params.append("user", user.user);
+    params.append("password", user.password);
+    const response = await fetch(`${API_URL}/login?${params}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    if (data.user.uid) {
+      setCookies(data.user);
       window.location.href = "/dashboard";
     }
   }

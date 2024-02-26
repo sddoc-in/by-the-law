@@ -9,7 +9,6 @@ import { API_URL } from "../../../constants/data";
 import validateUser from "../../../functions/validateUserSignup";
 import InputStatus from "../../input/InputStatus";
 import UserInterface from "../../../interface/NewUser";
-import InputPass from "../../input/InputPass";
 
 export default function UpdateUser(props: UserInterface) {
   const { user: currentUser } = React.useContext(AppContext);
@@ -127,7 +126,7 @@ export default function UpdateUser(props: UserInterface) {
   React.useEffect(() => {
     const uid = params.uid || "";
     setUid(uid);
-  }, []);
+  }, [params]);
 
   return (
     <>

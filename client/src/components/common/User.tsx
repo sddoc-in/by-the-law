@@ -1,5 +1,4 @@
-import React from "react";
-import { IoEyeOutline } from "react-icons/io5";
+
 import UserInterface from "../../interface/NewUser";
 import { MdDelete } from "react-icons/md";
 import { GrUpdate } from "react-icons/gr";
