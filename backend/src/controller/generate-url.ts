@@ -95,8 +95,8 @@ export async function validateURL(req: Request, res: Response) {
     let expiration = urlDoc.expiration;
     if (date > expiration) {
       return res.status(400).json({ message: "Expired url" });
-    } else if (urlDoc.submitted === false) {
-      return res.status(400).json({ message: "Url not submitted" });
+    } else if (urlDoc.submitted === true) {
+      return res.status(400).json({ message: "Form Already SUbmitted" });
     }
 
     return res.status(200).json({ message: "Valid url" });

@@ -7,6 +7,8 @@ import AppProvider from "./context/Context";
 import { SidebarData } from "./constants/Sidebar";
 import GlobalLayout from "./components/dashboard/GlobalLayout";
 import { UserOptions } from "./constants/Users";
+import UrlForm from "./pages/UrlForm";
+import WrongUrl from "./pages/WrongUrl";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Signin />} />
               <Route path="/sign-in" element={<Signin />} />
+              <Route path="/url/:url" element={<UrlForm />} />
+              <Route path="/wrong-url" element={<WrongUrl />} />
 
               {SidebarData.map((item, index) => {
                 return (

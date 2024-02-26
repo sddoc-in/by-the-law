@@ -8,6 +8,7 @@ import Templates from "../pages/Templates";
 import Logout from "../pages/Logout";
 import Users from "../pages/Users";
 import ViewURL from "../pages/ViewUrl";
+import Clients from "../pages/Clients";
 // import Clients from "../pages/Clients";
 
 export const SidebarData = [
@@ -37,7 +38,7 @@ export const SidebarData = [
     path: "/dashboard/clients",
     shortPath: "/clients",
     Icon: MdOutlineAccountTree,
-    Element: Users,
+    Element: Clients,
   },
   {
     title: "Templates",
