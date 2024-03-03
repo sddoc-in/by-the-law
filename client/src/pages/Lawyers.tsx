@@ -5,7 +5,7 @@ import UserInterface from "../interface/NewUser";
 import { AppContext } from "../context/Context";
 import { API_URL } from "../constants/data";
 
-export default function Users() {
+export default function Lawyers() {
 
   const {user:currentUser} = React.useContext(AppContext);
   const [data, setData] = React.useState<UserInterface[]>([]);
@@ -35,10 +35,10 @@ export default function Users() {
   return (
     <>
       <div className="flex justify-between items-center mt-4 md:mt-7 w-[95%] mx-auto">
-        <h1 className="font-black text-3xl text-start text-black ">Users</h1>
+        <h1 className="font-black text-3xl text-start text-black ">Lawyers</h1>
         <a href="/dashboard/users/new-users" className="bg-[#002F53] text-white text-[16px] font-[600] leading-[20px] py-4 rounded-xl flex justify-center px-3 items-center">
         <IoMdAdd className="mr-3 text-[20px]" />
-          Create User
+          Create Lawyer
         </a>
       </div>
       <div className="flex flex-col md:flex-row mt-10">

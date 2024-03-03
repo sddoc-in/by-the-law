@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import connectToCluster from "../connection/connect";
 import { Collection, Db } from "mongodb";
 import ConnectionRes from "../interface/ConnectionRes";
-import { validateSession } from "../functions/hash";
+import { validateSession  } from "../functions/hash";
 import { validateToken } from "../functions/bearer";
 
 export async function getAllUsers(req: Request, res: Response) {

@@ -1,4 +1,5 @@
 import DeleteUser from "../components/dashboard/user/DeleteUser";
+import NewClient from "../components/dashboard/client/NewClient";
 import NewUser from "../components/dashboard/user/NewUser";
 import UpdateUser from "../components/dashboard/user/UpdateUser";
 import ViewUser from "../components/dashboard/user/ViewUser";
@@ -10,6 +11,12 @@ export const UserOptions = [
     path: "/dashboard/users/new-users",
     shortPath: "/new-users",
     Element: NewUser,
+  },
+  {
+    title: "Create new Client",
+    path: "/dashboard/users/new-clients",
+    shortPath: "/new-clients",
+    Element: NewClient,
   },
   {
     title: "Update User",

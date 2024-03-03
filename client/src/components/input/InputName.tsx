@@ -1,5 +1,3 @@
-
-
 import Input from "../../interface/Input";
 
 export default function InputName(props: Input) {

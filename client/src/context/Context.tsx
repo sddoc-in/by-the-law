@@ -20,6 +20,20 @@ export const AppProvider = ({ children }: any) => {
     password: "",
   });
 
+  const [client,setClient] = React.useState({
+    username: "",
+    session: "",
+    access_token: "",
+    cid: "",
+  });
+
+  const [clientNew, setClientNew] = React.useState<UserInterface>({
+    email: "",
+    name: "",
+    username: "",
+    role: "client",
+    password: "",
+  });
   const [loggedIn, setLoggedIn] = React.useState<boolean>(false);
 
   const [dialog, setDialog] = React.useState<boolean>(false);
@@ -80,7 +94,7 @@ export const AppProvider = ({ children }: any) => {
 
   return (
     <AppContext.Provider
-      value={{ routerPath, setRouterPath, dialog, setDialog, setCookies, fetchUserCookies, user,  loggedIn, setUser, userNew, setUserNew}}
+      value={{ routerPath, setRouterPath, dialog, setDialog, setCookies, fetchUserCookies, user,client,setClient,  loggedIn, setUser, userNew, setUserNew}}
     >
       {children}
     </AppContext.Provider>

@@ -6,7 +6,7 @@ import { MdOutlineAccountTree } from "react-icons/md";
 import Dashboard from "../pages/Dashboard";
 import Templates from "../pages/Templates";
 import Logout from "../pages/Logout";
-import Users from "../pages/Users";
+import Lawyers from "../pages/Lawyers";
 import ViewURL from "../pages/ViewUrl";
 import Clients from "../pages/Clients";
 // import Clients from "../pages/Clients";
@@ -20,11 +20,11 @@ export const SidebarData = [
     Element: Dashboard,
   },
   {
-    title: "Users",
-    path: "/dashboard/users",
-    shortPath: "/users",
+    title: "Lawyers",
+    path: "/dashboard/Lawyers",
+    shortPath: "/lawyers",
     Icon: MdOutlineCampaign,
-    Element: Users,
+    Element: Lawyers,
   },
   {
     title: "Urls",
