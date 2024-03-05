@@ -9,6 +9,7 @@ import GlobalLayout from "./components/dashboard/GlobalLayout";
 import { UserOptions } from "./constants/Users";
 import UrlForm from "./pages/UrlForm";
 import WrongUrl from "./pages/WrongUrl";
+import Divorce from "./components/pdf/divorce";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function Router() {
             <Route path="/sign-in" element={<Signin />} />
             <Route path="/url/:url" element={<UrlForm />} />
             <Route path="/wrong-url" element={<WrongUrl />} />
+            <Route path="/pdf" element={<Divorce/>}/>
 
             {SidebarData.map((item, index) => {
               // if (item.title === "Users" && currentUser.role !== "admin")
