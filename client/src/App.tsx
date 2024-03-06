@@ -32,7 +32,7 @@ function Router() {
             <Route path="/sign-in" element={<Signin />} />
             <Route path="/url/:url" element={<UrlForm />} />
             <Route path="/wrong-url" element={<WrongUrl />} />
-            <Route path="/pdf" element={<Divorce/>}/>
+            <Route path="/dashboard/pdf" element={<Divorce/>}/>
 
             {SidebarData.map((item, index) => {
               // if (item.title === "Users" && currentUser.role !== "admin")
