@@ -4,7 +4,6 @@ import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineAccountTree } from "react-icons/md";
 import { GoLaw } from "react-icons/go";
 import Dashboard from "../pages/Dashboard";
-import Templates from "../pages/Templates";
 import Logout from "../pages/Logout";
 import Lawyers from "../pages/Lawyers";
 import Clients from "../pages/Clients";
@@ -30,13 +29,6 @@ export const SidebarData = [
     shortPath: "/clients",
     Icon: MdOutlineAccountTree,
     Element: Clients,
-  },
-  {
-    title: "Templates",
-    path: "/dashboard/templates",
-    shortPath: "/templates",
-    Icon: GoProjectTemplate,
-    Element: Templates,
   },
   {
     title: "Logout",

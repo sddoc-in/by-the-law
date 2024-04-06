@@ -118,7 +118,7 @@ export default function CreateuserPopup(props: Props) {
             <InputName
               name="username"
               defValue=""
-              placeholder="Username"
+              placeholder="Lawyer Id"
               inputClassName="w-full"
               onChangeHandler={onChange}
               error={

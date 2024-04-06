@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 import { Collection, Db } from "mongodb";
 import connectToCluster from "../connection/connect";
 import ConnectionRes from "../interface/ConnectionRes";
-import { createSession, hash, validateSession } from "../functions/hash";
-import { createBearer, validateToken } from "../functions/bearer";
+import { hash, validateSession } from "../functions/hash";
+import { validateToken } from "../functions/bearer";
 import { closeConn } from "../connection/closeConn";
 import registerValidate from "../functions/registerValidate";
 import RegisterError from "../interface/RegisterError";
@@ -13,7 +13,7 @@ import Client from "../interface/Client";
 export async function getAllClients(req: Request, res: Response) {
   const session = req.query.session as string;
   const uid = req.query.uid as string;
-  const token = req.query.token as string;
+  const token = req.query.access_token as string;
 
   try {
     if (session === undefined) {
@@ -44,6 +44,7 @@ export async function getAllClients(req: Request, res: Response) {
     const conn = connect.conn;
     const db: Db = conn.db("client");
     const clientsCollection: Collection = db.collection("clients");
+    const LawyerCollection: Collection = db.collection("users");
     const sessionCollection: Collection = db.collection("sessions");
 
     // insert session
@@ -56,18 +57,36 @@ export async function getAllClients(req: Request, res: Response) {
 
     //get all clients
     let clients = await clientsCollection
-      .find({
-        projection: {
-          username: 1,
-          email: 1,
-          client_id: 1,
-          status: 1,
-          created: 1,
-        },
-      })
+      .find(
+        {},
+        {
+          projection: {
+            _id: 0,
+            username: 1,
+            email: 1,
+            client_id: 1,
+            status: 1,
+            created: 1,
+            lawyer_id: 1,
+            name: 1,
+          },
+        }
+      )
       .toArray();
+
+    let clientWithlawyer = [];
+
+    for (let i = 0; i < clients.length; i++) {
+      let client = clients[i];
+      let lawyer = await LawyerCollection.findOne(
+        { lawyer_id: client.lawyer_id },
+        { projection: { username: 1, email: 1,_id:0 } }
+      );
+      clientWithlawyer.push({ ...client, lawyer: lawyer });
+    }
+
     closeConn(conn);
-    return res.status(200).json(clients);
+    return res.status(200).json(clientWithlawyer);
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Unknown error" });
@@ -146,7 +165,7 @@ export async function getClient(req: Request, res: Response) {
 export async function updateClient(req: Request, res: Response) {
   const session = req.query.session as string;
   const uid = req.query.uid as string;
-  const token = req.query.token as string;
+  const token = req.query.access_token as string;
 
   const { client_id, name, username, email, lawyer_id, status } = req.body;
 
@@ -255,7 +274,7 @@ export async function deleteClient(req: Request, res: Response) {
   const session = req.query.session as string;
   const uid = req.query.uid as string;
   const client_id = req.query.client_id as string;
-  const token = req.query.token as string;
+  const token = req.query.access_token as string;
 
   try {
     if (session === undefined) {
@@ -408,6 +427,7 @@ export async function createClient(req: Request, res: Response) {
       password: hash(password),
       status: "active",
       created: new Date(),
+      lawyer_id: lawyer_id,
     };
 
     await collection.insertOne(client);

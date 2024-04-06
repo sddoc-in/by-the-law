@@ -51,7 +51,7 @@ export default function Clients() {
       const params = new URLSearchParams();
       params.append("uid", currentUser.uid);
       params.append("session", currentUser.session);
-      params.append("token", currentUser.access_token);
+      params.append("access_token", currentUser.access_token);
 
       const data = await axios
         .get(API_URL + "/clients/all?" + params)
@@ -65,8 +65,8 @@ export default function Clients() {
   };
 
   React.useEffect(() => {
-    getAllUsers.current();
     getAllClients.current();
+    getAllUsers.current();
   }, [currentUser]);
 
   return (
@@ -86,14 +86,14 @@ export default function Clients() {
         inputClassName="md:w-1/2 w-11/12 mx-auto"
         onChangeHandler={(e) => setQuery(e.target.value)}
       />
-      {data.length > 0 ? (
+      {clients.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 w-[95%] mx-auto">
           {clients
             .filter((user: ClientInterface) =>
-              user.name.toLowerCase().includes(query.toLowerCase())
+              user.username.toLowerCase().includes(query.toLowerCase())
             )
             .map((user, index) => {
-              return <Card key={index} {...user} />;
+              return <Card key={index} data={user} lawyers={data} />;
             })}
         </div>
       ) : (

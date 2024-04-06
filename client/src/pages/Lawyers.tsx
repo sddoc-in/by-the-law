@@ -66,7 +66,7 @@ export default function Lawyers() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 w-[95%] mx-auto">
           { data
             .filter((user: UserInterface) =>
-              user.name!.toLowerCase().includes(query.toLowerCase())
+              user.username!.toLowerCase().includes(query.toLowerCase())
             ).map((user, index) => {
             return <Card key={index} {...user} />;
           })}

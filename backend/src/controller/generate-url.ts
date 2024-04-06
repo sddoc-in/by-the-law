@@ -3,15 +3,15 @@ import ConnectionRes from "../interface/ConnectionRes";
 import connectToCluster from "../connection/connect";
 import { Collection, Db } from "mongodb";
 import { Request, Response } from "express";
-import { createSession, validateSession } from "../functions/hash";
+import  { validateSession } from "../functions/hash";
 import { validateToken } from "../functions/bearer";
 import { closeConn } from "../connection/closeConn";
 
 export async function generateURL(req: Request, res: Response) {
   const session = req.query.session as string;
   const uid = req.query.uid as string;
-  const token = req.query.token as string;
-  const client_id = req.query.client_id as string;
+  const token = req.query.access_token as string;
+  const client_id = req.body.client_id as string;
 
   try {
     if (session === undefined) {

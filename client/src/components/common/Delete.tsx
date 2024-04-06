@@ -15,15 +15,16 @@ interface Props {
   isOpen: boolean;
   onClose: () => void;
   data: any;
-  onDelete: (data: any) => void;
+  onDelete: () => void;
   type: string;
 }
 
 export default function Delete(props: Props) {
   function onDelete() {
     props.onClose();
-    props.onDelete(props.data);
+    props.onDelete();
   }
+  console.log(props.data);
 
   return (
     <>
@@ -35,17 +36,7 @@ export default function Delete(props: Props) {
           <ModalBody>
             <p>
               Do you want to delete this {toTitleCase(props.type)} -{" "}
-              <b>
-                {" "}
-                {props.type === "lawyer"
-                  ? props.data.name
-                  : props.type === "discord-user"
-                  ? props.data.username
-                  : props.type === "panel-user"
-                  ? props.data.name
-                  : ""}
-                ?{" "}
-              </b>
+              <b> {props.data.username}?</b>
             </p>
           </ModalBody>
 

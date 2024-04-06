@@ -24,7 +24,7 @@ export default function validateClient(
     return setError("Username must be less than 20 characters", "username");
   }
   if (client.lawyer_id === undefined || client.lawyer_id === "") {
-    return setError("Role is required", "role");
+    return setError("Lawyer is required", "role");
   }
   if (client.email === undefined || client.email === "") {
     return setError("Email is required", "email");

@@ -37,8 +37,6 @@ function Router() {
             <Route path="/dashboard/pdf" element={<Divorce />} />
 
             {SidebarData.map((item, index) => {
-              // if (item.title === "Users" && currentUser.role !== "admin")
-              //   return null;
               return (
                 <Route
                   key={index}

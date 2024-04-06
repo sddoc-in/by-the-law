@@ -13,8 +13,9 @@ import Delete from "../../common/Delete";
 import { UserClientStatusEnum } from "../../../constants/Status";
 import toTitleCase from "../../../functions/toTitle";
 import { RolesEnum } from "../../../constants/Roles";
+import ClientInterface from "../../../interface/NewClient";
 
-export default function Card(props: UserInterface) {
+export default function Card(props: {data:ClientInterface,lawyers:UserInterface[]}) {
   const { user: currentUser } = React.useContext(AppContext);
 
   const [open, setOpen] = React.useState(false);
@@ -37,34 +38,34 @@ export default function Card(props: UserInterface) {
         uid: currentUser.uid,
         session: currentUser.session,
         access_token: currentUser.access_token,
-        lawyer_id: props.lawyer_id || "",
+        client_id: props.data.client_id || "",
       });
 
       const data = await axios
-        .delete(API_URL + "/lawyer/delete?" + params)
+        .delete(API_URL + "/client/delete?" + params)
         .then((res) => res.data)
         .catch((err) => {
           alert(err.response.data.message);
           return;
         });
 
-      if (data.message !== "Lawyer deleted successfully") {
+      if (data.message !== "Client deleted") {
         alert(data.message);
         return;
       }
-      alert("Lawyer deleted successfully");
+      alert("Client deleted");
       setOpen(false);
       window.location.reload();
     } catch (err) {}
   }
 
   const statusColor = () => {
-    if (props.status === "active" || props.status === "connected") {
+    if (props.data.status === "active" || props.data.status === "connected") {
       return "bg-green-500";
     } else if (
-      props.status === UserClientStatusEnum.inactive ||
-      props.status === UserClientStatusEnum.blocked ||
-      props.status === UserClientStatusEnum.deleted
+      props.data.status === UserClientStatusEnum.inactive ||
+      props.data.status === UserClientStatusEnum.blocked ||
+      props.data.status === UserClientStatusEnum.deleted
     ) {
       return "bg-red-500";
     } else {
@@ -84,7 +85,7 @@ export default function Card(props: UserInterface) {
               className={`w-2 h-2 rounded-full mr-2 block ${statusColor()}`}
             ></p>
             <p className="text-[#002F53] text-[12px] font-[600] leading-[20px]">
-              {toTitleCase(props.status ? props.status : "active")}
+              {toTitleCase(props.data.status ? props.data.status : "active")}
             </p>
           </div>
           <div className="flex justify-start items-start mb-4 w-11/12">
@@ -93,17 +94,20 @@ export default function Card(props: UserInterface) {
             </div>
             <div>
               <div className="flex justify-start items-center ml-3">
-                <p>{props.name} -</p>
-                <p className="ml-1">{props.username} </p>
+                <p>{props.data.name} -</p>
+                <p className="ml-1">{props.data.username} </p>
               </div>
               <div className="ml-3 text-ellipsis w-full">
-                <p>{props.email} </p>
+                <p>{props.data.email} </p>
+              </div>
+              <div className="ml-3 text-ellipsis w-full">
+                <p>Lawyer : {props.data.lawyer.username} </p>
               </div>
             </div>
           </div>
           <hr className="w-full h-1 " />
           <div className="flex justify-evenly items-center mt-2">
-            <a href={"/dashboard/panel-user/details/view/" + props.lawyer_id}>
+            <a href={"/dashboard/panel-user/details/view/" + props.data.client_id}>
               <FaRegEye className="text-2xl mt-1.5" />
             </a>
             <CiEdit
@@ -121,14 +125,15 @@ export default function Card(props: UserInterface) {
       <Delete
         isOpen={open}
         onClose={() => setOpen(false)}
-        data={props}
+        data={props.data}
         onDelete={deletePhrase}
-        type="lawyer"
+        type="client"
       />
       <UpdateUserPopup
         isOpen={updatePopup}
         onClose={() => setUpdatePopup(false)}
-        data={props}
+        data={props.data}
+        lawyers={props.lawyers}
       />
     </>
   );

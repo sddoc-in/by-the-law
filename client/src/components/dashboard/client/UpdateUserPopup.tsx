@@ -10,39 +10,52 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import InputSelect from "../../input/InputSelect";
-import { Roles, RolesEnum } from "../../../constants/Roles";
 import InputEmail from "../../input/InputEmail";
 import InputName from "../../input/InputName";
 import { AppContext } from "../../../context/Context";
 import axios from "axios";
 import { API_URL } from "../../../constants/data";
 import UserErrorInterface from "../../../interface/Error";
-import validateUser from "../../../functions/validateUserSignup";
 import UserInterface from "../../../interface/NewUser";
+import ClientInterface from "../../../interface/NewClient";
+import { UserClientStatus } from "../../../constants/Status";
+import toTitleCase from "../../../functions/toTitle";
+import validateClient from "../../../functions/validateClient";
 
 interface Props {
   isOpen: boolean;
   onClose: () => void;
-  data: UserInterface;
+  data: ClientInterface;
+  lawyers: UserInterface[];
 }
 
 export default function UpdateUserPopup(props: Props) {
   const { user: currentUser } = React.useContext(AppContext);
-  const [panelUser, setPanelUser] = React.useState<UserInterface>(props.data);
+  const [panelUser, setPanelUser] = React.useState<ClientInterface>(props.data);
 
   const [error, setError] = React.useState<UserErrorInterface>(
     {} as UserErrorInterface
   );
 
+  const lawyers =
+    props.lawyers.length > 0
+      ? props.lawyers.map((lawyer: UserInterface) => {
+          return {
+            id: lawyer.lawyer_id || "",
+            name: lawyer.username || "",
+            value: lawyer.lawyer_id || "",
+          };
+        })
+      : [
+          {
+            id: "",
+            name: "No Lawyer Found",
+            value: "",
+          },
+        ];
+
   async function onCreate() {
     if (!ValidateUser()) {
-      return;
-    }
-    if (
-      currentUser.role !== RolesEnum.admin &&
-      currentUser.uid !== props.data.lawyer_id
-    ) {
-      alert("You are not allowed to update this panel user");
       return;
     }
 
@@ -54,25 +67,25 @@ export default function UpdateUserPopup(props: Props) {
       });
 
       const data = await axios
-        .put(API_URL + "/lawyer/update?" + params, panelUser)
+        .put(API_URL + "/client/update?" + params, panelUser)
         .then((res) => res.data)
         .catch((err) => {
           let data = err.response.data;
           alert(data.message);
           return;
         });
-      if (data.message !== "User updated") {
+      if (data.message !== "Client updated") {
         alert(data.message);
         return;
       }
-      alert("Lawyer updated successfully");
+      alert("Client updated successfully");
       props.onClose();
       window.location.reload();
     } catch (err) {}
   }
 
   function ValidateUser() {
-    let error: UserErrorInterface = validateUser(panelUser, "", false);
+    let error: UserErrorInterface = validateClient(panelUser, false);
     if (error.hasError) {
       setError(error);
       return false;
@@ -81,6 +94,13 @@ export default function UpdateUserPopup(props: Props) {
   }
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
+    if(error.hasError){
+      setError({
+        hasError: false,
+        field: "",
+        message: "",
+      });
+    }
     setPanelUser({
       ...panelUser,
       [e.target.name]: e.target.value,
@@ -88,6 +108,13 @@ export default function UpdateUserPopup(props: Props) {
   }
 
   function onRoleChange(name: string, value: string) {
+    if(error.hasError){
+      setError({
+        hasError: false,
+        field: "",
+        message: "",
+      });
+    }
     setPanelUser({
       ...panelUser,
       [name]: value,
@@ -99,7 +126,7 @@ export default function UpdateUserPopup(props: Props) {
       <Modal isOpen={props.isOpen} onClose={props.onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create Panel User</ModalHeader>
+          <ModalHeader>Update Client - {props.data.username}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <InputName
@@ -115,6 +142,7 @@ export default function UpdateUserPopup(props: Props) {
             <InputName
               name="username"
               defValue={panelUser.username || ""}
+              disabled={true}
               placeholder="Username"
               inputClassName="w-full"
               onChangeHandler={onChange}
@@ -135,11 +163,11 @@ export default function UpdateUserPopup(props: Props) {
               }
             />
             <InputSelect
-              name="role"
-              selectArray={Roles}
+              name="lawyer_id"
+              selectArray={lawyers}
               onChange={onRoleChange}
-              defValue={panelUser.role || ""}
-              placeholder="Select your role"
+              defValue={toTitleCase(panelUser.lawyer.username)}
+              placeholder="Assign Lawyer"
               inputClassName="w-full"
               error={
                 error.hasError && error.field === "role" ? error.message : ""
@@ -147,12 +175,9 @@ export default function UpdateUserPopup(props: Props) {
             />
             <InputSelect
               name="status"
-              selectArray={[
-                { name: "active", value: "active", id: "1" },
-                { name: "inactive", value: "inactive", id: "2" },
-              ]}
+              selectArray={UserClientStatus}
               onChange={onRoleChange}
-              defValue={panelUser.status || ""}
+              defValue={toTitleCase(panelUser.status || "")}
               placeholder="Select your status"
               inputClassName="w-full"
               error={

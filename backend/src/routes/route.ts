@@ -31,7 +31,7 @@ router.delete("/api/client/delete",deleteClient);
 router.post("/api/client/create",createClient);
 
 // urls
-router.get("/api/url/generate", generateURL);
+router.post("/api/url/generate", generateURL);
 router.get("/api/url/validate", validateURL);
 router.get("/api/url/delete", deleteURL);
 

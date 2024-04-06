@@ -55,21 +55,36 @@ export default function CreateuserPopup(props: Props) {
       });
 
       const data = await axios
-        .post(API_URL + "/lawyer/create?" + params, panelUser)
+        .post(API_URL + "/client/create?" + params, panelUser)
         .then((res) => res.data)
         .catch((err) => {
           let data = err.response.data;
           alert(data.message);
           return;
         });
-      if (data.message !== "Lawyer created successfully") {
+      if (data.message !== "Client created successfully") {
         alert(data.message);
         return;
       }
-      if (data.user.uid) {
-        alert("Lawyer created successfully");
-        props.onClose();
-        window.location.reload();
+      if (data.client.client_id) {
+        const data2 = await axios
+          .post(API_URL + "/url/generate?" + params, {
+            client_id: data.client.client_id,
+          })
+          .then((res) => res.data)
+          .catch((err) => {
+            let data = err.response.data;
+            alert(data.message);
+            return;
+          });
+        if (data2.message !== "Url generated") {
+          alert(data2.message);
+          return;
+        } else {
+          alert("Client created successfully");
+          props.onClose();
+          window.location.reload();
+        }
       }
     } catch (err) {}
   }
@@ -102,7 +117,7 @@ export default function CreateuserPopup(props: Props) {
       <Modal isOpen={props.isOpen} onClose={props.onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create Lawyer</ModalHeader>
+          <ModalHeader>Create Client</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <InputName
@@ -118,7 +133,7 @@ export default function CreateuserPopup(props: Props) {
             <InputName
               name="username"
               defValue=""
-              placeholder="Account Number"
+              placeholder="Client Id"
               inputClassName="w-full"
               onChangeHandler={onChange}
               error={
@@ -156,7 +171,7 @@ export default function CreateuserPopup(props: Props) {
                 props.data.map((lawyer: UserInterface) => {
                   return {
                     id: lawyer.lawyer_id || "",
-                    name: lawyer.name || "",
+                    name: lawyer.username || "",
                     value: lawyer.lawyer_id || "",
                   };
                 }) || [

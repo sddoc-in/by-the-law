@@ -19,6 +19,8 @@ import { API_URL } from "../../../constants/data";
 import UserErrorInterface from "../../../interface/Error";
 import validateUser from "../../../functions/validateUserSignup";
 import UserInterface from "../../../interface/NewUser";
+import toTitleCase from "../../../functions/toTitle";
+import { UserClientStatus } from "../../../constants/Status";
 
 interface Props {
   isOpen: boolean;
@@ -99,7 +101,7 @@ export default function UpdateUserPopup(props: Props) {
       <Modal isOpen={props.isOpen} onClose={props.onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create Panel User</ModalHeader>
+          <ModalHeader>Update Lawyer - {props.data.username}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <InputName
@@ -116,6 +118,7 @@ export default function UpdateUserPopup(props: Props) {
               name="username"
               defValue={panelUser.username || ""}
               placeholder="Username"
+              disabled={true}
               inputClassName="w-full"
               onChangeHandler={onChange}
               error={
@@ -138,7 +141,7 @@ export default function UpdateUserPopup(props: Props) {
               name="role"
               selectArray={Roles}
               onChange={onRoleChange}
-              defValue={panelUser.role || ""}
+              defValue={toTitleCase(panelUser.role || "")}
               placeholder="Select your role"
               inputClassName="w-full"
               error={
@@ -147,12 +150,9 @@ export default function UpdateUserPopup(props: Props) {
             />
             <InputSelect
               name="status"
-              selectArray={[
-                { name: "active", value: "active", id: "1" },
-                { name: "inactive", value: "inactive", id: "2" },
-              ]}
+              selectArray={UserClientStatus}
               onChange={onRoleChange}
-              defValue={panelUser.status || ""}
+              defValue={toTitleCase(panelUser.status || "")}
               placeholder="Select your status"
               inputClassName="w-full"
               error={
