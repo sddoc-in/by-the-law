@@ -1,10 +1,10 @@
 export default interface ClientInterface {
-  cid:string;
+  client_id?:string;
   name: string;
   username: string;
   email: string;
   password: string;
-  lawyer?: string;
-  status: string;
+  lawyer_id: string;
+  status?: string;
   }
   

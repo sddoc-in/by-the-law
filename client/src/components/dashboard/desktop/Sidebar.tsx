@@ -26,12 +26,12 @@ export default function Sidebar() {
                 >
                   <a href={item.path} className="flex items-center">
                     <item.Icon
-                      className={`text-[24px] mr-3 ${
+                      className={`text-[18px] mr-3 ${
                         highlight ? "text-[#002F53]" : "text-white"
                       }`}
                     />
                     <p
-                      className={`font-bold text-[20px] ${
+                      className={`font-bold text-[16px] ${
                         highlight ? "text-[#002F53]" : "text-white"
                       }`}
                     >

@@ -1,5 +1,4 @@
 import React from "react";
-import UserInterface from "../interface/NewUser";
 
 export const AppContext = React.createContext<any>({});
 
@@ -11,29 +10,10 @@ export const AppProvider = ({ children }: any) => {
     session: "",
     access_token: "",
     uid: "",
-  });
-  const [userNew, setUserNew] = React.useState<UserInterface>({
-    email: "",
-    name: "",
-    username: "",
-    role: "user",
-    password: "",
+    role: "",
+    status: "",
   });
 
-  const [client,setClient] = React.useState({
-    username: "",
-    session: "",
-    access_token: "",
-    cid: "",
-  });
-
-  const [clientNew, setClientNew] = React.useState<UserInterface>({
-    email: "",
-    name: "",
-    username: "",
-    role: "client",
-    password: "",
-  });
   const [loggedIn, setLoggedIn] = React.useState<boolean>(false);
 
   const [dialog, setDialog] = React.useState<boolean>(false);
@@ -50,11 +30,14 @@ export const AppProvider = ({ children }: any) => {
       user[key.trim()] = value;
     });
     const tmpuser = {
-     username: user["user-name"],
-      session: user["session-id"],
+      username: user["user-name"],
+      session: user["session"],
       access_token: user["access_token"],
-      uid: user["_uid"],
+      uid: user["uid"],
+      role: user["role"],
+      status: user["status"],
     };
+
     if (
       tmpuser.username &&
       tmpuser.session &&
@@ -63,7 +46,7 @@ export const AppProvider = ({ children }: any) => {
       tmpuser.username !== "undefined" &&
       tmpuser.session !== "undefined" &&
       tmpuser.access_token !== "undefined" &&
-      tmpuser.uid !== "undefined"      
+      tmpuser.uid !== "undefined"
     ) {
       localStorage.setItem("user", JSON.stringify(tmpuser));
       setUser(tmpuser);
@@ -74,18 +57,26 @@ export const AppProvider = ({ children }: any) => {
   function setCookies(user: any) {
     // remove previous cookies
     document.cookie = "user-name=; Expires=Thu, 01 Jan 1970 00:00:00 UTC";
-    document.cookie = "session-id=; Expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    document.cookie = "session=; Expires=Thu, 01 Jan 1970 00:00:00 UTC";
     document.cookie = "access_token=; Expires=Thu, 01 Jan 1970 00:00:00 UTC";
-    document.cookie = "_uid=; Expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    document.cookie = "uid=; Expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    document.cookie = "role=; Expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    document.cookie = "status=; Expires=Thu, 01 Jan 1970 00:00:00 UTC";
 
     const expires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
 
     const session = user.session;
     const token = user.access_token;
     document.cookie = `user-name=${user.name}; Expires=${expires}`;
-    document.cookie = `session-id=${session}; Expires=${expires}`;
+    document.cookie = `session=${session}; Expires=${expires}`;
     document.cookie = `access_token=${token}; Expires=${expires}`;
-    document.cookie = `_uid=${user.uid}; Expires=${expires}`;
+    document.cookie = `uid=${user.uid}; Expires=${expires}`;
+    document.cookie = `role=${user.role}; Expires=${expires}`;
+    document.cookie = `status=${user.status}; Expires=${expires}`;
+
+    localStorage.setItem("user", JSON.stringify(user));
+
+    setUser(user);
   }
 
   React.useEffect(() => {
@@ -94,7 +85,7 @@ export const AppProvider = ({ children }: any) => {
 
   return (
     <AppContext.Provider
-      value={{ routerPath, setRouterPath, dialog, setDialog, setCookies, fetchUserCookies, user,client,setClient,  loggedIn, setUser, userNew, setUserNew}}
+      value={{ routerPath, setRouterPath, dialog, setDialog, setCookies, fetchUserCookies, user,  loggedIn, setUser, }}
     >
       {children}
     </AppContext.Provider>

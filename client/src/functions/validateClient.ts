@@ -3,7 +3,6 @@ import setError from "./setError";
 
 export default function validateClient(
   client: ClientInterface,
-  Password?: string,
   checkPassword?: boolean
 ) {
   if (client.name === undefined || client.name === "") {
@@ -24,7 +23,7 @@ export default function validateClient(
   if (client.username.length > 20) {
     return setError("Username must be less than 20 characters", "username");
   }
-  if (client.lawyer === undefined || client.lawyer === "") {
+  if (client.lawyer_id === undefined || client.lawyer_id === "") {
     return setError("Role is required", "role");
   }
   if (client.email === undefined || client.email === "") {

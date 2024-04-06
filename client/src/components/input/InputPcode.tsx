@@ -2,13 +2,14 @@ import React from "react";
 
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import Input from "../../interface/Input";
-import SelectArray from "../../interface/SelectArray";
+import CountriesInterface from "../../interface/Countries";
+import AllCountriesData from "../../constants/Allcountries";
 
-export default function InputSelect(props: Input) {
+export default function InputPcode(props: Input) {
   const [show, setShow] = React.useState(false);
-  const [fileteredCountries, setFilteredCountries] = React.useState(
-    props.selectArray || []
-  );
+  const [fileteredCountries, setFilteredCountries] =
+    React.useState<CountriesInterface[]>(AllCountriesData);
+
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   function Show() {
@@ -19,50 +20,48 @@ export default function InputSelect(props: Input) {
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
     setShow(true);
-    let filtered = props.selectArray!.filter((data: SelectArray) => {
+    let filtered = AllCountriesData.filter((data:CountriesInterface) => {
       return data.name.toLowerCase().includes(e.target.value.toLowerCase());
     });
     if (filtered.length === 0) {
-      filtered = props.selectArray!.filter((data: SelectArray) => {
-        return data.value!.toLowerCase().includes(e.target.value.toLowerCase());
+      filtered = AllCountriesData.filter((data:CountriesInterface) => {
+        return data.dial_code
+          .toLowerCase()
+          .includes(e.target.value.toLowerCase());
       });
     }
     setFilteredCountries(filtered);
   }
 
-  function onCountryClick(data: any) {
-    inputRef.current!.value = data.name;
+  function onCountryClick(data: CountriesInterface) {
+    inputRef.current!.value = data.dial_code;
     setShow(false);
     if (props.onChange) {
-      props.onChange(props.name, data.value);
+      props.onChange(props.name, data.dial_code);
     }
-    setFilteredCountries(props.selectArray || []);
+    setFilteredCountries(AllCountriesData);
   }
 
   React.useEffect(() => {
     inputRef.current!.value = props.defValue.toString() || "";
   }, [props.defValue]);
 
-  React.useEffect(() => {
-    setFilteredCountries(props.selectArray || []);
-  }, [props.selectArray]);
-
   return (
     <>
-      <div className={"w-full h-fit text-start my-1 " + props.inputClassName}>
+      <div className={" h-fit text-start my-1 " + props.inputClassName}>
         {props.label && (
           <label
             htmlFor={props.name ? props.name : "password"}
-            className="text-[16px] block leading-[24px] text-[#23262F] font-[700] mt-4 ml-3 md:mt-0  md:ml-0 my-1 md:my-2"
+            className="text-[16px] block leading-[24px] text-[#23262F] font-[700] my-1 md:my-2"
           >
             {props.label}
           </label>
         )}
-        <div className="relative w-[96%] mx-auto">
+        <div className="relative w-full">
           <div
             className="absolute right-4"
             onClick={Show}
-            style={{ top: "18.5px" }}
+            style={{ top: "13.5px" }}
           >
             {show ? (
               <IoMdArrowDropup className="text-[#777E91] text-[20px] cursor-pointer" />
@@ -74,30 +73,34 @@ export default function InputSelect(props: Input) {
             type="text"
             ref={inputRef}
             disabled={props.disabled ? true : false}
-            name={props.name ? props.name : "select"}
+            name={props.name ? props.name : "password"}
             onChange={(e) => onChange(e)}
-            placeholder={props.placeholder ? props.placeholder : `Select`}
+            placeholder={props.placeholder ? props.placeholder : `Phone Code`}
             className={
-              "input w-full rounded-lg text-[14px] text-black font-medium disabled:bg-white disabled:text-black placeholder:font-normal placeholder:text-[#000] bg-white my-1 "
+              "input w-full rounded-lg text-[14px] text-black font-medium disabled:bg-white disabled:text-black placeholder:font-normal placeholder:text-[#000] bg-white "
             }
             style={{ borderColor: "rgb(189, 189, 189)" }}
           />
           {props.error && (
             <p className="text-[12px] text-red-500">{props.error}</p>
           )}
-
           <div
             className={`absolute z-50 mt-2 top-full left-0 w-full bg-white rounded-lg shadow-md border border-gray-200 h-fit  max-h-[200px] overflow-y-scroll scroll-hide ${
               show ? "block" : "hidden"
             }`}
           >
-            {fileteredCountries.map((data: SelectArray, i: number) => (
+            {fileteredCountries.map((data: CountriesInterface, i) => (
               <div
                 key={i}
                 onClick={() => onCountryClick(data)}
-                className="flex items-center justify-between text-black px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-[#004D3D] hover:text-white  transition-all"
+                className="flex items-center justify-between px-4 py-2 border-b border-gray-200 cursor-pointer"
               >
-                <p className="text-[16px]  country-flag ">{data.name}</p>
+                <div className="flex items-center">
+                  <p className="text-[20px] country-flag ">{data.flag}</p>
+                  <p className="text-[black] ml-2 text-[14px]">
+                    {data.dial_code}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

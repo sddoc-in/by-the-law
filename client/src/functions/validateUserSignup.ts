@@ -58,7 +58,7 @@ export default function validateUser(
     if (!/(?=.*[a-zA-Z])/.test(user.password)) {
       return setError("Password must contain a letter", "password");
     }
-    if (cPassword !== undefined || cPassword !== "") {
+    if (cPassword !== undefined && cPassword !== "") {
       if (cPassword === "") {
         return setError("Confirm Password is required", "confirmPassword");
       }

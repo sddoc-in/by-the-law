@@ -1,13 +1,11 @@
 export default interface Client {
-    cid:string;
+    client_id?:string;
     name: string;
     username: string;
     email: string;
     password: string;
-    access_token?: string;
-    session?: string;
-    provider?: string;
-    Lawer?: string;
+    lawyer_id?: string;
     status: string;
     created?: Date;
+    modified?: Date;
 }

@@ -1,12 +1,13 @@
 import { Request, Response } from "express";
 import connectToCluster from "../connection/connect";
 import { Collection, Db } from "mongodb";
-import loginValidate from "../functions/loginValidate";
 import ConnectionRes from "../interface/ConnectionRes";
-import LoginError from "../interface/LoginError";
 import { comparePassword, createSession } from "../functions/hash";
 import { createBearer } from "../functions/bearer";
 import User from "../interface/User";
+import { UserClientStatusEnum } from "../enums/Status";
+import { closeConn } from "../connection/closeConn";
+import { stat } from "fs";
 
 export async function login(req: Request, res: Response) {
   let user = req.query.user as string;
@@ -34,9 +35,9 @@ export async function login(req: Request, res: Response) {
     // check if user exists
     let loggedUser;
     if (user) {
-      loggedUser = await collection.findOne({ username : user });
-    } 
-     if (loggedUser === null) {
+      loggedUser = await collection.findOne({ username: user });
+    }
+    if (loggedUser === null) {
       loggedUser = await collection.findOne({
         email: user,
       });
@@ -45,20 +46,24 @@ export async function login(req: Request, res: Response) {
     if (!loggedUser) {
       return res.status(400).json({ message: "User not found" });
     }
-
-
     // check if password is correct
-    if (comparePassword(password, loggedUser?.password)) {
+    if (!comparePassword(password, loggedUser?.password)) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
     // check user status
-    if (loggedUser?.status === "inactive") {
+    if (loggedUser?.status === UserClientStatusEnum.inactive) {
       return res.status(400).json({ message: "User is inactive" });
+    }
+    if (loggedUser?.status === UserClientStatusEnum.blocked) {
+      return res.status(400).json({ message: "User is blocked" });
+    }
+    if (loggedUser?.status === UserClientStatusEnum.deleted) {
+      return res.status(400).json({ message: "User is deleted" });
     }
 
     let newUser: User = {
-      uid: loggedUser?.uid,
+      lawyer_id: loggedUser?.lawyer_id,
       name: loggedUser?.name,
       username: loggedUser?.username,
       email: loggedUser?.email,
@@ -67,19 +72,22 @@ export async function login(req: Request, res: Response) {
       session: loggedUser?.session,
       role: loggedUser?.role,
       status: loggedUser?.status,
-
     };
 
     // check session
     newUser.session = createSession();
 
-    newUser.access_token = createBearer(loggedUser?.email, loggedUser?.uid, newUser.session);
+    newUser.access_token = createBearer(
+      loggedUser?.email,
+      loggedUser?.lawyer_id,
+      newUser.session
+    );
 
     // insert session
     await sessionCollection.insertOne({
       activity: "login",
       session: newUser.session,
-      uid: loggedUser?.uid,
+      uid: loggedUser?.lawyer_id,
       created: new Date(),
     });
 
@@ -87,7 +95,7 @@ export async function login(req: Request, res: Response) {
 
     await collection.updateOne(
       {
-        uid: loggedUser?.uid,
+        lawyer_id: loggedUser?.lawyer_id,
       },
       {
         $set: {
@@ -96,12 +104,15 @@ export async function login(req: Request, res: Response) {
         },
       }
     );
+    closeConn(conn);
 
     const tmpuser = {
-      uid: newUser.uid,
+      uid: newUser.lawyer_id,
       name: newUser.name,
       access_token: newUser.access_token,
       session: newUser.session,
+      role: newUser.role,
+      status: newUser.status,
     };
 
     res

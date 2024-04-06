@@ -4,7 +4,7 @@ export default interface UserInterface {
     username?: string;
     role?: string;
     password?: string;
-    uid?:string;
+    lawyer_id?:string;
     status?:string;
   }
   

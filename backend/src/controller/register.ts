@@ -11,8 +11,10 @@ import { createBearer, validateToken } from "../functions/bearer";
 import { closeConn } from "../connection/closeConn";
 
 export async function register(req: Request, res: Response) {
-  const { name, username, email, password, role, access_token, session, uid } =
-    req.body;
+  let session = req.query.session as string;
+  let access_token = req.query.access_token as string;
+  let uid = req.query.uid as string;
+  const { name, username, email, password, role } = req.body;
 
   try {
     if (name === undefined) {
@@ -43,9 +45,7 @@ export async function register(req: Request, res: Response) {
     const filteredDocs = await collection.find({ email: email }).toArray();
     if (filteredDocs.length > 0) {
       return res.status(400).json({
-        errors: {
-          message: "Email already exists",
-        },
+        message: "Email already exists",
         email: email,
       });
     }
@@ -96,7 +96,7 @@ export async function register(req: Request, res: Response) {
     const token = createBearer(email, uidNew, sessionNew);
 
     const user: User = {
-      uid: uidNew,
+      lawyer_id: uidNew,
       name: name,
       username: username,
       email: email,
@@ -106,6 +106,7 @@ export async function register(req: Request, res: Response) {
       role: role,
       status: "active",
       created: new Date(),
+      modifed: new Date(),
     };
 
     await collection.insertOne(user);
@@ -117,10 +118,12 @@ export async function register(req: Request, res: Response) {
       name: name,
       access_token: token,
       session: sessionNew,
+      role: role,
+      status: "active",
     };
     res
       .status(201)
-      .json({ user: tmpuser, message: "User created successfully" });
+      .json({ user: tmpuser, message: "Lawyer created successfully" });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Internal server error" });

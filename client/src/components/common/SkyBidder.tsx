@@ -19,7 +19,7 @@ export default function SkyBidder() {
           Law
         </span>
       </h1>
-      <p className="text-white font-[600] text-[24px] w-11/12 ">
+      <p className="text-white font-[600] text-[20px] w-11/12 ">
         We are a team of experienced lawyers who are passionate about what we do
       </p>
     </div>

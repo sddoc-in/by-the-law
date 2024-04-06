@@ -6,23 +6,25 @@ import Signin from "./pages/Signin";
 import AppProvider from "./context/Context";
 import { SidebarData } from "./constants/Sidebar";
 import GlobalLayout from "./components/dashboard/GlobalLayout";
-import { UserOptions } from "./constants/Users";
 import UrlForm from "./pages/UrlForm";
 import WrongUrl from "./pages/WrongUrl";
 import Divorce from "./components/pdf/divorce";
+import { ChakraProvider } from "@chakra-ui/react";
+
 
 function App() {
   return (
     <>
       <AppProvider>
-        <Router />
+        <ChakraProvider>
+          <Router />
+        </ChakraProvider>
       </AppProvider>
     </>
   );
 }
 
 function Router() {
-  // const { user: currentUser } = React.useContext(AppContext);
   return (
     <>
       <BrowserRouter>
@@ -32,25 +34,11 @@ function Router() {
             <Route path="/sign-in" element={<Signin />} />
             <Route path="/url/:url" element={<UrlForm />} />
             <Route path="/wrong-url" element={<WrongUrl />} />
-            <Route path="/dashboard/pdf" element={<Divorce/>}/>
+            <Route path="/dashboard/pdf" element={<Divorce />} />
 
             {SidebarData.map((item, index) => {
               // if (item.title === "Users" && currentUser.role !== "admin")
               //   return null;
-              return (
-                <Route
-                  key={index}
-                  path={item.path}
-                  element={
-                    <GlobalLayout>
-                      <item.Element />
-                    </GlobalLayout>
-                  }
-                />
-              );
-            })}
-
-            {UserOptions.map((item, index) => {
               return (
                 <Route
                   key={index}

@@ -2,8 +2,10 @@ import { Request, Response } from "express";
 import connectToCluster from "../connection/connect";
 import { Collection, Db } from "mongodb";
 import ConnectionRes from "../interface/ConnectionRes";
-import { validateSession  } from "../functions/hash";
+import { validateSession } from "../functions/hash";
 import { validateToken } from "../functions/bearer";
+import { closeConn } from "../connection/closeConn";
+import { RolesEnum } from "../enums/Roles";
 
 export async function getAllUsers(req: Request, res: Response) {
   const session = req.query.session as string;
@@ -21,17 +23,6 @@ export async function getAllUsers(req: Request, res: Response) {
       return res.status(400).json({ message: "Token required" });
     }
 
-    // create connection
-    const connect: ConnectionRes = await connectToCluster();
-    if (typeof connect.conn === "string") {
-      return res.status(500).json(connect);
-    }
-
-    const conn = connect.conn;
-    const db: Db = conn.db("client");
-    const usersCollection: Collection = db.collection("users");
-    const sessionCollection: Collection = db.collection("sessions");
-
     // check session
     let sessionBool = validateSession(session);
     if (sessionBool) {
@@ -42,6 +33,17 @@ export async function getAllUsers(req: Request, res: Response) {
     if (tokenErr !== "") {
       return res.status(400).json({ message: tokenErr });
     }
+
+    // create connection
+    const connect: ConnectionRes = await connectToCluster();
+    if (typeof connect.conn === "string") {
+      return res.status(500).json(connect);
+    }
+
+    const conn = connect.conn;
+    const db: Db = conn.db("client");
+    const usersCollection: Collection = db.collection("users");
+    const sessionCollection: Collection = db.collection("sessions");
 
     // insert session
     await sessionCollection.insertOne({
@@ -54,13 +56,13 @@ export async function getAllUsers(req: Request, res: Response) {
     // get all users
     let users = await usersCollection
       .find(
-        { role: "user" },
+        { role: "lawyer" },
         {
           projection: {
             username: 1,
             email: 1,
             name: 1,
-            uid: 1,
+            lawyer_id: 1,
             role: 1,
             status: 1,
           },
@@ -68,6 +70,7 @@ export async function getAllUsers(req: Request, res: Response) {
       )
       .toArray();
 
+    closeConn(conn);
     return res.status(200).json(users);
   } catch (error) {
     console.log(error);
@@ -147,15 +150,11 @@ export async function getUser(req: Request, res: Response) {
 }
 
 export async function updateUser(req: Request, res: Response) {
-  const session = req.body.session as string;
-  const uid = req.body.uid as string;
-  const userId = req.body.userId as string;
-  const token = req.body.access_token as string;
-  const name = req.body.name as string;
-  const username = req.body.username as string;
-  const email = req.body.email as string;
-  const role = req.body.role as string;
-  const status = req.body.status as string;
+  const session = req.query.session as string;
+  const uid = req.query.uid as string;
+  const token = req.query.access_token as string;
+
+  const { lawyer_id, name, username, email, role, status } = req.body;
 
   try {
     if (session === undefined) {
@@ -164,7 +163,7 @@ export async function updateUser(req: Request, res: Response) {
     if (uid === undefined) {
       return res.status(400).json({ message: "Uid required" });
     }
-    if (userId === undefined) {
+    if (lawyer_id === undefined) {
       return res.status(400).json({ message: "User id required" });
     }
     if (token === undefined) {
@@ -186,17 +185,6 @@ export async function updateUser(req: Request, res: Response) {
       return res.status(400).json({ message: "Status required" });
     }
 
-    // create connection
-    const connect: ConnectionRes = await connectToCluster();
-    if (typeof connect.conn === "string") {
-      return res.status(500).json(connect);
-    }
-
-    const conn = connect.conn;
-    const db: Db = conn.db("client");
-    const usersCollection: Collection = db.collection("users");
-    const sessionCollection: Collection = db.collection("sessions");
-
     // check session
     let sessionBool = validateSession(session);
     if (sessionBool) {
@@ -208,31 +196,53 @@ export async function updateUser(req: Request, res: Response) {
       return res.status(400).json({ message: tokenErr });
     }
 
-    let tempUser = await usersCollection.findOne({ uid: userId });
+    // create connection
+    const connect: ConnectionRes = await connectToCluster();
+    if (typeof connect.conn === "string") {
+      return res.status(500).json(connect);
+    }
+
+    const conn = connect.conn;
+    const db: Db = conn.db("client");
+    const usersCollection: Collection = db.collection("users");
+    const sessionCollection: Collection = db.collection("sessions");
+
+    let user = await usersCollection.findOne({ lawyer_id: uid });
+    if (!user) {
+      return res.status(400).json({ message: "User not found" });
+    }
+
+    if (user.role !== RolesEnum.admin && user.lawyer_id !== lawyer_id) {
+      return res
+        .status(400)
+        .json({ message: "You are not allowed to update this panel user" });
+    }
+
+    let tempUser = await usersCollection.findOne({ lawyer_id: lawyer_id });
     if (!tempUser) {
       return res.status(400).json({ message: "User not found" });
     }
 
     tempUser = await usersCollection.findOne(
       { username: username },
-      { projection: { username: 1, uid: 1 } }
+      { projection: { username: 1, lawyer_id: 1 } }
     );
     if (
       tempUser !== null &&
       tempUser!.username === username &&
-      tempUser.uid !== userId
+      tempUser.lawyer_id !== lawyer_id
     ) {
       return res.status(400).json({ message: "Username already taken" });
     }
 
     tempUser = await usersCollection.findOne(
       { email: email },
-      { projection: { email: 1, uid: 1 } }
+      { projection: { email: 1, lawyer_id: 1 } }
     );
     if (
       tempUser !== null &&
       tempUser.email === email &&
-      tempUser.uid !== userId
+      tempUser.lawyer_id !== lawyer_id
     ) {
       return res.status(400).json({ message: "Email already taken" });
     }
@@ -245,13 +255,8 @@ export async function updateUser(req: Request, res: Response) {
       created: new Date(),
     });
 
-    let user = await usersCollection.findOne({ uid: userId });
-    if (!user) {
-      return res.status(400).json({ message: "User not found" });
-    }
-
-    let updatedUser = await usersCollection.updateOne(
-      { uid: userId },
+    await usersCollection.updateOne(
+      { lawyer_id: lawyer_id },
       {
         $set: {
           name: name,
@@ -271,20 +276,20 @@ export async function updateUser(req: Request, res: Response) {
 }
 
 export async function deleteUser(req: Request, res: Response) {
-  const session = req.body.session as string;
-  const uid = req.body.uid as string;
-  const userId = req.body.userId as string;
-  const token = req.body.access_token as string;
+  const session = req.query.session as string;
+  const uid = req.query.uid as string;
+  const lawyer_id = req.query.lawyer_id as string;
+  const token = req.query.access_token as string;
 
   try {
     if (session === undefined) {
       return res.status(400).json({ message: "Session required" });
     }
     if (uid === undefined) {
-      return res.status(400).json({ message: "Uid required" });
+      return res.status(400).json({ message: "User required" });
     }
-    if (userId === undefined) {
-      return res.status(400).json({ message: "User id required" });
+    if (lawyer_id === undefined) {
+      return res.status(400).json({ message: "Lawyer is required" });
     }
     if (token === undefined) {
       return res.status(400).json({ message: "Token required" });
@@ -320,14 +325,15 @@ export async function deleteUser(req: Request, res: Response) {
       created: new Date(),
     });
 
-    let user = await usersCollection.findOne({ uid: userId });
+    let user = await usersCollection.findOne({ lawyer_id: lawyer_id });
     if (!user) {
       return res.status(400).json({ message: "User not found" });
     }
 
-    let deletedUser = await usersCollection.deleteOne({ uid: userId });
+    await usersCollection.deleteOne({ lawyer_id: lawyer_id });
+    closeConn(conn);
 
-    return res.status(200).json({ message: "User deleted" });
+    return res.status(200).json({ message: "Lawyer deleted successfully" });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Unknown error" });

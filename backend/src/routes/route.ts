@@ -8,27 +8,35 @@ import {
   getPlatformCredentials,
 } from "../controller/credentials";
 import { deleteUser, getAllUsers, getUser, updateUser } from "../controller/users";
-import { deleteClient, getAllClients, getClient, updateClient } from "../controller/clients";
-import { createClient } from "../controller/createClient";
+import { createClient, deleteClient, getAllClients, getClient, updateClient } from "../controller/clients";
+
 
 const router = express.Router();
 
 router.post("/api/register", register);
 router.get("/api/login", login);
-router.get("/api/generate-url", generateURL);
-router.get("/api/validate-url", validateURL);
-router.get("/api/delete-url", deleteURL);
+
+// lawyers
+router.get("/api/lawyers/all", getAllUsers);
+router.get("/api/laywer/details", getUser);
+router.put("/api/lawyer/update", updateUser);
+router.delete("/api/lawyer/delete", deleteUser);
+router.post("/api/lawyer/create", register);
+
+// clients
+router.get("/api/clients/all",getAllClients);
+router.get("/api/client/details",getClient);
+router.put("/api/client/update",updateClient);
+router.delete("/api/client/delete",deleteClient);
+router.post("/api/client/create",createClient);
+
+// urls
+router.get("/api/url/generate", generateURL);
+router.get("/api/url/validate", validateURL);
+router.get("/api/url/delete", deleteURL);
+
 router.get("/api/get-all-urls",getURLs)
 router.get("/api/get-all-credentials", getCredentials);
 router.post("/api/save-credentials", addCredentials);
 router.get("/api/get-credentials", getPlatformCredentials);
-router.get("/api/get-all-users", getAllUsers);
-router.get("/api/get-user", getUser);
-router.post("/api/update-user", updateUser);
-router.post("/api/delete-user", deleteUser);
-router.get("/api/get-all-clients",getAllClients);
-router.get("/api/get-client",getClient);
-router.get("/api/update-client",updateClient);
-router.get("/api/delete-client",deleteClient);
-router.get("/api/create-client",createClient);
 export default router;

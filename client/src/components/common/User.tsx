@@ -39,13 +39,13 @@ export default function UserCard(props: UserInterface) {
               <IoEyeOutline className="text-[#002F53] text-[20px] " />
             </a> */}
             <a
-              href={"/dashboard/users/update-users/" + props.uid}
+              href={"/dashboard/users/update-users/" + props.lawyer_id}
               className="flex items-center mx-2 cursor-pointer"
             >
               <GrUpdate className="text-blue-500 text-[20px] " />
             </a>
             <a
-              href={"/dashboard/users/delete-users/" + props.uid}
+              href={"/dashboard/users/delete-users/" + props.lawyer_id}
               className="flex items-center mx-2 cursor-pointer"
             >
               <MdDelete className="text-red-600 text-[20px] " />
@@ -53,7 +53,7 @@ export default function UserCard(props: UserInterface) {
           </div>
         </div>
         <div className="flex items-center justify-center w-full h-auto">
-          <a     href={"/dashboard/users/view-users/" + props.uid} className="w-[50px] h-[50px] rounded-full bg-[#002F53] flex justify-center items-center">
+          <a     href={"/dashboard/users/view-users/" + props.lawyer_id} className="w-[50px] h-[50px] rounded-full bg-[#002F53] flex justify-center items-center">
             <p className="text-white text-[20px] font-[900]">
               {props.name ? props.name.charAt(0) : "U"}
             </p>

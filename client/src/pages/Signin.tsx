@@ -9,43 +9,55 @@ import InputName from "../components/input/InputName";
 import { API_URL } from "../constants/data";
 
 export default function Signin() {
-  const {  setCookies } = React.useContext(AppContext);
+  const { setCookies, loggedIn } = React.useContext(AppContext);
 
-  // React.useEffect(() => {
-  //   if(localStorage.getItem("user")){
-  //     window.location.href = "/dashboard";
-  //   } else if(loggedIn){
-  //     window.location.href = "/dashboard";
-  //   }
-     
-  // }, [loggedIn]);
+  React.useEffect(() => {
+    if (localStorage.getItem("user")) {
+      window.location.href = "/dashboard";
+    } else if (loggedIn) {
+      window.location.href = "/dashboard";
+    }
+  }, [loggedIn]);
 
   const [user, setUser] = React.useState({
     password: "",
     user: "",
   });
 
-  function handleChanges(e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) {
+  function handleChanges(
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) {
     setUser({ ...user, [e.target.name]: e.target.value });
   }
 
   async function login() {
-    const params = new URLSearchParams();
-    params.append("user", user.user);
-    params.append("password", user.password);
-    const response = await fetch(`${API_URL}/login?${params}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-    if (data.user.uid) {
-      setCookies(data.user);
-      window.location.href = "/dashboard";
-    }
-  }
+    try {
+      const data = await fetch(
+        API_URL + "/login?" + new URLSearchParams(user),
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+        .then((res) => res.json())
+        .catch((err) => {
+          alert(err.response.data.message);
+          return;
+        });
 
+      if (data.message === "User logged in successfully") {
+        setCookies(data.user);
+        window.location.href = "/dashboard";
+      } else {
+        alert(data.message);
+        return;
+      }
+    } catch (err) {}
+  }
   return (
     <div className="relative w-full h-auto md:h-[100vh] overflow-hidden">
       <SkyBidder />

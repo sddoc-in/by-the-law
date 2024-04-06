@@ -5,11 +5,13 @@ import { Collection, Db } from "mongodb";
 import { Request, Response } from "express";
 import { createSession, validateSession } from "../functions/hash";
 import { validateToken } from "../functions/bearer";
+import { closeConn } from "../connection/closeConn";
 
 export async function generateURL(req: Request, res: Response) {
   const session = req.query.session as string;
   const uid = req.query.uid as string;
   const token = req.query.token as string;
+  const client_id = req.query.client_id as string;
 
   try {
     if (session === undefined) {
@@ -20,6 +22,9 @@ export async function generateURL(req: Request, res: Response) {
     }
     if (token === undefined) {
       return res.status(400).json({ message: "Token required" });
+    }
+    if (client_id === undefined) {
+      return res.status(400).json({ message: "Client ID required" });
     }
 
     // create connection
@@ -55,14 +60,23 @@ export async function generateURL(req: Request, res: Response) {
     let url = v4();
     await urlCollection.insertOne({
       url: url,
-      uid: uid,
+      client_id: client_id,
       submitted: false,
+      status: "Not Submitted",
+      progress: 0,
       submittedDate: "",
-      expiration: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
+      // expiration: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
       created: new Date(),
     });
 
-    return res.status(200).json({url:{ url: url,status: "Not Submitted"},message: "Url generated" });
+    closeConn(conn);
+
+    return res
+      .status(200)
+      .json({
+        url: { url: url, status: "Not Submitted" },
+        message: "Url generated",
+      });
   } catch (error) {
     console.log(error);
   }
@@ -156,7 +170,7 @@ export async function deleteURL(req: Request, res: Response) {
     });
 
     await urlCollection.deleteOne({ url: url });
-
+    closeConn(conn);
     return res.status(200).json({ message: "Url deleted" });
   } catch (error) {
     console.log(error);
@@ -209,7 +223,7 @@ export async function getURLs(req: Request, res: Response) {
       created: new Date(),
     });
 
-    let urls = await urlCollection.find({ uid: uid }).toArray();
+    let urls = await urlCollection.find({ }).toArray();
 
     let Response = urls.map((url) => {
       let status;

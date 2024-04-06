@@ -1,13 +1,15 @@
+import React from "react";
+import SelectArray from "./SelectArray";
+
 export default interface Input {
-    defValue: string;
-    label?: string;
-    name: string;
-    name2?: string;
-    options?: { value: string; label: string }[];
-    onChangeHandler?: (e:React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => void;
-    disabled?: boolean;
-    placeholder?: string;
-    inputClassName?: string;
-    error?: string;
-  }
-  
+  defValue: string | number ;
+  label?: string;
+  name: string;
+  onChangeHandler?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
+  placeholder?: string;
+  inputClassName?: string;
+  error?: string;
+  onChange?: (type:string,value:string) => void;
+  selectArray?: SelectArray[];
+}
