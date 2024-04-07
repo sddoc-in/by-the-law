@@ -1,24 +1,19 @@
+import React from "react";
 import { FaRegEye } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
-import { FaCircleUser } from "react-icons/fa6";
-
-import { CiEdit } from "react-icons/ci";
-import React from "react";
 import { AppContext } from "../../../context/Context";
 import { API_URL } from "../../../constants/data";
 import axios from "axios";
-import UpdateUserPopup from "./UpdateUserPopup";
-import UserInterface from "../../../interface/NewUser";
 import Delete from "../../common/Delete";
 import { UserClientStatusEnum } from "../../../constants/Status";
 import toTitleCase from "../../../functions/toTitle";
 import { RolesEnum } from "../../../constants/Roles";
+import FormInterface from "../../../interface/Form";
 
-export default function Card(props: UserInterface) {
+export default function Card(props: FormInterface) {
   const { user: currentUser } = React.useContext(AppContext);
 
   const [open, setOpen] = React.useState(false);
-  const [updatePopup, setUpdatePopup] = React.useState(false);
 
   async function deletePhrase() {
     if (!currentUser.uid) {
@@ -27,7 +22,7 @@ export default function Card(props: UserInterface) {
 
     if (!currentUser.role || currentUser.role !== RolesEnum.admin) {
       alert(
-        "You are not authorized to delete a lawyer. Please contact system administrator."
+        "You are not authorized to delete the form. Please contact system administrator."
       );
       return;
     }
@@ -37,22 +32,23 @@ export default function Card(props: UserInterface) {
         uid: currentUser.uid,
         session: currentUser.session,
         access_token: currentUser.access_token,
-        lawyer_id: props.lawyer_id || "",
+        client_id: props.client_id || "",
+        form_id: props.form_id || "",
       });
 
       const data = await axios
-        .delete(API_URL + "/lawyer/delete?" + params)
+        .delete(API_URL + "/form/delete?" + params)
         .then((res) => res.data)
         .catch((err) => {
           alert(err.response.data.message);
           return;
         });
 
-      if (data.message !== "Lawyer deleted successfully") {
+      if (data.message !== "Form deleted") {
         alert(data.message);
         return;
       }
-      alert("Lawyer deleted successfully");
+      alert("Form deleted");
       setOpen(false);
       window.location.reload();
     } catch (err) {}
@@ -88,29 +84,54 @@ export default function Card(props: UserInterface) {
             </p>
           </div>
           <div className="flex justify-start items-start mb-4 w-11/12">
-            <div className="p-1 rounded-full bg-indigo-100 text-indigo-500 ">
+            {/* <div className="p-1 rounded-full bg-indigo-100 text-indigo-500 ">
               <FaCircleUser className="text-3xl" />
-            </div>
-            <div>
-              <div className="flex justify-start items-center ml-3">
-                <p>{props.name} -</p>
-                <p className="ml-1">{props.username} </p>
+            </div> */}
+            <div className="flex justify-start items-start flex-col ml-3">
+              <div className="flex flex-row">
+                <p className="text-lg font-bold">Form:</p>
+                <p className="text-lg ml-2">{props.name}</p>
               </div>
-              <div className="ml-3 text-ellipsis w-full">
-                <p>{props.email} </p>
+              <div className="flex flex-row">
+                <p className="text-lg font-bold">Client Id:</p>
+                <a href={"/dashboard/client/" + props.client_id + "/details"}>
+                  <p className="text-lg ml-2">{props.client_username}</p>
+                </a>
               </div>
+              <div className="flex flex-row">
+                <p className="text-lg font-bold">Client Name:</p>
+                <p className="text-lg ml-2">{props.client_name}</p>
+              </div>
+              <div className="flex flex-row">
+                <p className="text-lg font-bold">Status:</p>
+                <p className="text-lg ml-2">
+                  {toTitleCase(props.status as string)}
+                </p>
+              </div>
+              <div className="flex flex-row">
+                <p className="text-lg font-bold">Progress:</p>
+                <p className="text-lg ml-2">{props.progress}% completed</p>
+              </div>
+              <div className="flex flex-row">
+                <p className="text-lg font-bold">Created:</p>
+                <p className="text-lg ml-2">
+                  {new Date(props.created || "").toDateString()}
+                </p>
+              </div>
+
+              {props.submitted && (
+                <div className="flex flex-row">
+                  <p className="text-lg font-bold">Submitted Date:</p>
+                  <p className="text-lg ml-2">{props.submittedDate}</p>
+                </div>
+              )}
             </div>
           </div>
           <hr className="w-full h-1 " />
           <div className="flex justify-evenly items-center mt-2">
-            <a href={"/dashboard/lawyer/"+ props.lawyer_id+"/details/" }>
-              <FaRegEye className="text-2xl mt-1.5" />
-            </a>
-            <CiEdit
-              onClick={() => setUpdatePopup(true)}
-              className="text-2xl mt-1.5 cursor-pointer"
-            />
-
+            {/* <a href={"/dashboard/lawyer/"+ props.lawyer_id+"/details/" }> */}
+            <FaRegEye className="text-2xl mt-1.5" />
+            {/* </a>   */}
             <MdDeleteForever
               onClick={openModal}
               className="text-2xl mt-1.5 text-rose-500 cursor-pointer"
@@ -123,12 +144,7 @@ export default function Card(props: UserInterface) {
         onClose={() => setOpen(false)}
         data={props}
         onDelete={deletePhrase}
-        type="lawyer"
-      />
-      <UpdateUserPopup
-        isOpen={updatePopup}
-        onClose={() => setUpdatePopup(false)}
-        data={props}
+        type="form"
       />
     </>
   );

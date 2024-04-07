@@ -38,7 +38,7 @@ export default function InputPass(props: Input) {
         <div
           className="absolute right-4"
           onClick={Show}
-          style={{ top: "23px" }}
+          style={{ top: "14px" }}
         >
           {show ? (
             <AiFillEyeInvisible className="text-[#777E91] text-[20px] cursor-pointer" />

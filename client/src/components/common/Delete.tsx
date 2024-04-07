@@ -34,11 +34,11 @@ export default function Delete(props: Props) {
           <ModalBody>
             <p>
               Do you want to delete this {toTitleCase(props.type)}
-              {!(props.type === "url") && (
+              {!(props.type === "url" || props.type === 'form') ? (
                 <>
                   - <b> {props.data.username}?</b>
                 </>
-              )}
+              ):"?"}
             </p>
           </ModalBody>
 

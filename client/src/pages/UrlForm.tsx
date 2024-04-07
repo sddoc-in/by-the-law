@@ -1,47 +1,76 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import InputName from "../components/input/InputName";
 import { API_URL } from "../constants/data";
+import axios from "axios";
+import InputPass from "../components/input/InputPass";
+import Divorce from "../components/pdf/Divorce";
 
 export default function UrlForm() {
-  const params = useParams();
+  const { url, client_id } = useParams();
+  const [validUrl, setValidUrl] = React.useState(
+    JSON.parse(sessionStorage.getItem("validUrl") as string) || false
+  );
+  const [password, setPassword] = React.useState("");
+  const [data, setData] = React.useState({});
 
-  const validateUrl = React.useRef(() => {});
+  async function validateUrl() {
+    try {
+      const params = new URLSearchParams();
+      params.append("url", url || "");
+      params.append("client_id", client_id || "");
+      params.append("password", password);
 
-  validateUrl.current = async () => {
-    const url = params.url;
-
-    // send a request to the server to validate the url
-    const response = await fetch(`${API_URL}/validate-url?url=${url}`);
-    const data = await response.json();
-    console.log(data);
-    // if (data.message !== "Valid url") {
-    //     window.location.href = "/wrong-url";
-    // }
-  };
+      const data = await axios
+        .get(API_URL + "/url/validate?" + params)
+        .then((res) => res.data)
+        .catch((err) => {
+          alert(err.response.data.message);
+          return;
+        });
+      if (data.message !== "Valid url") {
+        alert(data.message);
+        return;
+      }
+      sessionStorage.setItem("validUrl", JSON.stringify(true));
+      setData(data.form);
+      setValidUrl(true);
+    } catch (err) {}
+  }
 
   React.useEffect(() => {
-    validateUrl.current();
+    let validity = JSON.parse(sessionStorage.getItem("validUrl") as string);
+    if (validity) {
+      setValidUrl(true);
+    } else {
+      setValidUrl(false);
+      sessionStorage.setItem("validUrl", JSON.stringify(false));
+    }
   }, []);
+
   return (
     <>
-      <div className="w-full h-screen bg-white flex justify-center items-center">
-        <div className=" w-11/12 md:w-1/2 mx-auto h-auto">
-          <InputName
-            name="name"
-            label="First Name"
-            defValue=""
-            placeholder="First Name"
-          />
-
-          <InputName
-            name="name"
-            label="Second Name"
-            defValue=""
-            placeholder="Second name"
-          />
+      {!validUrl ? (
+        <div className="flex justify-center items-center h-96">
+          <div className="w-1/2 p-5 border border-gray-200 rounded-lg shadow-xl">
+            <h1 className="text-2xl font-bold">Enter Password</h1>
+            <InputPass
+              name="password"
+              label="Password"
+              placeholder="Enter Password"
+              defValue={password}
+              onChangeHandler={(e) => setPassword(e.target.value)}
+            />
+            <button
+              onClick={validateUrl}
+              className="bg-blue-500 text-white p-2 rounded-lg mt-2"
+            >
+              Submit
+            </button>
+          </div>
         </div>
-      </div>
+      ) : (
+        <Divorce />
+      )}
     </>
   );
 }

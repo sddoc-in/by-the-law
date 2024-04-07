@@ -76,6 +76,7 @@ export default function InputSelect(props: Input) {
             disabled={props.disabled ? true : false}
             name={props.name ? props.name : "select"}
             onChange={(e) => onChange(e)}
+            onClick={() => setShow(!show)}
             placeholder={props.placeholder ? props.placeholder : `Select`}
             className={
               "input w-full rounded-lg text-[14px] text-black font-medium disabled:bg-white disabled:text-black placeholder:font-normal placeholder:text-[#000] bg-white my-1 "

@@ -3,7 +3,7 @@ import ConnectionRes from "../interface/ConnectionRes";
 import connectToCluster from "../connection/connect";
 import { Collection, Db } from "mongodb";
 import { Request, Response } from "express";
-import { validateSession } from "../functions/hash";
+import { comparePassword, validateSession } from "../functions/hash";
 import { validateToken } from "../functions/bearer";
 import { closeConn } from "../connection/closeConn";
 
@@ -36,6 +36,7 @@ export async function generateURL(req: Request, res: Response) {
     const conn = connect.conn;
     const db: Db = conn.db("client");
     const urlCollection: Collection = db.collection("urls");
+    const ClientFormCollection: Collection = db.collection("client-forms");
     const sessionCollection: Collection = db.collection("sessions");
 
     // check session
@@ -67,6 +68,13 @@ export async function generateURL(req: Request, res: Response) {
       submittedDate: "",
       // expiration: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
       created: new Date(),
+      data: {},
+    });
+
+    await ClientFormCollection.insertOne({
+      client_id: client_id,
+      url: url,
+      data: {},
     });
 
     closeConn(conn);
@@ -82,11 +90,18 @@ export async function generateURL(req: Request, res: Response) {
 
 export async function validateURL(req: Request, res: Response) {
   const url = req.query.url as string;
+  const client_id = req.query.client_id as string;
+  const password = req.query.password as string;
+
 
   try {
     if (url === undefined) {
       return res.status(400).json({ message: "Url required" });
     }
+    if (client_id === undefined) {
+      return res.status(400).json({ message: "Client ID required" });
+    }
+
     // create connection
     const connect: ConnectionRes = await connectToCluster();
     if (typeof connect.conn === "string") {
@@ -95,6 +110,8 @@ export async function validateURL(req: Request, res: Response) {
 
     const conn = connect.conn;
     const db: Db = conn.db("client");
+    const clientCollection: Collection = db.collection("clients");
+    const ClientFormCollection: Collection = db.collection("client-forms");
     const urlCollection: Collection = db.collection("urls");
 
     // check url
@@ -103,15 +120,26 @@ export async function validateURL(req: Request, res: Response) {
       return res.status(400).json({ message: "Invalid url" });
     }
 
-    let date = new Date();
-    let expiration = urlDoc.expiration;
-    if (date > expiration) {
-      return res.status(400).json({ message: "Expired url" });
-    } else if (urlDoc.submitted === true) {
-      return res.status(400).json({ message: "Form Already SUbmitted" });
+    let client = await clientCollection.findOne({ client_id: client_id });
+    if (!client) {
+      return res.status(400).json({ message: "Invalid client" });
     }
 
-    return res.status(200).json({ message: "Valid url" });
+    // check if password is correct
+    if (!comparePassword(password, client?.password)) {
+      return res.status(400).json({ message: "Invalid credentials" });
+    }
+
+    const form = await ClientFormCollection.findOne({
+      client_id: client_id,
+      url: url,
+    },{
+      projection: { _id: 0, data:1 }
+    });
+
+    closeConn(conn);
+
+    return res.status(200).json({ message: "Valid url", form: form });
   } catch (error) {
     console.log(error);
   }

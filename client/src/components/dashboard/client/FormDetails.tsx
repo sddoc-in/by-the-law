@@ -59,7 +59,7 @@ export default function FormDetailsCard(props: {
           <div className="flex items-center justify-end">
             <p
               className={`w-2 h-2 rounded-full mr-2 block ${statusColor(
-                props.data.status
+                props.data.status ? props.data.status : "active"
               )}`}
             ></p>
             <p className="text-[#002F53] text-[12px] font-[600] leading-[20px]">
@@ -79,13 +79,13 @@ export default function FormDetailsCard(props: {
                 <div className="flex flex-row">
                   <p className="text-lg font-bold">Status:</p>
                   <p className="text-lg ml-2">
-                    {toTitleCase(props.data.status)}
+                    {toTitleCase(props.data.status ? props.data.status : "active")}
                   </p>
                 </div>
                 <div className="flex flex-row">
                   <p className="text-lg font-bold">Created:</p>
                   <p className="text-lg ml-2">
-                    {new Date(props.data.created).toDateString()}
+                    {new Date(props.data.created || "").toDateString()}
                   </p>
                 </div>
 

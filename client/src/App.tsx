@@ -6,11 +6,9 @@ import Signin from "./pages/Signin";
 import AppProvider from "./context/Context";
 import { SidebarData } from "./constants/Sidebar";
 import GlobalLayout from "./components/dashboard/GlobalLayout";
-import UrlForm from "./pages/UrlForm";
 import WrongUrl from "./pages/WrongUrl";
-import Divorce from "./components/pdf/divorce";
 import { ChakraProvider } from "@chakra-ui/react";
-import { OtherRoutes } from "./constants/OtherRoute";
+import { OtherRoutes, RoutesWithoutLayout } from "./constants/OtherRoute";
 
 function App() {
   return (
@@ -32,9 +30,7 @@ function Router() {
           <Routes>
             <Route path="/" element={<Signin />} />
             <Route path="/sign-in" element={<Signin />} />
-            <Route path="/url/:url" element={<UrlForm />} />
-            <Route path="/wrong-url" element={<WrongUrl />} />
-            <Route path="/dashboard/pdf" element={<Divorce />} />
+            <Route path="*" element={<WrongUrl />} />
 
             {SidebarData.map((item, index) => {
               return (
@@ -60,6 +56,15 @@ function Router() {
                       <item.Element />
                     </GlobalLayout>
                   }
+                />
+              );
+            })}
+            {RoutesWithoutLayout.map((item, index) => {
+              return (
+                <Route
+                  key={index}
+                  path={item.path}
+                  element={<item.Element />}
                 />
               );
             })}

@@ -2,10 +2,12 @@ import { MdLogout } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineAccountTree } from "react-icons/md";
 import { GoLaw } from "react-icons/go";
+import { FaWpforms } from "react-icons/fa";
 import Dashboard from "../pages/Dashboard";
 import Logout from "../pages/Logout";
 import Lawyers from "../pages/Lawyers";
 import Clients from "../pages/Clients";
+import Forms from "../pages/Forms";
 
 export const SidebarData = [
   {
@@ -30,10 +32,18 @@ export const SidebarData = [
     Element: Clients,
   },
   {
+    title: "Forms",
+    path: "/dashboard/forms",
+    shortPath: "/forms",
+    Icon: FaWpforms,
+    Element: Forms,
+  },
+  {
     title: "Logout",
     path: "/dashboard/logout",
     shortPath: "/logout",
     Icon: MdLogout,
     Element: Logout,
   },
+
 ];
