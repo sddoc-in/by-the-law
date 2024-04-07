@@ -6,11 +6,11 @@ export const Roles: SelectArray[] = [
     name: "Admin",
     value: "admin",
   },
-  {
-    id: "3",
-    name: "Client",
-    value: "client",
-  },
+  // {
+  //   id: "3",
+  //   name: "Client",
+  //   value: "client",
+  // },
   {
     id: "4",
     name: "Lawyer",
@@ -20,6 +20,6 @@ export const Roles: SelectArray[] = [
 
 export enum RolesEnum {
   admin = "admin",
-  client = "client",
+  // client = "client",
   lawyer = "lawyer",
 }
