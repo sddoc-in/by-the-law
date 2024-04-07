@@ -17,8 +17,8 @@ router.post("/api/register", register);
 router.get("/api/login", login);
 
 // lawyers
-router.get("/api/lawyers/all", getAllUsers);
-router.get("/api/laywer/details", getUser);
+router.get("/api/lawyer/all", getAllUsers);
+router.get("/api/lawyer/details", getUser);
 router.put("/api/lawyer/update", updateUser);
 router.delete("/api/lawyer/delete", deleteUser);
 router.post("/api/lawyer/create", register);

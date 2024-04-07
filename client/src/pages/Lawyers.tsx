@@ -31,7 +31,7 @@ export default function Lawyers() {
       params.append("token", currentUser.access_token);
 
       const data = await axios
-        .get(API_URL + "/lawyers/all?" + params)
+        .get(API_URL + "/lawyer/all?" + params)
         .then((res) => res.data)
         .catch((err) => {
           alert(err.response.data.message);

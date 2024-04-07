@@ -6,11 +6,20 @@ import axios from "axios";
 import toTitleCase from "../../../functions/toTitle";
 import URLDetailsCard from "./URLDetailsCard";
 import FormDetailsCard from "./FormDetails";
+import FormInterface from "../../../interface/Form";
+import URLInterface from "../../../interface/URL";
+import UserInterface from "../../../interface/NewUser";
+import ClientInterface from "../../../interface/NewClient";
 
 export default function ClientDetails() {
   const { client_id } = useParams();
   const { user: currentUser } = React.useContext(AppContext);
-  const [data, setData] = React.useState<any>({});
+  const [data, setData] = React.useState<{
+    client: ClientInterface;
+    lawyer: UserInterface;
+    urls: URLInterface[];
+    forms: FormInterface[];
+  } | null>(null);
   const getClientAllDetails = React.useRef(() => {});
 
   getClientAllDetails.current = async () => {
@@ -69,20 +78,27 @@ export default function ClientDetails() {
               <div className="flex flex-row">
                 <p className="text-lg font-bold">Client Status:</p>
                 <p className="text-lg ml-2">
-                  {toTitleCase(data.client.status)}
+                  {toTitleCase(data.client.status!)}
                 </p>
               </div>
               <div className="flex flex-row">
                 <p className="text-lg font-bold">Client Created On:</p>
                 <p className="text-lg ml-2">
-                  {new Date(data.client.created).toDateString()}
+                  {new Date(data.client.created || "").toDateString()}
                 </p>
               </div>
             </div>
             <div className="flex flex-col">
               <div className="flex flex-row">
                 <p className="text-lg font-bold">Lawyer ID:</p>
-                <p className="text-lg ml-2">{data.lawyer.username}</p>
+                <a
+                className="text-blue-500 hover:underline"
+                  href={
+                    "/dashboard/lawyer/" + data.client.lawyer_id + "/details"
+                  }
+                >
+                  <p className="text-lg ml-2">{data.lawyer.username}</p>
+                </a>
               </div>
               <div className="flex flex-row">
                 <p className="text-lg font-bold">Lawyer Name:</p>
@@ -95,7 +111,7 @@ export default function ClientDetails() {
               <div className="flex flex-row">
                 <p className="text-lg font-bold">Lawyer Status:</p>
                 <p className="text-lg ml-2">
-                  {toTitleCase(data.lawyer.status)}
+                  {toTitleCase(data.lawyer.status!)}
                 </p>
               </div>
             </div>
@@ -108,7 +124,7 @@ export default function ClientDetails() {
                   <URLDetailsCard
                     key={index}
                     data={url}
-                    client_id={data.client.client_id}
+                    client_id={data.client.client_id!}
                   />
                 ))
               ) : (
@@ -125,7 +141,7 @@ export default function ClientDetails() {
                   <FormDetailsCard
                     key={index}
                     data={url}
-                    client_id={data.client.client_id}
+                    client_id={data.client.client_id!}
                   />
                 ))
               ) : (

@@ -6,6 +6,7 @@ export default interface ClientInterface {
   password: string;
   lawyer_id: string;
   status?: string;
-  lawyer:any
+  lawyer?:any,
+  created?: Date;
   }
   

@@ -81,8 +81,8 @@ export async function getAllUsers(req: Request, res: Response) {
 export async function getUser(req: Request, res: Response) {
   const session = req.query.session as string;
   const uid = req.query.uid as string;
-  const userId = req.query.userId as string;
-  const token = req.query.token as string;
+  const lawyer_id = req.query.lawyer_id as string;
+  const token = req.query.access_token as string;
 
   try {
     if (session === undefined) {
@@ -91,23 +91,12 @@ export async function getUser(req: Request, res: Response) {
     if (uid === undefined) {
       return res.status(400).json({ message: "Uid required" });
     }
-    if (userId === undefined) {
-      return res.status(400).json({ message: "User id required" });
+    if (lawyer_id === undefined) {
+      return res.status(400).json({ message: "Lawyer required" });
     }
     if (token === undefined) {
       return res.status(400).json({ message: "Token required" });
     }
-
-    // create connection
-    const connect: ConnectionRes = await connectToCluster();
-    if (typeof connect.conn === "string") {
-      return res.status(500).json(connect);
-    }
-
-    const conn = connect.conn;
-    const db: Db = conn.db("client");
-    const usersCollection: Collection = db.collection("users");
-    const sessionCollection: Collection = db.collection("sessions");
 
     // check session
     let sessionBool = validateSession(session);
@@ -120,6 +109,18 @@ export async function getUser(req: Request, res: Response) {
       return res.status(400).json({ message: tokenErr });
     }
 
+    // create connection
+    const connect: ConnectionRes = await connectToCluster();
+    if (typeof connect.conn === "string") {
+      return res.status(500).json(connect);
+    }
+
+    const conn = connect.conn;
+    const db: Db = conn.db("client");
+    const usersCollection: Collection = db.collection("users");
+    const ClientCollection: Collection = db.collection("clients");
+    const sessionCollection: Collection = db.collection("sessions");
+
     // insert session
     await sessionCollection.insertOne({
       activity: "get-users",
@@ -129,20 +130,36 @@ export async function getUser(req: Request, res: Response) {
     });
 
     let users = await usersCollection.findOne(
-      { uid: userId },
+      { lawyer_id: lawyer_id },
       {
         projection: {
+          _id:0,
           username: 1,
           email: 1,
           name: 1,
-          uid: 1,
+          lawyer_id: 1,
           role: 1,
           status: 1,
         },
       }
     );
 
-    return res.status(200).json(users);
+    const clients = await ClientCollection.find(
+      { lawyer_id: lawyer_id },
+      {
+        projection: {
+          _id:0,
+          username: 1,
+          name: 1,
+          email: 1,
+          client_id: 1,
+          status: 1,
+          created: 1,
+        },
+      }
+    ).toArray();
+
+    return res.status(200).json({lawyer: users, clients });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Unknown error" });
