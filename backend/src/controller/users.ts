@@ -78,6 +78,78 @@ export async function getAllUsers(req: Request, res: Response) {
   }
 }
 
+export async function getAllAdmins(req: Request, res: Response) {
+  const session = req.query.session as string;
+  const uid = req.query.uid as string;
+  const token = req.query.token as string;
+
+  try {
+    if (session === undefined) {
+      return res.status(400).json({ message: "Session required" });
+    }
+    if (uid === undefined) {
+      return res.status(400).json({ message: "Uid required" });
+    }
+    if (token === undefined) {
+      return res.status(400).json({ message: "Token required" });
+    }
+
+    // check session
+    let sessionBool = validateSession(session);
+    if (sessionBool) {
+      return res.status(400).json({ message: "Invalid session" });
+    }
+
+    let tokenErr = validateToken(token);
+    if (tokenErr !== "") {
+      return res.status(400).json({ message: tokenErr });
+    }
+
+    // create connection
+    const connect: ConnectionRes = await connectToCluster();
+    if (typeof connect.conn === "string") {
+      return res.status(500).json(connect);
+    }
+
+    const conn = connect.conn;
+    const db: Db = conn.db("client");
+    const usersCollection: Collection = db.collection("users");
+    const sessionCollection: Collection = db.collection("sessions");
+
+    // insert session
+    await sessionCollection.insertOne({
+      activity: "get-all-users",
+      session: session,
+      uid: uid,
+      created: new Date(),
+    });
+
+    // get all users
+    let users = await usersCollection
+      .find(
+        { role: "admin" },
+        {
+          projection: {
+            username: 1,
+            email: 1,
+            name: 1,
+            lawyer_id: 1,
+            role: 1,
+            status: 1,
+          },
+        }
+      )
+      .toArray();
+
+    closeConn(conn);
+    return res.status(200).json(users);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: "Unknown error" });
+  }
+}
+
+
 export async function getUser(req: Request, res: Response) {
   const session = req.query.session as string;
   const uid = req.query.uid as string;

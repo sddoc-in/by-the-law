@@ -9,7 +9,7 @@ import CreateuserPopup from "../components/dashboard/lawyers/CreateuserPopup";
 import InputSearch from "../components/input/InputSearch";
 import { RolesEnum } from "../constants/Roles";
 
-export default function Lawyers() {
+export default function Admin() {
   const { user: currentUser } = React.useContext(AppContext);
   const [data, setData] = React.useState<UserInterface[]>([]);
   const [isPopupOpen, setIsPopupOpen] = React.useState(false);
@@ -32,7 +32,7 @@ export default function Lawyers() {
       params.append("token", currentUser.access_token);
 
       const data = await axios
-        .get(API_URL + "/lawyer/all?" + params)
+        .get(API_URL + "/lawyer/admins?" + params)
         .then((res) => res.data)
         .catch((err) => {
           alert(err.response.data.message);
@@ -48,7 +48,7 @@ export default function Lawyers() {
 
   return (
     <>
-      <h1 className=" text-3xl text-start text-black ">Lawyers</h1>
+      <h1 className=" text-3xl text-start text-black ">Administrators</h1>
       {currentUser.role === RolesEnum.admin && (
         <div
           className="bg-[#002F53] text-white text-[16px] leading-[20px] rounded-md mt-4 flex justify-center items-center mb-2 w-fit px-4 py-2 cursor-pointer"
@@ -72,11 +72,11 @@ export default function Lawyers() {
               user.username!.toLowerCase().includes(query.toLowerCase())
             )
             .map((user, index) => {
-              return <Card key={index} data={user} canDelete={true} />;
+              return <Card key={index} data={user} canDelete={false} />;
             })}
         </div>
       ) : (
-        <p>No Lawyers Found</p>
+        <p>No Administrators Found</p>
       )}
 
       <CreateuserPopup

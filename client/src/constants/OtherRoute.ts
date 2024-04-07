@@ -1,5 +1,6 @@
 import ClientDetails from "../components/dashboard/client/ClientDetails";
 import LawyerDetails from "../components/dashboard/lawyers/LawyerDetails";
+import Admin from "../pages/Admin";
 import UrlForm from "../pages/UrlForm";
 
 export const OtherRoutes = [
@@ -13,6 +14,11 @@ export const OtherRoutes = [
     path: "/dashboard/lawyer/:lawyer_id/details/",
     Element: LawyerDetails,
   },
+  {
+    title:"Administrators",
+    path:"/dashboard/admins",
+    Element: Admin,
+  }
 ];
 
 export const RoutesWithoutLayout = [

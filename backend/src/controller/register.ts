@@ -9,6 +9,7 @@ import User from "../interface/User";
 import { createSession, hash, validateSession } from "../functions/hash";
 import { createBearer, validateToken } from "../functions/bearer";
 import { closeConn } from "../connection/closeConn";
+import { RolesEnum } from "../enums/Roles";
 
 export async function register(req: Request, res: Response) {
   let session = req.query.session as string;
@@ -30,24 +31,21 @@ export async function register(req: Request, res: Response) {
       return res.status(400).json({ message: "Password required" });
     }
 
+    // check session
+    let sessionBool = validateSession(session);
+    if (sessionBool) {
+      return res.status(400).json({ message: "Invalid session" });
+    }
+
+    let tokenErr = validateToken(access_token);
+    if (tokenErr !== "") {
+      return res.status(400).json({ message: tokenErr });
+    }
+
     // create connection
     const connect: ConnectionRes = await connectToCluster();
     if (typeof connect.conn === "string") {
       return res.status(500).json(connect);
-    }
-
-    const conn = connect.conn;
-    const db: Db = conn.db("client");
-    const collection: Collection = db.collection("users");
-    const sessionCollection: Collection = db.collection("sessions");
-
-    // check if already exists
-    const filteredDocs = await collection.find({ email: email }).toArray();
-    if (filteredDocs.length > 0) {
-      return res.status(400).json({
-        message: "Email already exists",
-        email: email,
-      });
     }
 
     // check for errors
@@ -60,15 +58,26 @@ export async function register(req: Request, res: Response) {
       });
     }
 
-    // check session
-    let sessionBool = validateSession(session);
-    if (sessionBool) {
-      return res.status(400).json({ message: "Invalid session" });
+    const conn = connect.conn;
+    const db: Db = conn.db("client");
+    const collection: Collection = db.collection("users");
+    const sessionCollection: Collection = db.collection("sessions");
+
+    const currentUser = await collection.findOne({ uid: uid });
+    if (!currentUser) {
+      return res.status(400).json({ message: "Invalid user" });
+    }
+    if (currentUser.role !== RolesEnum.admin) {
+      return res.status(400).json({ message: "Unauthorized user" });
     }
 
-    let tokenErr = validateToken(access_token);
-    if (tokenErr !== "") {
-      return res.status(400).json({ message: tokenErr });
+    // check if already exists
+    const filteredDocs = await collection.find({ email: email }).toArray();
+    if (filteredDocs.length > 0) {
+      return res.status(400).json({
+        message: "Email already exists",
+        email: email,
+      });
     }
 
     // create account if everything is good

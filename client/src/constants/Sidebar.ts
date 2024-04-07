@@ -3,11 +3,13 @@ import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineAccountTree } from "react-icons/md";
 import { GoLaw } from "react-icons/go";
 import { FaWpforms } from "react-icons/fa";
+import { MdAccountCircle } from "react-icons/md";
 import Dashboard from "../pages/Dashboard";
 import Logout from "../pages/Logout";
 import Lawyers from "../pages/Lawyers";
 import Clients from "../pages/Clients";
 import Forms from "../pages/Forms";
+import MyAccount from "../pages/MyAccount";
 
 export const SidebarData = [
   {
@@ -38,6 +40,14 @@ export const SidebarData = [
     Icon: FaWpforms,
     Element: Forms,
   },
+  {
+    title: "My Account",
+    path: "/dashboard/account",
+    shortPath: "/account",
+    Icon: MdAccountCircle,
+    Element: MyAccount,
+  },
+  
   {
     title: "Logout",
     path: "/dashboard/logout",

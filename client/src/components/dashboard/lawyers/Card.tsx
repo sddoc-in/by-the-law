@@ -14,8 +14,12 @@ import { UserClientStatusEnum } from "../../../constants/Status";
 import toTitleCase from "../../../functions/toTitle";
 import { RolesEnum } from "../../../constants/Roles";
 
-export default function Card(props: UserInterface) {
+export default function Card(props: {
+  data: UserInterface;
+  canDelete: boolean;
+}) {
   const { user: currentUser } = React.useContext(AppContext);
+
 
   const [open, setOpen] = React.useState(false);
   const [updatePopup, setUpdatePopup] = React.useState(false);
@@ -37,7 +41,7 @@ export default function Card(props: UserInterface) {
         uid: currentUser.uid,
         session: currentUser.session,
         access_token: currentUser.access_token,
-        lawyer_id: props.lawyer_id || "",
+        lawyer_id: props.data.lawyer_id || "",
       });
 
       const data = await axios
@@ -59,12 +63,12 @@ export default function Card(props: UserInterface) {
   }
 
   const statusColor = () => {
-    if (props.status === "active" || props.status === "connected") {
+    if (props.data.status === "active" || props.data.status === "connected") {
       return "bg-green-500";
     } else if (
-      props.status === UserClientStatusEnum.inactive ||
-      props.status === UserClientStatusEnum.blocked ||
-      props.status === UserClientStatusEnum.deleted
+      props.data.status === UserClientStatusEnum.inactive ||
+      props.data.status === UserClientStatusEnum.blocked ||
+      props.data.status === UserClientStatusEnum.deleted
     ) {
       return "bg-red-500";
     } else {
@@ -84,38 +88,52 @@ export default function Card(props: UserInterface) {
               className={`w-2 h-2 rounded-full mr-2 block ${statusColor()}`}
             ></p>
             <p className="text-[#002F53] text-[12px] font-[600] leading-[20px]">
-              {toTitleCase(props.status ? props.status : "active")}
+              {toTitleCase(props.data.status ? props.data.status : "active")}
             </p>
           </div>
           <div className="flex justify-start items-start mb-4 w-11/12">
             <div className="p-1 rounded-full bg-indigo-100 text-indigo-500 ">
               <FaCircleUser className="text-3xl" />
             </div>
-            <div>
-              <div className="flex justify-start items-center ml-3">
-                <p>{props.name} -</p>
-                <p className="ml-1">{props.username} </p>
+            <div className="flex flex-col w-full ml-3">
+              <div  className="flex justify-start items-start">
+                <p className="text-xl font-bold text-black"> Id: </p>
+                <p className="ml-3 break-all">{props.data.username}</p>
               </div>
-              <div className="ml-3 text-ellipsis w-full">
-                <p>{props.email} </p>
+              <div  className="flex justify-start items-start">
+                <p className="text-xl font-bold text-black"> Name: </p>
+                <p className="ml-3 break-all">{props.data.name}</p>
+              </div>
+
+              <div  className="flex justify-start items-start">
+                <p className="text-xl font-bold text-black"> Email: </p>
+                <p className="ml-3 break-all">{props.data.email}</p>
               </div>
             </div>
           </div>
-          <hr className="w-full h-1 " />
-          <div className="flex justify-evenly items-center mt-2">
-            <a href={"/dashboard/lawyer/"+ props.lawyer_id+"/details/" }>
-              <FaRegEye className="text-2xl mt-1.5" />
-            </a>
-            <CiEdit
-              onClick={() => setUpdatePopup(true)}
-              className="text-2xl mt-1.5 cursor-pointer"
-            />
+          {props.canDelete && (
+            <>
+              <hr className="w-full h-1 " />
+              <div className="flex justify-evenly items-center mt-2">
+                <a
+                  href={
+                    "/dashboard/lawyer/" + props.data.lawyer_id + "/details/"
+                  }
+                >
+                  <FaRegEye className="text-2xl mt-1.5" />
+                </a>
+                <CiEdit
+                  onClick={() => setUpdatePopup(true)}
+                  className="text-2xl mt-1.5 cursor-pointer"
+                />
 
-            <MdDeleteForever
-              onClick={openModal}
-              className="text-2xl mt-1.5 text-rose-500 cursor-pointer"
-            />
-          </div>
+                <MdDeleteForever
+                  onClick={openModal}
+                  className="text-2xl mt-1.5 text-rose-500 cursor-pointer"
+                />
+              </div>
+            </>
+          )}
         </div>
       </section>
       <Delete
@@ -128,7 +146,7 @@ export default function Card(props: UserInterface) {
       <UpdateUserPopup
         isOpen={updatePopup}
         onClose={() => setUpdatePopup(false)}
-        data={props}
+        data={props.data}
       />
     </>
   );

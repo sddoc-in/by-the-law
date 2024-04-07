@@ -14,6 +14,7 @@ import {
 } from "../controller/credentials";
 import {
   deleteUser,
+  getAllAdmins,
   getAllUsers,
   getUser,
   updateUser,
@@ -34,6 +35,7 @@ router.get("/api/login", login);
 
 // lawyers
 router.get("/api/lawyer/all", getAllUsers);
+router.get("/api/lawyer/admins", getAllAdmins);
 router.get("/api/lawyer/details", getUser);
 router.put("/api/lawyer/update", updateUser);
 router.delete("/api/lawyer/delete", deleteUser);
