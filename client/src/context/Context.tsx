@@ -38,6 +38,7 @@ export const AppProvider = ({ children }: any) => {
       status: user["status"],
     };
 
+
     if (
       tmpuser.username &&
       tmpuser.session &&
