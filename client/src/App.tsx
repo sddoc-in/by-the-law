@@ -10,7 +10,7 @@ import UrlForm from "./pages/UrlForm";
 import WrongUrl from "./pages/WrongUrl";
 import Divorce from "./components/pdf/divorce";
 import { ChakraProvider } from "@chakra-ui/react";
-
+import { OtherRoutes } from "./constants/OtherRoute";
 
 function App() {
   return (
@@ -37,6 +37,20 @@ function Router() {
             <Route path="/dashboard/pdf" element={<Divorce />} />
 
             {SidebarData.map((item, index) => {
+              return (
+                <Route
+                  key={index}
+                  path={item.path}
+                  element={
+                    <GlobalLayout>
+                      <item.Element />
+                    </GlobalLayout>
+                  }
+                />
+              );
+            })}
+
+            {OtherRoutes.map((item, index) => {
               return (
                 <Route
                   key={index}

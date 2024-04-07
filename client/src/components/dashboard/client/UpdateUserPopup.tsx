@@ -21,6 +21,7 @@ import ClientInterface from "../../../interface/NewClient";
 import { UserClientStatus } from "../../../constants/Status";
 import toTitleCase from "../../../functions/toTitle";
 import validateClient from "../../../functions/validateClient";
+import { RolesEnum } from "../../../constants/Roles";
 
 interface Props {
   isOpen: boolean;
@@ -59,6 +60,14 @@ export default function UpdateUserPopup(props: Props) {
       return;
     }
 
+    if (
+      currentUser.uid !== panelUser.lawyer_id &&
+      currentUser.role !== RolesEnum.admin
+    ) {
+      alert("You are not allowed to update this client");
+      return;
+    }
+
     try {
       const params = new URLSearchParams({
         uid: currentUser.uid,
@@ -94,7 +103,7 @@ export default function UpdateUserPopup(props: Props) {
   }
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
-    if(error.hasError){
+    if (error.hasError) {
       setError({
         hasError: false,
         field: "",
@@ -108,7 +117,7 @@ export default function UpdateUserPopup(props: Props) {
   }
 
   function onRoleChange(name: string, value: string) {
-    if(error.hasError){
+    if (error.hasError) {
       setError({
         hasError: false,
         field: "",

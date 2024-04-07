@@ -14,6 +14,7 @@ import { UserClientStatusEnum } from "../../../constants/Status";
 import toTitleCase from "../../../functions/toTitle";
 import { RolesEnum } from "../../../constants/Roles";
 import ClientInterface from "../../../interface/NewClient";
+import statusColor from "../../../functions/statusColor";
 
 export default function Card(props: {data:ClientInterface,lawyers:UserInterface[]}) {
   const { user: currentUser } = React.useContext(AppContext);
@@ -59,19 +60,6 @@ export default function Card(props: {data:ClientInterface,lawyers:UserInterface[
     } catch (err) {}
   }
 
-  const statusColor = () => {
-    if (props.data.status === "active" || props.data.status === "connected") {
-      return "bg-green-500";
-    } else if (
-      props.data.status === UserClientStatusEnum.inactive ||
-      props.data.status === UserClientStatusEnum.blocked ||
-      props.data.status === UserClientStatusEnum.deleted
-    ) {
-      return "bg-red-500";
-    } else {
-      return "bg-[#F2F2F2]";
-    }
-  };
 
   function openModal() {
     setOpen(true);
@@ -82,7 +70,7 @@ export default function Card(props: {data:ClientInterface,lawyers:UserInterface[
         <div className="border border-gray-200 p-5 rounded-lg shadow-xl">
           <div className="flex items-center justify-end">
             <p
-              className={`w-2 h-2 rounded-full mr-2 block ${statusColor()}`}
+              className={`w-2 h-2 rounded-full mr-2 block ${statusColor(props.data.status ? props.data.status : UserClientStatusEnum.active)}`}
             ></p>
             <p className="text-[#002F53] text-[12px] font-[600] leading-[20px]">
               {toTitleCase(props.data.status ? props.data.status : "active")}
@@ -107,7 +95,7 @@ export default function Card(props: {data:ClientInterface,lawyers:UserInterface[
           </div>
           <hr className="w-full h-1 " />
           <div className="flex justify-evenly items-center mt-2">
-            <a href={"/dashboard/panel-user/details/view/" + props.data.client_id}>
+            <a href={"/dashboard/client/" + props.data.client_id+"/details"}>
               <FaRegEye className="text-2xl mt-1.5" />
             </a>
             <CiEdit

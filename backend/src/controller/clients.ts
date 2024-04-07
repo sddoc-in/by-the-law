@@ -80,82 +80,13 @@ export async function getAllClients(req: Request, res: Response) {
       let client = clients[i];
       let lawyer = await LawyerCollection.findOne(
         { lawyer_id: client.lawyer_id },
-        { projection: { username: 1, email: 1,_id:0 } }
+        { projection: { username: 1, email: 1, _id: 0 } }
       );
       clientWithlawyer.push({ ...client, lawyer: lawyer });
     }
 
     closeConn(conn);
     return res.status(200).json(clientWithlawyer);
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ message: "Unknown error" });
-  }
-}
-
-export async function getClient(req: Request, res: Response) {
-  const session = req.query.session as string;
-  const cid = req.query.cid as string;
-  const client_id = req.query.clientid as string;
-  const token = req.query.token as string;
-
-  try {
-    if (session === undefined) {
-      return res.status(400).json({ message: "Session required" });
-    }
-    if (cid === undefined) {
-      return res.status(400).json({ message: "Cid required" });
-    }
-    if (client_id === undefined) {
-      return res.status(400).json({ message: "Clientid required" });
-    }
-    if (token === undefined) {
-      return res.status(400).json({ message: "Token required" });
-    }
-
-    // check session
-    let sessionBool = validateSession(session);
-    if (sessionBool) {
-      return res.status(400).json({ message: "Invalid session" });
-    }
-    let tokenErr = validateToken(token);
-    if (tokenErr !== "") {
-      return res.status(400).json({ message: tokenErr });
-    }
-
-    // create connection
-    const connect: ConnectionRes = await connectToCluster();
-    if (typeof connect.conn === "string") {
-      return res.status(500).json(connect);
-    }
-
-    const conn = connect.conn;
-    const db: Db = conn.db("client");
-    const clientsCollection: Collection = db.collection("clients");
-    const sessionCollection: Collection = db.collection("sessions");
-
-    // insert session
-    await sessionCollection.insertOne({
-      activity: "get-client",
-      session: session,
-      uid: cid,
-      created: new Date(),
-    });
-
-    let client = await clientsCollection.findOne(
-      { client_id: client_id },
-      {
-        projection: {
-          username: 1,
-          email: 1,
-          client_id: 1,
-          status: 1,
-          created: 1,
-        },
-      }
-    );
-    closeConn(conn);
-    return res.status(200).json(client);
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Unknown error" });
@@ -444,5 +375,125 @@ export async function createClient(req: Request, res: Response) {
   } catch (err) {
     console.log(err);
     return res.status(500).json({ message: "Internal server error" });
+  }
+}
+
+export async function getClient(req: Request, res: Response) {
+  const session = req.query.session as string;
+  const uid = req.query.uid as string;
+  const client_id = req.query.client_id as string;
+  const token = req.query.access_token as string;
+
+  try {
+    if (session === undefined) {
+      return res.status(400).json({ message: "Session required" });
+    }
+    if (uid === undefined) {
+      return res.status(400).json({ message: "User Id required" });
+    }
+    if (client_id === undefined) {
+      return res.status(400).json({ message: "Client id required" });
+    }
+    if (token === undefined) {
+      return res.status(400).json({ message: "Token required" });
+    }
+
+    // check session
+    let sessionBool = validateSession(session);
+    if (sessionBool) {
+      return res.status(400).json({ message: "Invalid session" });
+    }
+    let tokenErr = validateToken(token);
+    if (tokenErr !== "") {
+      return res.status(400).json({ message: tokenErr });
+    }
+
+    // create connection
+    const connect: ConnectionRes = await connectToCluster();
+    if (typeof connect.conn === "string") {
+      return res.status(500).json(connect);
+    }
+
+    const conn = connect.conn;
+    const db: Db = conn.db("client");
+    const clientsCollection: Collection = db.collection("clients");
+    const UrlCollection: Collection = db.collection("urls");
+    const LawyerCollection: Collection = db.collection("users");
+    const FormsCollection: Collection = db.collection("forms");
+    const sessionCollection: Collection = db.collection("sessions");
+
+    // insert session
+    await sessionCollection.insertOne({
+      activity: "get-client",
+      session: session,
+      uid: uid,
+      created: new Date(),
+    });
+
+    let client = await clientsCollection.findOne(
+      { client_id: client_id },
+      {
+        projection: {
+          username: 1,
+          name: 1,
+          email: 1,
+          client_id: 1,
+          status: 1,
+          created: 1,
+          lawyer_id: 1,
+        },
+      }
+    );
+
+    const lawyer = await LawyerCollection.findOne(
+      { lawyer_id: client!.lawyer_id },
+      {
+        projection: {
+          username: 1,
+          email: 1,
+          _id: 0,
+          name: 1,
+          status: 1,
+          role: 1,
+        },
+      }
+    );
+
+    const urls = await UrlCollection.find(
+      { client_id: client_id },
+      {
+        projection: {
+          _id: 0,
+          url: 1,
+          submitted: 1,
+          status: 1,
+          progress: 1,
+          created: 1,
+          submittedDate: 1,
+        },
+      }
+    ).toArray();
+
+    const forms = await FormsCollection.find(
+      { client_id: client_id },
+      {
+        projection: {
+          _id: 0,
+          submitted: 1,
+          status: 1,
+          progress: 1,
+          created: 1,
+          submittedDate: 1,
+          name: 1,
+          form_id: 1,
+        },
+      }
+    ).toArray();
+
+    closeConn(conn);
+    return res.status(200).json({ client, lawyer, urls, forms });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: "Unknown error" });
   }
 }

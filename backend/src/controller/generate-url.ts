@@ -3,7 +3,7 @@ import ConnectionRes from "../interface/ConnectionRes";
 import connectToCluster from "../connection/connect";
 import { Collection, Db } from "mongodb";
 import { Request, Response } from "express";
-import  { validateSession } from "../functions/hash";
+import { validateSession } from "../functions/hash";
 import { validateToken } from "../functions/bearer";
 import { closeConn } from "../connection/closeConn";
 
@@ -62,7 +62,7 @@ export async function generateURL(req: Request, res: Response) {
       url: url,
       client_id: client_id,
       submitted: false,
-      status: "Not Submitted",
+      status: "active",
       progress: 0,
       submittedDate: "",
       // expiration: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
@@ -71,12 +71,10 @@ export async function generateURL(req: Request, res: Response) {
 
     closeConn(conn);
 
-    return res
-      .status(200)
-      .json({
-        url: { url: url, status: "Not Submitted" },
-        message: "Url generated",
-      });
+    return res.status(200).json({
+      url: { url: url },
+      message: "Url generated",
+    });
   } catch (error) {
     console.log(error);
   }
@@ -139,17 +137,6 @@ export async function deleteURL(req: Request, res: Response) {
       return res.status(400).json({ message: "Token required" });
     }
 
-    // create connection
-    const connect: ConnectionRes = await connectToCluster();
-    if (typeof connect.conn === "string") {
-      return res.status(500).json(connect);
-    }
-
-    const conn = connect.conn;
-    const db: Db = conn.db("client");
-    const urlCollection: Collection = db.collection("urls");
-    const sessionCollection: Collection = db.collection("sessions");
-
     // check session
     let sessionBool = validateSession(session);
     if (sessionBool) {
@@ -160,6 +147,17 @@ export async function deleteURL(req: Request, res: Response) {
     if (tokenErr !== "") {
       return res.status(400).json({ message: tokenErr });
     }
+
+    // create connection
+    const connect: ConnectionRes = await connectToCluster();
+    if (typeof connect.conn === "string") {
+      return res.status(500).json(connect);
+    }
+
+    const conn = connect.conn;
+    const db: Db = conn.db("client");
+    const urlCollection: Collection = db.collection("urls");
+    const sessionCollection: Collection = db.collection("sessions");
 
     // insert session
     await sessionCollection.insertOne({
@@ -223,7 +221,7 @@ export async function getURLs(req: Request, res: Response) {
       created: new Date(),
     });
 
-    let urls = await urlCollection.find({ }).toArray();
+    let urls = await urlCollection.find({}).toArray();
 
     let Response = urls.map((url) => {
       let status;

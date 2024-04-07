@@ -1,4 +1,3 @@
-import { GoProjectTemplate } from "react-icons/go";
 import { MdLogout } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdOutlineAccountTree } from "react-icons/md";

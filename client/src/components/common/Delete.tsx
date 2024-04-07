@@ -8,7 +8,6 @@ import {
   Button,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import React from "react";
 import toTitleCase from "../../functions/toTitle";
 
 interface Props {
@@ -24,7 +23,6 @@ export default function Delete(props: Props) {
     props.onClose();
     props.onDelete();
   }
-  console.log(props.data);
 
   return (
     <>
@@ -35,8 +33,12 @@ export default function Delete(props: Props) {
           <ModalCloseButton />
           <ModalBody>
             <p>
-              Do you want to delete this {toTitleCase(props.type)} -{" "}
-              <b> {props.data.username}?</b>
+              Do you want to delete this {toTitleCase(props.type)}
+              {!(props.type === "url") && (
+                <>
+                  - <b> {props.data.username}?</b>
+                </>
+              )}
             </p>
           </ModalBody>
 
