@@ -9,6 +9,7 @@ import GlobalLayout from "./components/dashboard/GlobalLayout";
 import WrongUrl from "./pages/WrongUrl";
 import { ChakraProvider } from "@chakra-ui/react";
 import { OtherRoutes, RoutesWithoutLayout } from "./constants/OtherRoute";
+import { FormRoute } from "./constants/FormRoute";
 
 function App() {
   return (
@@ -60,6 +61,16 @@ function Router() {
               );
             })}
             {RoutesWithoutLayout.map((item, index) => {
+              return (
+                <Route
+                  key={index}
+                  path={item.path}
+                  element={<item.Element />}
+                />
+              );
+            })}
+
+            {FormRoute.map((item, index) => {
               return (
                 <Route
                   key={index}

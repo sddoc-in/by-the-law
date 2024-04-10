@@ -288,6 +288,11 @@ export async function getAllForm(req: Request, res: Response) {
       }
     ).toArray();
 
+
+    if(forms.length === 0){
+      return res.status(200).json([]);
+    }
+
     let formData = [];
 
     for (let i = 0; i < forms.length; i++) {
@@ -310,6 +315,51 @@ export async function getAllForm(req: Request, res: Response) {
 
     closeConn(conn);
     return res.status(200).json(formData);
+  } catch (err: any) {
+    return res.status(500).json({ message: err.message });
+  }
+}
+
+export async function getFormDataDetails(req:Request,res:Response){
+  const form_id = req.query.form_id as string;
+  const client_id = req.query.client_id as string;
+  const form_name = req.query.form_name as string;
+
+  try {
+    if (form_id === undefined) {
+      return res.status(400).json({ message: "Form ID required" });
+    }
+    if (client_id === undefined) {
+      return res.status(400).json({ message: "Client ID required" });
+    }
+    if (form_name === undefined) {
+      return res.status(400).json({ message: "Form Name required" });
+    }
+
+
+    // create connection
+    const connect: ConnectionRes = await connectToCluster();
+    if (typeof connect.conn === "string") {
+      return res.status(500).json(connect);
+    }
+
+    const conn = connect.conn;
+    const db: Db = conn.db("client");
+    const ClientFormCollection: Collection = db.collection("client-forms");
+
+    // check if form exists
+    let form = await ClientFormCollection.findOne({ form_id: form_id, client_id: client_id, name: form_name},{
+      projection: {
+        _id: 0,
+        data: 1
+      }
+    });
+    if (!form) {
+      return res.status(400).json({ message: "Form not found" });
+    }
+
+    closeConn(conn);
+    return res.status(200).json(form);
   } catch (err: any) {
     return res.status(500).json({ message: err.message });
   }

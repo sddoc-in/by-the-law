@@ -26,7 +26,7 @@ import {
   getClient,
   updateClient,
 } from "../controller/clients";
-import { createForm, deleteForm, getAllForm } from "../controller/forms";
+import { createForm, deleteForm, getAllForm, getFormDataDetails } from "../controller/forms";
 
 const router = express.Router();
 
@@ -57,6 +57,7 @@ router.delete("/api/url/delete", deleteURL);
 router.post("/api/form/generate", createForm);
 router.delete("/api/form/delete", deleteForm);
 router.get("/api/form/all", getAllForm);
+router.get("/api/form/data", getFormDataDetails);
 
 router.get("/api/get-all-urls", getURLs);
 router.get("/api/get-all-credentials", getCredentials);

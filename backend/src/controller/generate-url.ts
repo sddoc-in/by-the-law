@@ -36,7 +36,6 @@ export async function generateURL(req: Request, res: Response) {
     const conn = connect.conn;
     const db: Db = conn.db("client");
     const urlCollection: Collection = db.collection("urls");
-    const ClientFormCollection: Collection = db.collection("client-forms");
     const sessionCollection: Collection = db.collection("sessions");
 
     // check session
@@ -68,12 +67,6 @@ export async function generateURL(req: Request, res: Response) {
       submittedDate: "",
       // expiration: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
       created: new Date(),
-      data: {},
-    });
-
-    await ClientFormCollection.insertOne({
-      client_id: client_id,
-      url: url,
       data: {},
     });
 

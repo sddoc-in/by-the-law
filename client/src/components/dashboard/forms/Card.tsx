@@ -129,9 +129,18 @@ export default function Card(props: FormInterface) {
           </div>
           <hr className="w-full h-1 " />
           <div className="flex justify-evenly items-center mt-2">
-            {/* <a href={"/dashboard/lawyer/"+ props.lawyer_id+"/details/" }> */}
-            <FaRegEye className="text-2xl mt-1.5" />
-            {/* </a>   */}
+            <a
+              href={
+                "/form/" +
+                props.name +
+                "/client/" +
+                props.client_id +
+                "/details/" +
+                props.form_id
+              }
+            >
+              <FaRegEye className="text-2xl mt-1.5" />
+            </a>
             <MdDeleteForever
               onClick={openModal}
               className="text-2xl mt-1.5 text-rose-500 cursor-pointer"

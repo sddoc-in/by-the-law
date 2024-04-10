@@ -31,14 +31,19 @@ export default function Lawyers() {
       params.append("session", currentUser.session);
       params.append("token", currentUser.access_token);
 
+      let apiCall = true;
+
       const data = await axios
         .get(API_URL + "/lawyer/all?" + params)
         .then((res) => res.data)
         .catch((err) => {
           alert(err.response.data.message);
+          apiCall = false;
           return;
         });
-      setData(data);
+        if(apiCall){
+          setData(data);
+        }
     } catch (err) {}
   };
 
@@ -66,7 +71,7 @@ export default function Lawyers() {
         onChangeHandler={(e) => setQuery(e.target.value)}
       />
       {data.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 w-[95%] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2  gap-2 w-[95%] mx-auto">
           {data
             .filter((user: UserInterface) =>
               user.username!.toLowerCase().includes(query.toLowerCase())

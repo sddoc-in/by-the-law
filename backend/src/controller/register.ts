@@ -63,13 +63,13 @@ export async function register(req: Request, res: Response) {
     const collection: Collection = db.collection("users");
     const sessionCollection: Collection = db.collection("sessions");
 
-    const currentUser = await collection.findOne({ uid: uid });
-    if (!currentUser) {
-      return res.status(400).json({ message: "Invalid user" });
-    }
-    if (currentUser.role !== RolesEnum.admin) {
-      return res.status(400).json({ message: "Unauthorized user" });
-    }
+    const currentUser = await collection.findOne({ lawyer_id: uid });
+      if (!currentUser) {
+        return res.status(400).json({ message: "User Sending Request Invalid" });
+      }
+      if (currentUser.role !== RolesEnum.admin) {
+        return res.status(400).json({ message: "Unauthorized user" });
+      }
 
     // check if already exists
     const filteredDocs = await collection.find({ email: email }).toArray();

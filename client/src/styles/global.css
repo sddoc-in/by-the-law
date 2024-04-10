@@ -26,3 +26,7 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+.pdf input,.pdf textarea{
+    font-size: 10px;
+}
