@@ -7,6 +7,7 @@ import Dashboard from "../pages/Dashboard";
 import Logout from "../pages/Logout";
 import Lawyers from "../pages/Lawyers";
 import Clients from "../pages/Clients";
+import ClientUrl from "../pages/ClientUrl";
 
 export const SidebarData = [
   {
@@ -29,6 +30,13 @@ export const SidebarData = [
     shortPath: "/clients",
     Icon: MdOutlineAccountTree,
     Element: Clients,
+  },
+  {
+    title: "Form-url",
+    path: "/dashboard/form-url",
+    shortPath: "/form-url",
+    Icon: MdOutlineAccountTree,
+    Element:ClientUrl,
   },
   {
     title: "Logout",

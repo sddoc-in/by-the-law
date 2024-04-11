@@ -27,7 +27,7 @@ function App() {
 function Router() {
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Signin />} />
@@ -51,7 +51,8 @@ function Router() {
             })}
           </Routes>
         </Suspense>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <Divorce/>
     </>
   );
 }

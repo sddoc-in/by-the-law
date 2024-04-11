@@ -14,6 +14,6 @@ export default function Logout() {
   React.useEffect(() => {
     logout();
   }, []);
-
+  // logout();
   return <div></div>;
 }
