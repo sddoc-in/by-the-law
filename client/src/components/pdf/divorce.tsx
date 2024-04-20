@@ -147,7 +147,7 @@ export default function Divorce() {
       },
     });
   }
-
+ 
   function handlePreviousMarriage(e: React.ChangeEvent<HTMLInputElement>) {
     setDetails({
       ...details,
