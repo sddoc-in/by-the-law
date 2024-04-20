@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom";
 import { API_URL } from "../constants/data";
 import axios from "axios";
 import InputPass from "../components/input/InputPass";
-import Divorce from "../components/pdf/Divorce";
+import Divorce from "../components/pdf/divorce";
 
 export default function UrlForm() {
   const { url, client_id } = useParams();
   const [validUrl, setValidUrl] = React.useState(
-    JSON.parse(sessionStorage.getItem("validUrl") as string) || false
+    // JSON.parse(sessionStorage.getItem("validUrl") as string) || false
+    true
   );
   const [password, setPassword] = React.useState("");
   const [data, setData] = React.useState({});
