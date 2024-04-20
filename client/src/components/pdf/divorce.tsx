@@ -112,7 +112,7 @@ export default function Divorce() {
       },
     });
   }
- 
+  
   function handleCollege(type: Type, e: React.ChangeEvent<HTMLInputElement>) {
     setDetails({
       ...details,
