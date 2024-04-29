@@ -43,7 +43,7 @@ export default function UpdateUserPopup(props: Props) {
       ? props.lawyers.map((lawyer: UserInterface) => {
           return {
             id: lawyer.lawyer_id || "",
-            name: lawyer.username || "",
+            name: lawyer.name || "",
             value: lawyer.lawyer_id || "",
           };
         })
@@ -175,7 +175,7 @@ export default function UpdateUserPopup(props: Props) {
               name="lawyer_id"
               selectArray={lawyers}
               onChange={onRoleChange}
-              defValue={toTitleCase(panelUser.lawyer.username)}
+              defValue={toTitleCase(panelUser.lawyer.name)}
               placeholder="Assign Lawyer"
               inputClassName="w-full"
               error={

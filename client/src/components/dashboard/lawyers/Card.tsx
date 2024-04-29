@@ -97,16 +97,16 @@ export default function Card(props: {
             </div>
             <div className="flex flex-col w-full ml-3">
               <div  className="flex justify-start items-start">
-                <p className="text-xl font-bold text-black"> Id: </p>
+                <p className="text-xl font-bold text-black"> Bar Number : </p>
                 <p className="ml-3 break-all">{props.data.username}</p>
               </div>
               <div  className="flex justify-start items-start">
-                <p className="text-xl font-bold text-black"> Name: </p>
+                <p className="text-xl font-bold text-black"> Name : </p>
                 <p className="ml-3 break-all">{props.data.name}</p>
               </div>
 
               <div  className="flex justify-start items-start">
-                <p className="text-xl font-bold text-black"> Email: </p>
+                <p className="text-xl font-bold text-black"> Email : </p>
                 <p className="ml-3 break-all">{props.data.email}</p>
               </div>
             </div>

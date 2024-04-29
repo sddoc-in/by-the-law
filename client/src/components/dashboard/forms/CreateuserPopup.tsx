@@ -42,7 +42,7 @@ export default function CreateuserPopup(props: Props) {
       ? props.clients.map((client) => {
           return {
             id: client.client_id || "",
-            name: client.username || "",
+            name: client.name || "",
             value: client.client_id || "",
           };
         })

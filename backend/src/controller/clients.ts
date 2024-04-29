@@ -80,7 +80,7 @@ export async function getAllClients(req: Request, res: Response) {
       let client = clients[i];
       let lawyer = await LawyerCollection.findOne(
         { lawyer_id: client.lawyer_id },
-        { projection: { username: 1, email: 1, _id: 0 } }
+        { projection: { name: 1, email: 1, _id: 0 } }
       );
       clientWithlawyer.push({ ...client, lawyer: lawyer });
     }

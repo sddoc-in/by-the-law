@@ -89,7 +89,7 @@ export default function Card(props: {data:ClientInterface,lawyers:UserInterface[
                 <p>{props.data.email} </p>
               </div>
               <div className="ml-3 text-ellipsis w-full">
-                <p>Lawyer : {props.data.lawyer.username} </p>
+                <p>Lawyer : {props.data.lawyer.name} </p>
               </div>
             </div>
           </div>

@@ -171,7 +171,7 @@ export default function CreateuserPopup(props: Props) {
                 props.data.map((lawyer: UserInterface) => {
                   return {
                     id: lawyer.lawyer_id || "",
-                    name: lawyer.username || "",
+                    name: lawyer.name || "",
                     value: lawyer.lawyer_id || "",
                   };
                 }) || [
