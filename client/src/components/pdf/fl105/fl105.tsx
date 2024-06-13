@@ -4,8 +4,8 @@ export default function FL105() {
     return (
         <>
             <div style={{ maxWidth: "1100px", margin: "auto" }}>
-                <h3 style={{ display: "flex", justifyContent: "end", marginTop: 0, marginBottom: 0 }}>FL-105/GC-120</h3>
-                <table style={{ width: "100%", marginTop: 10, border: "2px solid black", borderCollapse: "collapse" }}>
+                <h3 style={{ display: "flex", marginTop: 0, marginBottom: 0 }}>FL-105/GC-120</h3>
+                <table style={{ width: "96%", marginTop: 10, border: "2px solid black", borderCollapse: "collapse" }}>
                     <tbody>
                         <tr>
                             <td style={{ width: "60%", border: "2px solid black", borderCollapse: "collapse" }}>
@@ -15,10 +15,10 @@ export default function FL105() {
                                         address):
                                     </label>
                                     <textarea
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
+                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",resize:"none"}}
                                         name=""
                                         id=""
-                                        cols={100}
+                                        cols={99}
                                         rows={6}
                                     />
                                 </div>
@@ -107,7 +107,7 @@ export default function FL105() {
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">CASE NUMBER:</label>
                                     <br />
-                                    <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
                                 </div>
                             </td>
                         </tr>
@@ -289,7 +289,6 @@ export default function FL105() {
                 </table>
                 <table style={{ borderCollapse: "collapse", width: "100%", fontSize: 12 }}>
                     <thead>
-                        <tr className="tr"></tr>
                         <tr>
                             <td style={{ border: "1px solid black", padding: 5, width: 750 }}>
                                 b. Child’s name
@@ -348,8 +347,8 @@ export default function FL105() {
                         </tr>
                         <tr>
                             <td style={{ border: "1px solid black", padding: 5 }}>
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                                to <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" ,width:"45%"}} type="text" id="street" />
+                                to <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"45%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Child's residence (City, State)
@@ -365,9 +364,8 @@ export default function FL105() {
                         </tr>
                         <tr>
                             <td style={{ border: "1px solid black", padding: 5 }}>
-                                {" "}
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                                to <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"45%" }} type="text" id="street" />
+                                to <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"45%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Child's residence (City, State){" "}
@@ -385,9 +383,8 @@ export default function FL105() {
                         </tr>
                         <tr>
                             <td style={{ border: "1px solid black", padding: 5 }}>
-                                {" "}
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                                to <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"45%" }} type="text" id="street" />
+                                to <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"45%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Child's residence (City, State){" "}
@@ -444,7 +441,7 @@ export default function FL105() {
                         <li> www.courtinfo.ca.gov</li>
                     </div>
                 </div>
-                <div style={{ pageBreakBefore: "always" }} />
+                <div />
                 <table style={{ width: "100%", margin: 5, marginTop: 10, border: "2px solid black", borderCollapse: "collapse" }}>
                     <tbody>
                         <tr>
@@ -745,17 +742,14 @@ export default function FL105() {
                             width: "30%",
                             border: "1px solid black",
                             padding: 15,
+                            marginTop:"10%",
                             boxSizing: "border-box"
                         }}
                     >
                         <div>a. Name and address of person</div>
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
-                        <div>
+                        <textarea rows={4} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "100%",resize:"none" }}/>
+
+                           <div>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Has physical custody
                         </div>
@@ -773,16 +767,13 @@ export default function FL105() {
                             width: "30%",
                             border: "1px solid black",
                             padding: 15,
+                            marginTop:"10%",
                             boxSizing: "border-box"
                         }}
                     >
                         <div>b. Name and address of person </div>
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
-                        <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
+                        <textarea rows={4} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "100%",resize:"none" }}/>
+
                         <div>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Has physical custody{" "}
@@ -801,11 +792,12 @@ export default function FL105() {
                             width: "30%",
                             border: "1px solid black",
                             padding: 15,
+                            marginTop:"10%",
                             boxSizing: "border-box"
                         }}
                     >
                         <div>c. Name and address of person</div>
-                        <textarea  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "33%" }}/>
+                        <textarea rows={4} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "100%",resize:"none" }}/>
                         <div>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Has physical custody
@@ -829,7 +821,7 @@ export default function FL105() {
                             boxSizing: "border-box"
                         }}
                     >
-                        Name of each child{" "}
+                        Name of each child
                         <input size={30} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
                     </div>
                     <div
@@ -898,7 +890,7 @@ export default function FL105() {
                         child subject to this proceeding.
                     </b>
                 </div>
-                <hr style={{ width: "100%" }} />
+                <hr style={{ width: "98%" }} />
                 <div
                     className="footer"
                     style={{ display: "flex", justifyContent: "space-between" }}
