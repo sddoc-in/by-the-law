@@ -16,7 +16,7 @@ export default function SU115() {
                                         address):
                                     </label>
                                     <textarea
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"97%" }}
+                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" ,resize:"none"}}
                                         name=""
                                         id=""
                                         rows={6}
@@ -24,7 +24,7 @@ export default function SU115() {
                                     />
                                 </div>
                                 <div style={{ display: "grid",gridTemplateColumns:"1fr 1fr" }}>
-                                    <div style={{ marginBottom: 10 }}>
+                                    <div style={{ marginBottom: 2 }}>
                                         <label htmlFor="telephone">TELEPHONE NO.:</label>
                                         <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="number" id="telephone" />
                                     </div>
@@ -48,8 +48,8 @@ export default function SU115() {
                         </tr>
                         <tr>
                             <td style={{ margin: 0, border: "2px solid black", borderCollapse: "collapse", paddingLeft: "1.6rem" }}>
-                                <div className="font  " style={{ marginBottom: 2 }}>
-                                    <label htmlFor="name">SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+                                <div  style={{ marginBottom: 2 }}>
+                                    <label>SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
                                     <input
                                         style={{ width: "46%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
                                         type="text"
@@ -105,7 +105,6 @@ export default function SU115() {
                 <div style={{ display: "flex", marginTop: 2 }}>
                     <div style={{ marginLeft: 5 }}>1.</div>
                     <div style={{ marginLeft: 10 }}>
-                        {" "}
                         At the time of service, I was at least 18 years of age and not a party to
                         this action. I served the respondent with copies of:
                     </div>
@@ -113,17 +112,18 @@ export default function SU115() {
                 <div style={{ display: "flex", marginTop: 2 }}>
                     <div style={{ marginLeft: 25 }}>a.</div>
                     <div style={{ marginLeft: 5 }}>
-                        Family Law—Marriage/Domestic Partnership: Petition—Marriage/Domestic
-                        Partnership (form{" "}
-                        <a href="FL-100" target="_blank">
+                    <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
+                     <label> Family Law—Marriage/Domestic Partnership: Petition—Marriage/Domestic
+                     Partnership (form)</label>
+                        <a href="FL-100" target="_blank" style={{color:"blue"}}>
                             FL-100
                         </a>
                         ), Summons (form{" "}
-                        <a href="FL-110" target="_blank">
+                        <a href="FL-110" target="_blank" style={{color:"blue"}}>
                             FL-110
                         </a>
                         ), and blank Response—Marriage/Domestic Partnership (form{" "}
-                        <a href="FL-120" target="_blank">
+                        <a href="FL-120" target="_blank" style={{color:"blue"}}>
                             FL-120
                         </a>
                         )
@@ -132,16 +132,18 @@ export default function SU115() {
                 <div style={{ display: "flex", marginTop: 10 }}>
                     <div style={{ marginLeft: 25 }}>b.</div>
                     <div style={{ marginLeft: 5 }}>
-                        Uniform Parentage: Petition to Establish Parental Relationship (form{" "}
-                        <a href="FL-200" target="_blank">
+                    <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
+                        <label> Uniform Parentage: Petition to Establish Parental Relationship (form{" "}
+                            </label>
+                        <a href="FL-200" target="_blank" style={{color:"blue"}}>
                             FL-200
                         </a>
                         ), Summons (form{" "}
-                        <a href="FL-210" target="_blank">
+                        <a href="FL-210" target="_blank" style={{color:"blue"}}>
                             FL-210
                         </a>
                         ), and blank Response to Petition to Establish Parental Relationship (form{" "}
-                        <a href="FL-220" target="_blank">
+                        <a href="FL-220" target="_blank" style={{color:"blue"}}>
                             FL-220
                         </a>
                         )
@@ -150,18 +152,19 @@ export default function SU115() {
                 <div style={{ display: "flex", marginTop: 10 }}>
                     <div style={{ marginLeft: 25 }}>c.</div>
                     <div style={{ marginLeft: 5 }}>
-                        Custody and Support: Petition for Custody and Support of Minor Children
-                        (form{" "}
-                        <a href="FL-2600" target="_blank">
+                    <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
+                       <label> Custody and Support: Petition for Custody and Support of Minor Children
+                       (form{" "}</label>
+                        <a href="FL-2600" target="_blank" style={{color:"blue"}}>
                             FL-2600
                         </a>
                         ), Summons (form{" "}
-                        <a href="FL-210" target="_blank">
+                        <a href="FL-210" target="_blank" style={{color:"blue"}}>
                             FL-210
                         </a>
                         ), and blank Response to Petition for Custody and Support of Minor
                         Children (form{" "}
-                        <a href="FL-270" target="_blank">
+                        <a href="FL-270" target="_blank" style={{color:"blue"}}>
                             FL-270
                         </a>
                         )
@@ -173,35 +176,35 @@ export default function SU115() {
                         <span>(1)</span>
                         <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                         <span style={{ marginLeft: "10px" }}>Completed and blank Declaration Under Uniform Child Custody Jurisdiction and EnforcementAct
-                            <a href="">(form FL-105)</a>
+                            <a href="FL-105" target="_blank" style={{color:"blue"}}>(form FL-105)</a>
                         </span>
                     </div>
                     <div style={{ padding: "1rem" }}>
                         <span>(5)</span>
                         <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                         <span style={{ marginLeft: "10px" }}>Completed and blank Income and Expense Declaration
-                            <a href="">(form FL-150)</a>
+                            <a href="fl-150" style={{color:"blue"}}>(form FL-150)</a>
                         </span>
                     </div>
                     <div style={{ padding: "1rem" }}>
                         <span>(2)</span>
                         <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                         <span style={{ marginLeft: "10px" }}>Completed and blank Declaration of Disclosure
-                            <a href="">(form FL-140)</a>
+                            <a href="fl-140" style={{color:"blue"}}>(form FL-140)</a>
                         </span>
                     </div>
                     <div style={{ padding: "1rem" }}>
                         <span>(6)</span>
                         <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                         <span style={{ marginLeft: "10px" }}> Completed and blank Property Declaration
-                            <a href="">(form FL-160 )</a>
+                            <a href="fl-160" style={{color:"blue"}}>(form FL-160 )</a>
                         </span>
                     </div>
                     <div style={{ padding: "1rem" }}>
                         <span>(3)</span>
                         <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                         <span style={{ marginLeft: "10px" }}>Completed and blank Schedule of Assets and Debts
-                            <a href="">(form FL-142)</a>
+                            <a href="FL-142" target="_blank" style={{color:"blue"}}>(form FL-142)</a>
                         </span>
                     </div>
                     <div style={{ padding: "1rem" }}>
@@ -209,7 +212,7 @@ export default function SU115() {
                         <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                         <span style={{ marginLeft: "10px" }}>Request for Order (form FL-300), and blank Responsive Declaration to Request for Order
 
-                            <a href="">(form FL-320)</a>
+                            <a href="fl-320" style={{color:"blue"}}>(form FL-320)</a>
                         </span>
                     </div>
                     <div style={{ padding: "1rem" }}>
@@ -217,7 +220,7 @@ export default function SU115() {
                         <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                         <span style={{ marginLeft: "10px" }}>Completed and blank Income and Expense Declaration
 
-                            <a href="">(form FL-150 )</a>
+                            <a href="fl150" style={{color:"blue"}}>(form FL-150 )</a>
                         </span>
                     </div>
                     <div style={{ padding: "1rem" }}>
@@ -352,55 +355,38 @@ export default function SU115() {
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">CASE NUMBER:</label>
                                     <br />
-                                    <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "5px" }} type="text" id="street" />
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "5px",width:"97%" }} type="text" id="street" />
                                 </div>
                             </td>
                         </tr>
                     </tbody>
-                </table>
-                {/* <li> </li>
-    <li>c. Mail and acknowledgment service. I mailed the copies to the respondent, addressed as shown in item 2, by first-class mail, postage prepaid, on (date): from (city): </li>
-        <ul>
-            <li>(1) with two copies of the Notice and Acknowledgment of Receipt (form FL-117) and a postage-paid return envelope addressed to me. (Attach completed Notice and Acknowledgment of Receipt (form FL-117).) (Code Civ. Proc., § 415.30.) </li>
-            <li>(2) to an address outside California (by registered or certified mail with return receipt requested). (Attach signed return receipt or other evidence of actual delivery to the respondent.) (Code Civ. Proc., §§ 415.40, 417.20.) </li>
-        </ul>
-    <li>d. Other (specify code section): Continued on Attachment 3d. </li>
-      </ul>
-  
-  
-      <label>Name: </label><br>
-      <label>Address: </label><br>
-      <label>Telephone number: </label><br>
-      <p>This person is </p>
-      <label>a. exempt from registration under Business and Professions Code section 22350(b). </label><br>
-      <label>b. not a registered California process server. </label><br>
-      <label>c. a registered California process server: an employee or an independent contractor </label><br>
-    <label>(1) Registration no.: </label><br>
-    <label>(2) County: </label><br>
-      <label>d. The fee for service was (specify): $ </label><br> */}
+                </table>   
                 <div style={{ display: "flex", marginTop: 10 }}>
-                    <div style={{ marginLeft: 5 }}>3.</div>
+                    <div style={{ marginLeft: 5 }}>3.<label style={{ marginLeft: 5 }}>C</label>  </div>
                     <div style={{ marginLeft: 5 }}>
-                        Mail and acknowledgment service. I mailed the copies to the respondent,
-                        addressed as shown in item 2, by <br />
+                    <input type="checkbox" style={{ marginRight: 5 }} />
+                      <label>Mail and acknowledgment service. I mailed the copies to the respondent,
+                      addressed as shown in item 2, by </label>
+                        <br />
                     </div>
                 </div>
                 <div style={{ display: "flex", marginTop: 2 }}>
-                    <div style={{ marginLeft: 5 }}>(1).</div>
+                    <div style={{ marginLeft: 35 }}>(1).</div>
                     <div style={{ marginLeft: 5 }}>
                         {" "}
                         <input type="checkbox" style={{ marginRight: 5 }} /> with two copies of
-                        the Notice and Acknowledgment of Receipt (form FL-117) and a postage-paid
+                        the Notice and Acknowledgment of Receipt (form 
+                        <a href="fl-117" target="_blank" style={{color:"blue"}}>FL-117)</a> and a postage-paid
                         return envelope addressed to me. Attach completed Notice and
-                        Acknowledgment of Receipt (form{" "}
-                        <a href="FL-117" target="_blank">
-                            FL-117
+                        Acknowledgment of Receipt  (form
+                        <a href="FL-117" target="_blank" style={{color:"blue"}}>
+                        FL-117)
                         </a>
-                        ) (Code Civ. Proc., § 415.30.)
+                         (Code Civ. Proc., § 415.30.)
                     </div>
                 </div>
                 <div style={{ display: "flex", marginTop: 10 }}>
-                    <div style={{ marginLeft: 5 }}>(2).</div>
+                    <div style={{ marginLeft: 35 }}>(2).</div>
                     <div style={{ marginLeft: 5 }}>
                         <input type="checkbox" style={{ marginRight: 5 }} />
                         to an address outside California (by registered or certified mail with
@@ -432,12 +418,12 @@ export default function SU115() {
                 </div>
                 <div>
                     Name:
-                    <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "5px", width: "60rem" }} type="text" id="street" />
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "5px", width: "94%" }} type="text" id="street" />
                 </div>
                 
                 <div>
-                    <span style={{ marginLeft: "2px" }}> Address:</span>
-                    <textarea style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "58rem" }} />
+                    <label style={{ marginLeft: "2px" }}>Address:</label> 
+                    <textarea style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "92%",resize:"none" }} />
                 </div>
                 <div>
                     Telephone number:
@@ -470,28 +456,26 @@ export default function SU115() {
                     </div>
                     <div>
                         {" "}
-                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <input type="checkbox" style={{ marginRight: 10,marginLeft:15 }} />
                         an employee or
                     </div>
                     <div>
                         {" "}
-                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <input type="checkbox" style={{ marginRight: 10,marginLeft:15 }} />
                         an independent contractor
                     </div>
                 </div>
-                <div style={{ display: "flex", marginTop: 10 }}>
-                    <div style={{ marginLeft: 50 }}>(1).</div>
-                    <div style={{ marginLeft: 5 }}>
-                        Registration no.:
-                        <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",width:"50rem", margin: "0px" }} type="text" id="street" />
-                    </div>
+                <div style={{marginTop: 10 }}>
+                    <label style={{ marginLeft: 50 }}>(1)</label>
+                       <label> Registration no.:</label>
+                        <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",width:"80%", margin: "0px" }} type="text" id="street" />
                 </div>
-                <div style={{ display: "flex", marginTop: 10 }}>
-                    <div style={{ marginLeft: 50 }}>(2).</div>
-                    <div style={{ marginLeft: 5 }}>
-                        County:
-                        <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"50rem" }} type="text" id="street" />
-                    </div>
+                <div style={{  marginTop: 10 }}>
+                    <label style={{ marginLeft: 50 }}>(2).</label>
+                    
+                       <label style={{ marginLeft: 5 }}> County:</label>
+                        <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"85%" }} type="text" id="street" />
+                
                 </div>
                 <div style={{ display: "flex", marginTop: 10 }}>
                     <div style={{ marginLeft: 5 }}>(d).</div>
