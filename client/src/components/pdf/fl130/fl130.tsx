@@ -50,7 +50,6 @@ export default function () {
                                         style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",resize:"none" }}
                                         id=""
                                         cols={80}
-                                        // rows={4}
                                     />
                                 </div>
                                 <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr",marginBottom:"5px" }}>
@@ -195,7 +194,6 @@ export default function () {
                         a.
                     </div>
                     <div style={{ width: "98%", verticalAlign: "top" }}>
-                        {" "}
                         <input 
                         name={"AppearanceByRespondent"}
                        onChange={(e) => handleChange(e)}

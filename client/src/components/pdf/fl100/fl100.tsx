@@ -46,11 +46,11 @@ export default function SU100() {
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
                   <div style={{ marginBottom: 2 }}>
                     <label htmlFor="telephone">TELEPHONE NO.:</label>
-                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="number" id="telephone" />
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"68%" }} type="number" id="telephone" />
                   </div>
                   <div style={{ marginBottom: 2 }}>
                     <label htmlFor="fax">fAX NO:</label>
-                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" />
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"82%" }} type="text" />
                   </div>
                 </div>
                 <div style={{ marginBottom: 2 }}>
@@ -1033,7 +1033,7 @@ export default function SU100() {
         <div style={{ marginLeft: 25 }}>
           Date:{" "}
           <input
-            size={74}
+            size={35}
             style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", marginLeft: 15 }}
             type="text"
             id="name"
@@ -1051,7 +1051,7 @@ export default function SU100() {
             <div style={{ marginLeft: 200 }}>
               <div>
                 {" "}
-                <input size={50} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
+                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"140%" }} type="text" id="name" />
               </div>
               <div>(SIGNATURE OF RESPONDENT)</div>
             </div>
@@ -1060,7 +1060,7 @@ export default function SU100() {
         <div style={{ marginLeft: 25 }}>
           Date:{" "}
           <input
-            size={74}
+            size={35}
             style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", marginLeft: 15 }}
             type="text"
             id="name"
@@ -1069,7 +1069,7 @@ export default function SU100() {
         <div style={{ display: "flex", margin: 5, marginLeft: 25 }}>
           <div style={{ marginLeft: 50 }}>
             <div>
-              {" "}
+        
               <input size={50} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
             </div>
             <div>(TYPE OR PRINT NAME)</div>
@@ -1078,7 +1078,7 @@ export default function SU100() {
             <div style={{ marginLeft: 200 }}>
               <div>
                 {" "}
-                <input size={50} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
+                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"100%" }} type="text" id="name" />
               </div>
               <div>(SIGNATURE OF ATTORNEY FOR PETITIONER)</div>
             </div>
@@ -1088,8 +1088,8 @@ export default function SU100() {
           style={{
             fontSize:"10px",
             border: "1px solid black",
-            padding: 5,
-            width: "100%",
+            padding: 2,
+            width: "95%",
             marginLeft: 40
           }}
         >
@@ -1111,8 +1111,8 @@ export default function SU100() {
         <div
           style={{
             border: "1px solid black",
-            padding: 5,
-            width: "100%",
+            padding: 2,
+            width: "95%",
             marginTop:"5px",
             marginLeft: 40
           }}
@@ -1131,9 +1131,9 @@ export default function SU100() {
         <div
           style={{
             border: "1px solid black",
-            padding: 5,
+            padding: 2,
             margin: 5,
-            width: "100%",
+            width: "95%",
             marginLeft: 40
           }}
         >

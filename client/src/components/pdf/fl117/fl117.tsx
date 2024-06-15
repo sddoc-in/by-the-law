@@ -11,26 +11,23 @@ export default function SU117() {
                         <tr>
                             <td style={{ width: "70%", border: "2px solid black", borderCollapse: "collapse" }}>
                                 <div>
-                                    <label>
-                                        ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and
-                                        address):
-                                    </label>
                                     <textarea
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none",width:"98%" }}
+                                    placeholder=" ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and
+                                        address):"
+                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none",width:"99%" }}
                                         name=""
                                         id=""
-                                        rows={6}
-                                        defaultValue={""}
+                                        rows={4}
                                     />
                                 </div>
-                                <div style={{ display: "grid",gridTemplateColumns:"1fr 1fr", marginBottom: 4, paddingLeft: "4rem" }} >
+                                <div style={{ display: "grid",gridTemplateColumns:"1fr 1fr", marginBottom: 1, paddingLeft: "4rem" }} >
                                     <div>
                                         <label htmlFor="telephone">TELEPHONE NO.:</label>
                                         <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", paddingLeft: "4px" }} type="number" id="telephone" />
                                     </div>
                                     <div>
                                         <label htmlFor="telephone">FAX NO.:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "16.9%" }} type="number" id="telephone" />
+                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "78.9%" }} type="number" id="telephone" />
                                     </div>
                                 </div>
                                 <div style={{ paddingLeft: "4rem" }}>
@@ -88,7 +85,7 @@ export default function SU117() {
                         </tr>
                         <tr>
                             <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <h3 style={{ textAlign: "center", marginBottom: 4 }}>
+                                <h3 style={{ textAlign: "center", marginBottom: 2 }}>
                                     NOTICE AND ACKNOWLEDGMENT OF RECEIPT
                                 </h3>
                             </td>
@@ -96,7 +93,7 @@ export default function SU117() {
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">CASE NUMBER:</label>
                                     <br />
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px",width:"96%" }} type="text" id="street" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "1px",width:"96%" }} type="text" id="street" />
                                 </div>
                             </td>
                         </tr>
@@ -131,11 +128,10 @@ export default function SU117() {
                 <div
                     style={{
                         border: "2px solid black",
-                        padding: 10,
+                        padding: 3,
                         boxSizing: "border-box",
                         fontSize: 17,
-                        width: "95%",
-                        marginLeft: 20
+                        width: "100%",
                     }} >
                     <div style={{ textAlign: "center" }}>
                         <b>NOTICE</b>
@@ -259,63 +255,65 @@ export default function SU117() {
                         )
                     </div>
                 </div>
-                <div style={{ display: "flex", marginLeft: 70, fontSize: 17, marginTop: 10 }}>
+                <div style={{ display: "flex", marginLeft: 70, fontSize: 17, marginTop: 2 }}>
                     <div>
                         <span>(1)</span>
                         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-                            <div style={{ padding: "1rem" }}>
+                            <div style={{ padding: 2 }}>
                                 <span>(1)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
-                                <span style={{ marginLeft: "10px" }}>Completed and blank Declaration Under Uniform Child Custody Jurisdiction and EnforcementAct
-                                    <a href="">(form FL-105)</a>
+                                <span style={{ marginLeft: "10px" }}>Completed and blank Declaration Under Uniform Child 
+                                    Custody Jurisdiction and EnforcementAct (form 
+                                    <a href="" target="_blank" style={{color:"blue"}}>FL-105</a> )
                                 </span>
                             </div>
-                            <div style={{ padding: "1rem" }}>
+                            <div style={{ padding: 2 }}>
                                 <span>(5)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
-                                <span style={{ marginLeft: "10px" }}>Completed and blank Income and Expense Declaration
-                                    <a href="">(form FL-150)</a>
+                                <span style={{ marginLeft: "10px" }}>Completed and blank Income and Expense Declaration (form 
+                                    <a href="" style={{color:"blue"}}>FL-150</a>)
                                 </span>
                             </div>
-                            <div style={{ padding: "1rem" }}>
+                            <div style={{ padding: 2 }}>
                                 <span>(2)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
-                                <span style={{ marginLeft: "10px" }}>Completed and blank Declaration of Disclosure
-                                    <a href="">(form FL-140)</a>
+                                <span style={{ marginLeft: "10px" }}>Completed and blank Declaration of Disclosure (form 
+                                    <a href="" style={{color:"blue"}}>FL-140</a>)
                                 </span>
                             </div>
-                            <div style={{ padding: "1rem" }}>
+                            <div style={{ padding: 2 }}>
                                 <span>(6)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                                 <span style={{ marginLeft: "10px" }}>
-                                    Completed and blank Financial Statement (Simplified)
-                                    <a href="">(form FL-155 )</a>
+                                    Completed and blank Financial Statement (Simplified)(form 
+                                    <a href="" style={{color:"blue"}}>FL-155 </a>)
                                 </span>
                             </div>
-                            <div style={{ padding: "1rem" }}>
+                            <div style={{ padding: 2 }}>
                                 <span>(3)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
-                                <span style={{ marginLeft: "10px" }}>Completed and blank Schedule of Assets and Debts
-                                    <a href="">(form FL-142)</a>
+                                <span style={{ marginLeft: "10px" }}>Completed and blank Schedule of Assets and Debts (form
+                                    <a href="" style={{color:"blue"}}> FL-142</a> )
                                 </span>
                             </div>
-                            <div style={{ padding: "1rem" }}>
+                            <div style={{ padding: 2 }}>
                                 <span>(7)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
-                                <span style={{ marginLeft: "10px" }}>Request for Order (form FL-300), and blank Responsive Declaration to Request for Order
+                                <span style={{ marginLeft: "10px" }}>Request for Order (form FL-300), and
+                                     blank Responsive Declaration to Request for Order (form 
 
-                                    <a href="">(form FL-320)</a>
+                                    <a href="" style={{color:"blue"}}>FL-320</a>)
                                 </span>
                             </div>
-                            <div style={{ padding: "1rem" }}>
+                            <div style={{ padding: 2 }}>
                                 <span>(4)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
-                                <span style={{ marginLeft: "10px" }}> Completed and blank Property Declaration (form FL-160
+                                <span style={{ marginLeft: "10px" }}> Completed and blank Property Declaration (form
 
-                                    <a href="">(form FL-160 )</a>
+                                    <a href="" style={{color:"blue"}}> FL-160 )</a>
                                 </span>
                             </div>
-                            <div style={{ padding: "1rem" }}>
+                            <div style={{ padding: 2 }}>
                                 <span>Other (specify)</span>
                                 <input type="text" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "10px", width: "22rem" }} />
                             </div>
@@ -362,7 +360,6 @@ export default function SU117() {
                     <div style={{ textAlign: "center" }}>
                         <h3>NOTICE AND ACKNOWLEDGMENT OF RECEIPT</h3>
                         <label style={{ textAlign: "center", fontWeight: "bold" }}>
-                            {" "}
                             (Family Law)
                         </label>
                     </div>
