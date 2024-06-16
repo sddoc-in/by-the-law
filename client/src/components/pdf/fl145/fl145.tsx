@@ -47,7 +47,7 @@ export default function FL145() {
 
   return (
     <div style={{ maxWidth: "1100px", margin: "auto" }}>
-      <div className="pages">
+      <div>
         <h3
           style={{
             display: "flex",
@@ -56,12 +56,11 @@ export default function FL145() {
             marginBottom: "0px",
           }}
         >
-          {" "}
           FL-145
         </h3>
         <table
           style={{
-            width: "100%",
+            width: "95%",
             border: "2px solid black",
             borderCollapse: "collapse",
           }}
@@ -224,11 +223,11 @@ export default function FL145() {
                     <b>Asking Party:</b>
                   </label>
                   <input
-                    size={63}
                     style={{
                       backgroundColor: "rgb(225, 243, 243)",
                       border: "none",
-                      margin:"2px 6px"
+                      margin:"2px 6px",
+                      width:"75%"
                     }}
                     onChange={(e) => handleFormInterrogatoriesFamilyLaw(e)}
                     value={details.FormInterrogatoriesFamilyLaw?.AskingParty}
@@ -243,11 +242,11 @@ export default function FL145() {
                    onChange={(e) => handleFormInterrogatoriesFamilyLaw(e)}
                    value={details.FormInterrogatoriesFamilyLaw?.AnsweringParty}
                    name="AnsweringParty"
-                    size={63}
                     style={{
                       backgroundColor: "rgb(225, 243, 243)",
                       border: "none",
-                      margin:"3px 5px"
+                      margin:"3px 5px",
+                      width:"75%"
                     }}
                     type="text"
                   />
@@ -259,11 +258,11 @@ export default function FL145() {
                      onChange={(e) => handleFormInterrogatoriesFamilyLaw(e)}
                      value={details.FormInterrogatoriesFamilyLaw?. SetNo}
                      name=" SetNo"
-                    size={63}
                     style={{
                       backgroundColor: "rgb(225, 243, 243)",
                       border: "none",
-                      margin:"3px 5px"
+                      margin:"3px 5px",
+                      width:"75%"
                     }}
                     type="text"
                   />

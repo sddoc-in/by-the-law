@@ -22,7 +22,9 @@ import FL140 from "./components/pdf/fl140/fl140";
 import FL141 from "./components/pdf/fl141/fl141";
 import FL100 from "./components/pdf/fl100/fl100";
 import FL105 from "./components/pdf/fl105/fl105";
+import FL110 from "./components/pdf/fl110/fl110";
 
+ 
 
 function App() {
   return (
@@ -57,6 +59,8 @@ function Router() {
             <Route path="pdf141" element={<FL141/>}/>
             <Route path="pdf100" element={<FL100/>}/>
             <Route path="pdf105" element={<FL105/>}/>
+            <Route path="pdf110" element={<FL110/>}/>
+           
            
 
             {SidebarData.map((item, index) => {

@@ -47,9 +47,7 @@ export default function () {
                                     <textarea
                                     name={"AttorneyOrPartyWithoutAttorney"}
                                     onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",resize:"none" }}
-                                        id=""
-                                        cols={80}
+                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",resize:"none" }}                                        cols={80}
                                     />
                                 </div>
                                 <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr",marginBottom:"5px" }}>
