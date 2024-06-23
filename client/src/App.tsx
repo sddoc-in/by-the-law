@@ -24,6 +24,7 @@ import FL100 from "./components/pdf/fl100/fl100";
 import FL105 from "./components/pdf/fl105/fl105";
 import FL110 from "./components/pdf/fl110/fl110";
 import FL120 from "./components/pdf/fl120/fl120";
+import FL190 from "./components/pdf/fl190/fl190";
 
  
 
@@ -62,6 +63,7 @@ function Router() {
             <Route path="pdf105" element={<FL105/>}/>
             <Route path="pdf110" element={<FL110/>}/>
             <Route path="pdf120" element={<FL120/>}/>
+            <Route path="pdf190" element={<FL190/>}/>
 
            
 

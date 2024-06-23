@@ -560,24 +560,177 @@ export default function FL105() {
                         <label>Attachment 9b.</label>
                     </div>
                 </div>
-                <div style={{display:"grid" ,gridTemplateColumns:"70% 30%"}}>
+                <div style={{ display: "grid", gridTemplateColumns: "70% 30%" }}>
                     <div>
                         <label> the following list</label>
-                        <label>Item</label><br/>
-                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  /><br/>
-                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  /><br/>
-                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  /><br/>
-                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  /><br/>
-
-
+                        <label>Item</label><br />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" /><br />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" /><br />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" /><br />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" /><br />
                     </div>
                     <div>
-                        <label>Confirm to</label><br/>
-                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  />
-                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  />
-                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  />
-                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  />
+                        <label>Confirm to</label><br />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
                     </div>
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "70% 30%" }}>
+                    <div style={{ border: "1px solid black" }}>
+                        <div>
+                            <label>PETITIONER: </label>
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
+                        </div>
+                        <div>
+                            <label>RESPONDENT: </label>
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
+                        </div>
+                    </div>
+                    <div style={{ border: "1px solid black" }}>
+                        <div>
+                            <label>CASE NUMBER:</label>
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <b>10.	COMMUNITY AND QUASI-COMMUNITY PROPERTY</b>
+                    <div>
+                        <label>a .</label>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <label>There are no such assets or debts that I know of to be divided by the court.</label>
+                    </div>
+                    <div>
+                        <label>b .</label>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <label>Determine rights to community and quasi-community assets and debts. All such assets and debts are listed</label>
+                        <div>
+                            <input type="checkbox" style={{ marginRight: 5 }} />
+                            <label>Property Declaration <a style={{ color: "blue" }}>(form FL-160).</a> </label>
+                            <input type="checkbox" style={{ marginRight: 5 }} />
+                            <a style={{ color: "blue" }}>Attachment 10b.</a>
+                        </div>
+                        <div>
+                            <input type="checkbox" style={{ marginRight: 5 }} />
+                            <textarea
+                                style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none" }}
+                                placeholder='Other (specify):'
+                                cols={70}
+                                rows={4} />
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <b>11.	COMMUNITY AND QUASI-COMMUNITY PROPERTY</b>
+                    <div>
+                        <div style={{ display: "flex", justifyContent: "space-between" }}>
+                            <div>
+                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <label>a.	Attorney's fees and costs payable by.</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <label>Petitioner</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <label>Respondent.</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label>b . Respondent's former name be restored to (specify):</label>
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
+                        </div>
+                        <div>
+                            <label> c .</label>
+                            <textarea
+                                style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none" }}
+                                placeholder='Other (specify):'
+                                cols={70}
+                                rows={4} />
+                            <div>
+                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <label>Continued on Attachment 11c..</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h5>I declare under penalty of perjury under the laws of the State of California that the foregoing is true and correct. </h5>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <div>
+                        <div>
+                            <label>Date</label>
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
+                        </div>
+                        <div>
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
+                            <h6 style={{ textAlign: "center" }}>(TYPE OR PRINT NAME)</h6>
+                        </div>
+                    </div>
+                    <div>
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" /><br />
+                        <label>	(SIGNATURE OF RESPONDENT)</label>
+                        <hr style={{ border: "1px solid black" }} />
+                    </div>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <div>
+                        <div>
+                            <label>Date</label>
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
+                        </div>
+                        <div>
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" /><br />
+                            <h6 style={{ textAlign: "center" }}>(TYPE OR PRINT NAME)</h6>
+                        </div>
+                    </div>
+                    <div>
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" /><br />
+                        <label>(SIGNATURE OF ATTORNEY FOR RESPONDENT)</label>
+                        <hr style={{ border: "1px solid black" }} />
+                    </div>
+                </div>
+                <div style={{ border: "1px solid black", padding: "5px" }}>
+                    <h6><b>FOR MORE INFORMATION:</b>  Read Legal Steps for a Divorce or Legal Separation
+                        <a style={{ color: "blue" }}>( form FL-107-INFO)</a>
+                        and visit "Families Change" at <a style={{ color: "blue" }}>www.familieschange.ca.gov </a>—
+                        an online guide for parents and children going through divorce or separation.</h6>
+                </div>
+                <div style={{ border: "1px solid black", padding: "5px", marginTop: "5px" }}>
+                    <h6><b>NOTICE:</b> You may redact (black out) social security numbers from any written material
+                        filed with the court in this case other than a form used to collect child, spousal or partner
+                        support.</h6>
+                </div>
+                <div style={{ border: "1px solid black", padding: "5px", marginTop: "5px" }}>
+                    <h6>NOTICE—CANCELLATION OF RIGHTS: Dissolution or legal separation may automatically cancel
+                        the rights of a domestic partner or spouse under the other domestic partner's or
+                        spouse's will, trust, retirement plan, power of attorney, pay-on-death bank account,
+                        survivorship rights to any property owned in joint tenancy, and any other similar
+                        thing. It does not automatically cancel the right of a domestic partner or spouse as
+                        beneficiary of the other partner's or spouse's life insurance policy. You should
+                        review these matters, as well as any credit cards, other credit accounts, insurance
+                        polices, retirement plans, and credit reports, to determine whether they should be
+                        changed or whether you should take any other actions. Some changes may require the
+                        agreement of your partner or spouse or a court order.</h6>
+                </div>
+                <div style={{ border: "1px solid black", padding: "5px", marginTop: "5px" }}>
+                    <h5 >The original response must be filed in the court with proof of service of a copy on Petitioner.</h5>
+                </div>
+                <div style={{display:"grid",gridTemplateColumns:"20% 60% 20%"}}>
+                     <div>
+                        <p>FL-120 [Rev. January 1, 2020]</p>
+                     </div>
+                     <div>
+                        <p><b>RESPONSE—MARRIAGE/DOMESTIC PARTNERSHIP</b></p>
+                        <p><b>(Family Law)</b></p>
+                     </div>
+                     <div>
+                        <label>Page 3 of 3</label>
+                     </div>
                 </div>
 
 
