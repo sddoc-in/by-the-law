@@ -480,17 +480,104 @@ export default function FL105() {
                         </div>
                     </div>
                     <div>
-                    <div>
+                        <div>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             <label>form FL-341(C) </label>
                         </div>
                         <div>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             <label>Attachment 6c(1)</label>
-                        </div>     
+                        </div>
                     </div>
+                </div>
+                <div>
+                    <label>7 <b>CHILD SUPPORT</b></label>
+                    <div>
+                        <label>a .</label>
+                        <label>If there are minor children born to or adopted by Petitioner and Respondent before or during this marriage or domestic partnership,
+                            the court will make orders for the support of the children upon request and submission of financial forms by the requesting party.</label>
+                    </div>
+                    <div>
+                        <label>b .</label>
+                        <label>An earnings assignment may be issued without further notice.</label>
+                    </div>
+                    <div>
+                        <label>c .</label>
+                        <label>Any party required to pay support must pay interest on overdue amounts at the "legal" rate, which is currently 10 percent.</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <textarea
+                            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none" }}
+                            placeholder='Other (specify):'
+                            cols={70}
+                            rows={4} />
+                    </div>
+                </div>
+                <div>
+                    <label>8. <b>SPOUSAL OR DOMESTIC PARTNER SUPPORT</b> </label>
+                    <div>
+                        <label>a .	Spousal or domestic partner support payable to</label>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <label>Petitioner</label>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <label>Respondent</label>
+                    </div>
+                    <div>
+                        <label>b .	Terminate (end) the court's ability to award support to</label>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <label>Petitioner</label>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <label>Respondent</label>
+                    </div>
+                    <div>
+                        <label>c .	Reserve for future determination the issue of support payable to</label>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <label>Petitioner</label>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <label>Respondent</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <textarea
+                            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none" }}
+                            placeholder='Other (specify):'
+                            cols={70}
+                            rows={4} />
+                    </div>
+                </div>
+                <div>
+                    <label>9 .<b>SEPARATE PROPERTY</b></label>
+                    <div>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <label>a.	There are no such assets or debts that I know of to be confirmed by the court.</label>
+                    </div>
+                    <div>
+                        <label>b.	Confirm as separate property the assets and debts in</label>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <label>Property Declaration (form FL-160).</label>
+                        <input type="checkbox" style={{ marginRight: 5 }} />
+                        <label>Attachment 9b.</label>
+                    </div>
+                </div>
+                <div style={{display:"grid" ,gridTemplateColumns:"70% 30%"}}>
+                    <div>
+                        <label> the following list</label>
+                        <label>Item</label><br/>
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  /><br/>
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  /><br/>
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  /><br/>
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  /><br/>
 
 
+                    </div>
+                    <div>
+                        <label>Confirm to</label><br/>
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text"  />
+                    </div>
                 </div>
 
 
