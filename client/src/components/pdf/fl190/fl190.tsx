@@ -4,7 +4,7 @@ export default function FL190() {
     return (
         <>
             <div style={{ maxWidth: "1100px", margin: "auto" }}>
-                <h3 style={{ display: "flex", marginTop: 0, marginBottom: 0 }}>FL-105/GC-120</h3>
+                <h3 style={{ display: "flex", marginTop: 0, marginBottom: 0 }}>FL-190</h3>
                 <table style={{ width: "100%", marginTop: 6, border: "2px solid black", borderCollapse: "collapse", }}>
                     <tbody>
                         <tr>
@@ -26,7 +26,7 @@ export default function FL190() {
                                             name={"TelephoneNo"}
                                             style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="number" id="telephone" />
                                     </div>
-                                    <div style={{}}>
+                                    <div>
                                         <label htmlFor="telephone">FAX NO.:</label>
                                         <input
                                             name={"FaxNo"}

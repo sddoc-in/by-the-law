@@ -126,7 +126,7 @@ export default function FL141() {
                             <div style={{ marginLeft: "1.2rem" }}>
                                 <label htmlFor="street">CASE NUMBER:</label>
                                 <br />
-                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input size={33} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"100%"  }} type="text" id="street" />
                             </div>
                         </td>
                     </tr>

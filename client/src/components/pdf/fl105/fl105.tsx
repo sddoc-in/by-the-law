@@ -50,7 +50,7 @@ export default function FL105() {
                                 <div style={{ margin: 2, fontWeight: "bold" }}>
                                     <label htmlFor="name">SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
                                     <input
-                                        style={{ width: "56.6%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
+                                        style={{ width: "56%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
                                         type="text"
                                         id="name"
                                     />
