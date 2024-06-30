@@ -8,7 +8,7 @@ export default function FL105() {
                 <table style={{ width: "100%", marginTop: 10, border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
                     <tbody>
                         <tr>
-                            <td style={{ width: "80%", border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
+                            <td style={{ width: "70%", border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
                                 <div>
                                     <label>PARTY WITHOUT ATTORNEY OR ATTORNEY</label>
                                     <label style={{ marginLeft: "10%" }}>STATE BAR NUMBER</label>
@@ -68,7 +68,7 @@ export default function FL105() {
                         </tr>
             
                         <tr>
-                            <td style={{width: "80%", margin: 0, border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
+                            <td style={{width: "70%", margin: 0, border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
                                 <div style={{ marginBottom: 5 }}>
                                     <label htmlFor="name">SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
                                     <input
@@ -96,7 +96,7 @@ export default function FL105() {
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ width: "80%",border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
+                            <td style={{ width: "70%",border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
                                 <div style={{ fontSize: 18, marginBottom: 5, marginLeft: "1.2rem" }}>
                                     <label htmlFor="name">PETITIONER:</label>
                                     <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "82%" }} type="text" id="name" />
@@ -113,52 +113,52 @@ export default function FL105() {
                         </tr>
                         <tr>
                             <td style={{ width: "80%",border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
-                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr",margin:4}}>
+                            <div style={{ display: "grid", gridTemplateColumns: "35% 30% 35%",margin:10}}>
                             <div>
-                                <label>RESPONSE</label>
+                                <label> <b>RESPONSE</b> </label>
+                            </div>
+                            <div style={{ marginRight: 20 }}>
+                                <input type="checkbox"  />
+                                <b>AND REQUEST FOR</b>
                             </div>
                             <div>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
-                                AND REQUEST FOR
+                                <input type="checkbox"  />
+                             <b>AMENDED</b>
                             </div>
                             <div>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
-                                AMENDED
-                            </div>
-                            <div>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <input type="checkbox"  />
                                 Dissolution (Divorce) of:
                             </div>
                             <div>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <input type="checkbox"  />
                                 Marriage
                             </div>
                             <div>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <input type="checkbox"  />
                                 Domestic Partnership
                             </div>
                             <div>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <input type="checkbox"  />
                                 Legal Separation of:
                             </div>
                             <div>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <input type="checkbox"  />
                                 Marriage
                             </div>
                             <div>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <input type="checkbox"  />
                                 Domestic Partnership
                             </div>
                             <div>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <input type="checkbox"  />
                                 Nullity of:
                             </div>
                             <div>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <input type="checkbox"  />
                                 Marriage
                             </div>
                             <div>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                <input type="checkbox"  />
                                 Domestic Partnership
                             </div>
                         </div>
@@ -198,17 +198,17 @@ export default function FL105() {
                 <div>
                     <label> 1 <b>LEGAL RELATIONSHIP </b>(check all that apply):</label>
                     <div>
-                        <b style={{ marginRight: 8 }}>a .</b>
+                        <b style={{ marginRight: 8,marginLeft:"5%" }}>a .</b>
                         <input type="checkbox" style={{ marginRight: 5 }} />
                         We are married.
                     </div>
                     <div>
-                        <b style={{ marginRight: 8 }}>b .</b>
+                        <b style={{ marginRight: 8,marginLeft:"5%" }}>b .</b>
                         <input type="checkbox" style={{ marginRight: 5 }} />
                         We are domestic partners and our domestic partnership was established in California.
                     </div>
                     <div>
-                        <b style={{ marginRight: 8 }}>c .</b>
+                        <b style={{ marginRight: 8,marginLeft:"5%" }}>c .</b>
                         <input type="checkbox" style={{ marginRight: 5 }} />
                         We are domestic partners and our domestic partnership was NOT established in California.
                     </div>
@@ -216,26 +216,21 @@ export default function FL105() {
 
                 <div>
                     <label> 2 <b>RESIDENCE REQUIREMENTS </b>(check all that apply):</label>
-                    <div style={{ display: "flex" }}>
-                        <div>
+                    <div style={{ marginLeft: "5%" }}>
+                    <b style={{marginRight:"5px"}}> a.</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
-                            a.	Petitioner
-                        </div>
-                        <div>
-                            <input type="checkbox" style={{ marginRight: 5 }} />
+                          	Petitioner
+                            <input type="checkbox" style={{ marginRight: 5,marginLeft:"10px" }} />
                             Respondent  has been a resident of this state for at least six months and of this county for at least
                             three months immediately preceding the filing of this Petition. (For a divorce, unless you are in the legal relationship described in 1b.,
                             at least one of you must comply with this requirement.)
-
-                        </div>
-
                     </div>
                     <div>
-                        <b style={{ marginRight: 8 }}>b .</b>
+                        <b style={{ marginLeft: "5%",marginRight:"5px" }}>b .</b>
                         <input type="checkbox" style={{ marginRight: 5 }} />
                         Our domestic partnership was established in California. Neither of us has to be a resident or have a domicile in California to dissolve our partnership here                    </div>
                     <div>
-                        <b style={{ marginRight: 8 }}>c .</b>
+                        <b style={{ marginLeft:"5%",marginRight:"5px" }}>c .</b>
                         <input type="checkbox" style={{ marginRight: 5 }} />
                         We are the same sex, were married in California, but currently live in a jurisdiction that does not recognize, and will not dissolve, our marriage. This Petition is filed in the county where we married.
                         Petitioner lives in (specify):
@@ -244,23 +239,23 @@ export default function FL105() {
                         <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
                     </div>
                     <div>
-                        <label>3 . <b>	STATISTICAL FACTS</b></label>
+                        <label> <b>3 .	STATISTICAL FACTS</b></label>
                         <div style={{marginLeft:"5%"}}>
                             <b style={{ marginRight: 8 }}>a .</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             (1) Date of marriage (specify):
                             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                            <b style={{ marginRight: 8 }}>(2)</b>
+                            <b style={{ marginRight: 8,marginLeft:4 }}>(2)</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Date of separation (specify):
                             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                            <b style={{ marginRight: 8 }}>(3)</b>
+                            <b style={{ marginRight: 8 ,marginLeft:4}}>(3)</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Time from date of marriage to date of separation (specify):
                             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                            <label>Year</label>
+                            <label style={{marginLeft:4}}>Year</label>
                             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                            <label>Months</label>
+                            <label style={{marginLeft:4}}>Months</label>
                             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
 
                         </div>
@@ -269,17 +264,17 @@ export default function FL105() {
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             (1) Registration date of domestic partnership with the California Secretary of State or other state equivalent (specify below):
                             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                            <b style={{ marginRight: 8 }}>(2)</b>
+                            <b style={{ marginRight: 8,marginLeft:4 }}>(2)</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Date of separation (specify):
                             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                            <b style={{ marginRight: 8 }}>(3)</b>
+                            <b style={{ marginRight: 8,marginLeft:4 }}>(3)</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Time from date of registration of domestic partnership to date of separation (specify):
                             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                            <label>Year</label>
+                            <label style={{marginLeft:4}}>Year</label>
                             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                            <label>Months</label>
+                            <label style={{marginLeft:4}}>Months</label>
                             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
 
 
@@ -693,7 +688,7 @@ export default function FL105() {
                         </div>
                         <div>
                             <label>b . Respondent's former name be restored to (specify):</label>
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom:"2px",width:"56%" }} type="text" />
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom:"2px",width:"55%" }} type="text" />
                         </div>
                         <div>
                             <label> c .</label>
@@ -723,7 +718,7 @@ export default function FL105() {
                             <h6 style={{ textAlign: "center" }}>(TYPE OR PRINT NAME)</h6>
                         </div>
                     </div>
-                    <div>
+                    <div style={{marginRight:"11%"}}>
                         <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px",width:"120%" }} type="text" /><br />
                         <label>	(SIGNATURE OF RESPONDENT)</label>
                         <hr style={{ border: "1px solid black" }} />
