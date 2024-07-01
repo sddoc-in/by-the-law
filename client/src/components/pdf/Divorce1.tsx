@@ -1,10 +1,11 @@
 import React from "react";
 import SUdivorce from "./SUdivorce";
 import { Type } from "./divorce";
+import axios from "axios";
+import { API_URL } from "../../constants/data";
 // import { createImmediatelyInvokedFunctionExpression } from "typescript";
 
-
-export default function Divorce() {
+export default function Divorce({ url }: { url: string }) {
   const [details, setDetails] = React.useState<SUdivorce>({
     referredBy: "",
     date: "",
@@ -384,11 +385,13 @@ export default function Divorce() {
     },
     settlementNotes: Array(20).fill(""),
   });
-  
+
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement> |
-      React.ChangeEvent<HTMLTextAreaElement>
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
   ) {
+    console.log(e.target.value, e.target.name);
     setDetails({
       ...details,
       [e.target.name]: e.target.value,
@@ -396,7 +399,7 @@ export default function Divorce() {
   }
 
   function onChangePhone(type: Type, e: React.ChangeEvent<HTMLInputElement>) {
-    console.log(e.target.value);  
+    console.log(e.target.value);
     setDetails({
       ...details,
       [type]: {
@@ -523,44 +526,53 @@ export default function Divorce() {
     });
   }
 
-  function handlePreviousMarriage(type: Type,e: React.ChangeEvent<HTMLInputElement>) {
+  function handlePreviousMarriage(
+    type: Type,
+    e: React.ChangeEvent<HTMLInputElement>
+  ) {
     setDetails({
-        ...details,
-        [type]: {
-          ...details[type],
-          [e.target.name]: e.target.value,
-        },
-      });
+      ...details,
+      [type]: {
+        ...details[type],
+        [e.target.name]: e.target.value,
+      },
+    });
   }
 
-  function handleChildrenOfClient(type: Type,e: React.ChangeEvent<HTMLInputElement>) {
+  function handleChildrenOfClient(
+    type: Type,
+    e: React.ChangeEvent<HTMLInputElement>
+  ) {
     setDetails({
-        ...details,
-        [type]: {
-          ...details[type],
-          [e.target.name]: e.target.value,
-        },
-      });
+      ...details,
+      [type]: {
+        ...details[type],
+        [e.target.name]: e.target.value,
+      },
+    });
   }
 
-  function handleCurrentMarriage(type: Type,e: React.ChangeEvent<HTMLInputElement>) {
+  function handleCurrentMarriage(
+    type: Type,
+    e: React.ChangeEvent<HTMLInputElement>
+  ) {
     setDetails({
-        ...details,
-        [type]: {
-          ...details[type],
-          [e.target.name]: e.target.value,
-        },
-      });
+      ...details,
+      [type]: {
+        ...details[type],
+        [e.target.name]: e.target.value,
+      },
+    });
   }
 
   function handleAssets(e: React.ChangeEvent<HTMLInputElement>) {
     setDetails({
-        ...details,
-        // [type]: {
-        //   ...details[type],
-          [e.target.name]: e.target.value,
-        // },
-      });
+      ...details,
+      // [type]: {
+      //   ...details[type],
+      [e.target.name]: e.target.value,
+      // },
+    });
   }
 
   function handleLiabilities(e: React.ChangeEvent<HTMLInputElement>) {
@@ -597,17 +609,35 @@ export default function Divorce() {
   //   console.log(details);
   // }
 
-  function handleSubmit(){
-    console.log(details)
+  async function handleSubmit() {
+    try {
+      const response = await axios
+        .put(
+          API_URL +
+            "/url/submit?" +
+            new URLSearchParams({
+              url: url,
+            }),
+          details
+        )
+        .then((res) => res.data)
+        .catch((err) => {
+          alert(err.response.data.message);
+          return;
+        });
+    } catch (err: any) {
+      alert(err.message);
+    }
   }
 
-  // create function which runs in every 5 sec
-  // function saveData() {
-  //   setInterval(() => {
-  //     sendData();
-  //   }, 5000);
-  // }
-  // saveData();
+  // autosaver
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      handleSubmit();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <div
@@ -649,7 +679,8 @@ export default function Divorce() {
               <input
                 name="referredBy"
                 type="text"
-                onChange={(e) => handleChange(e)} />
+                onChange={(e) => handleChange(e)}
+              />
             </span>
           </p>
         </div>
@@ -661,7 +692,8 @@ export default function Divorce() {
                 name="date"
                 type="text"
                 className="ml-[2px]"
-                onChange={(e) => handleChange(e)} />
+                onChange={(e) => handleChange(e)}
+              />
             </span>
           </p>
         </div>
@@ -671,7 +703,8 @@ export default function Divorce() {
             border: " 1.5px solid black",
             marginTop: " 4rem",
             marginBottom: "4rem",
-          }} />
+          }}
+        />
         <br />
 
         <div className="font-s">
@@ -683,7 +716,8 @@ export default function Divorce() {
                 type="text"
                 name="name"
                 onChange={(e) => handleClient(Type.client, e)}
-                defaultValue={details.client?.name} />
+                defaultValue={details.client?.name}
+              />
             </span>
           </p>
           <div
@@ -709,7 +743,8 @@ export default function Divorce() {
                 defaultValue={details.client?.address}
                 className="ml-[14px]"
                 type="text"
-                name="address" />
+                name="address"
+              />
             </span>
           </p>
         </div>
@@ -732,7 +767,8 @@ export default function Divorce() {
                 type="text"
                 style={{ width: "10rem" }}
                 onChange={(e) => onChangePhone(Type.client, e)}
-                defaultValue={details.client?.phone?.home } />
+                defaultValue={details.client?.phone?.home}
+              />
             </div>
             <div style={{ marginLeft: "5px" }}>
               Cell :{" "}
@@ -741,7 +777,8 @@ export default function Divorce() {
                 type="text"
                 style={{ width: "11rem" }}
                 onChange={(e) => onChangePhone(Type.client, e)}
-                defaultValue={details.client?.phone?.cell} />
+                defaultValue={details.client?.phone?.cell}
+              />
             </div>
           </div>
 
@@ -753,7 +790,8 @@ export default function Divorce() {
                 type="text"
                 style={{ width: "10rem" }}
                 onChange={(e) => onChangePhone(Type.client, e)}
-                defaultValue={details.client?.phone?.work} />
+                defaultValue={details.client?.phone?.work}
+              />
             </div>
             <div>
               fax :{" "}
@@ -762,7 +800,8 @@ export default function Divorce() {
                 name="fax"
                 style={{ width: "11.1rem" }}
                 onChange={(e) => onChangePhone(Type.client, e)}
-                defaultValue={details.client?.phone?.fax} />
+                defaultValue={details.client?.phone?.fax}
+              />
             </div>
           </div>
         </div>
@@ -775,7 +814,8 @@ export default function Divorce() {
             style={{ width: "57rem" }}
             type="text"
             onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.emailAddress} />
+            defaultValue={details.client?.emailAddress}
+          />
         </div>
         <br />
         <br />
@@ -788,7 +828,8 @@ export default function Divorce() {
             id=""
             // onChange={(e)=>handleClient(e)} defaultChecked={details.client?'On':'Off'}
             onChange={(e) => handleCorrespondenceAddress(Type.client, e)}
-            defaultChecked={details.client?.correspondenceAddress?.home.contain} />{" "}
+            defaultChecked={details.client?.correspondenceAddress?.home.contain}
+          />{" "}
           Home{" "}
           <input
             className="ml"
@@ -796,7 +837,8 @@ export default function Divorce() {
             name=""
             id=""
             onChange={(e) => handleCorrespondenceAddress(Type.client, e)}
-            defaultChecked={details.client?.correspondenceAddress?.work.contain} />{" "}
+            defaultChecked={details.client?.correspondenceAddress?.work.contain}
+          />{" "}
           Work
         </div>
         <br />
@@ -808,7 +850,8 @@ export default function Divorce() {
             style={{ width: "60.5rem" }}
             type="text"
             onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.employer} />
+            defaultValue={details.client?.employer}
+          />
         </div>
         <br />
         <br />
@@ -819,14 +862,16 @@ export default function Divorce() {
             style={{ width: "25rem" }}
             type="text"
             name="position"
-            onChange={(e) => handleClient(Type.client, e)} />{" "}
+            onChange={(e) => handleClient(Type.client, e)}
+          />{" "}
           Years Employed:{" "}
           <input
             style={{ width: "25.8rem" }}
             type="text"
             name="yearsEmployed"
             onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.position} />
+            defaultValue={details.client?.position}
+          />
         </div>
         <br />
         <br />
@@ -839,7 +884,8 @@ export default function Divorce() {
               type="text"
               style={{ width: "16.7rem" }}
               onChange={(e) => handleSalary(Type.client, e)}
-              defaultValue={details.client?.salary.gross} />
+              defaultValue={details.client?.salary.gross}
+            />
           </span>{" "}
           <span className="ml">
             Net:
@@ -847,7 +893,8 @@ export default function Divorce() {
               type="text"
               style={{ width: "18rem" }}
               onChange={(e) => handleSalary(Type.client, e)}
-              defaultValue={details.client?.salary.net} />
+              defaultValue={details.client?.salary.net}
+            />
           </span>
           <span>
             <input
@@ -856,7 +903,8 @@ export default function Divorce() {
               id=""
               className="mr-1"
               onChange={(e) => handleSalaryType(Type.client, e)}
-              defaultChecked={details.client?.salary.type.annual} />
+              defaultChecked={details.client?.salary.type.annual}
+            />
             annual/
             <input
               type="checkbox"
@@ -864,7 +912,8 @@ export default function Divorce() {
               id=""
               className="mr-1"
               onChange={(e) => handleSalaryType(Type.client, e)}
-              defaultChecked={details.client?.salary.type.monthly} />
+              defaultChecked={details.client?.salary.type.monthly}
+            />
             monthly/
             <input
               type="checkbox"
@@ -872,7 +921,8 @@ export default function Divorce() {
               id=""
               className="mr-1"
               onChange={(e) => handleSalaryType(Type.client, e)}
-              defaultChecked={details.client?.salary.type.hourly} />
+              defaultChecked={details.client?.salary.type.hourly}
+            />
             hourly
           </span>
         </div>
@@ -887,7 +937,8 @@ export default function Divorce() {
             className="18rem"
             name="socialSecurityNo"
             onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.socialSecurityNo} />
+            defaultValue={details.client?.socialSecurityNo}
+          />
           Place of Birth:{" "}
           <input
             type="text"
@@ -895,7 +946,8 @@ export default function Divorce() {
             style={{ width: "25.7rem" }}
             className="18rem"
             onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.placeOfBirth} />
+            defaultValue={details.client?.placeOfBirth}
+          />
         </div>
         <br />
         <br />
@@ -907,14 +959,16 @@ export default function Divorce() {
             style={{ width: "24rem" }}
             name="dateOfBirth"
             onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.dateOfBirth} />{" "}
+            defaultValue={details.client?.dateOfBirth}
+          />{" "}
           AGE:{" "}
           <input
             type="text"
             name="age"
             style={{ width: "35.8rem" }}
             onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.age} />
+            defaultValue={details.client?.age}
+          />
         </div>
         <br />
         <br />
@@ -927,42 +981,58 @@ export default function Divorce() {
               name="contain"
               id=""
               onChange={(e) => handleHighSchool(Type.client, e)}
-              defaultChecked={details.client?.educationOrTraining.highSchool.contain} />
+              defaultChecked={
+                details.client?.educationOrTraining.highSchool.contain
+              }
+            />
             High School
             <input
               type="text"
               name="details"
               style={{ width: "44.8rem" }}
               onChange={(e) => handleHighSchool(Type.client, e)}
-              defaultValue={details.client?.educationOrTraining.highSchool.details} />
+              defaultValue={
+                details.client?.educationOrTraining.highSchool.details
+              }
+            />
             <br />
             <input
               type="checkbox"
               name="contain"
               id=""
               onChange={(e) => handleCollege(Type.client, e)}
-              defaultChecked={details.client?.educationOrTraining.college.contain} />
+              defaultChecked={
+                details.client?.educationOrTraining.college.contain
+              }
+            />
             College
             <input
               type="text"
               name="details"
               style={{ width: "47.1rem", marginTop: "20px" }}
               onChange={(e) => handleCollege(Type.client, e)}
-              defaultValue={details.client?.educationOrTraining.college.details} />
+              defaultValue={details.client?.educationOrTraining.college.details}
+            />
             <br />
             <input
               type="checkbox"
               name="contain"
               id=""
               onChange={(e) => handleGraduateSchool(Type.client, e)}
-              defaultChecked={details.client?.educationOrTraining.highSchool.contain} />
+              defaultChecked={
+                details.client?.educationOrTraining.highSchool.contain
+              }
+            />
             Graduate School
             <input
               type="text"
               name="details"
               style={{ width: "42rem", marginTop: "20px" }}
               onChange={(e) => handleClient(Type.client, e)}
-              defaultValue={details.client?.educationOrTraining.graduateSchool.details} />
+              defaultValue={
+                details.client?.educationOrTraining.graduateSchool.details
+              }
+            />
           </div>
         </div>
         <br />
@@ -983,7 +1053,8 @@ export default function Divorce() {
                 },
               });
             }}
-            defaultValue={details.client?.healthStatus} />
+            defaultValue={details.client?.healthStatus}
+          />
         </div>
 
         <hr style={{ border: "1.5px solid black", marginTop: "4rem" }} />
@@ -1000,7 +1071,8 @@ export default function Divorce() {
                 style={{ width: "51.6rem" }}
                 type="text"
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.name} />
+                defaultValue={details.spouse?.name}
+              />
             </span>
           </p>
           <div
@@ -1025,7 +1097,8 @@ export default function Divorce() {
                   style={{ width: "53rem" }}
                   type="text"
                   onChange={(e) => handleClient(Type.spuse, e)}
-                  defaultValue={details.spouse?.address} />
+                  defaultValue={details.spouse?.address}
+                />
               </span>
             </p>
             <div style={{ marginLeft: " 18rem" }}>(if different)</div>
@@ -1048,7 +1121,8 @@ export default function Divorce() {
                   name="home"
                   style={{ width: "10rem" }}
                   onChange={(e) => onChangePhone(Type.spuse, e)}
-                  defaultValue={details.spouse?.phone?.home} />
+                  defaultValue={details.spouse?.phone?.home}
+                />
               </div>
               <div style={{ marginLeft: "5px" }}>
                 Cell :{" "}
@@ -1057,7 +1131,8 @@ export default function Divorce() {
                   name="cell"
                   style={{ width: "11rem" }}
                   onChange={(e) => onChangePhone(Type.spuse, e)}
-                  defaultValue={details.spouse?.phone?.cell} />
+                  defaultValue={details.spouse?.phone?.cell}
+                />
               </div>
             </div>
 
@@ -1069,7 +1144,8 @@ export default function Divorce() {
                   name="work"
                   style={{ width: "10rem" }}
                   onChange={(e) => onChangePhone(Type.spuse, e)}
-                  defaultValue={details.spouse?.phone.work} />
+                  defaultValue={details.spouse?.phone.work}
+                />
               </div>
               <div>
                 fax :{" "}
@@ -1078,7 +1154,8 @@ export default function Divorce() {
                   name="fax"
                   style={{ width: "11.1rem" }}
                   onChange={(e) => onChangePhone(Type.spuse, e)}
-                  defaultValue={details.spouse?.phone?.fax} />
+                  defaultValue={details.spouse?.phone?.fax}
+                />
               </div>
             </div>
           </div>
@@ -1090,7 +1167,8 @@ export default function Divorce() {
               name="emailAddress"
               style={{ width: "58.2rem" }}
               onChange={(e) => handleClient(Type.spuse, e)}
-              defaultValue={details.spouse?.emailAddress} />
+              defaultValue={details.spouse?.emailAddress}
+            />
           </div>
 
           <div className="mt">
@@ -1102,7 +1180,10 @@ export default function Divorce() {
               name="contain"
               id=""
               onChange={(e) => handleCorrespondenceAddress(Type.spuse, e)}
-              defaultChecked={details.spouse?.correspondenceAddress.home.contain} />{" "}
+              defaultChecked={
+                details.spouse?.correspondenceAddress.home.contain
+              }
+            />{" "}
             Home{" "}
             <input
               className="ml relative top-[2px]"
@@ -1111,7 +1192,10 @@ export default function Divorce() {
               name="contain"
               id=""
               onChange={(e) => handleCorrespondenceAddress(Type.spuse, e)}
-              defaultChecked={details.spouse?.correspondenceAddress.work.contain} />{" "}
+              defaultChecked={
+                details.spouse?.correspondenceAddress.work.contain
+              }
+            />{" "}
             Work{" "}
             <input
               className="ml relative top-[2px]"
@@ -1120,7 +1204,10 @@ export default function Divorce() {
               name="contain"
               id=""
               onChange={(e) => handleCorrespondenceAddress(Type.spuse, e)}
-              defaultChecked={details.spouse?.correspondenceAddress.attorney.contain} />{" "}
+              defaultChecked={
+                details.spouse?.correspondenceAddress.attorney.contain
+              }
+            />{" "}
             Attorney
           </div>
 
@@ -1132,7 +1219,8 @@ export default function Divorce() {
                 type="text"
                 name="employer"
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.employer} />
+                defaultValue={details.spouse?.employer}
+              />
             </p>
           </div>
 
@@ -1144,14 +1232,16 @@ export default function Divorce() {
                 type="text"
                 name="position"
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.position} />{" "}
+                defaultValue={details.spouse?.position}
+              />{" "}
               Years Employed:{" "}
               <input
                 style={{ width: "26rem" }}
                 name="yearsEmployed"
                 type="text"
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.yearsEmployed} />
+                defaultValue={details.spouse?.yearsEmployed}
+              />
             </p>
           </div>
 
@@ -1164,7 +1254,8 @@ export default function Divorce() {
                   name="gross"
                   type="text"
                   onChange={(e) => handleSalary(Type.spuse, e)}
-                  defaultValue={details.spouse?.salary.gross} />
+                  defaultValue={details.spouse?.salary.gross}
+                />
               </span>{" "}
               <span className="ml">
                 Net:
@@ -1172,7 +1263,8 @@ export default function Divorce() {
                   type="text"
                   style={{ width: "17rem" }}
                   onChange={(e) => handleClient(Type.spuse, e)}
-                  defaultValue={details.spouse?.salary.net} />
+                  defaultValue={details.spouse?.salary.net}
+                />
                 annual/monthly/ weekly
               </span>
             </p>
@@ -1187,7 +1279,8 @@ export default function Divorce() {
                 name="socialSecurityNo"
                 className="18rem"
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.socialSecurityNo} />
+                defaultValue={details.spouse?.socialSecurityNo}
+              />
               Place of Birth:{" "}
               <input
                 type="text"
@@ -1195,7 +1288,8 @@ export default function Divorce() {
                 name="placeOfBirth"
                 className="18rem"
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.placeOfBirth} />
+                defaultValue={details.spouse?.placeOfBirth}
+              />
             </p>
           </div>
 
@@ -1207,14 +1301,16 @@ export default function Divorce() {
                 name="dateOfBirth"
                 style={{ width: "30rem" }}
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.dateOfBirth} />{" "}
+                defaultValue={details.spouse?.dateOfBirth}
+              />{" "}
               AGE:{" "}
               <input
                 type="text"
                 name="age"
                 style={{ width: "30rem" }}
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.age} />
+                defaultValue={details.spouse?.age}
+              />
             </p>
           </div>
 
@@ -1227,7 +1323,10 @@ export default function Divorce() {
                 name="details"
                 style={{ width: "46.8rem" }}
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.educationOrTraining.highSchool.details} />
+                defaultValue={
+                  details.spouse?.educationOrTraining.highSchool.details
+                }
+              />
               <br />
               College{" "}
               <input
@@ -1235,7 +1334,10 @@ export default function Divorce() {
                 name="details"
                 style={{ width: "49rem", marginTop: "20px" }}
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.educationOrTraining.college.details} />
+                defaultValue={
+                  details.spouse?.educationOrTraining.college.details
+                }
+              />
               <br />
               Graduate School{" "}
               <input
@@ -1243,7 +1345,10 @@ export default function Divorce() {
                 name="details"
                 style={{ width: "43.8rem", marginTop: "20px" }}
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.educationOrTraining.graduateSchool.details} />
+                defaultValue={
+                  details.spouse?.educationOrTraining.graduateSchool.details
+                }
+              />
             </div>
           </div>
 
@@ -1256,7 +1361,8 @@ export default function Divorce() {
                 name="healthStatus"
                 style={{ width: "49.5rem" }}
                 onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.healthStatus} />
+                defaultValue={details.spouse?.healthStatus}
+              />
             </p>
           </div>
           <hr style={{ border: " 1.5px solid black", marginTop: "5rem" }} />
@@ -1269,14 +1375,16 @@ export default function Divorce() {
                 style={{ width: "21.9rem" }}
                 name="previousMarriageClient"
                 onChange={(e) => handlePreviousMarriage(Type.client, e)}
-                defaultValue={details.previousMarriage?.client} />{" "}
+                defaultValue={details.previousMarriage?.client}
+              />{" "}
               Spouse:{" "}
               <input
                 type="text"
                 name="previousMarriageSpouse"
                 style={{ width: "24.6rem" }}
-                onChange={(e) => handlePreviousMarriage(Type.spuse,e)}
-                defaultValue={details.previousMarriage?.spouse} />
+                onChange={(e) => handlePreviousMarriage(Type.spuse, e)}
+                defaultValue={details.previousMarriage?.spouse}
+              />
             </p>
           </div>
 
@@ -1289,7 +1397,8 @@ export default function Divorce() {
                 style={{ width: "52.9rem" }}
                 name="previousMarriageEndedClient"
                 onChange={(e) => handlePreviousMarriage(Type.client, e)}
-                defaultValue={details.previousMarriage?.endedDetails.client} />
+                defaultValue={details.previousMarriage?.endedDetails.client}
+              />
             </p>
             <p style={{ marginLeft: "10rem" }} className="mt">
               Spouse:{" "}
@@ -1298,7 +1407,8 @@ export default function Divorce() {
                 style={{ width: "52rem" }}
                 name="previousMarriageEndedSpouse"
                 onChange={(e) => handlePreviousMarriage(Type.spuse, e)}
-                defaultValue={details.previousMarriage?.endedDetails.spouse} />
+                defaultValue={details.previousMarriage?.endedDetails.spouse}
+              />
             </p>
           </div>
 
@@ -1314,24 +1424,27 @@ export default function Divorce() {
                   type="text"
                   style={{ width: "15rem" }}
                   name="firstChildrenOfClient"
-                  onChange={(e) => handleChildrenOfClient(Type.client , e)}
-                  defaultValue={details.childrenOfClient?.client.name} />
+                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
+                  defaultValue={details.childrenOfClient?.client.name}
+                />
                 <br />{" "}
                 <input
                   type="text"
                   className="mt"
-                  name='secondShildrenOfClient'
+                  name="secondShildrenOfClient"
                   style={{ width: "15rem" }}
-                  onChange={(e) => handleChildrenOfClient(Type.client,e)}
-                  defaultValue={details.childrenOfClient?.client.name} />{" "}
+                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
+                  defaultValue={details.childrenOfClient?.client.name}
+                />{" "}
                 <br />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
                   name="thirdChildrenOfClient"
-                  onChange={(e) => handleChildrenOfClient(Type.client,e)}
-                  defaultValue={details.childrenOfClient?.client.name} />
+                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
+                  defaultValue={details.childrenOfClient?.client.name}
+                />
               </p>
               <p style={{ marginLeft: "5rem" }} className="mt">
                 DOB: <br />{" "}
@@ -1339,46 +1452,52 @@ export default function Divorce() {
                   type="text"
                   style={{ width: "15rem" }}
                   name="firstChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.client,e)}
-                  defaultValue={details.childrenOfClient?.client.dob} />{" "}
+                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
+                  defaultValue={details.childrenOfClient?.client.dob}
+                />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
                   name="secondChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.client,e)}
-                  defaultValue={details.childrenOfClient?.client.dob} />{" "}
+                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
+                  defaultValue={details.childrenOfClient?.client.dob}
+                />{" "}
                 <br />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
-                    name="thirdChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.client,e)}
-                  defaultValue={details.childrenOfClient?.client.dob} />
+                  name="thirdChildrenDOB"
+                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
+                  defaultValue={details.childrenOfClient?.client.dob}
+                />
               </p>
               <p style={{ marginLeft: "5rem" }} className="mt">
                 SSN: <br />{" "}
                 <input
                   type="text"
                   style={{ width: "15rem" }}
-                    name="firstChildrenSSN"
-                  onChange={(e) => handleChildrenOfClient(Type.client,e)}
-                  defaultValue={details.childrenOfClient?.client.ssn} />{" "}
+                  name="firstChildrenSSN"
+                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
+                  defaultValue={details.childrenOfClient?.client.ssn}
+                />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
-                  name="secondChildrenSSN"  
-                  onChange={(e) => handleChildrenOfClient(Type.client,e)}
-                  defaultValue={details.childrenOfClient?.client.ssn} />{" "}
+                  name="secondChildrenSSN"
+                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
+                  defaultValue={details.childrenOfClient?.client.ssn}
+                />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
                   name="thirdChildrenSSN"
-                  onChange={(e) => handleChildrenOfClient(Type.client,e)}
-                  defaultValue={details.childrenOfClient?.client.ssn} />
+                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
+                  defaultValue={details.childrenOfClient?.client.ssn}
+                />
               </p>
             </div>
           </div>
@@ -1392,24 +1511,27 @@ export default function Divorce() {
                   type="text"
                   style={{ width: "15rem" }}
                   name="firstChildrenOfSpouse"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse,e)}
-                  defaultValue={details.childrenOfClient?.spouse.name} />
+                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
+                  defaultValue={details.childrenOfClient?.spouse.name}
+                />
                 <br />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
                   name="secondChildrenOfSpouse"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse,e)}
-                  defaultValue={details.childrenOfClient?.spouse.name} />{" "}
+                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
+                  defaultValue={details.childrenOfClient?.spouse.name}
+                />{" "}
                 <br />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
                   name="thirdChildrenOfSpouse"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse,e)}
-                  defaultValue={details.childrenOfClient?.spouse.name} />
+                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
+                  defaultValue={details.childrenOfClient?.spouse.name}
+                />
               </p>
               <p style={{ marginLeft: "5rem" }} className="mt">
                 DOB: <br />{" "}
@@ -1417,46 +1539,52 @@ export default function Divorce() {
                   type="text"
                   style={{ width: "15rem" }}
                   name="firstChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse,e)}
-                  defaultValue={details.childrenOfClient?.spouse.dob} />{" "}
+                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
+                  defaultValue={details.childrenOfClient?.spouse.dob}
+                />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
-                    name="secondChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse,e)}
-                  defaultValue={details.childrenOfClient?.spouse.dob} />{" "}
+                  name="secondChildrenDOB"
+                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
+                  defaultValue={details.childrenOfClient?.spouse.dob}
+                />{" "}
                 <br />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
                   name="thirdChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse,e)}
-                  defaultValue={details.childrenOfClient?.spouse.dob} />
+                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
+                  defaultValue={details.childrenOfClient?.spouse.dob}
+                />
               </p>
               <p style={{ marginLeft: "5rem" }} className="mt">
                 SSN: <br />{" "}
                 <input
                   type="text"
                   style={{ width: "15rem" }}
-                    name="firstChildrenSSN" 
-                  onChange={(e) => handleChildrenOfClient(Type.spuse,e)}
-                  defaultValue={details.childrenOfClient?.spouse.ssn} />{" "}
+                  name="firstChildrenSSN"
+                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
+                  defaultValue={details.childrenOfClient?.spouse.ssn}
+                />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
                   name="secondChildrenSSN"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse,e)}
-                  defaultValue={details.childrenOfClient?.spouse.ssn} />{" "}
+                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
+                  defaultValue={details.childrenOfClient?.spouse.ssn}
+                />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
-                    name="thirdChildrenSSN"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse,e)}
-                  defaultValue={details.childrenOfClient?.spouse.ssn} />
+                  name="thirdChildrenSSN"
+                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
+                  defaultValue={details.childrenOfClient?.spouse.ssn}
+                />
               </p>
             </div>
           </div>
@@ -1473,8 +1601,9 @@ export default function Divorce() {
                   <input
                     type="text"
                     style={{ borderBottom: "1px solid black" }}
-                    onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                    defaultValue={details.thisMarriage?.date} />
+                    onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                    defaultValue={details.thisMarriage?.date}
+                  />
                 </div>
 
                 <p>
@@ -1484,8 +1613,9 @@ export default function Divorce() {
                     type="text"
                     style={{ width: "30rem" }}
                     name="place"
-                    onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                    defaultValue={details.thisMarriage?.place} />
+                    onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                    defaultValue={details.thisMarriage?.place}
+                  />
                 </p>
               </div>
             </p>
@@ -1496,8 +1626,9 @@ export default function Divorce() {
               type="text"
               style={{ width: "46rem" }}
               name="registered"
-              onChange={(e) => handleCurrentMarriage(Type.client,e)}
-              defaultValue={details.thisMarriage?.registered} />
+              onChange={(e) => handleCurrentMarriage(Type.client, e)}
+              defaultValue={details.thisMarriage?.registered}
+            />
           </div>
 
           <div className="mt">
@@ -1509,24 +1640,27 @@ export default function Divorce() {
                   type="text"
                   style={{ width: "15rem" }}
                   name="firstChildren"
-                  onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                  defaultValue={details.thisMarriage?.children.name} />
+                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                  defaultValue={details.thisMarriage?.children.name}
+                />
                 <br />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
-                    name="secondChildren"
-                  onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                  defaultValue={details.thisMarriage?.children.name} />{" "}
+                  name="secondChildren"
+                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                  defaultValue={details.thisMarriage?.children.name}
+                />{" "}
                 <br />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
-                   name="thirdChildren"
-                  onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                  defaultValue={details.thisMarriage?.children.name} />
+                  name="thirdChildren"
+                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                  defaultValue={details.thisMarriage?.children.name}
+                />
               </p>
               <p style={{ marginLeft: "5rem" }} className="mt">
                 DOB: <br />{" "}
@@ -1534,23 +1668,26 @@ export default function Divorce() {
                   type="text"
                   style={{ width: "15rem" }}
                   name="firstChildrenDOB"
-                  onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                  defaultValue={details.thisMarriage?.children.dob} />{" "}
+                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                  defaultValue={details.thisMarriage?.children.dob}
+                />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
-                    name="secondChildrenDOB"
-                  onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                  defaultValue={details.thisMarriage?.children.dob} />{" "}
+                  name="secondChildrenDOB"
+                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                  defaultValue={details.thisMarriage?.children.dob}
+                />{" "}
                 <br />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
                   name="thirdChildrenDOB"
-                  onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                  defaultValue={details.thisMarriage?.children.dob} />
+                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                  defaultValue={details.thisMarriage?.children.dob}
+                />
               </p>
               <p style={{ marginLeft: "5rem" }} className="mt">
                 Lives With: <br />{" "}
@@ -1558,22 +1695,25 @@ export default function Divorce() {
                   type="text"
                   name="firstChildrenLivesWith"
                   style={{ width: "15rem" }}
-                  onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                  defaultValue={details.thisMarriage?.children.livesWith} />
+                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                  defaultValue={details.thisMarriage?.children.livesWith}
+                />
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
                   name="secondChildrenLivesWith"
-                  onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                  defaultValue={details.thisMarriage?.children.livesWith} />{" "}
+                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                  defaultValue={details.thisMarriage?.children.livesWith}
+                />{" "}
                 <input
                   type="text"
                   className="mt"
                   style={{ width: "15rem" }}
                   name="thirdChildrenLivesWith"
-                  onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                  defaultValue={details.thisMarriage?.children.livesWith} />
+                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                  defaultValue={details.thisMarriage?.children.livesWith}
+                />
               </p>
             </div>
           </div>
@@ -1585,8 +1725,9 @@ export default function Divorce() {
               <input
                 type="text"
                 style={{ width: "32rem" }}
-                onChange={(e) => handleCurrentMarriage(Type.client,e)}
-                defaultValue={details.thisMarriage?.specialProblems} />
+                onChange={(e) => handleCurrentMarriage(Type.client, e)}
+                defaultValue={details.thisMarriage?.specialProblems}
+              />
             </p>
           </div>
 
@@ -1597,24 +1738,27 @@ export default function Divorce() {
                 type="text"
                 style={{ width: "50.1rem" }}
                 name="spouseAttorney"
-                onChange={(e) => handleCurrentMarriage(Type.spuse,e)}
-                defaultValue={details.thisMarriage?.spouseAttorney} />
-            </p>
-            <p style={{ marginLeft: "11rem" }}>
-              <input
-                type="text"
-                style={{ width: "50.2rem" }}
-                 name="spouseAttorney"
-                onChange={(e) => handleCurrentMarriage(Type.spuse,e)}
-                defaultValue={details.thisMarriage?.spouseAttorney} />
+                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
+                defaultValue={details.thisMarriage?.spouseAttorney}
+              />
             </p>
             <p style={{ marginLeft: "11rem" }}>
               <input
                 type="text"
                 style={{ width: "50.2rem" }}
                 name="spouseAttorney"
-                onChange={(e) => handleCurrentMarriage(Type.spuse,e)}
-                defaultValue={details.thisMarriage?.spouseAttorney} />
+                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
+                defaultValue={details.thisMarriage?.spouseAttorney}
+              />
+            </p>
+            <p style={{ marginLeft: "11rem" }}>
+              <input
+                type="text"
+                style={{ width: "50.2rem" }}
+                name="spouseAttorney"
+                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
+                defaultValue={details.thisMarriage?.spouseAttorney}
+              />
             </p>
           </div>
 
@@ -1629,15 +1773,19 @@ export default function Divorce() {
                 type="text"
                 style={{ width: "20rem" }}
                 name="when"
-                onChange={(e) => handleCurrentMarriage(Type.spuse,e)}
-                defaultValue={details.thisMarriage?.previousDivorceActions.when} />{" "}
+                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
+                defaultValue={details.thisMarriage?.previousDivorceActions.when}
+              />{" "}
               Where:{" "}
               <input
                 type="text"
                 style={{ width: "28.4rem" }}
                 name="where"
-                onChange={(e) => handleCurrentMarriage(Type.spuse,e)}
-                defaultValue={details.thisMarriage?.previousDivorceActions.where} />
+                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
+                defaultValue={
+                  details.thisMarriage?.previousDivorceActions.where
+                }
+              />
             </p>
           </div>
 
@@ -1650,8 +1798,11 @@ export default function Divorce() {
                 type="text"
                 style={{ width: "51.2rem" }}
                 name="howTerminated"
-                onChange={(e) => handleCurrentMarriage(Type.spuse,e)}
-                defaultValue={details.thisMarriage?.previousDivorceActions.terminated} />
+                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
+                defaultValue={
+                  details.thisMarriage?.previousDivorceActions.terminated
+                }
+              />
             </p>
           </div>
 
@@ -1675,8 +1826,9 @@ export default function Divorce() {
                   <input
                     type="text"
                     name="other"
-                    onChange={(e) => handleCurrentMarriage(Type.spuse,e)}
-                    defaultValue={details.thisMarriage?.other} />
+                    onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
+                    defaultValue={details.thisMarriage?.other}
+                  />
                 </p>
                 <p>irreconcilable Differences</p>
               </div>
@@ -1690,24 +1842,27 @@ export default function Divorce() {
                 type="text"
                 style={{ width: "51rem" }}
                 name="comments"
-                onChange={(e) => handleCurrentMarriage(Type.spuse,e)}
-                defaultValue={details.thisMarriage?.comments} />
+                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
+                defaultValue={details.thisMarriage?.comments}
+              />
             </p>
             <p className="mt-3">
               <input
                 type="text"
                 style={{ width: "51rem" }}
                 name="comments"
-                onChange={(e) => handleCurrentMarriage(Type.spuse,e)}
-                defaultValue={details.thisMarriage?.comments} />
+                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
+                defaultValue={details.thisMarriage?.comments}
+              />
             </p>
             <p className="mt-3">
               <input
                 type="text"
                 style={{ width: "51rem" }}
                 name="comments"
-                onChange={(e) => handleCurrentMarriage(Type.spuse,e)}
-                defaultValue={details.thisMarriage?.comments} />
+                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
+                defaultValue={details.thisMarriage?.comments}
+              />
             </p>
           </div>
 
@@ -1738,7 +1893,8 @@ export default function Divorce() {
                 style={{ width: "55rem" }}
                 onChange={(e) => handleAssets(e)}
                 name="address"
-                 defaultValue={details.assets?.martialResidence.address} />{" "}
+                defaultValue={details.assets?.martialResidence.address}
+              />{" "}
             </p>
             <p className="mt">
               Title in whose name(s)?{" "}
@@ -1747,16 +1903,18 @@ export default function Divorce() {
                 style={{ width: "46.5rem" }}
                 name="titleNames"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.titleNames} />{" "}
+                defaultValue={details.assets?.martialResidence.titleNames}
+              />{" "}
             </p>
             <p className="mt">
               Location of title papers:{" "}
               <input
                 type="text"
-                style={{ width: "46.5rem"}}
+                style={{ width: "46.5rem" }}
                 name="titleLocation"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.titleLocation} />{" "}
+                defaultValue={details.assets?.martialResidence.titleLocation}
+              />{" "}
             </p>
             <p className="mt">
               Who made down payment:{" "}
@@ -1765,7 +1923,10 @@ export default function Divorce() {
                 style={{ width: "44.5rem" }}
                 name="downPaymentMadeBy"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.downPaymentMadeBy} />{" "}
+                defaultValue={
+                  details.assets?.martialResidence.downPaymentMadeBy
+                }
+              />{" "}
             </p>
             <p className="mt">
               Are payments current?
@@ -1774,16 +1935,18 @@ export default function Divorce() {
                 style={{ width: "47.1rem" }}
                 name="paymentsCurrent"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.paymentsCurrent} />
+                defaultValue={details.assets?.martialResidence.paymentsCurrent}
+              />
             </p>
             <p className="mt">
               Who makes payments?
               <input
                 type="text"
                 style={{ width: "46.9rem" }}
-                name='whoMakesPayments'
+                name="whoMakesPayments"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.whoMakesPayments} />
+                defaultValue={details.assets?.martialResidence.whoMakesPayments}
+              />
             </p>
             <br />
             <div style={{ display: "flex" }}>
@@ -1794,16 +1957,22 @@ export default function Divorce() {
                   style={{ width: "20rem" }}
                   name="whenPurchaged"
                   onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.martialResidence.purchaseDetails.when} />
+                  defaultValue={
+                    details.assets?.martialResidence.purchaseDetails.when
+                  }
+                />
               </p>
               <p>
                 Price Paid:{" "}
                 <input
                   type="text"
-                  style={{ width: "23rem"}}
+                  style={{ width: "23rem" }}
                   name="pricePaid"
                   onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.martialResidence.purchaseDetails.pricePaid} />
+                  defaultValue={
+                    details.assets?.martialResidence.purchaseDetails.pricePaid
+                  }
+                />
               </p>
             </div>
             <div className="mt" style={{ display: "flex" }}>
@@ -1811,19 +1980,23 @@ export default function Divorce() {
                 Mortgage payments:{" "}
                 <input
                   type="text"
-                  style={{ width: "18rem"}}
+                  style={{ width: "18rem" }}
                   name="mortgagePayments"
                   onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.martialResidence.mortgagePayments} />
+                  defaultValue={
+                    details.assets?.martialResidence.mortgagePayments
+                  }
+                />
               </p>
               <p>
                 Approximate yearly taxes:{" "}
                 <input
                   type="text"
                   style={{ width: "14.8rem" }}
-                    name="yearlyTaxes"
+                  name="yearlyTaxes"
                   onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.martialResidence.yearlyTaxes} />
+                  defaultValue={details.assets?.martialResidence.yearlyTaxes}
+                />
               </p>
             </div>
             <br />
@@ -1834,7 +2007,8 @@ export default function Divorce() {
                 style={{ width: "32.5rem" }}
                 name="presentValue"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.presentValue} />
+                defaultValue={details.assets?.martialResidence.presentValue}
+              />
             </p>
             <p className="mt-2" style={{ marginLeft: "10rem" }}>
               (2) Mortgage balance as of:{" "}
@@ -1843,17 +2017,23 @@ export default function Divorce() {
                 style={{ width: "15rem" }}
                 name="mortgageBalanceAsOf"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.mortgageBalance.asOf} />
+                defaultValue={
+                  details.assets?.martialResidence.mortgageBalance.asOf
+                }
+              />
               :<input type="text" style={{ width: "19rem" }} />
             </p>
             <p className="mt-2" style={{ marginLeft: "15rem" }}>
               Estimated Net Value:${" "}
               <input
                 type="text"
-                style={{ width: "26rem"}}
+                style={{ width: "26rem" }}
                 name="estimatedNetValue"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.mortgageBalance.balance} />
+                defaultValue={
+                  details.assets?.martialResidence.mortgageBalance.balance
+                }
+              />
               <b style={{ marginLeft: "4rem", textDecoration: "underline" }}>
                 Other
               </b>
@@ -1870,7 +2050,8 @@ export default function Divorce() {
                 style={{ width: "55.5rem" }}
                 name="address"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.realEstate.address} />
+                defaultValue={details.assets?.realEstate.address}
+              />
             </p>
             <p className="mt-2">
               Location of title papers:
@@ -1879,7 +2060,8 @@ export default function Divorce() {
                 style={{ width: "47.2rem" }}
                 name="titleLocation"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.realEstate.titleLocation} />
+                defaultValue={details.assets?.realEstate.titleLocation}
+              />
             </p>
           </div>
 
@@ -1893,7 +2075,8 @@ export default function Divorce() {
               style={{ width: "43rem" }}
               name="downPaymentMadeBy"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.realEstate.downPaymentMadeBy} />
+              defaultValue={details.assets?.realEstate.downPaymentMadeBy}
+            />
           </p>
           <p className="mt">
             Who holds mortgage:
@@ -1902,7 +2085,8 @@ export default function Divorce() {
               style={{ width: "48.4rem" }}
               name="mortgageHolds"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.realEstate.mortgageholds} />
+              defaultValue={details.assets?.realEstate.mortgageholds}
+            />
           </p>
           <p className="mt">
             Are payments current?
@@ -1910,8 +2094,9 @@ export default function Divorce() {
               type="text"
               style={{ width: "47.5rem" }}
               name="paymentsCurrent"
-              onChange={(e) => handleAssets(e)} 
-              defaultValue={details.assets?.realEstate.paymentsCurrent} />
+              onChange={(e) => handleAssets(e)}
+              defaultValue={details.assets?.realEstate.paymentsCurrent}
+            />
           </p>
           <p className="mt">
             Who makes payments:
@@ -1920,7 +2105,8 @@ export default function Divorce() {
               style={{ width: "47.5rem" }}
               name="whoMakesPayments"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.realEstate.whoMakesPayments} />
+              defaultValue={details.assets?.realEstate.whoMakesPayments}
+            />
           </p>
           <div>
             <br />
@@ -1933,7 +2119,8 @@ export default function Divorce() {
                     style={{ width: "18rem" }}
                     name="mortagePayments"
                     onChange={(e) => handleAssets(e)}
-                    defaultValue={details.assets?.realEstate.mortagePayments} />
+                    defaultValue={details.assets?.realEstate.mortagePayments}
+                  />
                 </p>
               </div>
               <div>
@@ -1944,7 +2131,8 @@ export default function Divorce() {
                     style={{ width: "16rem" }}
                     name="yearlyTaxes"
                     onChange={(e) => handleAssets(e)}
-                    defaultValue={details.assets?.realEstate.yearlyTaxes} />
+                    defaultValue={details.assets?.realEstate.yearlyTaxes}
+                  />
                 </p>
               </div>
             </p>
@@ -1956,7 +2144,8 @@ export default function Divorce() {
                 style={{ width: "33rem" }}
                 name="presentValue"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.realEstate.presentValue} />
+                defaultValue={details.assets?.realEstate.presentValue}
+              />
             </p>
             <p className="mt-3" style={{ marginLeft: "10rem" }}>
               (2) Mortgage balance as of:
@@ -1965,14 +2154,18 @@ export default function Divorce() {
                 style={{ width: "15rem" }}
                 name="mortgageBalanceAsOf"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.realEstate.mortgageBalance.asOf} />
+                defaultValue={details.assets?.realEstate.mortgageBalance.asOf}
+              />
               :
               <input
                 type="text"
                 style={{ width: "19.5rem" }}
                 name="mortgageBalance"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.realEstate.mortgageBalance.balance} />
+                defaultValue={
+                  details.assets?.realEstate.mortgageBalance.balance
+                }
+              />
             </p>
           </div>
         </div>
@@ -1986,7 +2179,8 @@ export default function Divorce() {
               style={{ width: "18rem" }}
               name="grossMonthlyIncome"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.realEstate.grossmonthlyIncome} />
+              defaultValue={details.assets?.realEstate.grossmonthlyIncome}
+            />
           </p>
           <p className="mt-2">
             Net monthly income:{" "}
@@ -1995,7 +2189,8 @@ export default function Divorce() {
               style={{ width: "17rem" }}
               name="netMonthlyIncome"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.realEstate.netMonthlyIncome} />
+              defaultValue={details.assets?.realEstate.netMonthlyIncome}
+            />
           </p>
         </div>
         <p className="mt-2">
@@ -2005,7 +2200,8 @@ export default function Divorce() {
             style={{ width: "33rem" }}
             name="incomeExpenseStatement"
             onChange={(e) => handleAssets(e)}
-            defaultValue={details.assets?.realEstate.incomeExpenseStatement} />
+            defaultValue={details.assets?.realEstate.incomeExpenseStatement}
+          />
         </p>
         <p className="mt-2" style={{ marginLeft: "20rem" }}>
           Estimated Net Value:${" "}
@@ -2014,7 +2210,8 @@ export default function Divorce() {
             style={{ width: "27.8rem" }}
             name="estimatedNetValue"
             onChange={(e) => handleAssets(e)}
-            defaultValue={details.assets?.realEstate.estimatedNetValue} />
+            defaultValue={details.assets?.realEstate.estimatedNetValue}
+          />
         </p>
 
         {/* yaha hu */}
@@ -2031,7 +2228,8 @@ export default function Divorce() {
               style={{ width: "47.4rem" }}
               name="yearAndModel"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[0].yearAndModel} />{" "}
+              defaultValue={details.assets?.automobiles[0].yearAndModel}
+            />{" "}
             Name
           </p>
           <p className="mt-1">
@@ -2041,7 +2239,8 @@ export default function Divorce() {
               style={{ width: "51rem" }}
               name="nameOnTitle"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[0].nameOnTitle!} />
+              defaultValue={details.assets?.automobiles[0].nameOnTitle!}
+            />
             Who has
           </p>
           <p className="mt-1">
@@ -2049,27 +2248,30 @@ export default function Divorce() {
             <input
               type="text"
               style={{ width: "54rem" }}
-                name="possession"
+              name="possession"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[0].possession} />
+              defaultValue={details.assets?.automobiles[0].possession}
+            />
           </p>
           <p className="mt-1">
             Who holds lien:{" "}
             <input
               type="text"
               style={{ width: "52rem" }}
-                name="whoHoldslien"
+              name="whoHoldslien"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[0].whoHoldslien} />
+              defaultValue={details.assets?.automobiles[0].whoHoldslien}
+            />
           </p>
           <p className="mt-1">
             Payments per month:{" "}
             <input
               type="text"
               style={{ width: "46rem" }}
-                name="paymentsPerMonth"
+              name="paymentsPerMonth"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[0].paymentsPerMonth} />{" "}
+              defaultValue={details.assets?.automobiles[0].paymentsPerMonth}
+            />{" "}
             Who
           </p>
           <p className="mt-1">
@@ -2077,9 +2279,10 @@ export default function Divorce() {
             <input
               type="text"
               style={{ width: "49rem" }}
-                name="whomakingpayments"
+              name="whomakingpayments"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[0].whomakingpayments} />
+              defaultValue={details.assets?.automobiles[0].whomakingpayments}
+            />
           </p>
           <br />
           <p className="mt-1" style={{ marginLeft: "10rem" }}>
@@ -2089,7 +2292,10 @@ export default function Divorce() {
               style={{ width: "33rem" }}
               name="approximatePresentValue"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[0].approximatePresentValue} />
+              defaultValue={
+                details.assets?.automobiles[0].approximatePresentValue
+              }
+            />
           </p>
         </div>
 
@@ -2100,14 +2306,16 @@ export default function Divorce() {
             style={{ width: "18rem" }}
             name="balanceOwingOnLien"
             onChange={(e) => handleAssets(e)}
-            defaultValue={details.assets?.automobiles[0].balanceOwingOnLien} />
+            defaultValue={details.assets?.automobiles[0].balanceOwingOnLien}
+          />
           :$
           <input
             type="text"
             style={{ width: "13.5rem" }}
             name="balanceOwingOnLien"
             onChange={(e) => handleAssets(e)}
-            defaultValue={details.assets?.automobiles[0].balanceOwingOnLien} />
+            defaultValue={details.assets?.automobiles[0].balanceOwingOnLien}
+          />
         </p>
         <p style={{ marginLeft: "20rem" }}>
           Estimated Net Value:${" "}
@@ -2116,7 +2324,8 @@ export default function Divorce() {
             style={{ width: "28rem" }}
             name="estimatedNetValue"
             onChange={(e) => handleAssets(e)}
-            defaultValue={details.assets?.automobiles[0].estimatedNetValue} />
+            defaultValue={details.assets?.automobiles[0].estimatedNetValue}
+          />
         </p>
 
         <div className="mt">
@@ -2127,7 +2336,8 @@ export default function Divorce() {
               style={{ width: "47.4rem" }}
               name="yearAndModel"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[1].yearAndModel} />{" "}
+              defaultValue={details.assets?.automobiles[1].yearAndModel}
+            />{" "}
             Name
           </p>
           <p className="mt-1">
@@ -2135,9 +2345,10 @@ export default function Divorce() {
             <input
               type="text"
               style={{ width: "50rem" }}
-                name="nameOnTitle"
+              name="nameOnTitle"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[1].nameOnTitle} />
+              defaultValue={details.assets?.automobiles[1].nameOnTitle}
+            />
             Who
           </p>
           <p className="mt-1">
@@ -2147,7 +2358,8 @@ export default function Divorce() {
               style={{ width: "52rem" }}
               name="possession"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[1].possession} />
+              defaultValue={details.assets?.automobiles[1].possession}
+            />
           </p>
           <p className="mt-1">
             Who holds lien:{" "}
@@ -2156,7 +2368,8 @@ export default function Divorce() {
               style={{ width: "52.5rem" }}
               name="whoHoldslien"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[1].whoHoldslien} />
+              defaultValue={details.assets?.automobiles[1].whoHoldslien}
+            />
           </p>
           <p className="mt-1">
             Payments per month:{" "}
@@ -2165,7 +2378,8 @@ export default function Divorce() {
               style={{ width: "49rem" }}
               name="paymentsPerMonth"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[1].paymentsPerMonth} />
+              defaultValue={details.assets?.automobiles[1].paymentsPerMonth}
+            />
           </p>
           <p className="mt-1">
             Who is making payments:{" "}
@@ -2174,7 +2388,8 @@ export default function Divorce() {
               style={{ width: "46.5rem" }}
               name="whomakingpayments"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[1].whomakingpayments} />
+              defaultValue={details.assets?.automobiles[1].whomakingpayments}
+            />
           </p>
           <br />
           <p className="mt-1" style={{ marginLeft: "10rem" }}>
@@ -2184,7 +2399,10 @@ export default function Divorce() {
               style={{ width: "33.5rem" }}
               name="approximatePresentValue"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.automobiles[1].approximatePresentValue} />
+              defaultValue={
+                details.assets?.automobiles[1].approximatePresentValue
+              }
+            />
           </p>
         </div>
         <p style={{ pageBreakAfter: "always" }}></p>
@@ -2197,14 +2415,16 @@ export default function Divorce() {
             style={{ width: "18rem" }}
             name="balanceOwingOnLien"
             onChange={(e) => handleAssets(e)}
-            defaultValue={details.assets?.automobiles[1].balanceOwingOnLien} />
+            defaultValue={details.assets?.automobiles[1].balanceOwingOnLien}
+          />
           :$
           <input
             type="text"
             style={{ width: "14.5rem" }}
             name="balanceOwingOnLien"
             onChange={(e) => handleAssets(e)}
-            defaultValue={details.assets?.automobiles[1].balanceOwingOnLien} />
+            defaultValue={details.assets?.automobiles[1].balanceOwingOnLien}
+          />
         </p>
         <p style={{ marginLeft: "20rem" }}>
           Estimated Net Value:${" "}
@@ -2213,7 +2433,8 @@ export default function Divorce() {
             style={{ width: "29rem" }}
             name="estimatedNetValue"
             onChange={(e) => handleAssets(e)}
-            defaultValue={details.assets?.automobiles[1].estimatedNetValue} />
+            defaultValue={details.assets?.automobiles[1].estimatedNetValue}
+          />
         </p>
 
         <div className="mt">
@@ -2230,31 +2451,35 @@ export default function Divorce() {
               style={{ width: "25rem" }}
               onChange={(e) => handleAssets(e)}
               name="amountTypeCompany"
-              defaultValue={details.assets?.stocksAndBonds[0].amountTypeCompany} />{" "}
+              defaultValue={details.assets?.stocksAndBonds[0].amountTypeCompany}
+            />{" "}
             Location:{" "}
             <input
               type="text"
               style={{ width: "16rem" }}
               name="location"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[0].location} />
+              defaultValue={details.assets?.stocksAndBonds[0].location}
+            />
           </p>
           <p className="mt-3">
             Named Owner:{" "}
             <input
               type="text"
               style={{ width: "20rem" }}
-                name="namedOwner"
+              name="namedOwner"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[0].namedOwner} />{" "}
+              defaultValue={details.assets?.stocksAndBonds[0].namedOwner}
+            />{" "}
             Value as of <input type="number" style={{ width: "10rem" }} />
             :$
             <input
               type="number"
               style={{ width: "14rem" }}
-                name="valueAsOf"
+              name="valueAsOf"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[0].valueAsOf} />
+              defaultValue={details.assets?.stocksAndBonds[0].valueAsOf}
+            />
           </p>
 
           <p className="mt">
@@ -2264,14 +2489,16 @@ export default function Divorce() {
               style={{ width: "20rem" }}
               name="amountTypeCompany"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[1].amountTypeCompany} />
+              defaultValue={details.assets?.stocksAndBonds[1].amountTypeCompany}
+            />
             Location:{" "}
             <input
               type="text"
               style={{ width: "22rem" }}
               name="location"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[1].location} />
+              defaultValue={details.assets?.stocksAndBonds[1].location}
+            />
           </p>
           <p className="mt-3">
             Named Owner:{" "}
@@ -2280,15 +2507,17 @@ export default function Divorce() {
               style={{ width: "16rem" }}
               name="namedOwner"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[1].namedOwner} />
+              defaultValue={details.assets?.stocksAndBonds[1].namedOwner}
+            />
             Value as of <input type="number" style={{ width: "14rem" }} />
             :${" "}
             <input
               type="text"
               style={{ width: "14rem" }}
-                name="valueAsOf"
+              name="valueAsOf"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[1].valueAsOf} />
+              defaultValue={details.assets?.stocksAndBonds[1].valueAsOf}
+            />
           </p>
 
           <p className="mt">
@@ -2296,49 +2525,55 @@ export default function Divorce() {
             <input
               type="text"
               style={{ width: "20rem" }}
-                name="amountTypeCompany"
-              onChange={(e) => handleAssets(e)}  
-              defaultValue={details.assets?.stocksAndBonds[2].amountTypeCompany} />
+              name="amountTypeCompany"
+              onChange={(e) => handleAssets(e)}
+              defaultValue={details.assets?.stocksAndBonds[2].amountTypeCompany}
+            />
             Location:{" "}
             <input
               type="text"
               style={{ width: "22rem" }}
               name="location"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[2].location} />
+              defaultValue={details.assets?.stocksAndBonds[2].location}
+            />
           </p>
           <p className="mt-3">
             Named Owner:{" "}
             <input
               type="text"
               style={{ width: "20rem" }}
-                name="namedOwner"
+              name="namedOwner"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[2].namedOwner} />
+              defaultValue={details.assets?.stocksAndBonds[2].namedOwner}
+            />
             Value as of <input type="number" style={{ width: "14rem" }} />
             :${" "}
             <input
               type="text"
               style={{ width: "10rem" }}
-                name="valueAsOf"
+              name="valueAsOf"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[2].valueAsOf} />
+              defaultValue={details.assets?.stocksAndBonds[2].valueAsOf}
+            />
           </p>
           <p className="mt">
             Amount,type,company:{" "}
             <input
               type="text"
               style={{ width: "20rem" }}
-                name="amountTypeCompany"
+              name="amountTypeCompany"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[3].amountTypeCompany} />
+              defaultValue={details.assets?.stocksAndBonds[3].amountTypeCompany}
+            />
             Location:{" "}
             <input
               type="text"
               style={{ width: "22rem" }}
-                name="location"
+              name="location"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[3].location} />
+              defaultValue={details.assets?.stocksAndBonds[3].location}
+            />
           </p>
 
           <p className="mt-3">
@@ -2346,17 +2581,19 @@ export default function Divorce() {
             <input
               type="text"
               style={{ width: "20rem" }}
-                name="namedOwner"
+              name="namedOwner"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[3].namedOwner} />
+              defaultValue={details.assets?.stocksAndBonds[3].namedOwner}
+            />
             Value as of <input type="number" style={{ width: "14rem" }} />
             :${" "}
             <input
               type="text"
               style={{ width: "10rem" }}
-                name="valueAsOf"
+              name="valueAsOf"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.stocksAndBonds[3].valueAsOf} />
+              defaultValue={details.assets?.stocksAndBonds[3].valueAsOf}
+            />
           </p>
 
           <div className="mt">
@@ -2370,7 +2607,8 @@ export default function Divorce() {
                 style={{ width: "55rem" }}
                 name="company"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.insurancePolicies[0].company} />
+                defaultValue={details.assets?.insurancePolicies[0].company}
+              />
             </p>
             <div className="mt-3" style={{ display: "flex" }}>
               <p>
@@ -2378,18 +2616,22 @@ export default function Divorce() {
                 <input
                   type="number"
                   style={{ width: "18rem" }}
-                    name="policyNumber"
+                  name="policyNumber"
                   onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.insurancePolicies[0].policyNumber} />
+                  defaultValue={
+                    details.assets?.insurancePolicies[0].policyNumber
+                  }
+                />
               </p>
               <p>
                 Face Amount:{" "}
                 <input
                   type="number"
                   style={{ width: "25.5rem" }}
-                    name="faceAmount"
+                  name="faceAmount"
                   onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.insurancePolicies[0].faceAmount} />
+                  defaultValue={details.assets?.insurancePolicies[0].faceAmount}
+                />
               </p>
             </div>
             <div className="mt-3" style={{ display: "flex" }}>
@@ -2398,18 +2640,20 @@ export default function Divorce() {
                 <input
                   type="text"
                   style={{ width: "18rem" }}
-                    name="premiums"
+                  name="premiums"
                   onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.insurancePolicies[0].premiums} />
+                  defaultValue={details.assets?.insurancePolicies[0].premiums}
+                />
               </p>
               <p>
                 per:{" "}
                 <input
                   type="number"
                   style={{ width: "34rem" }}
-                    name="per"
+                  name="per"
                   onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.insurancePolicies[0].per} />
+                  defaultValue={details.assets?.insurancePolicies[0].per}
+                />
               </p>
             </div>
 
@@ -2419,9 +2663,10 @@ export default function Divorce() {
                 <input
                   type="text"
                   style={{ width: "18rem" }}
-                    name="owner"
+                  name="owner"
                   onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.insurancePolicies[0].owner} />
+                  defaultValue={details.assets?.insurancePolicies[0].owner}
+                />
               </p>
               <p>
                 Beneficiary:{" "}
@@ -2430,15 +2675,21 @@ export default function Divorce() {
                   style={{ width: "31.5rem" }}
                   name="beneficiary"
                   onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.insurancePolicies[0].beneficiary} />
+                  defaultValue={
+                    details.assets?.insurancePolicies[0].beneficiary
+                  }
+                />
               </p>
             </div>
             <p className="mt-3">
-              Cash Value:$ <input type="text"
-                   name="cashValue"
-                  onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.insurancePolicies[0].cashValue}  
-                  style={{ width: "53.1rem" }} />
+              Cash Value:${" "}
+              <input
+                type="text"
+                name="cashValue"
+                onChange={(e) => handleAssets(e)}
+                defaultValue={details.assets?.insurancePolicies[0].cashValue}
+                style={{ width: "53.1rem" }}
+              />
             </p>
           </div>
         </div>
@@ -2449,7 +2700,8 @@ export default function Divorce() {
             style={{ width: "55rem" }}
             name="company"
             onChange={(e) => handleAssets(e)}
-            defaultValue={details.assets?.insurancePolicies[1].company} />
+            defaultValue={details.assets?.insurancePolicies[1].company}
+          />
         </p>
         <div className="mt-3" style={{ display: "flex" }}>
           <p>
@@ -2459,16 +2711,18 @@ export default function Divorce() {
               style={{ width: "18rem" }}
               name="policyNumber"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.insurancePolicies[1].policyNumber} />
+              defaultValue={details.assets?.insurancePolicies[1].policyNumber}
+            />
           </p>
           <p>
             Face Amount:{" "}
             <input
               type="number"
-              style={{ width: "25.5rem"}}
+              style={{ width: "25.5rem" }}
               name="faceAmount"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.insurancePolicies[1].faceAmount} />
+              defaultValue={details.assets?.insurancePolicies[1].faceAmount}
+            />
           </p>
         </div>
         <div className="mt-3" style={{ display: "flex" }}>
@@ -2479,16 +2733,18 @@ export default function Divorce() {
               style={{ width: "18rem" }}
               name="premiums"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.insurancePolicies[1].premiums} />
+              defaultValue={details.assets?.insurancePolicies[1].premiums}
+            />
           </p>
           <p>
             per:{" "}
             <input
               type="number"
               style={{ width: "34rem" }}
-                name="per"
+              name="per"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.insurancePolicies[1].per} />
+              defaultValue={details.assets?.insurancePolicies[1].per}
+            />
           </p>
         </div>
 
@@ -2500,24 +2756,29 @@ export default function Divorce() {
               style={{ width: "18rem" }}
               name="owner"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.insurancePolicies[1].owner} />
+              defaultValue={details.assets?.insurancePolicies[1].owner}
+            />
           </p>
           <p>
             Beneficiary:{" "}
             <input
               type="number"
               style={{ width: "31.5rem" }}
-                name="beneficiary"
+              name="beneficiary"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.insurancePolicies[1].beneficiary} />
+              defaultValue={details.assets?.insurancePolicies[1].beneficiary}
+            />
           </p>
         </div>
         <p className="mt-3">
-          Cash Value:$ <input type="text"
-         name="cashValue"
+          Cash Value:${" "}
+          <input
+            type="text"
+            name="cashValue"
             onChange={(e) => handleAssets(e)}
-            defaultValue={details.assets?.insurancePolicies[1].cashValue}    
-         style={{ width: "53.1rem" }} />
+            defaultValue={details.assets?.insurancePolicies[1].cashValue}
+            style={{ width: "53.1rem" }}
+          />
         </p>
 
         <div className="mt">
@@ -2531,7 +2792,8 @@ export default function Divorce() {
               style={{ width: "55.2rem" }}
               name="location"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.safeDepositBox.location} />
+              defaultValue={details.assets?.safeDepositBox.location}
+            />
           </p>
           <p className="mt-3">
             Names on box:{" "}
@@ -2540,16 +2802,18 @@ export default function Divorce() {
               style={{ width: "51.9rem" }}
               name="namesOnBox"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.safeDepositBox.namesOnBox} />
+              defaultValue={details.assets?.safeDepositBox.namesOnBox}
+            />
           </p>
           <p className="mt-3">
             Who has the key?{" "}
             <input
               type="text"
-              style={{ width:"50.2rem" }}
+              style={{ width: "50.2rem" }}
               name="whoHasTheKey"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.safeDepositBox.whoHasTheKey} />
+              defaultValue={details.assets?.safeDepositBox.whoHasTheKey}
+            />
           </p>
           <p className="mt-3">
             Contents:{" "}
@@ -2558,7 +2822,8 @@ export default function Divorce() {
               style={{ width: "55rem" }}
               name="contents"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.safeDepositBox.contents} />
+              defaultValue={details.assets?.safeDepositBox.contents}
+            />
           </p>
         </div>
 
@@ -2576,7 +2841,8 @@ export default function Divorce() {
               style={{ width: "20rem" }}
               name="location"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[0].location} />{" "}
+              defaultValue={details.assets?.bankAccounts[0].location}
+            />{" "}
             Balance as of <input type="text" style={{ width: "15rem" }} />
             :${" "}
             <input
@@ -2584,7 +2850,8 @@ export default function Divorce() {
               style={{ width: "10.5rem" }}
               name="balanceAsOf"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[0].balanceAsOf} />
+              defaultValue={details.assets?.bankAccounts[0].balanceAsOf}
+            />
           </p>
           <p className="mt-4">
             In Whose Name:{" "}
@@ -2593,7 +2860,8 @@ export default function Divorce() {
               style={{ width: "51rem" }}
               name="inWhoseName"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[0].inWhoseName} />
+              defaultValue={details.assets?.bankAccounts[0].inWhoseName}
+            />
           </p>
           <p className="mt-4">
             Who Has Passbook:{" "}
@@ -2602,7 +2870,8 @@ export default function Divorce() {
               style={{ width: "49rem" }}
               name="whoHasPassbook"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[0].WhohasPassbook} />
+              defaultValue={details.assets?.bankAccounts[0].WhohasPassbook}
+            />
           </p>
           <p className="mt-4">
             Type of Account:{" "}
@@ -2611,7 +2880,8 @@ export default function Divorce() {
               style={{ width: "51rem" }}
               name="typeOfAccount"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[0].typeOfAccount} />
+              defaultValue={details.assets?.bankAccounts[0].typeOfAccount}
+            />
           </p>
           <p className="mt-4">
             How Funds Acquired:{" "}
@@ -2620,7 +2890,8 @@ export default function Divorce() {
               style={{ width: "49rem" }}
               name="howFundsAcquired"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[0].howFundsAcquired} />
+              defaultValue={details.assets?.bankAccounts[0].howFundsAcquired}
+            />
           </p>
 
           <p className="mt">
@@ -2630,14 +2901,16 @@ export default function Divorce() {
               style={{ width: "15.5rem" }}
               name="location"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[1].location} />{" "}
+              defaultValue={details.assets?.bankAccounts[1].location}
+            />{" "}
             Balance as of{" "}
             <input
               type="text"
               style={{ width: "15rem" }}
               name="balanceAsOf"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[1].balanceAsOf} />
+              defaultValue={details.assets?.bankAccounts[1].balanceAsOf}
+            />
             :$ <input type="text" style={{ width: "15rem" }} />
           </p>
           <p className="mt-4">
@@ -2647,7 +2920,8 @@ export default function Divorce() {
               style={{ width: "51.2rem" }}
               name="inWhoseName"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[1].inWhoseName} />
+              defaultValue={details.assets?.bankAccounts[1].inWhoseName}
+            />
           </p>
           <p className="mt-4">
             Who Has Passbook:{" "}
@@ -2656,7 +2930,8 @@ export default function Divorce() {
               style={{ width: "40rem" }}
               name="whoHasPassbook"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[1].WhohasPassbook} />
+              defaultValue={details.assets?.bankAccounts[1].WhohasPassbook}
+            />
           </p>
           <p className="mt-4">
             Type of Account:{" "}
@@ -2665,7 +2940,8 @@ export default function Divorce() {
               style={{ width: "51.2rem" }}
               name="typeOfAccount"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[1].typeOfAccount} />
+              defaultValue={details.assets?.bankAccounts[1].typeOfAccount}
+            />
           </p>
           <p className="mt-4">
             How Funds Acquired:{" "}
@@ -2674,7 +2950,8 @@ export default function Divorce() {
               style={{ width: "48.5rem" }}
               name=" howFundsAcquired"
               onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.bankAccounts[1].howFundsAcquired} />
+              defaultValue={details.assets?.bankAccounts[1].howFundsAcquired}
+            />
           </p>
         </div>
 
@@ -2699,7 +2976,10 @@ export default function Divorce() {
                 style={{ width: "25rem" }}
                 name="description"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.otherAssetsInPossession[0].description} />{" "}
+                defaultValue={
+                  details.assets?.otherAssetsInPossession[0].description
+                }
+              />{" "}
               <br />
               <input
                 className="mt"
@@ -2707,7 +2987,10 @@ export default function Divorce() {
                 style={{ width: "25rem" }}
                 name="description"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.otherAssetsInPossession[0].description} />
+                defaultValue={
+                  details.assets?.otherAssetsInPossession[0].description
+                }
+              />
             </div>
             <div style={{ marginLeft: "50px" }}>
               <p style={{ textAlign: "center" }}>Estimated Value</p>
@@ -2716,7 +2999,10 @@ export default function Divorce() {
                 style={{ width: "25rem" }}
                 name="estimatedValue"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.otherAssetsInPossession[0].estimatedValue} />{" "}
+                defaultValue={
+                  details.assets?.otherAssetsInPossession[0].estimatedValue
+                }
+              />{" "}
               <br />
               <input
                 className="mt"
@@ -2724,7 +3010,10 @@ export default function Divorce() {
                 style={{ width: "25rem" }}
                 name="estimatedValue"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.otherAssetsInPossession[0].estimatedValue} />
+                defaultValue={
+                  details.assets?.otherAssetsInPossession[0].estimatedValue
+                }
+              />
             </div>
           </div>
         </div>
@@ -2750,7 +3039,10 @@ export default function Divorce() {
                 style={{ width: "25rem" }}
                 name="description"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.clientsNonMaritalProperty[0].description} />{" "}
+                defaultValue={
+                  details.assets?.clientsNonMaritalProperty[0].description
+                }
+              />{" "}
               <br />
               <input
                 className="mt"
@@ -2758,7 +3050,10 @@ export default function Divorce() {
                 style={{ width: "25rem" }}
                 name="description"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.clientsNonMaritalProperty[0].description} />
+                defaultValue={
+                  details.assets?.clientsNonMaritalProperty[0].description
+                }
+              />
             </div>
             <div style={{ marginLeft: "50px" }}>
               <p className="mt-4" style={{ textAlign: "center" }}>
@@ -2769,7 +3064,10 @@ export default function Divorce() {
                 style={{ width: "25rem" }}
                 name="estimatedValue"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.clientsNonMaritalProperty[0].estimatedValue} />{" "}
+                defaultValue={
+                  details.assets?.clientsNonMaritalProperty[0].estimatedValue
+                }
+              />{" "}
               <br />
               <input
                 className="mt"
@@ -2777,7 +3075,10 @@ export default function Divorce() {
                 name="estimatedValue"
                 style={{ width: "25rem" }}
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.clientsNonMaritalProperty[0].estimatedValue} />
+                defaultValue={
+                  details.assets?.clientsNonMaritalProperty[0].estimatedValue
+                }
+              />
             </div>
           </div>
         </div>
@@ -2801,7 +3102,8 @@ export default function Divorce() {
                 name="description"
                 style={{ width: "25rem" }}
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.pensionPlans[0].description} />{" "}
+                defaultValue={details.assets?.pensionPlans[0].description}
+              />{" "}
               <br />
               <input
                 className="mt"
@@ -2809,7 +3111,8 @@ export default function Divorce() {
                 name="description"
                 style={{ width: "25rem" }}
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.pensionPlans[0].description} />
+                defaultValue={details.assets?.pensionPlans[0].description}
+              />
             </div>
             <div style={{ marginLeft: "50px" }}>
               <input
@@ -2817,7 +3120,8 @@ export default function Divorce() {
                 style={{ width: "25rem" }}
                 name="estimatedValue"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.pensionPlans[0].estimatedValue} />{" "}
+                defaultValue={details.assets?.pensionPlans[0].estimatedValue}
+              />{" "}
               <br />
               <input
                 className="mt"
@@ -2825,7 +3129,8 @@ export default function Divorce() {
                 style={{ width: "25rem" }}
                 name="estimatedValue"
                 onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.pensionPlans[0].estimatedValue} />
+                defaultValue={details.assets?.pensionPlans[0].estimatedValue}
+              />
             </div>
           </div>
         </div>
@@ -2849,19 +3154,22 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.toWhomOwed} />
+                defaultValue={details.liabilities?.creditCardDebt.toWhomOwed}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.toWhomOwed} />
+                defaultValue={details.liabilities?.creditCardDebt.toWhomOwed}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.toWhomOwed} />
+                defaultValue={details.liabilities?.creditCardDebt.toWhomOwed}
+              />
             </div>
 
             <div>
@@ -2871,19 +3179,22 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.forWhat} />
+                defaultValue={details.liabilities?.creditCardDebt.forWhat}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.forWhat} />
+                defaultValue={details.liabilities?.creditCardDebt.forWhat}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.forWhat} />
+                defaultValue={details.liabilities?.creditCardDebt.forWhat}
+              />
             </div>
 
             <div>
@@ -2893,19 +3204,28 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.monthlyPayment} />
+                defaultValue={
+                  details.liabilities?.creditCardDebt.monthlyPayment
+                }
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.monthlyPayment} />
+                defaultValue={
+                  details.liabilities?.creditCardDebt.monthlyPayment
+                }
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.monthlyPayment} />
+                defaultValue={
+                  details.liabilities?.creditCardDebt.monthlyPayment
+                }
+              />
             </div>
 
             <div>
@@ -2915,19 +3235,22 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.balanceAsOf} />
+                defaultValue={details.liabilities?.creditCardDebt.balanceAsOf}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.balanceAsOf} />
+                defaultValue={details.liabilities?.creditCardDebt.balanceAsOf}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.creditCardDebt.balanceAsOf} />
+                defaultValue={details.liabilities?.creditCardDebt.balanceAsOf}
+              />
             </div>
           </div>
 
@@ -2945,19 +3268,22 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.toWhomOwed} />
+                defaultValue={details.liabilities?.personalLoans.toWhomOwed}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.toWhomOwed} />
+                defaultValue={details.liabilities?.personalLoans.toWhomOwed}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.toWhomOwed} />
+                defaultValue={details.liabilities?.personalLoans.toWhomOwed}
+              />
             </div>
 
             <div>
@@ -2967,19 +3293,22 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.forWhat} />
+                defaultValue={details.liabilities?.personalLoans.forWhat}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.forWhat} />
+                defaultValue={details.liabilities?.personalLoans.forWhat}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.forWhat} />
+                defaultValue={details.liabilities?.personalLoans.forWhat}
+              />
             </div>
 
             <div className="mt-2">
@@ -2989,19 +3318,22 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.monthlyPayment} />
+                defaultValue={details.liabilities?.personalLoans.monthlyPayment}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.monthlyPayment} />
+                defaultValue={details.liabilities?.personalLoans.monthlyPayment}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.monthlyPayment} />
+                defaultValue={details.liabilities?.personalLoans.monthlyPayment}
+              />
             </div>
 
             <div>
@@ -3011,19 +3343,22 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.balanceAsOf} />
+                defaultValue={details.liabilities?.personalLoans.balanceAsOf}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.balanceAsOf} />
+                defaultValue={details.liabilities?.personalLoans.balanceAsOf}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.personalLoans.balanceAsOf} />
+                defaultValue={details.liabilities?.personalLoans.balanceAsOf}
+              />
             </div>
           </div>
 
@@ -3041,19 +3376,22 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.toWhomOwed} />
+                defaultValue={details.liabilities?.automobileLoans.toWhomOwed}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.toWhomOwed} />
+                defaultValue={details.liabilities?.automobileLoans.toWhomOwed}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.toWhomOwed} />
+                defaultValue={details.liabilities?.automobileLoans.toWhomOwed}
+              />
             </div>
 
             <div>
@@ -3063,19 +3401,22 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.forWhat} />
+                defaultValue={details.liabilities?.automobileLoans.forWhat}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.forWhat} />
+                defaultValue={details.liabilities?.automobileLoans.forWhat}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.forWhat} />
+                defaultValue={details.liabilities?.automobileLoans.forWhat}
+              />
             </div>
 
             <div>
@@ -3085,19 +3426,28 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.monthlyPayment} />
+                defaultValue={
+                  details.liabilities?.automobileLoans.monthlyPayment
+                }
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.monthlyPayment} />
+                defaultValue={
+                  details.liabilities?.automobileLoans.monthlyPayment
+                }
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.monthlyPayment} />
+                defaultValue={
+                  details.liabilities?.automobileLoans.monthlyPayment
+                }
+              />
             </div>
 
             <div>
@@ -3107,19 +3457,22 @@ export default function Divorce() {
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.balanceAsOf} />
+                defaultValue={details.liabilities?.automobileLoans.balanceAsOf}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.balanceAsOf} />
+                defaultValue={details.liabilities?.automobileLoans.balanceAsOf}
+              />
               <input
                 type="text"
                 style={{ width: "13rem" }}
                 className="mt-[1rem]"
                 onChange={(e) => handleLiabilities(e)}
-                defaultValue={details.liabilities?.automobileLoans.balanceAsOf} />
+                defaultValue={details.liabilities?.automobileLoans.balanceAsOf}
+              />
             </div>
           </div>
         </div>
@@ -3137,19 +3490,22 @@ export default function Divorce() {
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.toWhomOwed} />
+              defaultValue={details.liabilities?.mortgageLoans.toWhomOwed}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.toWhomOwed} />
+              defaultValue={details.liabilities?.mortgageLoans.toWhomOwed}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.toWhomOwed} />
+              defaultValue={details.liabilities?.mortgageLoans.toWhomOwed}
+            />
           </div>
 
           <div>
@@ -3159,19 +3515,22 @@ export default function Divorce() {
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.forWhat} />
+              defaultValue={details.liabilities?.mortgageLoans.forWhat}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.forWhat} />
+              defaultValue={details.liabilities?.mortgageLoans.forWhat}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.forWhat} />
+              defaultValue={details.liabilities?.mortgageLoans.forWhat}
+            />
           </div>
 
           <div>
@@ -3181,19 +3540,22 @@ export default function Divorce() {
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.monthlyPayment} />
+              defaultValue={details.liabilities?.mortgageLoans.monthlyPayment}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.monthlyPayment} />
+              defaultValue={details.liabilities?.mortgageLoans.monthlyPayment}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.monthlyPayment} />
+              defaultValue={details.liabilities?.mortgageLoans.monthlyPayment}
+            />
           </div>
 
           <div>
@@ -3203,19 +3565,22 @@ export default function Divorce() {
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.balanceAsOf} />
+              defaultValue={details.liabilities?.mortgageLoans.balanceAsOf}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.balanceAsOf} />
+              defaultValue={details.liabilities?.mortgageLoans.balanceAsOf}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.mortgageLoans.balanceAsOf} />
+              defaultValue={details.liabilities?.mortgageLoans.balanceAsOf}
+            />
           </div>
         </div>
 
@@ -3233,19 +3598,22 @@ export default function Divorce() {
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.toWhomOwed} />
+              defaultValue={details.liabilities?.otherDebt.toWhomOwed}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.toWhomOwed} />
+              defaultValue={details.liabilities?.otherDebt.toWhomOwed}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.toWhomOwed} />
+              defaultValue={details.liabilities?.otherDebt.toWhomOwed}
+            />
           </div>
 
           <div>
@@ -3255,19 +3623,22 @@ export default function Divorce() {
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.forWhat} />
+              defaultValue={details.liabilities?.otherDebt.forWhat}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.forWhat} />
+              defaultValue={details.liabilities?.otherDebt.forWhat}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.forWhat} />
+              defaultValue={details.liabilities?.otherDebt.forWhat}
+            />
           </div>
 
           <div>
@@ -3277,19 +3648,22 @@ export default function Divorce() {
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.monthlyPayment} />
+              defaultValue={details.liabilities?.otherDebt.monthlyPayment}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.monthlyPayment} />
+              defaultValue={details.liabilities?.otherDebt.monthlyPayment}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.monthlyPayment} />
+              defaultValue={details.liabilities?.otherDebt.monthlyPayment}
+            />
           </div>
 
           <div>
@@ -3299,19 +3673,22 @@ export default function Divorce() {
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.balanceAsOf} />
+              defaultValue={details.liabilities?.otherDebt.balanceAsOf}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.balanceAsOf} />
+              defaultValue={details.liabilities?.otherDebt.balanceAsOf}
+            />
             <input
               type="text"
               style={{ width: "13rem" }}
               className="mt-[1rem]"
               onChange={(e) => handleLiabilities(e)}
-              defaultValue={details.liabilities?.otherDebt.balanceAsOf} />
+              defaultValue={details.liabilities?.otherDebt.balanceAsOf}
+            />
           </div>
         </div>
 
@@ -3320,12 +3697,14 @@ export default function Divorce() {
           <input
             type="text"
             style={{ width: "15rem" }}
-            defaultValue={details.liabilities?.total.husband} />{" "}
+            defaultValue={details.liabilities?.total.husband}
+          />{" "}
           <input
             type="text"
             style={{ width: "15rem", marginLeft: "40px" }}
             onChange={(e) => handleLiabilities(e)}
-            defaultValue={details.liabilities?.total.wife} />
+            defaultValue={details.liabilities?.total.wife}
+          />
         </p>
 
         <p style={{ pageBreakAfter: "always" }}></p>
@@ -3352,7 +3731,10 @@ export default function Divorce() {
               type="text"
               style={{ width: "20rem" }}
               onChange={(e) => handleIssuesToAddress(e)}
-              defaultValue={details.issuesToAddress?.maidenNameRestored.maidenName} />{" "}
+              defaultValue={
+                details.issuesToAddress?.maidenNameRestored.maidenName
+              }
+            />{" "}
           </p>
         </div>
         <br />
@@ -3400,7 +3782,8 @@ export default function Divorce() {
               type="text"
               style={{ width: "11rem" }}
               onChange={(e) => handleIssuesToAddress(e)}
-              defaultValue={details.issuesToAddress?.maintenance.howMuch} />
+              defaultValue={details.issuesToAddress?.maintenance.howMuch}
+            />
           </p>
         </div>
         <br />
@@ -3421,7 +3804,8 @@ export default function Divorce() {
               type="text"
               style={{ width: "11rem" }}
               onChange={(e) => handleIssuesToAddress(e)}
-              defaultValue={details.issuesToAddress?.childSupport.howMuch} />
+              defaultValue={details.issuesToAddress?.childSupport.howMuch}
+            />
             deviate from statute:Y/N
           </p>
         </div>
@@ -3512,7 +3896,8 @@ export default function Divorce() {
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[0]} />
+            defaultValue={details.settlementNotes[0]}
+          />
 
           <br />
           <input
@@ -3520,133 +3905,152 @@ export default function Divorce() {
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[1]} />
+            defaultValue={details.settlementNotes[1]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[2]} />
+            defaultValue={details.settlementNotes[2]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[3]} />
+            defaultValue={details.settlementNotes[3]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[4]} />
+            defaultValue={details.settlementNotes[4]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[5]} />
+            defaultValue={details.settlementNotes[5]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[6]} />
+            defaultValue={details.settlementNotes[6]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[7]} />
+            defaultValue={details.settlementNotes[7]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[8]} />
+            defaultValue={details.settlementNotes[8]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[9]} />
+            defaultValue={details.settlementNotes[9]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[10]} />
+            defaultValue={details.settlementNotes[10]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[11]} />
+            defaultValue={details.settlementNotes[11]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[12]} />
+            defaultValue={details.settlementNotes[12]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[13]} />
+            defaultValue={details.settlementNotes[13]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[14]} />
+            defaultValue={details.settlementNotes[14]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[15]} />
+            defaultValue={details.settlementNotes[15]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[16]} />
+            defaultValue={details.settlementNotes[16]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[17]} />
+            defaultValue={details.settlementNotes[17]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[18]} />
+            defaultValue={details.settlementNotes[18]}
+          />
           <br />
           <input
             type="text"
             style={{ width: "60rem" }}
             className="mt"
             onChange={(e) => handleSettlementNotes(e)}
-            defaultValue={details.settlementNotes[19]} />
+            defaultValue={details.settlementNotes[19]}
+          />
         </div>
         <div
           style={{

@@ -142,7 +142,7 @@ export async function deleteURL(req: Request, res: Response) {
   const url = req.query.url as string;
   const session = req.query.session as string;
   const uid = req.query.uid as string;
-  const token = req.query.token as string;
+  const token = req.query.access_token as string;
 
   try {
     if (url === undefined) {
@@ -267,5 +267,41 @@ export async function getURLs(req: Request, res: Response) {
     return res.status(200).json({ urls: Response });
   } catch (error) {
     console.log(error);
+  }
+}
+
+
+export async function submitURL(req: Request, res: Response) {
+  const url = req.query.url as string;
+
+  try {
+    if (url === undefined) {
+      return res.status(400).json({ message: "Url required" });
+    }
+    // create connection
+    const connect: ConnectionRes = await connectToCluster();
+    if (typeof connect.conn === "string") {
+      return res.status(500).json(connect);
+    }
+
+    const conn = connect.conn;
+    const db: Db = conn.db("client");
+    const urlCollection: Collection = db.collection("urls");
+
+    await urlCollection.updateOne(
+      { url: url },
+      {
+        $set: {
+          data: req.body,
+          
+        },
+      }
+    );
+
+    closeConn(conn);
+    return res.status(200).json({ message: "Url submitted" });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: "Internal server error" });  
   }
 }
