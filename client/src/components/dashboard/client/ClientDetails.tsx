@@ -10,6 +10,7 @@ import FormInterface from "../../../interface/Form";
 import URLInterface from "../../../interface/URL";
 import UserInterface from "../../../interface/NewUser";
 import ClientInterface from "../../../interface/NewClient";
+import { IoMdAdd } from "react-icons/io";
 
 export default function ClientDetails() {
   const { client_id } = useParams();
@@ -43,6 +44,32 @@ export default function ClientDetails() {
       setData(data);
     } catch (err) {}
   };
+
+  async function createUrl() {
+    try {
+      const res = await axios.post(
+        API_URL +
+          "/url/generate?" +
+          new URLSearchParams({
+            uid: currentUser.uid,
+            session: currentUser.session,
+            access_token: currentUser.access_token,
+          }),
+        {
+          client_id: client_id || "",
+        }
+      ).then((res) => res.data).catch((err) => {
+        alert(err.response.data.message);
+        return;
+      } );
+      if (res.message === "Url generated") {
+        alert("URL created");
+        getClientAllDetails.current();
+      }
+    } catch (err: any) {
+      alert(err.response.data.message);
+    }
+  }
 
   React.useEffect(() => {
     getClientAllDetails.current();
@@ -92,7 +119,7 @@ export default function ClientDetails() {
               <div className="flex flex-row">
                 <p className="text-lg font-bold">Lawyer ID:</p>
                 <a
-                className="text-blue-500 hover:underline"
+                  className="text-blue-500 hover:underline"
                   href={
                     "/dashboard/lawyer/" + data.client.lawyer_id + "/details"
                   }
@@ -128,7 +155,13 @@ export default function ClientDetails() {
                   />
                 ))
               ) : (
-                <p>No URL Found</p>
+                <div
+                  className="bg-[#002F53] text-white text-[16px] leading-[20px] rounded-md mt-4 flex justify-center items-center mb-2 w-fit px-4 py-2 cursor-pointer"
+                  onClick={createUrl}
+                >
+                  <IoMdAdd className="mr-2 text-[20px] " />
+                  Create
+                </div>
               )}
             </div>
           </div>

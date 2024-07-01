@@ -5,6 +5,7 @@ import {
   deleteURL,
   generateURL,
   getURLs,
+  submitURL,
   validateURL,
 } from "../controller/generate-url";
 import {
@@ -50,8 +51,10 @@ router.post("/api/client/create", createClient);
 
 // urls
 router.post("/api/url/generate", generateURL);
+router.put("/api/url/submit", submitURL);
 router.get("/api/url/validate", validateURL);
 router.delete("/api/url/delete", deleteURL);
+
 
 // forms
 router.post("/api/form/generate", createForm);

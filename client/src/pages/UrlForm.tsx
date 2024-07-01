@@ -70,7 +70,7 @@ export default function UrlForm() {
           </div>
         </div>
       ) : (
-        <Divorce />
+        <Divorce url={url || ""} />
       )}
     </>
   );
