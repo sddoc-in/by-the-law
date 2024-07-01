@@ -161,9 +161,12 @@ export default function () {
 
                 <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       <form>
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: '20px'}}>
           <h3>1. Employment</h3>
           <p style={{ marginLeft: '20px' }}>(Give information on your current job or, if you're unemployed, your most recent job.)</p>
+          
+          <div style={{display:'flex'}}>
+          <div style={{width:'12%'}}><b>Attach copies of your pay stubs for last two months (black out Social Security numbers). </b></div>
           <div style={{ marginLeft: '40px' }}>
             <p>Attach copies of your pay stubs for last two months (black out Social Security numbers).</p>
             <div>
@@ -191,6 +194,8 @@ export default function () {
               <label>h. I get paid $ <input type="text" name="grossIncome" style={{ width: '10%', backgroundColor: 'rgb(225, 243, 243)' }} /> gross (before taxes) <input type="checkbox" name="highSchoolCompleted" /> per month<input type="checkbox" name="highSchoolCompleted" />per week  <input type="checkbox" name="highSchoolCompleted" /> per hour.</label>
             </div>
           </div>
+          </div>
+          
           <p style={{ marginLeft: '20px', fontWeight: 'bold' }}>
             (If you have more than one job, attach an 8 1/2-by-11-inch sheet of paper and list the same information as above for your other jobs. Write "Question 1—Other Jobs" at the top.)
           </p>
@@ -1015,7 +1020,7 @@ export default function () {
                         <div> www.courtinfo.ca.gov</div>
                     </div>
                     <div style={{ listStyle: "none", fontWeight: "bold",fontSize:'12px' }}>
-                    <li>Page 3 of 4</li>
+                    <li>Page 4 of 4</li>
                     </div>
                 </div>
                 <br />
