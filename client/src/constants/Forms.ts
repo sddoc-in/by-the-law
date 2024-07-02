@@ -127,9 +127,44 @@ export const Forms: SelectArray[] = [
     value: "fl182",
   },
   {
+    id: "fl182",
+    name: "fl182",
+    value: "fl182",
+  },
+  {
     id: "fl190",
     name: "fl190",
     value: "fl190",
+  },
+  {
+    id: "fl191",
+    name: "fl191",
+    value: "fl191",
+  },
+  {
+    id: "fl192",
+    name: "fl192",
+    value: "fl192",
+  },
+  {
+    id: "fl330",
+    name: "fl330",
+    value: "fl330",
+  },
+  {
+    id: "fl335",
+    name: "fl335",
+    value: "fl335",
+  },
+  {
+    id: "fl800",
+    name: "fl800",
+    value: "fl800",
+  },
+  {
+    id: "fl1034",
+    name: "fl1034",
+    value: "fl1034",
   },
   {
     id: "fl191",
@@ -171,6 +206,21 @@ export const Forms: SelectArray[] = [
   //   name: "fw001",
   //   value: "fw001",
   // },
+  {
+    id: "fw001info",
+    name: "fw001info",
+    value: "fw001info",
+  },
+  {
+    id: "fw002",
+    name: "fw002",
+    value: "fw002",
+  },
+  {
+    id: "petition",
+    name: "petition",
+    value: "petition",
+  },
   {
     id: "fw001info",
     name: "fw001info",
