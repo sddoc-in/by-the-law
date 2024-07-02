@@ -10,5 +10,5 @@ export default interface FormInterface {
     progress?: number;
     submittedDate?: string;
     client_name?: string;
-    client_username?: string;
+    client_username: string;
 }

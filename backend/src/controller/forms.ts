@@ -254,6 +254,7 @@ export async function getAllForm(req: Request, res: Response) {
         let client = clients.find(
           (client) => client.client_id === form.client_id
         );
+        if (!client) return;
         return {
           form_id: form.form_id,
           name: form.name,
@@ -289,7 +290,7 @@ export async function getAllForm(req: Request, res: Response) {
     ).toArray();
 
 
-    if(forms.length === 0){
+    if (forms.length === 0) {
       return res.status(200).json([]);
     }
 
@@ -299,6 +300,7 @@ export async function getAllForm(req: Request, res: Response) {
       let client = await ClientCollection.findOne({
         client_id: forms[i].client_id,
       });
+      if (!client) continue;
       formData.push({
         form_id: forms[i].form_id,
         name: forms[i].name,
@@ -320,7 +322,7 @@ export async function getAllForm(req: Request, res: Response) {
   }
 }
 
-export async function getFormDataDetails(req:Request,res:Response){
+export async function getFormDataDetails(req: Request, res: Response) {
   const form_id = req.query.form_id as string;
   const client_id = req.query.client_id as string;
   const form_name = req.query.form_name as string;
@@ -348,7 +350,7 @@ export async function getFormDataDetails(req:Request,res:Response){
     const ClientFormCollection: Collection = db.collection("client-forms");
 
     // check if form exists
-    let form = await ClientFormCollection.findOne({ form_id: form_id, client_id: client_id, name: form_name},{
+    let form = await ClientFormCollection.findOne({ form_id: form_id, client_id: client_id, name: form_name }, {
       projection: {
         _id: 0,
         data: 1

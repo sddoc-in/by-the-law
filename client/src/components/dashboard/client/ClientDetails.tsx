@@ -11,16 +11,23 @@ import URLInterface from "../../../interface/URL";
 import UserInterface from "../../../interface/NewUser";
 import ClientInterface from "../../../interface/NewClient";
 import { IoMdAdd } from "react-icons/io";
+import CreateuserPopup from "../forms/CreateuserPopup";
 
 export default function ClientDetails() {
   const { client_id } = useParams();
   const { user: currentUser } = React.useContext(AppContext);
-  const [data, setData] = React.useState<{
+    const [isPopupOpen, setIsPopupOpen] = React.useState(false);
+    const [data, setData] = React.useState<{
     client: ClientInterface;
     lawyer: UserInterface;
     urls: URLInterface[];
     forms: FormInterface[];
   } | null>(null);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
   const getClientAllDetails = React.useRef(() => {});
 
   getClientAllDetails.current = async () => {
@@ -168,6 +175,13 @@ export default function ClientDetails() {
 
           <div className="flex flex-col mt-5">
             <h1 className="text-2xl font-bold">Form Details</h1>
+            <div
+        className="bg-[#002F53] text-white text-[16px] leading-[20px] rounded-md mt-4 flex justify-center items-center mb-2 w-fit px-4 py-2 cursor-pointer"
+        onClick={openPopup}
+      >
+        <IoMdAdd className="mr-2 text-[20px] " />
+        Create
+      </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-2 w-[95%] mx-auto">
               {data.forms.length > 0 ? (
                 data.forms.map((url: any, index: number) => (
@@ -184,6 +198,11 @@ export default function ClientDetails() {
           </div>
         </div>
       )}
+      <CreateuserPopup
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+        clients={[data?.client || {} as ClientInterface] }
+      />
     </>
   );
 }

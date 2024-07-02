@@ -17,6 +17,20 @@ import FL120 from "../../pdf/fl120/fl120";
 import FL142 from "../../pdf/fl142/fl142";
 import FL145 from "../../pdf/fl145/fl145";
 import FL190 from "../../pdf/fl190/fl190";
+import Fl155 from "../../pdf/fl155/Fl155";
+import Fl157 from "../../pdf/fl157/Fl157";
+import Fl158 from "../../pdf/fl158/Fl158";
+import FL160 from "../../pdf/fl160/Fl160";
+import Fl170 from "../../pdf/fl170/Fl170";
+import Fl182 from "../../pdf/fl182/Fl182";
+import Fl191 from "../../pdf/fl191/Fl-191";
+import FL330 from "../../pdf/Fl330/FL330";
+import FL335 from "../../pdf/Fl335/FL335";
+import FL800 from "../../pdf/Fl800/FL800";
+import FW001Info from "../../pdf/Fw001info/FW001info";
+import Fw002 from "../../pdf/Fw002/Fw002";
+import Petition from "../../pdf/petition/Petition";
+import Loading from "../../loader/Loading";
 
 export default function Form() {
   const { client_id, form_id, form_name } = useParams();
@@ -49,18 +63,14 @@ export default function Form() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   switch (form_name) {
-    case "1034":
-      return <FL1034 />;
     case "fl100":
       return <SU100 />;
     case "fl105":
       return <FL105 />;
-    case "fl107info":
-      return <div>fl107info</div>;
     case "fl110":
       return <SU110 />;
     case "fl115":
@@ -83,8 +93,41 @@ export default function Form() {
       return <FL144 />;
     case "fl145":
       return <FL145 />;
+    case "fl155":
+      return <Fl155 />;
+    case "fl157":
+      return <Fl157 />;
+    case "fl158":
+      return <Fl158 />;
+    case "fl160":
+      return <FL160 />;
+    case "fl170":
+      return <Fl170 />;
+    case "fl182":
+      return <Fl182 />;
     case "fl190":
       return <FL190 />;
+    case "fl191":
+      return <Fl191 />;
+    // case "fl192":
+    //   return <FL192 />;
+    case "fl330":
+      return <FL330 />;
+    case "fl335":
+      return <FL335 />;
+    case "fl800":
+      return <FL800 />;
+    case "1034":
+      return <FL1034 />;
+    case "1034":
+      return <FL1034 />;
+    case "fw001info":
+      return <FW001Info />;
+    case "fw002":
+      return <Fw002 />;
+    case "petition":
+      return <Petition />;
+
     default:
       return <div>Invalid Form</div>;
   }

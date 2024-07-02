@@ -10,7 +10,9 @@ export default function Divorce({ url }: { url: string }) {
     referredBy: "",
     date: "",
     client: {
-      name: "",
+      first: "",
+      maiden: "",
+      last: "",
       address: "",
       phone: {
         home: "",
@@ -56,7 +58,9 @@ export default function Divorce({ url }: { url: string }) {
       healthStatus: "",
     },
     spouse: {
-      name: "",
+      first: "",
+      maiden: "",
+      last: "",
       address: "",
       phone: {
         home: "",
@@ -79,7 +83,7 @@ export default function Divorce({ url }: { url: string }) {
         type: {
           annual: "",
           monthly: "",
-          hourly: "",
+          weekly: "",
         },
       },
       socialSecurityNo: "",
@@ -87,9 +91,18 @@ export default function Divorce({ url }: { url: string }) {
       dateOfBirth: "",
       age: "",
       educationOrTraining: {
-        highSchool: { details: "" },
-        college: { details: "" },
-        graduateSchool: { details: "" },
+        highSchool: {
+          contain: false,
+          details: "",
+        },
+        college: {
+          contain: false,
+          details: "",
+        },
+        graduateSchool: {
+          contain: false,
+          details: "",
+        },
       },
       healthStatus: "",
     },
@@ -391,7 +404,6 @@ export default function Divorce({ url }: { url: string }) {
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>
   ) {
-    console.log(e.target.value, e.target.name);
     setDetails({
       ...details,
       [e.target.name]: e.target.value,
@@ -399,7 +411,6 @@ export default function Divorce({ url }: { url: string }) {
   }
 
   function onChangePhone(type: Type, e: React.ChangeEvent<HTMLInputElement>) {
-    console.log(e.target.value);
     setDetails({
       ...details,
       [type]: {
@@ -526,14 +537,11 @@ export default function Divorce({ url }: { url: string }) {
     });
   }
 
-  function handlePreviousMarriage(
-    type: Type,
-    e: React.ChangeEvent<HTMLInputElement>
-  ) {
+  function handlePreviousMarriage(e: React.ChangeEvent<HTMLInputElement>) {
     setDetails({
       ...details,
-      [type]: {
-        ...details[type],
+      previousMarriage: {
+        ...details.previousMarriage,
         [e.target.name]: e.target.value,
       },
     });
@@ -631,12 +639,12 @@ export default function Divorce({ url }: { url: string }) {
   }
 
   // autosaver
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      handleSubmit();
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  // React.useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     handleSubmit();
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <>
@@ -657,7 +665,6 @@ export default function Divorce({ url }: { url: string }) {
             display: "flex",
             justifyContent: "center",
             marginTop: "25rem",
-            scale: "1.5",
           }}
         >
           <img src="/law.png" alt="ByTheLaw" />
@@ -700,437 +707,466 @@ export default function Divorce({ url }: { url: string }) {
 
         <hr
           style={{
-            border: " 1.5px solid black",
+            border: "1.5px solid black",
             marginTop: " 4rem",
             marginBottom: "4rem",
           }}
         />
         <br />
-
-        <div className="font-s">
-          <p>
-            <b>Client’s Name:</b>{" "}
-            <span style={{ marginLeft: " 4.7rem" }}>
-              <input
-                style={{ width: "43rem" }}
-                type="text"
-                name="name"
-                onChange={(e) => handleClient(Type.client, e)}
-                defaultValue={details.client?.name}
-              />
-            </span>
-          </p>
-          <div
-            style={{
-              display: " flex",
-              justifyContent: " space-between",
-              marginLeft: " 18rem",
-              width: " 50%",
-            }}
-          >
-            <div>(First)</div>
-            <div>(Maiden)</div>
-            <div>(Last)</div>
-          </div>
-        </div>
-        <div className="font-s">
-          <p>
-            Address:
-            <span style={{ marginLeft: " 8.4rem" }}>
-              <input
-                style={{ width: "43rem" }}
-                onChange={(e) => handleClient(Type.client, e)}
-                defaultValue={details.client?.address}
-                className="ml-[14px]"
-                type="text"
-                name="address"
-              />
-            </span>
-          </p>
-        </div>
-        <br />
-
-        <div
-          className="font-s"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "50rem",
-          }}
-        >
-          <div>Phone:</div>
-          <div style={{ marginRight: "70px", marginLeft: "30px" }}>
-            <div>
-              Home :{" "}
-              <input
-                name="home"
-                type="text"
-                style={{ width: "10rem" }}
-                onChange={(e) => onChangePhone(Type.client, e)}
-                defaultValue={details.client?.phone?.home}
-              />
-            </div>
-            <div style={{ marginLeft: "5px" }}>
-              Cell :{" "}
-              <input
-                name="cell"
-                type="text"
-                style={{ width: "11rem" }}
-                onChange={(e) => onChangePhone(Type.client, e)}
-                defaultValue={details.client?.phone?.cell}
-              />
+        {/* client */}
+        <div>
+          <div className="font-s">
+            <div className="flex justify-between w-full">
+              <b className="w-fit">Client’s Name:</b>{" "}
+              <div className="flex justify-between items-center">
+                <div className="flex justify-center items-center flex-col mx-1">
+                  <input
+                    type="text"
+                    name="first"
+                    onChange={(e) => handleClient(Type.client, e)}
+                    defaultValue={details.client?.first}
+                  />
+                  <div>(First)</div>
+                </div>
+                <div className="flex justify-center items-center flex-col mx-1">
+                  <input
+                    type="text"
+                    name="maiden"
+                    onChange={(e) => handleClient(Type.client, e)}
+                    defaultValue={details.client?.maiden}
+                  />
+                  <div>(Maiden)</div>
+                </div>
+                <div className="flex justify-center items-center flex-col mx-1">
+                  <input
+                    type="text"
+                    name="last"
+                    onChange={(e) => handleClient(Type.client, e)}
+                    defaultValue={details.client?.last}
+                  />
+                  <div>(Last)</div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div style={{}}>
-            <div>
-              Work :{" "}
-              <input
-                name="work"
-                type="text"
-                style={{ width: "10rem" }}
-                onChange={(e) => onChangePhone(Type.client, e)}
-                defaultValue={details.client?.phone?.work}
-              />
-            </div>
-            <div>
-              fax :{" "}
-              <input
-                type="text"
-                name="fax"
-                style={{ width: "11.1rem" }}
-                onChange={(e) => onChangePhone(Type.client, e)}
-                defaultValue={details.client?.phone?.fax}
-              />
-            </div>
-          </div>
-        </div>
-        <br />
-
-        <div className="font-s mt">
-          Email Address:{" "}
-          <input
-            name="emailAddress"
-            style={{ width: "57rem" }}
-            type="text"
-            onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.emailAddress}
-          />
-        </div>
-        <br />
-        <br />
-        <div className="font-s ">
-          Address Where Correspondence Should Be Sent:{" "}
-          <input
-            className="ml"
-            type="checkbox"
-            name=""
-            id=""
-            // onChange={(e)=>handleClient(e)} defaultChecked={details.client?'On':'Off'}
-            onChange={(e) => handleCorrespondenceAddress(Type.client, e)}
-            defaultChecked={details.client?.correspondenceAddress?.home.contain}
-          />{" "}
-          Home{" "}
-          <input
-            className="ml"
-            type="checkbox"
-            name=""
-            id=""
-            onChange={(e) => handleCorrespondenceAddress(Type.client, e)}
-            defaultChecked={details.client?.correspondenceAddress?.work.contain}
-          />{" "}
-          Work
-        </div>
-        <br />
-        <br />
-
-        <div className="font-s ">
-          Emloyer:{" "}
-          <input
-            style={{ width: "60.5rem" }}
-            type="text"
-            onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.employer}
-          />
-        </div>
-        <br />
-        <br />
-
-        <div className="font-s">
-          Position:{" "}
-          <input
-            style={{ width: "25rem" }}
-            type="text"
-            name="position"
-            onChange={(e) => handleClient(Type.client, e)}
-          />{" "}
-          Years Employed:{" "}
-          <input
-            style={{ width: "25.8rem" }}
-            type="text"
-            name="yearsEmployed"
-            onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.position}
-          />
-        </div>
-        <br />
-        <br />
-
-        <div className="font-s">
-          Salary:{" "}
-          <span style={{ marginLeft: "4rem" }}>
-            Gross:{" "}
-            <input
-              type="text"
-              style={{ width: "16.7rem" }}
-              onChange={(e) => handleSalary(Type.client, e)}
-              defaultValue={details.client?.salary.gross}
-            />
-          </span>{" "}
-          <span className="ml">
-            Net:
-            <input
-              type="text"
-              style={{ width: "18rem" }}
-              onChange={(e) => handleSalary(Type.client, e)}
-              defaultValue={details.client?.salary.net}
-            />
-          </span>
-          <span>
-            <input
-              type="checkbox"
-              name=""
-              id=""
-              className="mr-1"
-              onChange={(e) => handleSalaryType(Type.client, e)}
-              defaultChecked={details.client?.salary.type.annual}
-            />
-            annual/
-            <input
-              type="checkbox"
-              name=""
-              id=""
-              className="mr-1"
-              onChange={(e) => handleSalaryType(Type.client, e)}
-              defaultChecked={details.client?.salary.type.monthly}
-            />
-            monthly/
-            <input
-              type="checkbox"
-              name=""
-              id=""
-              className="mr-1"
-              onChange={(e) => handleSalaryType(Type.client, e)}
-              defaultChecked={details.client?.salary.type.hourly}
-            />
-            hourly
-          </span>
-        </div>
-        <br />
-        <br />
-
-        <div className="font-s">
-          Social Security No.
-          <input
-            type="text "
-            style={{ width: "22rem" }}
-            className="18rem"
-            name="socialSecurityNo"
-            onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.socialSecurityNo}
-          />
-          Place of Birth:{" "}
-          <input
-            type="text"
-            name="placeOfBirth"
-            style={{ width: "25.7rem" }}
-            className="18rem"
-            onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.placeOfBirth}
-          />
-        </div>
-        <br />
-        <br />
-
-        <div className="font-s">
-          DOB:{" "}
-          <input
-            type="text"
-            style={{ width: "24rem" }}
-            name="dateOfBirth"
-            onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.dateOfBirth}
-          />{" "}
-          AGE:{" "}
-          <input
-            type="text"
-            name="age"
-            style={{ width: "35.8rem" }}
-            onChange={(e) => handleClient(Type.client, e)}
-            defaultValue={details.client?.age}
-          />
-        </div>
-        <br />
-        <br />
-
-        <div className="font-s" style={{ display: " flex" }}>
-          <div>Education or Training:</div>
-          <div className="ml">
-            <input
-              type="checkbox"
-              name="contain"
-              id=""
-              onChange={(e) => handleHighSchool(Type.client, e)}
-              defaultChecked={
-                details.client?.educationOrTraining.highSchool.contain
-              }
-            />
-            High School
-            <input
-              type="text"
-              name="details"
-              style={{ width: "44.8rem" }}
-              onChange={(e) => handleHighSchool(Type.client, e)}
-              defaultValue={
-                details.client?.educationOrTraining.highSchool.details
-              }
-            />
-            <br />
-            <input
-              type="checkbox"
-              name="contain"
-              id=""
-              onChange={(e) => handleCollege(Type.client, e)}
-              defaultChecked={
-                details.client?.educationOrTraining.college.contain
-              }
-            />
-            College
-            <input
-              type="text"
-              name="details"
-              style={{ width: "47.1rem", marginTop: "20px" }}
-              onChange={(e) => handleCollege(Type.client, e)}
-              defaultValue={details.client?.educationOrTraining.college.details}
-            />
-            <br />
-            <input
-              type="checkbox"
-              name="contain"
-              id=""
-              onChange={(e) => handleGraduateSchool(Type.client, e)}
-              defaultChecked={
-                details.client?.educationOrTraining.highSchool.contain
-              }
-            />
-            Graduate School
-            <input
-              type="text"
-              name="details"
-              style={{ width: "42rem", marginTop: "20px" }}
-              onChange={(e) => handleClient(Type.client, e)}
-              defaultValue={
-                details.client?.educationOrTraining.graduateSchool.details
-              }
-            />
-          </div>
-        </div>
-        <br />
-        <br />
-
-        <div className="font-s">Status of</div>
-        <div className="font-s" style={{ marginTop: "0.5rem" }}>
-          Health and Treating Physician{" "}
-          <input
-            type="text"
-            style={{ width: "49rem" }}
-            onChange={(e) => {
-              setDetails({
-                ...details,
-                client: {
-                  ...details.client,
-                  healthStatus: e.target.value,
-                },
-              });
-            }}
-            defaultValue={details.client?.healthStatus}
-          />
-        </div>
-
-        <hr style={{ border: "1.5px solid black", marginTop: "4rem" }} />
-        <br />
-
-        <p style={{ pageBreakAfter: "always" }}></p>
-        <p style={{ pageBreakBefore: "always" }}></p>
-
-        <div style={{ marginTop: "35px" }}>
-          <p>
-            <b>Spouse’s Name:</b>{" "}
-            <span style={{ marginLeft: " 4.7rem" }}>
-              <input
-                style={{ width: "51.6rem" }}
-                type="text"
-                onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.name}
-              />
-            </span>
-          </p>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: " space-between",
-              marginLeft: "18rem",
-              width: "62%",
-            }}
-          >
-            <div>(Last)</div>
-            <div>(First)</div>
-            <div>(Maiden)</div>
-          </div>
-
-          <div>
+          <div className="font-s">
             <p>
-              {" "}
               Address:
-              <span style={{ marginLeft: "8.4rem" }}>
+              <span style={{ marginLeft: " 8.4rem" }}>
                 <input
-                  style={{ width: "53rem" }}
+                  style={{ width: "43rem" }}
+                  onChange={(e) => handleClient(Type.client, e)}
+                  defaultValue={details.client?.address}
+                  className="ml-[14px]"
                   type="text"
-                  onChange={(e) => handleClient(Type.spuse, e)}
-                  defaultValue={details.spouse?.address}
+                  name="address"
                 />
               </span>
             </p>
-            <div style={{ marginLeft: " 18rem" }}>(if different)</div>
           </div>
+          <br />
 
           <div
             className="font-s"
             style={{
               display: "flex",
               justifyContent: "space-between",
-              width: "50.2rem",
+              width: "50rem",
             }}
           >
-            <div className="4">Phone:</div>
+            <div>Phone:</div>
             <div style={{ marginRight: "70px", marginLeft: "30px" }}>
               <div>
                 Home :{" "}
                 <input
-                  type="text"
                   name="home"
+                  type="text"
                   style={{ width: "10rem" }}
-                  onChange={(e) => onChangePhone(Type.spuse, e)}
+                  onChange={(e) => onChangePhone(Type.client, e)}
+                  defaultValue={details.client?.phone?.home}
+                />
+              </div>
+              <div style={{ marginLeft: "5px" }}>
+                Cell :{" "}
+                <input
+                  name="cell"
+                  type="text"
+                  style={{ width: "11rem" }}
+                  onChange={(e) => onChangePhone(Type.client, e)}
+                  defaultValue={details.client?.phone?.cell}
+                />
+              </div>
+            </div>
+
+            <div style={{}}>
+              <div>
+                Work :{" "}
+                <input
+                  name="work"
+                  type="text"
+                  style={{ width: "10rem" }}
+                  onChange={(e) => onChangePhone(Type.client, e)}
+                  defaultValue={details.client?.phone?.work}
+                />
+              </div>
+              <div>
+                fax :{" "}
+                <input
+                  type="text"
+                  name="fax"
+                  style={{ width: "11.1rem" }}
+                  onChange={(e) => onChangePhone(Type.client, e)}
+                  defaultValue={details.client?.phone?.fax}
+                />
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div className="font-s mt">
+            Email Address:{" "}
+            <input
+              name="emailAddress"
+              style={{ width: "57rem" }}
+              type="text"
+              onChange={(e) => handleClient(Type.client, e)}
+              defaultValue={details.client?.emailAddress}
+            />
+          </div>
+          <br />
+          <br />
+          <div className="font-s ">
+            Address Where Correspondence Should Be Sent:{" "}
+            <input
+              className="ml"
+              type="checkbox"
+              name=""
+              id=""
+              // onChange={(e)=>handleClient(e)} defaultChecked={details.client?'On':'Off'}
+              onChange={(e) => handleCorrespondenceAddress(Type.client, e)}
+              defaultChecked={
+                details.client?.correspondenceAddress?.home.contain
+              }
+            />{" "}
+            Home{" "}
+            <input
+              className="ml"
+              type="checkbox"
+              name=""
+              id=""
+              onChange={(e) => handleCorrespondenceAddress(Type.client, e)}
+              defaultChecked={
+                details.client?.correspondenceAddress?.work.contain
+              }
+            />{" "}
+            Work
+          </div>
+          <br />
+          <br />
+
+          <div className="font-s ">
+            Emloyer:{" "}
+            <input
+              style={{ width: "60.5rem" }}
+              type="text"
+              onChange={(e) => handleClient(Type.client, e)}
+              defaultValue={details.client?.employer}
+            />
+          </div>
+          <br />
+          <br />
+
+          <div className="font-s">
+            Position:{" "}
+            <input
+              style={{ width: "25rem" }}
+              type="text"
+              name="position"
+              onChange={(e) => handleClient(Type.client, e)}
+            />{" "}
+            Years Employed:{" "}
+            <input
+              style={{ width: "25.8rem" }}
+              type="text"
+              name="yearsEmployed"
+              onChange={(e) => handleClient(Type.client, e)}
+              defaultValue={details.client?.position}
+            />
+          </div>
+          <br />
+          <br />
+
+          <div className="font-s">
+            Salary:{" "}
+            <span style={{ marginLeft: "4rem" }}>
+              Gross:{" "}
+              <input
+                type="text"
+                style={{ width: "16.7rem" }}
+                onChange={(e) => handleSalary(Type.client, e)}
+                defaultValue={details.client.salary.gross}
+              />
+            </span>{" "}
+            <span className="ml">
+              Net:
+              <input
+                type="text"
+                style={{ width: "18rem" }}
+                onChange={(e) => handleSalary(Type.client, e)}
+                defaultValue={details.client.salary.net}
+              />
+            </span>
+            <span>
+              <input
+                type="checkbox"
+                name=""
+                id=""
+                className="mr-1"
+                onChange={(e) => handleSalaryType(Type.client, e)}
+                defaultChecked={details.client.salary.type.annual}
+              />
+              annual/
+              <input
+                type="checkbox"
+                name=""
+                id=""
+                className="mr-1"
+                onChange={(e) => handleSalaryType(Type.client, e)}
+                defaultChecked={details.client?.salary.type.monthly}
+              />
+              monthly/
+              <input
+                type="checkbox"
+                name=""
+                id=""
+                className="mr-1"
+                onChange={(e) => handleSalaryType(Type.client, e)}
+                defaultChecked={details.client?.salary.type.hourly}
+              />
+              hourly
+            </span>
+          </div>
+          <br />
+          <br />
+
+          <div className="font-s">
+            Social Security No.
+            <input
+              type="text "
+              style={{ width: "22rem" }}
+              className="18rem"
+              name="socialSecurityNo"
+              onChange={(e) => handleClient(Type.client, e)}
+              defaultValue={details.client?.socialSecurityNo}
+            />
+            Place of Birth:{" "}
+            <input
+              type="text"
+              name="placeOfBirth"
+              style={{ width: "25.7rem" }}
+              className="18rem"
+              onChange={(e) => handleClient(Type.client, e)}
+              defaultValue={details.client?.placeOfBirth}
+            />
+          </div>
+          <br />
+          <br />
+
+          <div className="font-s">
+            DOB:{" "}
+            <input
+              type="text"
+              style={{ width: "24rem" }}
+              name="dateOfBirth"
+              onChange={(e) => handleClient(Type.client, e)}
+              defaultValue={details.client?.dateOfBirth}
+            />{" "}
+            AGE:{" "}
+            <input
+              type="text"
+              name="age"
+              style={{ width: "35.8rem" }}
+              onChange={(e) => handleClient(Type.client, e)}
+              defaultValue={details.client?.age}
+            />
+          </div>
+          <br />
+          <br />
+
+          <div className="font-s" style={{ display: " flex" }}>
+            <div>Education or Training:</div>
+            <div className="ml">
+              <input
+                type="checkbox"
+                name="contain"
+                id=""
+                onChange={(e) => handleHighSchool(Type.client, e)}
+                defaultChecked={
+                  details.client?.educationOrTraining.highSchool.contain
+                }
+              />
+              High School
+              <input
+                type="text"
+                name="details"
+                style={{ width: "44.8rem" }}
+                onChange={(e) => handleHighSchool(Type.client, e)}
+                defaultValue={
+                  details.client?.educationOrTraining.highSchool.details
+                }
+              />
+              <br />
+              <input
+                type="checkbox"
+                name="contain"
+                id=""
+                onChange={(e) => handleCollege(Type.client, e)}
+                defaultChecked={
+                  details.client?.educationOrTraining.college.contain
+                }
+              />
+              College
+              <input
+                type="text"
+                name="details"
+                style={{ width: "47.1rem", marginTop: "20px" }}
+                onChange={(e) => handleCollege(Type.client, e)}
+                defaultValue={
+                  details.client?.educationOrTraining.college.details
+                }
+              />
+              <br />
+              <input
+                type="checkbox"
+                name="contain"
+                id=""
+                onChange={(e) => handleGraduateSchool(Type.client, e)}
+                defaultChecked={
+                  details.client?.educationOrTraining.highSchool.contain
+                }
+              />
+              Graduate School
+              <input
+                type="text"
+                name="details"
+                style={{ width: "42rem", marginTop: "20px" }}
+                onChange={(e) => handleClient(Type.client, e)}
+                defaultValue={
+                  details.client?.educationOrTraining.graduateSchool.details
+                }
+              />
+            </div>
+          </div>
+          <br />
+          <br />
+
+          <div className="font-s">Status of</div>
+          <div className="font-s" style={{ marginTop: "0.5rem" }}>
+            Health and Treating Physician{" "}
+            <input
+              type="text"
+              style={{ width: "49rem" }}
+              onChange={(e) => {
+                setDetails({
+                  ...details,
+                  client: {
+                    ...details.client,
+                    healthStatus: e.target.value,
+                  },
+                });
+              }}
+              defaultValue={details.client?.healthStatus}
+            />
+          </div>
+
+          <hr style={{ border: "1.5px solid black", marginTop: "4rem" }} />
+          <br />
+
+          <p style={{ pageBreakAfter: "always" }}></p>
+          <p style={{ pageBreakBefore: "always" }}></p>
+        </div>
+
+        {/* spouse */}
+        <div>
+          <div className="font-s">
+            <div className="flex justify-between w-full">
+              <b className="w-fit">Spouse’s Name:</b>{" "}
+              <div className="flex justify-between items-center">
+                <div className="flex justify-center items-center flex-col mx-1">
+                  <input
+                    type="text"
+                    name="first"
+                    onChange={(e) => handleClient(Type.spouse, e)}
+                    defaultValue={details.spouse?.first}
+                  />
+                  <div>(First)</div>
+                </div>
+                <div className="flex justify-center items-center flex-col mx-1">
+                  <input
+                    type="text"
+                    name="maiden"
+                    onChange={(e) => handleClient(Type.spouse, e)}
+                    defaultValue={details.spouse?.maiden}
+                  />
+                  <div>(Maiden)</div>
+                </div>
+                <div className="flex justify-center items-center flex-col mx-1">
+                  <input
+                    type="text"
+                    name="last"
+                    onChange={(e) => handleClient(Type.spouse, e)}
+                    defaultValue={details.spouse?.last}
+                  />
+                  <div>(Last)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="font-s">
+            <p>
+              Address:
+              <span style={{ marginLeft: " 8.4rem" }}>
+                <input
+                  style={{ width: "43rem" }}
+                  onChange={(e) => handleClient(Type.spouse, e)}
+                  defaultValue={details.spouse?.address}
+                  className="ml-[14px]"
+                  type="text"
+                  name="address"
+                />
+              </span>
+              <p>(If Different)</p>
+            </p>
+          </div>
+          <br />
+
+          <div
+            className="font-s"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "50rem",
+            }}
+          >
+            <div>Phone:</div>
+            <div style={{ marginRight: "70px", marginLeft: "30px" }}>
+              <div>
+                Home :{" "}
+                <input
+                  name="home"
+                  type="text"
+                  style={{ width: "10rem" }}
+                  onChange={(e) => onChangePhone(Type.spouse, e)}
                   defaultValue={details.spouse?.phone?.home}
                 />
               </div>
               <div style={{ marginLeft: "5px" }}>
                 Cell :{" "}
                 <input
-                  type="text"
                   name="cell"
+                  type="text"
                   style={{ width: "11rem" }}
-                  onChange={(e) => onChangePhone(Type.spuse, e)}
+                  onChange={(e) => onChangePhone(Type.spouse, e)}
                   defaultValue={details.spouse?.phone?.cell}
                 />
               </div>
@@ -1140,11 +1176,11 @@ export default function Divorce({ url }: { url: string }) {
               <div>
                 Work :{" "}
                 <input
-                  type="text"
                   name="work"
+                  type="text"
                   style={{ width: "10rem" }}
-                  onChange={(e) => onChangePhone(Type.spuse, e)}
-                  defaultValue={details.spouse?.phone.work}
+                  onChange={(e) => onChangePhone(Type.spouse, e)}
+                  defaultValue={details.spouse?.phone?.work}
                 />
               </div>
               <div>
@@ -1153,1022 +1189,363 @@ export default function Divorce({ url }: { url: string }) {
                   type="text"
                   name="fax"
                   style={{ width: "11.1rem" }}
-                  onChange={(e) => onChangePhone(Type.spuse, e)}
+                  onChange={(e) => onChangePhone(Type.spouse, e)}
                   defaultValue={details.spouse?.phone?.fax}
                 />
               </div>
             </div>
           </div>
+          <br />
 
-          <div className="mt">
+          <div className="font-s mt">
             Email Address:{" "}
             <input
-              type="text"
               name="emailAddress"
-              style={{ width: "58.2rem" }}
-              onChange={(e) => handleClient(Type.spuse, e)}
+              style={{ width: "57rem" }}
+              type="text"
+              onChange={(e) => handleClient(Type.spouse, e)}
               defaultValue={details.spouse?.emailAddress}
             />
           </div>
-
-          <div className="mt">
+          <br />
+          <br />
+          <div className="font-s ">
             Address Where Correspondence Should Be Sent:{" "}
             <input
-              className="ml relative top-[2px]"
-              style={{ width: " 18px", height: "18px" }}
+              className="ml"
               type="checkbox"
-              name="contain"
+              name=""
               id=""
-              onChange={(e) => handleCorrespondenceAddress(Type.spuse, e)}
+              // onChange={(e)=>handlespouse(e)} defaultChecked={details.spouse?'On':'Off'}
+              onChange={(e) => handleCorrespondenceAddress(Type.spouse, e)}
               defaultChecked={
-                details.spouse?.correspondenceAddress.home.contain
+                details.spouse?.correspondenceAddress?.home.contain
               }
             />{" "}
             Home{" "}
             <input
-              className="ml relative top-[2px]"
-              style={{ width: " 18px", height: "18px" }}
+              className="ml"
               type="checkbox"
-              name="contain"
+              name=""
               id=""
-              onChange={(e) => handleCorrespondenceAddress(Type.spuse, e)}
+              onChange={(e) => handleCorrespondenceAddress(Type.spouse, e)}
               defaultChecked={
-                details.spouse?.correspondenceAddress.work.contain
+                details.spouse?.correspondenceAddress?.work.contain
               }
             />{" "}
-            Work{" "}
+            Work
+          </div>
+          <br />
+          <br />
+
+          <div className="font-s ">
+            Emloyer:{" "}
             <input
-              className="ml relative top-[2px]"
-              style={{ width: " 18px", height: "18px" }}
-              type="checkbox"
-              name="contain"
-              id=""
-              onChange={(e) => handleCorrespondenceAddress(Type.spuse, e)}
-              defaultChecked={
-                details.spouse?.correspondenceAddress.attorney.contain
-              }
+              style={{ width: "60.5rem" }}
+              type="text"
+              onChange={(e) => handleClient(Type.spouse, e)}
+              defaultValue={details.spouse?.employer}
+            />
+          </div>
+          <br />
+          <br />
+
+          <div className="font-s">
+            Position:{" "}
+            <input
+              style={{ width: "25rem" }}
+              type="text"
+              name="position"
+              defaultValue={details.spouse?.position}
+              onChange={(e) => handleClient(Type.spouse, e)}
             />{" "}
-            Attorney
+            Years Employed:{" "}
+            <input
+              style={{ width: "25.8rem" }}
+              type="text"
+              name="yearsEmployed"
+              onChange={(e) => handleClient(Type.spouse, e)}
+              defaultValue={details.spouse?.yearsEmployed}
+            />
           </div>
+          <br />
+          <br />
 
-          <div className="mt">
-            <p>
-              Spouse's Emloyer:{" "}
+          <div className="font-s">
+            Salary:{" "}
+            <span style={{ marginLeft: "4rem" }}>
+              Gross:{" "}
               <input
-                style={{ width: "55.6rem" }}
                 type="text"
-                name="employer"
-                onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.employer}
+                style={{ width: "16.7rem" }}
+                onChange={(e) => handleSalary(Type.spouse, e)}
+                defaultValue={details.spouse.salary.gross}
               />
-            </p>
-          </div>
-
-          <div className="mt">
-            <p>
-              Position:{" "}
+            </span>{" "}
+            <span className="ml">
+              Net:
               <input
-                style={{ width: "25rem" }}
                 type="text"
-                name="position"
-                onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.position}
-              />{" "}
-              Years Employed:{" "}
-              <input
-                style={{ width: "26rem" }}
-                name="yearsEmployed"
-                type="text"
-                onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.yearsEmployed}
+                style={{ width: "18rem" }}
+                onChange={(e) => handleSalary(Type.spouse, e)}
+                defaultValue={details.spouse.salary.net}
               />
-            </p>
-          </div>
-
-          <div className="mt">
-            <p>
-              Salary:{" "}
-              <span style={{ marginLeft: " 6rem" }}>
-                Gross:{" "}
-                <input
-                  name="gross"
-                  type="text"
-                  onChange={(e) => handleSalary(Type.spuse, e)}
-                  defaultValue={details.spouse?.salary.gross}
-                />
-              </span>{" "}
-              <span className="ml">
-                Net:
-                <input
-                  type="text"
-                  style={{ width: "17rem" }}
-                  onChange={(e) => handleClient(Type.spuse, e)}
-                  defaultValue={details.spouse?.salary.net}
-                />
-                annual/monthly/ weekly
-              </span>
-            </p>
-          </div>
-
-          <div className="mt">
-            <p>
-              Social Security No.
+            </span>
+            <span>
               <input
-                type="text "
-                style={{ width: "22rem" }}
-                name="socialSecurityNo"
-                className="18rem"
-                onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.socialSecurityNo}
+                type="checkbox"
+                name=""
+                id=""
+                className="mr-1"
+                onChange={(e) => handleSalaryType(Type.spouse, e)}
+                defaultChecked={
+                  details.spouse.salary.type.annual ? true : false
+                }
               />
-              Place of Birth:{" "}
+              annual/
               <input
-                type="text"
-                style={{ width: "25.7rem" }}
-                name="placeOfBirth"
-                className="18rem"
-                onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.placeOfBirth}
+                type="checkbox"
+                name=""
+                id=""
+                className="mr-1"
+                onChange={(e) => handleSalaryType(Type.spouse, e)}
+                defaultChecked={
+                  details.spouse?.salary.type.monthly ? true : false
+                }
               />
-            </p>
-          </div>
-
-          <div className="mt">
-            <p>
-              DOB:{" "}
+              monthly/
               <input
-                type="text"
-                name="dateOfBirth"
-                style={{ width: "30rem" }}
-                onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.dateOfBirth}
-              />{" "}
-              AGE:{" "}
-              <input
-                type="text"
-                name="age"
-                style={{ width: "30rem" }}
-                onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.age}
+                type="checkbox"
+                name=""
+                id=""
+                className="mr-1"
+                onChange={(e) => handleSalaryType(Type.spouse, e)}
+                defaultChecked={
+                  details.spouse?.salary.type.weekly ? true : false
+                }
               />
-            </p>
+              weekly
+            </span>
           </div>
+          <br />
+          <br />
 
-          <div className="mt flex">
-            <p>Education or Training:</p>
-            <div className="ml mt-1">
-              High School{" "}
+          <div className="font-s">
+            Social Security No.
+            <input
+              type="text "
+              style={{ width: "22rem" }}
+              className="18rem"
+              name="socialSecurityNo"
+              onChange={(e) => handleClient(Type.spouse, e)}
+              defaultValue={details.spouse?.socialSecurityNo}
+            />
+            Place of Birth:{" "}
+            <input
+              type="text"
+              name="placeOfBirth"
+              style={{ width: "25.7rem" }}
+              className="18rem"
+              onChange={(e) => handleClient(Type.spouse, e)}
+              defaultValue={details.spouse?.placeOfBirth}
+            />
+          </div>
+          <br />
+          <br />
+
+          <div className="font-s">
+            DOB:{" "}
+            <input
+              type="text"
+              style={{ width: "24rem" }}
+              name="dateOfBirth"
+              onChange={(e) => handleClient(Type.spouse, e)}
+              defaultValue={details.spouse?.dateOfBirth}
+            />{" "}
+            AGE:{" "}
+            <input
+              type="text"
+              name="age"
+              style={{ width: "35.8rem" }}
+              onChange={(e) => handleClient(Type.spouse, e)}
+              defaultValue={details.spouse?.age}
+            />
+          </div>
+          <br />
+          <br />
+
+          <div className="font-s" style={{ display: " flex" }}>
+            <div>Education or Training:</div>
+            <div className="ml">
+              <input
+                type="checkbox"
+                name="contain"
+                id=""
+                onChange={(e) => handleHighSchool(Type.spouse, e)}
+                defaultChecked={
+                  details.spouse?.educationOrTraining.highSchool.contain
+                }
+              />
+              High School
               <input
                 type="text"
                 name="details"
-                style={{ width: "46.8rem" }}
-                onChange={(e) => handleClient(Type.spuse, e)}
+                style={{ width: "44.8rem" }}
+                onChange={(e) => handleHighSchool(Type.spouse, e)}
                 defaultValue={
                   details.spouse?.educationOrTraining.highSchool.details
                 }
               />
               <br />
-              College{" "}
+              <input
+                type="checkbox"
+                name="contain"
+                id=""
+                onChange={(e) => handleCollege(Type.spouse, e)}
+                defaultChecked={
+                  details.spouse?.educationOrTraining.college.contain
+                }
+              />
+              College
               <input
                 type="text"
                 name="details"
-                style={{ width: "49rem", marginTop: "20px" }}
-                onChange={(e) => handleClient(Type.spuse, e)}
+                style={{ width: "47.1rem", marginTop: "20px" }}
+                onChange={(e) => handleCollege(Type.spouse, e)}
                 defaultValue={
                   details.spouse?.educationOrTraining.college.details
                 }
               />
               <br />
-              Graduate School{" "}
+              <input
+                type="checkbox"
+                name="contain"
+                id=""
+                onChange={(e) => handleGraduateSchool(Type.spouse, e)}
+                defaultChecked={
+                  details.spouse?.educationOrTraining.highSchool.contain
+                }
+              />
+              Graduate School
               <input
                 type="text"
                 name="details"
-                style={{ width: "43.8rem", marginTop: "20px" }}
-                onChange={(e) => handleClient(Type.spuse, e)}
+                style={{ width: "42rem", marginTop: "20px" }}
+                onChange={(e) => handleClient(Type.spouse, e)}
                 defaultValue={
                   details.spouse?.educationOrTraining.graduateSchool.details
                 }
               />
             </div>
           </div>
-
-          <div className="mt">
-            <p className="2">Status of</p>
-            <p>
-              Health and Treating Physician{" "}
-              <input
-                type="text"
-                name="healthStatus"
-                style={{ width: "49.5rem" }}
-                onChange={(e) => handleClient(Type.spuse, e)}
-                defaultValue={details.spouse?.healthStatus}
-              />
-            </p>
-          </div>
-          <hr style={{ border: " 1.5px solid black", marginTop: "5rem" }} />
           <br />
-          <div className="mt">
-            <p>
-              Previous Marriage: Client:{" "}
-              <input
-                type="text"
-                style={{ width: "21.9rem" }}
-                name="previousMarriageClient"
-                onChange={(e) => handlePreviousMarriage(Type.client, e)}
-                defaultValue={details.previousMarriage?.client}
-              />{" "}
-              Spouse:{" "}
-              <input
-                type="text"
-                name="previousMarriageSpouse"
-                style={{ width: "24.6rem" }}
-                onChange={(e) => handlePreviousMarriage(Type.spuse, e)}
-                defaultValue={details.previousMarriage?.spouse}
-              />
-            </p>
+          <br />
+
+          <div className="font-s">Status of</div>
+          <div className="font-s" style={{ marginTop: "0.5rem" }}>
+            Health and Treating Physician{" "}
+            <input
+              type="text"
+              style={{ width: "49rem" }}
+              onChange={(e) => {
+                setDetails({
+                  ...details,
+                  spouse: {
+                    ...details.spouse,
+                    healthStatus: e.target.value,
+                  },
+                });
+              }}
+              defaultValue={details.spouse?.healthStatus}
+            />
           </div>
 
-          <div className="mt">
-            <p>How and When Ended:</p>
-            <p style={{ marginLeft: "10rem" }} className="mt">
-              Client:{" "}
-              <input
-                type="text"
-                style={{ width: "52.9rem" }}
-                name="previousMarriageEndedClient"
-                onChange={(e) => handlePreviousMarriage(Type.client, e)}
-                defaultValue={details.previousMarriage?.endedDetails.client}
-              />
-            </p>
-            <p style={{ marginLeft: "10rem" }} className="mt">
-              Spouse:{" "}
-              <input
-                type="text"
-                style={{ width: "52rem" }}
-                name="previousMarriageEndedSpouse"
-                onChange={(e) => handlePreviousMarriage(Type.spuse, e)}
-                defaultValue={details.previousMarriage?.endedDetails.spouse}
-              />
-            </p>
-          </div>
-
-          <p style={{ pageBreakAfter: "always" }}></p>
-          <p style={{ pageBreakBefore: "always" }}></p>
-
-          <div className="mt">
-            <b>Children of Client:</b>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <p style={{ marginLeft: "2rem" }} className="mt">
-                Name: <br />{" "}
-                <input
-                  type="text"
-                  style={{ width: "15rem" }}
-                  name="firstChildrenOfClient"
-                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
-                  defaultValue={details.childrenOfClient?.client.name}
-                />
-                <br />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  name="secondShildrenOfClient"
-                  style={{ width: "15rem" }}
-                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
-                  defaultValue={details.childrenOfClient?.client.name}
-                />{" "}
-                <br />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="thirdChildrenOfClient"
-                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
-                  defaultValue={details.childrenOfClient?.client.name}
-                />
-              </p>
-              <p style={{ marginLeft: "5rem" }} className="mt">
-                DOB: <br />{" "}
-                <input
-                  type="text"
-                  style={{ width: "15rem" }}
-                  name="firstChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
-                  defaultValue={details.childrenOfClient?.client.dob}
-                />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="secondChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
-                  defaultValue={details.childrenOfClient?.client.dob}
-                />{" "}
-                <br />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="thirdChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
-                  defaultValue={details.childrenOfClient?.client.dob}
-                />
-              </p>
-              <p style={{ marginLeft: "5rem" }} className="mt">
-                SSN: <br />{" "}
-                <input
-                  type="text"
-                  style={{ width: "15rem" }}
-                  name="firstChildrenSSN"
-                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
-                  defaultValue={details.childrenOfClient?.client.ssn}
-                />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="secondChildrenSSN"
-                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
-                  defaultValue={details.childrenOfClient?.client.ssn}
-                />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="thirdChildrenSSN"
-                  onChange={(e) => handleChildrenOfClient(Type.client, e)}
-                  defaultValue={details.childrenOfClient?.client.ssn}
-                />
-              </p>
-            </div>
-          </div>
-
-          <div className="mt">
-            <b>Children of Spouse:</b>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <p style={{ marginLeft: "2rem" }} className="mt">
-                Name: <br />{" "}
-                <input
-                  type="text"
-                  style={{ width: "15rem" }}
-                  name="firstChildrenOfSpouse"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
-                  defaultValue={details.childrenOfClient?.spouse.name}
-                />
-                <br />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="secondChildrenOfSpouse"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
-                  defaultValue={details.childrenOfClient?.spouse.name}
-                />{" "}
-                <br />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="thirdChildrenOfSpouse"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
-                  defaultValue={details.childrenOfClient?.spouse.name}
-                />
-              </p>
-              <p style={{ marginLeft: "5rem" }} className="mt">
-                DOB: <br />{" "}
-                <input
-                  type="text"
-                  style={{ width: "15rem" }}
-                  name="firstChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
-                  defaultValue={details.childrenOfClient?.spouse.dob}
-                />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="secondChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
-                  defaultValue={details.childrenOfClient?.spouse.dob}
-                />{" "}
-                <br />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="thirdChildrenDOB"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
-                  defaultValue={details.childrenOfClient?.spouse.dob}
-                />
-              </p>
-              <p style={{ marginLeft: "5rem" }} className="mt">
-                SSN: <br />{" "}
-                <input
-                  type="text"
-                  style={{ width: "15rem" }}
-                  name="firstChildrenSSN"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
-                  defaultValue={details.childrenOfClient?.spouse.ssn}
-                />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="secondChildrenSSN"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
-                  defaultValue={details.childrenOfClient?.spouse.ssn}
-                />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="thirdChildrenSSN"
-                  onChange={(e) => handleChildrenOfClient(Type.spuse, e)}
-                  defaultValue={details.childrenOfClient?.spouse.ssn}
-                />
-              </p>
-            </div>
-          </div>
           <hr style={{ border: "1.5px solid black", marginTop: "4rem" }} />
           <br />
 
-          <div className="mt">
-            <p>
-              {" "}
-              <b>This Marriage:</b>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <div className="flex">
-                  <p className="mt-3">Date:</p>
+          <p style={{ pageBreakAfter: "always" }}></p>
+          <p style={{ pageBreakBefore: "always" }}></p>
+        </div>
+
+        {/* previous marriage */}
+        <div>
+          <div className="flex justify-between items-center">
+            <strong>Previous Marriages:</strong>
+            <div className="flex justify-center items-center w-9/12">
+              <div className="flex justify-start items-center w-1/2">
+                <p>Client:</p>
+                <input
+                  type="text"
+                  style={{ width: "90%" }}
+                  name="client"
+                  onChange={(e) => handlePreviousMarriage(e)}
+                  defaultValue={details.previousMarriage?.client}
+                />
+              </div>
+              <div className="flex justify-start items-center w-1/2 ml-3">
+                <p>Spouse:</p>
+                <input
+                  type="text"
+                  style={{ width: "90%" }}
+                  name="spouse"
+                  onChange={(e) => handlePreviousMarriage(e)}
+                  defaultValue={details.previousMarriage?.spouse}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p>How and When Ended:</p>
+            <div>
+                <div className="flex justify-end items-center  w-full">
+                  <p>Client:</p>
                   <input
                     type="text"
-                    style={{ borderBottom: "1px solid black" }}
-                    onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                    defaultValue={details.thisMarriage?.date}
+                    className="ml-2 w-10/12"
+                    name="client"
+                    onChange={(e) => {
+                      setDetails({
+                        ...details,
+                        previousMarriage: {
+                          ...details.previousMarriage,
+                          endedDetails: {
+                            ...details.previousMarriage?.endedDetails,
+                            client: e.target.value,
+                          },
+                        },
+                      });
+                    
+                    }}
+                    defaultValue={details.previousMarriage?.endedDetails.client}
                   />
                 </div>
-
-                <p>
-                  {" "}
-                  Place:{" "}
+                <div className="flex justify-end items-center  w-full">
+                  <p>Spouse:</p>
                   <input
                     type="text"
-                    style={{ width: "30rem" }}
-                    name="place"
-                    onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                    defaultValue={details.thisMarriage?.place}
+                    className="ml-2 w-10/12"
+                    name="spouse"
+                    onChange={(e) => {
+                      setDetails({
+                        ...details,
+                        previousMarriage: {
+                          ...details.previousMarriage,
+                          endedDetails: {
+                            ...details.previousMarriage?.endedDetails,
+                            spouse: e.target.value,
+                          },
+                        },
+                      });
+                    }}
+                    defaultValue={details.previousMarriage?.endedDetails.spouse}
                   />
-                </p>
               </div>
-            </p>
-          </div>
-          <div className="mt-2" style={{ marginLeft: "8rem" }}>
-            Registered:{" "}
-            <input
-              type="text"
-              style={{ width: "46rem" }}
-              name="registered"
-              onChange={(e) => handleCurrentMarriage(Type.client, e)}
-              defaultValue={details.thisMarriage?.registered}
-            />
-          </div>
-
-          <div className="mt">
-            <b>Children:</b>
-            <div style={{ display: "flex", justifyContent: " space-between" }}>
-              <p style={{ marginLeft: "2rem" }} className="mt">
-                Name: <br />{" "}
-                <input
-                  type="text"
-                  style={{ width: "15rem" }}
-                  name="firstChildren"
-                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                  defaultValue={details.thisMarriage?.children.name}
-                />
-                <br />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="secondChildren"
-                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                  defaultValue={details.thisMarriage?.children.name}
-                />{" "}
-                <br />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="thirdChildren"
-                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                  defaultValue={details.thisMarriage?.children.name}
-                />
-              </p>
-              <p style={{ marginLeft: "5rem" }} className="mt">
-                DOB: <br />{" "}
-                <input
-                  type="text"
-                  style={{ width: "15rem" }}
-                  name="firstChildrenDOB"
-                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                  defaultValue={details.thisMarriage?.children.dob}
-                />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="secondChildrenDOB"
-                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                  defaultValue={details.thisMarriage?.children.dob}
-                />{" "}
-                <br />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="thirdChildrenDOB"
-                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                  defaultValue={details.thisMarriage?.children.dob}
-                />
-              </p>
-              <p style={{ marginLeft: "5rem" }} className="mt">
-                Lives With: <br />{" "}
-                <input
-                  type="text"
-                  name="firstChildrenLivesWith"
-                  style={{ width: "15rem" }}
-                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                  defaultValue={details.thisMarriage?.children.livesWith}
-                />
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="secondChildrenLivesWith"
-                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                  defaultValue={details.thisMarriage?.children.livesWith}
-                />{" "}
-                <input
-                  type="text"
-                  className="mt"
-                  style={{ width: "15rem" }}
-                  name="thirdChildrenLivesWith"
-                  onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                  defaultValue={details.thisMarriage?.children.livesWith}
-                />
-              </p>
             </div>
           </div>
-
-          <div className="mt" style={{ marginLeft: "10rem" }}>
-            <p>Currently pregnant? Y / N</p>
-            <p className="mt-3">
-              Special Problems With Children?{" "}
-              <input
-                type="text"
-                style={{ width: "32rem" }}
-                onChange={(e) => handleCurrentMarriage(Type.client, e)}
-                defaultValue={details.thisMarriage?.specialProblems}
-              />
-            </p>
-          </div>
-
-          <div className="mt">
-            <p>
-              Spouse’s Attorney:{" "}
-              <input
-                type="text"
-                style={{ width: "50.1rem" }}
-                name="spouseAttorney"
-                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
-                defaultValue={details.thisMarriage?.spouseAttorney}
-              />
-            </p>
-            <p style={{ marginLeft: "11rem" }}>
-              <input
-                type="text"
-                style={{ width: "50.2rem" }}
-                name="spouseAttorney"
-                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
-                defaultValue={details.thisMarriage?.spouseAttorney}
-              />
-            </p>
-            <p style={{ marginLeft: "11rem" }}>
-              <input
-                type="text"
-                style={{ width: "50.2rem" }}
-                name="spouseAttorney"
-                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
-                defaultValue={details.thisMarriage?.spouseAttorney}
-              />
-            </p>
-          </div>
-
-          <p className="mt" style={{ marginLeft: "4rem" }}>
-            Previous Divorce Actions Commenced Against Present Spouse
-          </p>
-
-          <div className="mt" style={{ marginLeft: "4rem" }}>
-            <p>
-              When:{" "}
-              <input
-                type="text"
-                style={{ width: "20rem" }}
-                name="when"
-                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
-                defaultValue={details.thisMarriage?.previousDivorceActions.when}
-              />{" "}
-              Where:{" "}
-              <input
-                type="text"
-                style={{ width: "28.4rem" }}
-                name="where"
-                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
-                defaultValue={
-                  details.thisMarriage?.previousDivorceActions.where
-                }
-              />
-            </p>
-          </div>
-
-          <hr style={{ border: "1.5px solid black", marginTop: "4rem" }} />
-
-          <div className="mt">
-            <p>
-              How Terminated:{" "}
-              <input
-                type="text"
-                style={{ width: "51.2rem" }}
-                name="howTerminated"
-                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
-                defaultValue={
-                  details.thisMarriage?.previousDivorceActions.terminated
-                }
-              />
-            </p>
-          </div>
-
-          <div className="mt">
-            <p>
-              {" "}
-              <b>Grounds:</b>
-              <div
-                className="mt"
-                style={{ display: "flex", justifyContent: "" }}
-              >
-                <p className="ml-20">Mental</p>
-                <p className="ml-48">Adultery</p>
-                <p className="ml-24">Drunkenness</p>
-                <p className="ml-40">Physical</p>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-around" }}>
-                <p>Desertion</p>
-                <p>
-                  Other{" "}
-                  <input
-                    type="text"
-                    name="other"
-                    onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
-                    defaultValue={details.thisMarriage?.other}
-                  />
-                </p>
-                <p>irreconcilable Differences</p>
-              </div>
-            </p>
-          </div>
-
-          <div className="mt" style={{ marginLeft: "10rem" }}>
-            <p>Comments:</p>
-            <p className="mt-3">
-              <input
-                type="text"
-                style={{ width: "51rem" }}
-                name="comments"
-                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
-                defaultValue={details.thisMarriage?.comments}
-              />
-            </p>
-            <p className="mt-3">
-              <input
-                type="text"
-                style={{ width: "51rem" }}
-                name="comments"
-                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
-                defaultValue={details.thisMarriage?.comments}
-              />
-            </p>
-            <p className="mt-3">
-              <input
-                type="text"
-                style={{ width: "51rem" }}
-                name="comments"
-                onChange={(e) => handleCurrentMarriage(Type.spuse, e)}
-                defaultValue={details.thisMarriage?.comments}
-              />
-            </p>
-          </div>
-
-          <div
-            className="mt"
-            style={{
-              display: "flex",
-              justifyContent: "space-around",
-              width: "80%",
-            }}
-          >
-            <p>Fee Agreement:</p>
-            <p>Retainer</p>
-            <p>Hourly Rate</p>
-            <p>Minimum</p>
-            <p>Other</p>
-          </div>
-
-          <div className="mt">
-            <b>ASSETS:</b>
-            <p className="mt" style={{ textDecoration: "underline" }}>
-              Martial Residence
-            </p>
-            <p className="mt">
-              Address:{" "}
-              <input
-                type="text"
-                style={{ width: "55rem" }}
-                onChange={(e) => handleAssets(e)}
-                name="address"
-                defaultValue={details.assets?.martialResidence.address}
-              />{" "}
-            </p>
-            <p className="mt">
-              Title in whose name(s)?{" "}
-              <input
-                type="text"
-                style={{ width: "46.5rem" }}
-                name="titleNames"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.titleNames}
-              />{" "}
-            </p>
-            <p className="mt">
-              Location of title papers:{" "}
-              <input
-                type="text"
-                style={{ width: "46.5rem" }}
-                name="titleLocation"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.titleLocation}
-              />{" "}
-            </p>
-            <p className="mt">
-              Who made down payment:{" "}
-              <input
-                type="text"
-                style={{ width: "44.5rem" }}
-                name="downPaymentMadeBy"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={
-                  details.assets?.martialResidence.downPaymentMadeBy
-                }
-              />{" "}
-            </p>
-            <p className="mt">
-              Are payments current?
-              <input
-                type="text"
-                style={{ width: "47.1rem" }}
-                name="paymentsCurrent"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.paymentsCurrent}
-              />
-            </p>
-            <p className="mt">
-              Who makes payments?
-              <input
-                type="text"
-                style={{ width: "46.9rem" }}
-                name="whoMakesPayments"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.whoMakesPayments}
-              />
-            </p>
-            <br />
-            <div style={{ display: "flex" }}>
-              <p>
-                When Purchaged:{" "}
-                <input
-                  type="text"
-                  style={{ width: "20rem" }}
-                  name="whenPurchaged"
-                  onChange={(e) => handleAssets(e)}
-                  defaultValue={
-                    details.assets?.martialResidence.purchaseDetails.when
-                  }
-                />
-              </p>
-              <p>
-                Price Paid:{" "}
-                <input
-                  type="text"
-                  style={{ width: "23rem" }}
-                  name="pricePaid"
-                  onChange={(e) => handleAssets(e)}
-                  defaultValue={
-                    details.assets?.martialResidence.purchaseDetails.pricePaid
-                  }
-                />
-              </p>
-            </div>
-            <div className="mt" style={{ display: "flex" }}>
-              <p>
-                Mortgage payments:{" "}
-                <input
-                  type="text"
-                  style={{ width: "18rem" }}
-                  name="mortgagePayments"
-                  onChange={(e) => handleAssets(e)}
-                  defaultValue={
-                    details.assets?.martialResidence.mortgagePayments
-                  }
-                />
-              </p>
-              <p>
-                Approximate yearly taxes:{" "}
-                <input
-                  type="text"
-                  style={{ width: "14.8rem" }}
-                  name="yearlyTaxes"
-                  onChange={(e) => handleAssets(e)}
-                  defaultValue={details.assets?.martialResidence.yearlyTaxes}
-                />
-              </p>
-            </div>
-            <br />
-            <p style={{ marginLeft: "10rem" }}>
-              (1) Approximate present value:{" "}
-              <input
-                type="text"
-                style={{ width: "32.5rem" }}
-                name="presentValue"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.martialResidence.presentValue}
-              />
-            </p>
-            <p className="mt-2" style={{ marginLeft: "10rem" }}>
-              (2) Mortgage balance as of:{" "}
-              <input
-                type="text"
-                style={{ width: "15rem" }}
-                name="mortgageBalanceAsOf"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={
-                  details.assets?.martialResidence.mortgageBalance.asOf
-                }
-              />
-              :<input type="text" style={{ width: "19rem" }} />
-            </p>
-            <p className="mt-2" style={{ marginLeft: "15rem" }}>
-              Estimated Net Value:${" "}
-              <input
-                type="text"
-                style={{ width: "26rem" }}
-                name="estimatedNetValue"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={
-                  details.assets?.martialResidence.mortgageBalance.balance
-                }
-              />
-              <b style={{ marginLeft: "4rem", textDecoration: "underline" }}>
-                Other
-              </b>
-            </p>
-          </div>
-
-          <div className="mt">
-            {" "}
-            <b style={{ textDecoration: "underline" }}>Real Estate:</b>
-            <p className="mt-2">
-              Address:
-              <input
-                type="text"
-                style={{ width: "55.5rem" }}
-                name="address"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.realEstate.address}
-              />
-            </p>
-            <p className="mt-2">
-              Location of title papers:
-              <input
-                type="text"
-                style={{ width: "47.2rem" }}
-                name="titleLocation"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.realEstate.titleLocation}
-              />
-            </p>
-          </div>
-
-          <p style={{ pageBreakAfter: "always" }}></p>
-          <p style={{ pageBreakBefore: "always" }}></p>
-
-          <p className="mt">
-            Who made the down payment:
-            <input
-              type="text"
-              style={{ width: "43rem" }}
-              name="downPaymentMadeBy"
-              onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.realEstate.downPaymentMadeBy}
-            />
-          </p>
-          <p className="mt">
-            Who holds mortgage:
-            <input
-              type="text"
-              style={{ width: "48.4rem" }}
-              name="mortgageHolds"
-              onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.realEstate.mortgageholds}
-            />
-          </p>
-          <p className="mt">
-            Are payments current?
-            <input
-              type="text"
-              style={{ width: "47.5rem" }}
-              name="paymentsCurrent"
-              onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.realEstate.paymentsCurrent}
-            />
-          </p>
-          <p className="mt">
-            Who makes payments:
-            <input
-              type="text"
-              style={{ width: "47.5rem" }}
-              name="whoMakesPayments"
-              onChange={(e) => handleAssets(e)}
-              defaultValue={details.assets?.realEstate.whoMakesPayments}
-            />
-          </p>
-          <div>
-            <br />
-            <p style={{ display: "flex" }}>
-              <div>
-                <p>
-                  Mortgage payments:
-                  <input
-                    type="text"
-                    style={{ width: "18rem" }}
-                    name="mortagePayments"
-                    onChange={(e) => handleAssets(e)}
-                    defaultValue={details.assets?.realEstate.mortagePayments}
-                  />
-                </p>
-              </div>
-              <div>
-                <p>
-                  Approximate yearly taxes:
-                  <input
-                    type="text"
-                    style={{ width: "16rem" }}
-                    name="yearlyTaxes"
-                    onChange={(e) => handleAssets(e)}
-                    defaultValue={details.assets?.realEstate.yearlyTaxes}
-                  />
-                </p>
-              </div>
-            </p>
-            <br />
-            <p className="mt-3" style={{ marginLeft: "10rem" }}>
-              (1) Approximate present value:
-              <input
-                type="text"
-                style={{ width: "33rem" }}
-                name="presentValue"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.realEstate.presentValue}
-              />
-            </p>
-            <p className="mt-3" style={{ marginLeft: "10rem" }}>
-              (2) Mortgage balance as of:
-              <input
-                type="text"
-                style={{ width: "15rem" }}
-                name="mortgageBalanceAsOf"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={details.assets?.realEstate.mortgageBalance.asOf}
-              />
-              :
-              <input
-                type="text"
-                style={{ width: "19.5rem" }}
-                name="mortgageBalance"
-                onChange={(e) => handleAssets(e)}
-                defaultValue={
-                  details.assets?.realEstate.mortgageBalance.balance
-                }
-              />
-            </p>
-          </div>
+          
         </div>
+
         <br />
         <p>If applicable:</p>
         <div style={{ display: "flex" }}>

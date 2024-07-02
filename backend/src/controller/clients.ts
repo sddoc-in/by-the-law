@@ -419,7 +419,7 @@ export async function getClient(req: Request, res: Response) {
     const clientsCollection: Collection = db.collection("clients");
     const UrlCollection: Collection = db.collection("urls");
     const LawyerCollection: Collection = db.collection("users");
-    const FormsCollection: Collection = db.collection("forms");
+    const FormsCollection: Collection = db.collection("client-forms");
     const sessionCollection: Collection = db.collection("sessions");
 
     // insert session

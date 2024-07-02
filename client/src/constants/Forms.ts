@@ -2,11 +2,6 @@ import SelectArray from "../interface/SelectArray";
 
 export const Forms: SelectArray[] = [
   {
-    id: "1034",
-    name: "1034",
-    value: "1034",
-  },
-  {
     id: "fl100",
     name: "fl100",
     value: "fl100",
@@ -71,11 +66,6 @@ export const Forms: SelectArray[] = [
     name: "fl144",
     value: "fl144",
   },
-  // {
-  //   id: "fl145 copy",
-  //   name: "fl145 copy",
-  //   value: "fl145 copy",
-  // },
   {
     id: "fl145",
     name: "fl145",
@@ -86,26 +76,26 @@ export const Forms: SelectArray[] = [
   //   name: "fl150",
   //   value: "fl150",
   // },
-  // {
-  //   id: "fl155",
-  //   name: "fl155",
-  //   value: "fl155",
-  // },
-  // {
-  //   id: "fl157",
-  //   name: "fl157",
-  //   value: "fl157",
-  // },
-  // {
-  //   id: "fl158",
-  //   name: "fl158",
-  //   value: "fl158",
-  // },
-  // {
-  //   id: "fl160",
-  //   name: "fl160",
-  //   value: "fl160",
-  // },
+  {
+    id: "fl155",
+    name: "fl155",
+    value: "fl155",
+  },
+  {
+    id: "fl157",
+    name: "fl157",
+    value: "fl157",
+  },
+  {
+    id: "fl158",
+    name: "fl158",
+    value: "fl158",
+  },
+  {
+    id: "fl160",
+    name: "fl160",
+    value: "fl160",
+  },
   // {
   //   id: "fl161",
   //   name: "fl161",
@@ -116,11 +106,11 @@ export const Forms: SelectArray[] = [
   //   name: "fl165",
   //   value: "fl165",
   // },
-  // {
-  //   id: "fl170",
-  //   name: "fl170",
-  //   value: "fl170",
-  // },
+  {
+    id: "fl170",
+    name: "fl170",
+    value: "fl170",
+  },
   // {
   //   id: "fl172",
   //   name: "fl172",
@@ -131,41 +121,46 @@ export const Forms: SelectArray[] = [
   //   name: "fl180",
   //   value: "fl180",
   // },
-  // {
-  //   id: "fl182",
-  //   name: "fl182",
-  //   value: "fl182",
-  // },
+  {
+    id: "fl182",
+    name: "fl182",
+    value: "fl182",
+  },
   {
     id: "fl190",
     name: "fl190",
     value: "fl190",
   },
-  // {
-  //   id: "fl191",
-  //   name: "fl191",
-  //   value: "fl191",
-  // },
-  // {
-  //   id: "fl192",
-  //   name: "fl192",
-  //   value: "fl192",
-  // },
-  // {
-  //   id: "fl330",
-  //   name: "fl330",
-  //   value: "fl330",
-  // },
-  // {
-  //   id: "fl335",
-  //   name: "fl335",
-  //   value: "fl335",
-  // },
-  // {
-  //   id: "fl800",
-  //   name: "fl800",
-  //   value: "fl800",
-  // },
+  {
+    id: "fl191",
+    name: "fl191",
+    value: "fl191",
+  },
+  {
+    id: "fl192",
+    name: "fl192",
+    value: "fl192",
+  },
+  {
+    id: "fl330",
+    name: "fl330",
+    value: "fl330",
+  },
+  {
+    id: "fl335",
+    name: "fl335",
+    value: "fl335",
+  },
+  {
+    id: "fl800",
+    name: "fl800",
+    value: "fl800",
+  },
+  {
+    id: "fl1034",
+    name: "fl1034",
+    value: "fl1034",
+  },
   // {
   //   id: "fl810",
   //   name: "fl810",
@@ -176,19 +171,19 @@ export const Forms: SelectArray[] = [
   //   name: "fw001",
   //   value: "fw001",
   // },
-  // {
-  //   id: "fw001info",
-  //   name: "fw001info",
-  //   value: "fw001info",
-  // },
-  // {
-  //   id: "fw002",
-  //   name: "fw002",
-  //   value: "fw002",
-  // },
-  // {
-  //   id: "petition",
-  //   name: "petition",
-  //   value: "petition",
-  // },
+  {
+    id: "fw001info",
+    name: "fw001info",
+    value: "fw001info",
+  },
+  {
+    id: "fw002",
+    name: "fw002",
+    value: "fw002",
+  },
+  {
+    id: "petition",
+    name: "petition",
+    value: "petition",
+  },
 ];

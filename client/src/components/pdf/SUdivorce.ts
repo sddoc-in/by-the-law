@@ -2,7 +2,9 @@ export default interface SUdivorce {
   referredBy: string;
   date: string;
   client: {
-    name: string;
+    first: string;
+    maiden: string;
+    last: string;
     address: string;
     phone: {
       home: string;
@@ -52,7 +54,9 @@ export default interface SUdivorce {
     healthStatus: string;
   };
   spouse: {
-    name: string;
+    first: string;
+    maiden: string;
+    last: string;
     address: string;
     phone: {
       home: string;
@@ -81,7 +85,7 @@ export default interface SUdivorce {
       type: {
         annual: string;
         monthly: string;
-        hourly: string;
+        weekly: string;
       };
     };
     socialSecurityNo: string;
@@ -90,12 +94,15 @@ export default interface SUdivorce {
     age: string;
     educationOrTraining: {
       highSchool: {
+        contain: boolean;
         details: string;
       };
       college: {
+        contain: boolean;
         details: string;
       };
       graduateSchool: {
+        contain: boolean;
         details: string;
       };
     };
