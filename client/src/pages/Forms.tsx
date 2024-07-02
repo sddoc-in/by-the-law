@@ -41,10 +41,7 @@ export default function Forms() {
             return;
           });
         setData(data);
-<<<<<<< HEAD
         console.log(data);
-=======
->>>>>>> 14c4412 (fl161, fl165 added again)
       } catch (err) {}
     };
 

@@ -31,12 +31,7 @@ import FW001Info from "../../pdf/Fw001info/FW001info";
 import Fw002 from "../../pdf/Fw002/Fw002";
 import Petition from "../../pdf/petition/Petition";
 import Loading from "../../loader/Loading";
-<<<<<<< HEAD
-=======
 import Fl150 from "../../pdf/fl150/Fl150";
-import Fl161 from "../../pdf/Fl192/Fl161";
-import Fl165 from "../../pdf/fl165/Fl165";
->>>>>>> 14c4412 (fl161, fl165 added again)
 
 export default function Form() {
   const { client_id, form_id, form_name } = useParams();
@@ -99,11 +94,8 @@ export default function Form() {
       return <FL144 />;
     case "fl145":
       return <FL145 />;
-<<<<<<< HEAD
-=======
     case "fl150":
       return <Fl150 />;
->>>>>>> 14c4412 (fl161, fl165 added again)
     case "fl155":
       return <Fl155 />;
     case "fl157":
@@ -112,13 +104,6 @@ export default function Form() {
       return <Fl158 />;
     case "fl160":
       return <FL160 />;
-<<<<<<< HEAD
-=======
-    case "fl161":
-      return <Fl161 />;
-    case "fl165":
-      return <Fl165 />;
->>>>>>> 14c4412 (fl161, fl165 added again)
     case "fl170":
       return <Fl170 />;
     case "fl182":

@@ -71,19 +71,11 @@ export const Forms: SelectArray[] = [
     name: "fl145",
     value: "fl145",
   },
-<<<<<<< HEAD
-  // {
-  //   id: "fl150",
-  //   name: "fl150",
-  //   value: "fl150",
-  // },
-=======
   {
     id: "fl150",
     name: "fl150",
     value: "fl150",
   },
->>>>>>> 14c4412 (fl161, fl165 added again)
   {
     id: "fl155",
     name: "fl155",
@@ -104,18 +96,6 @@ export const Forms: SelectArray[] = [
     name: "fl160",
     value: "fl160",
   },
-<<<<<<< HEAD
-  // {
-  //   id: "fl161",
-  //   name: "fl161",
-  //   value: "fl161",
-  // },
-  // {
-  //   id: "fl165",
-  //   name: "fl165",
-  //   value: "fl165",
-  // },
-=======
   {
     id: "fl161",
     name: "fl161",
@@ -126,7 +106,6 @@ export const Forms: SelectArray[] = [
     name: "fl165",
     value: "fl165",
   },
->>>>>>> 14c4412 (fl161, fl165 added again)
   {
     id: "fl170",
     name: "fl170",
@@ -207,8 +186,4 @@ export const Forms: SelectArray[] = [
     name: "petition",
     value: "petition",
   },
-<<<<<<< HEAD
 ];
-=======
-];
->>>>>>> 14c4412 (fl161, fl165 added again)

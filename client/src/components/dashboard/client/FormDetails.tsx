@@ -130,8 +130,4 @@ export default function FormDetailsCard(props: {
       />
     </>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 14c4412 (fl161, fl165 added again)
