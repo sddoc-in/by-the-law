@@ -12,17 +12,10 @@ app.use("/", router);
 
 // for deploying on heroku also move client from ../client to ./client also change api url from "http://localhost:8000" to nothin
 // just remove that
-<<<<<<< HEAD
 // app.use(express.static(path.join(__dirname, "../../client", "build")));
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../../client", "build", "index.html"));
 // });
-=======
-app.use(express.static(path.join(__dirname, "../../client", "build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../client", "build", "index.html"));
-});
->>>>>>> 14c4412 (fl161, fl165 added again)
 
 // for deploying on localhost
 // app.use(express.static(path.join(__dirname, '../client', 'build')));

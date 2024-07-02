@@ -496,8 +496,4 @@ export async function getClient(req: Request, res: Response) {
     console.log(error);
     return res.status(500).json({ message: "Unknown error" });
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 14c4412 (fl161, fl165 added again)

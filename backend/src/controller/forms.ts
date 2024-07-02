@@ -365,8 +365,4 @@ export async function getFormDataDetails(req: Request, res: Response) {
   } catch (err: any) {
     return res.status(500).json({ message: err.message });
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 14c4412 (fl161, fl165 added again)
