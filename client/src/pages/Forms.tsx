@@ -41,7 +41,6 @@ export default function Forms() {
             return;
           });
         setData(data);
-        console.log(data);
       } catch (err) {}
     };
 
