@@ -3,30 +3,30 @@ import SUPFL130 from "./SU130";
 export default function () {
     const [details, setDetails] = React.useState<SUPFL130>(
         {} as SUPFL130
-      );
-    
-      function handleChange(
+    );
+
+    function handleChange(
         e:
-          | React.ChangeEvent<HTMLInputElement>
-          | React.ChangeEvent<HTMLTextAreaElement>
-      ) {
+            | React.ChangeEvent<HTMLInputElement>
+            | React.ChangeEvent<HTMLTextAreaElement>
+    ) {
         setDetails({
-          ...details,
-          [e.target.name]: e.target.value,
+            ...details,
+            [e.target.name]: e.target.value,
         });
-      }
+    }
 
 
-      function handleSUPERIORCOURTOFCALIFORNIA(
+    function handleSUPERIORCOURTOFCALIFORNIA(
         e:
-          | React.ChangeEvent<HTMLInputElement>
-          | React.ChangeEvent<HTMLTextAreaElement>
-      ) {
+            | React.ChangeEvent<HTMLInputElement>
+            | React.ChangeEvent<HTMLTextAreaElement>
+    ) {
         setDetails({
-          ...details,
-          [e.target.name]: e.target.value,
+            ...details,
+            [e.target.name]: e.target.value,
         });
-      } 
+    }
 
     console.log(details)
 
@@ -34,8 +34,8 @@ export default function () {
     return (
         <div style={{ maxWidth: "1100px", margin: "auto" }}>
             <>
-            <h3 style={{ display: 'flex', marginBottom: '0' }}>FL-130 </h3>
-                <table style={{ width: "100%",  border: "2px solid black", borderCollapse: "collapse" }}>
+                <h3 style={{ display: 'flex', marginBottom: '0' }}>FL-130 </h3>
+                {/* <table style={{ width: "100%",  border: "2px solid black", borderCollapse: "collapse" }}>
                     <tbody>
                         <tr>
                             <td style={{ width: "70%", border: "2px solid black", borderCollapse: "collapse" }}>
@@ -163,7 +163,141 @@ export default function () {
                             </td>
                         </tr>
                     </tbody>
+                </table> */}
+
+                <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
+                    <tr className='flex justify-center items-start w-full h-full'>
+                        <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
+                        >
+                            <div style={{ margin: "0px 2px", marginTop: "-4px" }}>
+                                <label style={{ fontSize: "10px" }} >
+                                    ATTORNEY OR PARTY WITHOUT ATTORNEY
+                                    <span style={{ fontStyle: "italic" }}>(Name, State Bar number, and
+                                        address)</span>:
+                                </label>
+                                <textarea
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "-webkit-fill-available", resize: 'none' }}
+                                    name=""
+                                    id=""
+                                    cols={90}
+                                    rows={3}
+                                    defaultValue={""}
+                                />
+                            </div>
+                            <div className='flex justify-end items-center w-full'
+                            >
+                                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">TELEPHONE NO.:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
+                                </div>
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">FAX NO. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
+                                </div>
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="fax">E-MAIL ADDRESS <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="attorney">ATTORNEY FOR <span style={{ fontStyle: "italic" }}>(Name)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "71%" }} type="email" id="attorney" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className='relative w-[30%]'
+                        >
+                            <p className='absolute' style={{
+                                top: 10,
+                                left: "21%",
+                                fontSize: "10px",
+                                fontWeight: "bold"
+                            }}>
+                                FOR COURT USE ONLY
+                            </p>
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ margin: 0, padding: 1, paddingBottom: 2, borderCollapse: "collapse", borderTop: "2px solid black", display: "flex", flexDirection: "column", justifyContent: "flex-end", width: "70%", borderRight: "2px solid black" }}>
+                            <div className=' flex justify-end items-center'>
+                                <label htmlFor="name" style={{ fontSize: "10px", fontWeight: "bold" }}>SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+                                <input
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '56%' }}
+                                    type="text"
+                                    id="name"
+                                />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>STREET ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CITY AND ZIP CODE:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>BRANCH NAME:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ borderTop: "2px solid black", borderCollapse: "collapse", padding: 1, paddingBottom: 2, width: "70%", borderRight: "2px solid black", borderBottom: "2px solid black" }}>
+                            <div className='flex justify-end items-center '>
+                                <label htmlFor="name" style={{ fontSize: "10px" }}>PETITIONER:</label>
+                                <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                                    type="text" id="name" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>RESPONDENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "83%" }}
+                                    type="text" id="street" />
+                            </div>
+
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{
+                            borderCollapse: "collapse", width: "70%",
+                            height: "48px",
+                            borderRight: "2px solid black",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}>
+                            <div style={{ textAlign: "center", fontSize: "14px", letterSpacing: "1px" }}>
+                                <b>STIPULATION AND WAIVER OF FINAL DECLARATION OF DISCLOSURE</b>
+                            </div>
+                        </td>
+                        <td className='px-2 w-[30%]' style={{ borderTop: "2px solid black", }}>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CASE NUMBER:</label>
+                                <br />
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                    </tr>
                 </table>
+
+
+
+
                 <table
                     width="100%"
                     style={{ pageBreakInside: "auto", marginTop: 5, fontSize: 16, verticalAlign: "top" }}
@@ -192,10 +326,10 @@ export default function () {
                         a.
                     </div>
                     <div style={{ width: "98%", verticalAlign: "top" }}>
-                        <input 
-                        name={"AppearanceByRespondent"}
-                       onChange={(e) => handleChange(e)}
-                        type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                        <input
+                            name={"AppearanceByRespondent"}
+                            onChange={(e) => handleChange(e)}
+                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
                         By filing this form, I make a general appearance.
                     </div>
                 </div>
@@ -208,10 +342,10 @@ export default function () {
                     </div>
                     <div style={{ width: "95%", verticalAlign: "top" }} >
                         {" "}
-                        <input 
-                      name={"AppearanceByRespondent"}
-                      onChange={(e) => handleChange(e)}
-                        type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />I have
+                        <input
+                            name={"AppearanceByRespondent"}
+                            onChange={(e) => handleChange(e)}
+                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />I have
                         previously made a general appearance.
                     </div>
                 </div>
@@ -222,10 +356,10 @@ export default function () {
                         c.
                     </div>
                     <div>
-                        <input 
-                        name={"AppearanceByRespondent"}
-                        onChange={(e) => handleChange(e)}
-                        type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />{" "}
+                        <input
+                            name={"AppearanceByRespondent"}
+                            onChange={(e) => handleChange(e)}
+                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />{" "}
                     </div>
                     <div>
                         {" "}
@@ -268,10 +402,10 @@ export default function () {
                         a.
                     </div>
                     <div style={{ width: "95%", verticalAlign: "top" }} >
-                        <input 
-                        name={"AggrementsStipulationsAndWaivers"}
-                        onChange={(e) => handleChange(e)}
-                        type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                        <input
+                            name={"AggrementsStipulationsAndWaivers"}
+                            onChange={(e) => handleChange(e)}
+                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
                         The parties agree that this cause may be decided as an uncontested matter
                     </div>
                 </div>
@@ -284,10 +418,10 @@ export default function () {
                     </div>
                     <div style={{ width: "95%", verticalAlign: "top" }} >
                         {" "}
-                        <input 
-                        name={"AggrementsStipulationsAndWaivers"}
-                        onChange={(e) => handleChange(e)}
-                        type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                        <input
+                            name={"AggrementsStipulationsAndWaivers"}
+                            onChange={(e) => handleChange(e)}
+                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
                         The parties waive their rights to notice of trial, a statement of
                         decision, a motion for a new trial, and the right to appeal.
                     </div>
@@ -299,10 +433,10 @@ export default function () {
                     </div>
                     <div style={{ width: "95%", verticalAlign: "top" }} >
                         {" "}
-                        <input 
-                        name={"AggrementsStipulationsAndWaivers"}
-                        onChange={(e) => handleChange(e)}
-                        type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                        <input
+                            name={"AggrementsStipulationsAndWaivers"}
+                            onChange={(e) => handleChange(e)}
+                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
                         This matter may be decided by a commissioner sitting as a temporary judge
                     </div>
                 </div>
@@ -313,10 +447,10 @@ export default function () {
                     </div>
                     <div>
                         {" "}
-                        <input 
-                        name={"AggrementsStipulationsAndWaivers"}
-                        onChange={(e) => handleChange(e)}
-                        type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                        <input
+                            name={"AggrementsStipulationsAndWaivers"}
+                            onChange={(e) => handleChange(e)}
+                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
                     </div>
                     <div>
                         {" "}
@@ -334,10 +468,10 @@ export default function () {
                         e.
                     </div>
                     <div>
-                        <input 
-                        name={"AggrementsStipulationsAndWaivers"}
-                        onChange={(e) => handleChange(e)}
-                        type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                        <input
+                            name={"AggrementsStipulationsAndWaivers"}
+                            onChange={(e) => handleChange(e)}
+                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
                     </div>
                     <div>
                         {" "}
@@ -354,10 +488,10 @@ export default function () {
                         f.
                     </div>
                     <div>
-                        <input 
-                        name={"AggrementsStipulationsAndWaivers"}
-                        onChange={(e) => handleChange(e)}
-                        type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                        <input
+                            name={"AggrementsStipulationsAndWaivers"}
+                            onChange={(e) => handleChange(e)}
+                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
                     </div>
                     <div>
                         {" "}
@@ -385,7 +519,7 @@ export default function () {
                                 <div style={{ marginBottom: 5, marginLeft: 10, fontSize: 16 }}>
                                     <b>Other (specify):</b>
                                 </div>
-                                <textarea style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "50px",width:"100%",resize:"none"}}/>
+                                <textarea style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "50px", width: "100%", resize: "none" }} />
                             </td>
                         </tr>
                     </tbody>
@@ -393,120 +527,120 @@ export default function () {
                 <div style={{ marginLeft: "5%" }}>
                     <div style={{ marginTop: 2, fontSize: 16 }}>
                         Date: <input
-                        name={"Date"}
-                        onChange={(e) => handleChange(e)}
-                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" size={20} id="fax" />
+                            name={"Date"}
+                            onChange={(e) => handleChange(e)}
+                            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" size={20} id="fax" />
                     </div>
                     <div
-                        style={{ display: "flex", justifyContent: "space-between", margin: 3}}
+                        style={{ display: "flex", justifyContent: "space-between", margin: 3 }}
                     >
                         <div>
                             <input
-                            name={"TypeOrPrintName"}
-                            onChange={(e) => handleChange(e)}
-                            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="fax" size={50} />
+                                name={"TypeOrPrintName"}
+                                onChange={(e) => handleChange(e)}
+                                style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="fax" size={50} />
                             <div>(TYPE OR PRINT NAME)</div>{" "}
                         </div>
                         <div>
-                        <input 
-                        name={"SignatureOfPetitioner"}
-                        onChange={(e) => handleChange(e)}
-                        type="text" size={40} id="fax" />{" "}
+                            <input
+                                name={"SignatureOfPetitioner"}
+                                onChange={(e) => handleChange(e)}
+                                type="text" size={40} id="fax" />{" "}
                             <div> (SIGNATURE OF PETITIONER)</div>
                         </div>
                     </div>
                     <div style={{ marginTop: 5, fontSize: 16 }}>
-                        Date: <input 
-                        name={"Date"}
-                        onChange={(e) => handleChange(e)}
-                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" size={20} id="fax" />
-                    </div>
-                    <div
-                        style={{ display: "flex", justifyContent: "space-between", margin: 6 }}
-                    >
-                        <div>
-                            <input 
-                            name={"TypeOrPrintName"}
+                        Date: <input
+                            name={"Date"}
                             onChange={(e) => handleChange(e)}
-                            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="fax" size={50} />
-                            <div>(TYPE OR PRINT NAME)</div>{" "}
-                        </div>
-                        <div>
-                        <input
-                          name={"SignatureOfRespondent"}
-                          onChange={(e) => handleChange(e)}
-                        type="text" size={40} id="fax" />{" "}
-                            <div>(SIGNATURE OF RESPONDENT) </div>
-                        </div>
-                    </div>
-                    <div style={{ marginTop: 5, fontSize: 16}}>
-                        Date:<input
-                         name={"Date"}
-                         onChange={(e) => handleChange(e)}
-                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" size={20} id="fax" />
-                         {/* <input type="text" size={40} id="fax" />{" "} */}
+                            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" size={20} id="fax" />
                     </div>
                     <div
                         style={{ display: "flex", justifyContent: "space-between", margin: 6 }}
                     >
                         <div>
                             <input
-                            name={"TypeOrPrintName"}
-                            onChange={(e) => handleChange(e)}
-                            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",  }} type="text" id="fax" size={50} />
+                                name={"TypeOrPrintName"}
+                                onChange={(e) => handleChange(e)}
+                                style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="fax" size={50} />
                             <div>(TYPE OR PRINT NAME)</div>{" "}
                         </div>
                         <div>
-                        <input 
-                        name={"SignatureOfAttorneyForPetitioner"}
-                        onChange={(e) => handleChange(e)}
-                        type="text" size={40} id="fax" />{" "}
-                            <div> (SIGNATURE OF ATTORNEY FOR PETITIONER)</div>
+                            <input
+                                name={"SignatureOfRespondent"}
+                                onChange={(e) => handleChange(e)}
+                                type="text" size={40} id="fax" />{" "}
+                            <div>(SIGNATURE OF RESPONDENT) </div>
                         </div>
                     </div>
-                    <div style={{ fontSize: 16 }}>
-                        Date: <input 
-                        name={"Date"}
-                        onChange={(e) => handleChange(e)}
-                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", }} type="text" size={20} id="fax" />
+                    <div style={{ marginTop: 5, fontSize: 16 }}>
+                        Date:<input
+                            name={"Date"}
+                            onChange={(e) => handleChange(e)}
+                            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" size={20} id="fax" />
+                        {/* <input type="text" size={40} id="fax" />{" "} */}
                     </div>
                     <div
                         style={{ display: "flex", justifyContent: "space-between", margin: 6 }}
                     >
                         <div>
-                            <input 
-                             name={"TypeOrPrintName"}
-                             onChange={(e) => handleChange(e)}
-                            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", }} type="text" id="fax" size={50} />
+                            <input
+                                name={"TypeOrPrintName"}
+                                onChange={(e) => handleChange(e)}
+                                style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", }} type="text" id="fax" size={50} />
                             <div>(TYPE OR PRINT NAME)</div>{" "}
                         </div>
                         <div>
-                        <input 
-                        name={"SignatureOfAttorneyForRespondent"}
-                        onChange={(e) => handleChange(e)}
-                        type="text" size={40} id="fax" />{" "}
+                            <input
+                                name={"SignatureOfAttorneyForPetitioner"}
+                                onChange={(e) => handleChange(e)}
+                                type="text" size={40} id="fax" />{" "}
+                            <div> (SIGNATURE OF ATTORNEY FOR PETITIONER)</div>
+                        </div>
+                    </div>
+                    <div style={{ fontSize: 16 }}>
+                        Date: <input
+                            name={"Date"}
+                            onChange={(e) => handleChange(e)}
+                            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", }} type="text" size={20} id="fax" />
+                    </div>
+                    <div
+                        style={{ display: "flex", justifyContent: "space-between", margin: 6 }}
+                    >
+                        <div>
+                            <input
+                                name={"TypeOrPrintName"}
+                                onChange={(e) => handleChange(e)}
+                                style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", }} type="text" id="fax" size={50} />
+                            <div>(TYPE OR PRINT NAME)</div>{" "}
+                        </div>
+                        <div>
+                            <input
+                                name={"SignatureOfAttorneyForRespondent"}
+                                onChange={(e) => handleChange(e)}
+                                type="text" size={40} id="fax" />{" "}
                             <div> (SIGNATURE OF ATTORNEY FOR PETITIONER)</div>
                         </div>
                     </div>
                 </div>
-              
+
                 <hr style={{ width: "100%" }} />
                 <div
                     className="footer"
                     style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                    <div style={{ listStyle: "none" , fontSize:'10px' }}>
+                    <div style={{ listStyle: "none", fontSize: '10px' }}>
                         <div>Form Approved for Optional Use</div>
                         <div>Judicial Council of California</div>
                         <div> FL-130 [Rev. January 1, 2011]</div>
                     </div>
-                    <div style={{ }}>
-                      <div style={{ marginLeft:"40px" , fontWeight: "bold" }}>  <h3>APPEARANCE, STIPULATIONS, AND WAIVERS</h3></div>
-                        <div style={{ marginLeft:"5px" , fontWeight: "bold" }}>
+                    <div style={{}}>
+                        <div style={{ marginLeft: "40px", fontWeight: "bold" }}>  <h3>APPEARANCE, STIPULATIONS, AND WAIVERS</h3></div>
+                        <div style={{ marginLeft: "5px", fontWeight: "bold" }}>
                             (Family Law—Uniform Parentage—Custody and Support)
                         </div>
                     </div>
-                    <div style={{ listStyle: "none", fontSize:'10px' }}>
+                    <div style={{ listStyle: "none", fontSize: '10px' }}>
                         <div>Government Code, § 70673</div>
                         <div> www.courtinfo.ca.gov</div>
                     </div>

@@ -5,175 +5,179 @@ export default function FL105() {
         <>
             <div style={{ maxWidth: "1100px", margin: "auto" }}>
                 <h3 style={{ float: "right", marginTop: 0, marginBottom: 0 }}><b>FL-120</b></h3>
-                <table style={{ width: "100%", marginTop: 10, border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
-                    <tbody>
-                        <tr>
-                            <td style={{ width: "70%", border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
-                                <div>
-                                    <label>PARTY WITHOUT ATTORNEY OR ATTORNEY</label>
-                                    <label style={{ marginLeft: "10%" }}>STATE BAR NUMBER</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" />
-                                    <div>
-                                        <label>NAME</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "88%" }} type="text" />
-                                    </div>
-                                    <div>
-                                        <label>FIRM NAME:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "82%" }} type="text" />
-                                    </div>
-                                    <div>
-                                        <label>STREET ADDRESS:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "75%" }} type="text" />
-                                    </div>
-                                    <div style={{ display: "grid", gridTemplateColumns: "40% 30% 30%" }}>
-                                        <div>
-                                            <label>CITY</label>
-                                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" />
-                                        </div>
-                                        <div>
-                                            <label>STATE:</label>
-                                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "73%" }} type="text" />
-                                        </div>
-                                        <div>
-                                            <label>ZIP CODE:</label>
-                                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" />
-                                        </div>
-                                    </div>
-                                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-                                        <div>
-                                            <label>TELEPHONE NO.:</label>
-                                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" />
-                                        </div>
-                                        <div>
-                                            <label>FAX NO:</label>
-                                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label>E-MAIL ADDRESS: </label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" />
-                                    </div>
-                                    <div>
-                                        <label>ATTORNEY FOR (name): </label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" />
-                                    </div>
+                <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
+                    <tr className='flex justify-center items-start w-full h-full'>
+                        <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
+                        >
+                            <div style={{ margin: "0px 2px", marginTop: "-4px" }}>
+                                <label style={{ fontSize: "10px" }} >
+                                    ATTORNEY OR PARTY WITHOUT ATTORNEY
+                                    <span style={{ fontStyle: "italic" }}>(Name, State Bar number, and
+                                        address)</span>:
+                                </label>
+                                <div className='mt-1 flex justify-end items-center'>
+                                    <label style={{ fontSize: "10px" }} htmlFor="fax">NAME <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
                                 </div>
-                            </td>
-                            <td style={{ textAlign: "center", top: 0, border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }} rowSpan={3}
-                            >
-                                <div>
-                                    <label>FOR COURT USE ONLY</label>
+                                <div className='mt-1 flex justify-end items-center'>
+                                    <label style={{ fontSize: "10px" }} htmlFor="fax">FIRM NAME <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
                                 </div>
-                            </td>
-                        </tr>
+                                <div className='mt-1 flex justify-end items-center'>
+                                    <label style={{ fontSize: "10px" }} htmlFor="fax">STREET ADDRESS <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
+                                </div>
+                            </div>
 
-                        <tr>
-                            <td style={{ width: "70%", margin: 0, border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
-                                <div style={{ marginBottom: 5 }}>
-                                    <label htmlFor="name">SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
-                                    <input
-                                        style={{ width: "50%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
-                                        type="text"
-                                        id="name"
-                                    />
+                            <div className='flex justify-end items-center w-full' >
+                                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">CITY:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "2px 2px", }} className='w-[60%]' type="number" id="telephone" />
                                 </div>
-                                <div style={{ marginBottom: 5 }}>
-                                    <label htmlFor="street">STREET ADDRESS:</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "78%" }} type="text" id="street" />
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">STATE. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "2px 1px", }} className='w-[42%]' type="number" id="telephone" />
                                 </div>
-                                <div style={{ marginBottom: 5 }}>
-                                    <label htmlFor="street">MAILING ADDRESS:</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "78%" }} type="text" id="street" />
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">ZIP CODE. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "2px 1px", }} className='w-[30%]' type="number" id="telephone" />
                                 </div>
-                                <div style={{ marginBottom: 5 }}>
-                                    <label htmlFor="street">CITY AND ZIP CODE:</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "76%" }} type="text" id="street" />
+                            </div>
+
+                            <div className='flex justify-end items-center w-full' >
+                                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">TELEPHONE NO.:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                                 </div>
-                                <div style={{ marginBottom: 5 }}>
-                                    <label htmlFor="street">BRANCH NAME:</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "80%" }} type="text" id="street" />
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">FAX NO. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ width: "70%", border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
-                                <div style={{ fontSize: 18, marginBottom: 5, marginLeft: "1.2rem" }}>
-                                    <label htmlFor="name">PETITIONER:</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "82%" }} type="text" id="name" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="fax">E-MAIL ADDRESS <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="attorney">ATTORNEY FOR <span style={{ fontStyle: "italic" }}>(Name)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "71%" }} type="email" id="attorney" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className='relative w-[30%]'
+                        >
+                            <p className='absolute' style={{
+                                top: 10,
+                                left: "21%",
+                                fontSize: "10px",
+                                fontWeight: "bold"
+                            }}>
+                                FOR COURT USE ONLY
+                            </p>
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ margin: 0, padding: 1, paddingBottom: 2, borderCollapse: "collapse", borderTop: "2px solid black", display: "flex", flexDirection: "column", justifyContent: "flex-end", width: "70%", borderRight: "2px solid black" }}>
+                            <div className=' flex justify-end items-center'>
+                                <label htmlFor="name" style={{ fontSize: "10px", fontWeight: "bold" }}>SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+                                <input
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '56%' }}
+                                    type="text"
+                                    id="name"
+                                />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>STREET ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CITY AND ZIP CODE:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>BRANCH NAME:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ borderTop: "2px solid black", borderCollapse: "collapse", padding: 1, paddingBottom: 2, width: "70%", borderRight: "2px solid black", borderBottom: "2px solid black" }}>
+                            <div className='flex justify-end items-center '>
+                                <label htmlFor="name" style={{ fontSize: "10px" }}>PLAINTIFF/PETITIONER:</label>
+                                <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                                    type="text" id="name" />
+                            </div>
+
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>RESPONDENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{
+                            borderCollapse: "collapse", width: "70%",
+                            height: "48px",
+                            borderRight: "2px solid black",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}>
+                            <div className='flex justify-end items-center w-full' >
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+
+                                    <label style={{ fontSize: "15px", marginRight: "18px" }} htmlFor="telephone">RESPONSE</label>
                                 </div>
-                                <div style={{ fontSize: 18, marginBottom: 5 }}>
-                                    <label htmlFor="street">RESPONDENT:</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "80%" }} type="text" id="street" />
+                                <div className='flex  items-center' style={{ width: "inherit" }}>
+                                    <input type="checkbox" style={{ marginRight: 5 }} />
+                                    <label style={{ fontSize: "15px" }} htmlFor="telephone"> <span style={{ fontStyle: "italic" }}>AND REQUEST FOR</span></label>
                                 </div>
-                                <div style={{ fontSize: 18, marginBottom: 5 }}>
-                                    <label htmlFor="street">OTHER PARENT/PARTY:</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "70%" }} type="text" id="street" />
+                                <div className='flex justify-end ' style={{ width: "inherit" }}>
+                                    <input type="checkbox" style={{ marginRight: 5 }} />
+                                    <label style={{ fontSize: "15px" }} htmlFor="telephone"><span style={{ fontStyle: "italic", marginRight: "14px" }}>AMENDED </span></label>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ width: "80%", border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
-                                <div style={{ display: "grid", gridTemplateColumns: "35% 30% 35%", margin: 10 }}>
-                                    <div>
-                                        <label> <b>RESPONSE</b> </label>
-                                    </div>
-                                    <div style={{ marginRight: 20 }}>
-                                        <input type="checkbox" />
-                                        <b>AND REQUEST FOR</b>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" />
-                                        <b>AMENDED</b>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" />
-                                        Dissolution (Divorce) of:
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" />
-                                        Marriage
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" />
-                                        Domestic Partnership
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" />
-                                        Legal Separation of:
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" />
-                                        Marriage
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" />
-                                        Domestic Partnership
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" />
-                                        Nullity of:
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" />
-                                        Marriage
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" />
-                                        Domestic Partnership
-                                    </div>
+                            </div>
+                            <div className='flex items-center w-full' >
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                <input type="checkbox" style={{ marginRight: 5 }} />
+                                    <label style={{ fontSize: "15px", marginRight: "18px" }} htmlFor="telephone">Dissolution (Divorce) of:</label>
                                 </div>
-                            </td>
-                            <td>
-                                <div style={{ marginLeft: "1.2rem" }}>
-                                    <label htmlFor="street">CASE NUMBER:</label>
-                                    <br />
-                                    <input size={28} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <input type="checkbox" style={{ marginRight: 5 }} />
+                                    <label style={{ fontSize: "15px" }} htmlFor="telephone"> <span style={{ fontStyle: "italic" }}>Marriage</span></label>
                                 </div>
-                            </td>
-                        </tr>
-                    </tbody>
+                                <div className='flex justify-end ' style={{ width: "inherit" }}>
+                                    <input type="checkbox" style={{ marginRight: 5 }} />
+                                    <label style={{ fontSize: "15px" }} htmlFor="telephone"><span style={{ fontStyle: "italic", marginRight: "14px" }}>Domestic Partnership  </span></label>
+                                </div>
+                            </div>
+
+                        </td>
+                        <td className='px-2 w-[30%]' style={{ borderTop: "2px solid black", }}>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "15px" }}>CASE NUMBER:</label>
+                                <br />
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                    </tr>
                 </table>
-
 
 
 
@@ -355,9 +359,10 @@ export default function FL105() {
                                         <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "80.5%" }} type="text" id="street" />
                                     </div>
                                 </div>
-                                <div style={{ border: "1px solid black" }}>
-                                    <label>CASE NUMBER</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <div style={{ margin: "0px", }}>
+                                    <label htmlFor="street" style={{ fontSize: "15px" }}>CASE NUMBER:</label>
+                                    <br />
+                                    <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
                                 </div>
                             </div>
                         </div>
@@ -636,9 +641,10 @@ export default function FL105() {
                         </div>
                     </div>
                     <div style={{ border: "1px solid black" }}>
-                        <div>
-                            <label>CASE NUMBER:</label>
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" />
+                        <div style={{ margin: "0px", }}>
+                            <label htmlFor="street" style={{ fontSize: "15px" }}>CASE NUMBER:</label>
+                            <br />
+                            <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
                         </div>
                     </div>
                 </div>
