@@ -133,38 +133,66 @@ export default function FL105() {
                     <tr className='flex justify-center items-center w-full'>
                         <td style={{
                             borderCollapse: "collapse", width: "70%",
-                            height: "48px",
                             borderRight: "2px solid black",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center"
-                        }}>
-                            <div className='flex justify-end items-center w-full' >
-                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
 
-                                    <label style={{ fontSize: "15px", marginRight: "18px" }} htmlFor="telephone">RESPONSE</label>
+                        }}>
+                            <div className=' w-full' >
+                                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", letterSpacing: "1px" }}>
+                                    <div>
+
+                                        <span style={{ fontStyle: "10px", fontWeight: "bold", marginLeft: "10px" }}>(PETITION FOR)</span>
+                                    </div>
+                                    <div style={{ marginRight: "12px" }}>
+                                        <input type="checkbox" style={{ marginRight: 5 }} />
+                                        <span style={{ fontStyle: "10px", fontWeight: "bold" }}>AND REQUEST FOR</span>
+                                    </div>
+                                    <div style={{ marginRight: "12px" }}>
+                                        <input type="checkbox" style={{ marginRight: 5 }} />
+                                        <span style={{ fontStyle: "10px", fontWeight: "bold" }}>(AMENDED)</span>
+                                    </div>
+
                                 </div>
-                                <div className='flex  items-center' style={{ width: "inherit" }}>
-                                    <input type="checkbox" style={{ marginRight: 5 }} />
-                                    <label style={{ fontSize: "15px" }} htmlFor="telephone"> <span style={{ fontStyle: "italic" }}>AND REQUEST FOR</span></label>
+                                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", letterSpacing: "1px" }}>
+                                    <div style={{ marginLeft: "10px" }}>
+                                        <input type="checkbox" style={{ marginRight: 5 }} />
+                                        <span style={{ fontStyle: "10px", fontWeight: "bold" }}> Dissolution (Divorce) of</span>
+                                    </div>
+                                    <div style={{ marginRight: "31px" }}>
+                                        <input type="checkbox" style={{ marginRight: 5 }} />
+                                        <span style={{ fontStyle: "7px", }}>Marriage</span>
+                                    </div>
+                                    <div style={{ marginRight: "12px" }}>
+                                        <input type="checkbox" style={{ marginRight: 5 }} />
+                                        <span style={{ fontStyle: "7px" }}>Domestic partnership</span>
+                                    </div>
                                 </div>
-                                <div className='flex justify-end ' style={{ width: "inherit" }}>
-                                    <input type="checkbox" style={{ marginRight: 5 }} />
-                                    <label style={{ fontSize: "15px" }} htmlFor="telephone"><span style={{ fontStyle: "italic", marginRight: "14px" }}>AMENDED </span></label>
+                                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", letterSpacing: "1px" }}>
+                                    <div style={{ marginLeft: "10px" }}>
+                                        <input type="checkbox" style={{ marginRight: 5 }} />
+                                        <span style={{ fontStyle: "10px", fontWeight: "bold" }}>Legal Separation of:</span>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" style={{ marginRight: 5 }} />
+                                        <span style={{ fontStyle: "7px", }}>Marriage</span>
+                                    </div>
+                                    <div style={{ marginRight: "12px" }}>
+                                        <input type="checkbox" style={{ marginRight: 5 }} />
+                                        <span style={{ fontStyle: "7px" }}>Domestic partnership</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='flex items-center w-full' >
-                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
-                                <input type="checkbox" style={{ marginRight: 5 }} />
-                                    <label style={{ fontSize: "15px", marginRight: "18px" }} htmlFor="telephone">Dissolution (Divorce) of:</label>
-                                </div>
-                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
-                                    <input type="checkbox" style={{ marginRight: 5 }} />
-                                    <label style={{ fontSize: "15px" }} htmlFor="telephone"> <span style={{ fontStyle: "italic" }}>Marriage</span></label>
-                                </div>
-                                <div className='flex justify-end ' style={{ width: "inherit" }}>
-                                    <input type="checkbox" style={{ marginRight: 5 }} />
-                                    <label style={{ fontSize: "15px" }} htmlFor="telephone"><span style={{ fontStyle: "italic", marginRight: "14px" }}>Domestic Partnership  </span></label>
+                                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", letterSpacing: "1px" }}>
+                                    <div style={{ marginLeft: "10px" }}>
+                                        <input type="checkbox" style={{ marginRight: 5 }} />
+                                        <span style={{ fontStyle: "10px", fontWeight: "bold" }}> Nullity of</span>
+                                    </div>
+                                    <div style={{ marginLeft: "11%" }}>
+                                        <input type="checkbox" style={{ marginRight: 5 }} />
+                                        <span style={{ fontStyle: "7px", }}>Marriage</span>
+                                    </div>
+                                    <div style={{ marginRight: "12px" }}>
+                                        <input type="checkbox" style={{ marginRight: 5 }} />
+                                        <span style={{ fontStyle: "7px" }}>Domestic partnership</span>
+                                    </div>
                                 </div>
                             </div>
 

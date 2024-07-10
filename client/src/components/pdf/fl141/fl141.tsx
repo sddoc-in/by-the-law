@@ -7,7 +7,7 @@ export default function FL141() {
 
         
             <h3 className="fl">FL-141</h3>
-            <table style={{ width: "100%", marginTop: 10, border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
+            {/* <table style={{ width: "100%", marginTop: 10, border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
                 <tbody>
                     <tr>
                         <td style={{ width: "70%", border: "2px solid black", borderCollapse: "collapse", marginBottom: "5px" }}>
@@ -131,7 +131,7 @@ export default function FL141() {
                         </td>
                     </tr>
                 </tbody>
-            </table>
+            </table> */}
             <table
                 width="100%"
                 style={{ pageBreakInside: "auto", verticalAlign: "top" }}

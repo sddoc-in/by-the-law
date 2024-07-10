@@ -99,14 +99,14 @@ export default function SU117() {
                         </tr>
                     </tbody>
                 </table> */}
-                   <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
+                <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
                     <tr className='flex justify-center items-start w-full h-full'>
                         <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
                         >
                             <div style={{ margin: "0px 2px", marginTop: "4px" }}>
-                
+
                                 <textarea
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "-webkit-fill-available", resize: 'none',fontSize: "10px" }}
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "-webkit-fill-available", resize: 'none', fontSize: "10px" }}
                                     name=""
                                     id=""
                                     placeholder="  ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and address) "
@@ -225,7 +225,7 @@ export default function SU117() {
                         </td>
                     </tr>
                 </table>
-                
+
 
 
 
@@ -250,7 +250,7 @@ export default function SU117() {
                             <td width="95%" valign="top">
                                 <div>
                                     To (name of individual being served):
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "38rem" }} type="text" id="street" />
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "38rem" }} type="text" id="street" />
                                 </div>
                             </td>
                         </tr>
@@ -393,47 +393,47 @@ export default function SU117() {
                             <div style={{ padding: 2 }}>
                                 <span>(1)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
-                                <span style={{ marginLeft: "10px" }}>Completed and blank Declaration Under Uniform Child 
-                                    Custody Jurisdiction and EnforcementAct (form 
-                                    <a href="" target="_blank" style={{color:"blue"}}>FL-105</a> )
+                                <span style={{ marginLeft: "10px" }}>Completed and blank Declaration Under Uniform Child
+                                    Custody Jurisdiction and EnforcementAct (form
+                                    <a href="" target="_blank" style={{ color: "blue" }}>FL-105</a> )
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
                                 <span>(5)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
-                                <span style={{ marginLeft: "10px" }}>Completed and blank Income and Expense Declaration (form 
-                                    <a href="" style={{color:"blue"}}>FL-150</a>)
+                                <span style={{ marginLeft: "10px" }}>Completed and blank Income and Expense Declaration (form
+                                    <a href="" style={{ color: "blue" }}>FL-150</a>)
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
                                 <span>(2)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
-                                <span style={{ marginLeft: "10px" }}>Completed and blank Declaration of Disclosure (form 
-                                    <a href="" style={{color:"blue"}}>FL-140</a>)
+                                <span style={{ marginLeft: "10px" }}>Completed and blank Declaration of Disclosure (form
+                                    <a href="" style={{ color: "blue" }}>FL-140</a>)
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
                                 <span>(6)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                                 <span style={{ marginLeft: "10px" }}>
-                                    Completed and blank Financial Statement (Simplified)(form 
-                                    <a href="" style={{color:"blue"}}>FL-155 </a>)
+                                    Completed and blank Financial Statement (Simplified)(form
+                                    <a href="" style={{ color: "blue" }}>FL-155 </a>)
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
                                 <span>(3)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                                 <span style={{ marginLeft: "10px" }}>Completed and blank Schedule of Assets and Debts (form
-                                    <a href="" style={{color:"blue"}}> FL-142</a> )
+                                    <a href="" style={{ color: "blue" }}> FL-142</a> )
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
                                 <span>(7)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                                 <span style={{ marginLeft: "10px" }}>Request for Order (form FL-300), and
-                                     blank Responsive Declaration to Request for Order (form 
+                                    blank Responsive Declaration to Request for Order (form
 
-                                    <a href="" style={{color:"blue"}}>FL-320</a>)
+                                    <a href="" style={{ color: "blue" }}>FL-320</a>)
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
@@ -441,7 +441,7 @@ export default function SU117() {
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                                 <span style={{ marginLeft: "10px" }}> Completed and blank Property Declaration (form
 
-                                    <a href="" style={{color:"blue"}}> FL-160 )</a>
+                                    <a href="" style={{ color: "blue" }}> FL-160 )</a>
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>

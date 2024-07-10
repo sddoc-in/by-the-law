@@ -5,177 +5,197 @@ export default function SU100() {
     <>
       <div style={{ maxWidth: "1100px", margin: "auto" }}>
         <h3 className="fl">FL-100</h3>
-        <table style={{ width: "100%", margin: 5, border: "2px solid black", borderCollapse: "collapse" }}>
-          <tbody>
-            <tr>
-              <td style={{ border: "2px solid black", borderCollapse: "collapse", width: "70%" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-                  <label>PARTY WITHOUT ATTORNEY OR ATTORNEY</label>
-                  <div style={{ marginBottom: 4 }}><label>STATE BAR NUMBER:</label>
-                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="fax" />
-                  </div>
+        <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
+          <tr className='flex justify-center items-start w-full h-full'>
+            <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
+            >
+              <div className='mt-1 flex justify-end items-center'>
+                <label htmlFor="street" style={{ fontSize: "10px" }}>NAME:</label>
+                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                  type="text" id="street" />
+              </div>
+              <div className='mt-1 flex justify-end items-center'>
+                <label htmlFor="street" style={{ fontSize: "10px" }}> FIRM NAME:</label>
+                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                  type="text" id="street" />
+              </div>
+              <div className='mt-1 flex justify-end items-center'>
+                <label htmlFor="street" style={{ fontSize: "10px" }}> STREET ADDRESS:</label>
+                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                  type="text" id="street" />
+              </div>
+              <div className='flex justify-end items-center w-full' >
+                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                  <label style={{ fontSize: "10px" }} htmlFor="telephone">CITY.:</label>
+                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "2px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                 </div>
-                <div style={{ marginBottom: 2 }}>
-                  <label>NAME:</label>
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "93%" }} type="text" id="fax" />
+                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                  <label style={{ fontSize: "10px" }} htmlFor="telephone">STATE. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "2px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                 </div>
-                <div style={{ marginBottom: 2 }}>
-                  <label>FIRM NAME:</label>
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "87.9%" }} type="text" id="fax" />
+                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                  <label style={{ fontSize: "10px" }} htmlFor="telephone">ZIP CODE. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "2px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                 </div>
-                <div style={{ marginBottom: 2 }}>
-                  <label>STREET ADDRESS:</label>
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "82.2%" }} type="text" id="fax" />
-                </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
-                  <div style={{ marginBottom: 2 }}>
-                    <label>CITY:</label>
-                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" />
+              </div>
 
-                  </div>
-                  <div >
-                    <label>STATE:</label>
-                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "75%" }} type="text" />
-
-                  </div>
-                  <div style={{ marginBottom: 2 }}>
-                    <label>ZIP CODE</label>
-                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "69%" }} type="text" />
-                  </div>
+              <div className='flex justify-end items-center w-full' >
+                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                  <label style={{ fontSize: "10px" }} htmlFor="telephone">TELEPHONE NO.:</label>
+                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-                  <div style={{ marginBottom: 2 }}>
-                    <label htmlFor="telephone">TELEPHONE NO.:</label>
-                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"68%" }} type="number" id="telephone" />
-                  </div>
-                  <div style={{ marginBottom: 2 }}>
-                    <label htmlFor="fax">fAX NO:</label>
-                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"82%" }} type="text" />
-                  </div>
+                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                  <label style={{ fontSize: "10px" }} htmlFor="telephone">FAX NO. :</label>
+                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                 </div>
-                <div style={{ marginBottom: 2 }}>
-                  <label htmlFor="attorney">ATTORNEY FOR (name):</label>
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "75%" }} type="email" id="attorney" />
-                </div>
-              </td>
-              <td
-                style={{ textAlign: "center", top: 0, border: "2px solid black", borderCollapse: "collapse" }}
-                rowSpan={3}
-              >
+              </div>
+              <div className='mt-1 flex justify-end items-center'>
+                <label style={{ fontSize: "10px" }} htmlFor="fax">E-MAIL ADDRESS <span style={{ fontStyle: "italic" }}></span>:</label>
+                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
+              </div>
+              <div className='mt-1 flex justify-end items-center'>
+                <label style={{ fontSize: "10px" }} htmlFor="attorney">ATTORNEY FOR <span style={{ fontStyle: "italic" }}>(Name)</span>:</label>
+                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "71%" }} type="email" id="attorney" />
+              </div>
+            </td>
+            <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+              className='relative w-[30%]'
+            >
+              <p className='absolute' style={{
+                top: 10,
+                left: "21%",
+                fontSize: "10px",
+                fontWeight: "bold"
+              }}>
                 FOR COURT USE ONLY
-              </td>
-            </tr>
-            <tr>
-              <td style={{ margin: 0, border: "2px solid black", borderCollapse: "collapse" }}>
-                <div className="font  " style={{ margin: 2 }}>
-                  <label htmlFor="name">
-                    SUPERIOR COURT OF CALIFORIA, COUNTY OF
-                  </label>
-                  <input
-                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "55%" }}
-                    type="text"
-                    id="name"
-                  />
+              </p>
+            </td>
+          </tr>
+          <tr className='flex justify-center items-center w-full'>
+            <td style={{ margin: 0, padding: 1, paddingBottom: 2, borderCollapse: "collapse", borderTop: "2px solid black", display: "flex", flexDirection: "column", justifyContent: "flex-end", width: "70%", borderRight: "2px solid black" }}>
+              <div className=' flex justify-end items-center'>
+                <label htmlFor="name" style={{ fontSize: "10px", fontWeight: "bold" }}>SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+                <input
+                  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '56%' }}
+                  type="text"
+                  id="name"
+                />
+              </div>
+              <div className='mt-1 flex justify-end items-center'>
+                <label htmlFor="street" style={{ fontSize: "10px" }}>STREET ADDRESS:</label>
+                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                  type="text" id="street" />
+              </div>
+              <div className='mt-1 flex justify-end items-center'>
+                <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                  type="text" id="street" />
+              </div>
+              <div className='mt-1 flex justify-end items-center'>
+                <label htmlFor="street" style={{ fontSize: "10px" }}>CITY AND ZIP CODE:</label>
+                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                  type="text" id="street" />
+              </div>
+              <div className='mt-1 flex justify-end items-center'>
+                <label htmlFor="street" style={{ fontSize: "10px" }}>BRANCH NAME:</label>
+                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }} type="text" id="street" />
+              </div>
+            </td>
+            <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+              className=' w-[30%]'
+            >
+            </td>
+          </tr>
+          <tr className='flex justify-center items-center w-full'>
+            <td style={{ borderTop: "2px solid black", borderCollapse: "collapse", padding: 1, paddingBottom: 2, width: "70%", borderRight: "2px solid black", borderBottom: "2px solid black" }}>
+              <div className='flex justify-end items-center '>
+                <label htmlFor="name" style={{ fontSize: "10px" }}>PETITIONER:</label>
+                <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                  type="text" id="name" />
+              </div>
+              <div className='flex justify-end items-center mt-1'>
+                <label htmlFor="street" style={{ fontSize: "10px" }}>RESPONDENT:</label>
+                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "83%" }}
+                  type="text" id="street" />
+              </div>
+
+            </td>
+            <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+              className=' w-[30%]'
+            >
+
+            </td>
+          </tr>
+          <tr className='flex justify-center items-center w-full'>
+            <td style={{
+              borderCollapse: "collapse", width: "70%",
+            
+              borderRight: "2px solid black",
+            }}>
+              <div style={{ display: "flex",justifyContent:"space-between", fontSize: "14px", letterSpacing: "1px" }}>
+                <div>
+                 
+                  <span style={{ fontStyle: "10px",fontWeight:"bold", marginLeft:"10px" }}>(PETITION FOR)</span>
                 </div>
-                <div style={{ marginBottom: 2 }}>
-                  <label htmlFor="street">STREET ADDRESS:</label>
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "82%" }} type="text" id="street" />
+                <div style={{marginRight:"12px"}}>
+                  <input type="checkbox" style={{ marginRight: 5 }} />
+                  <span style={{ fontStyle: "10px",fontWeight:"bold" }}>(AMENDED)</span>
+                </div> 
+              </div>
+              <div style={{ display: "flex",justifyContent:"space-between", fontSize: "14px", letterSpacing: "1px" }}>
+                <div style={{marginLeft:"10px"}}>
+                  <input type="checkbox" style={{ marginRight: 5 }} />
+                  <span style={{ fontStyle: "10px",fontWeight:"bold" }}> Dissolution (Divorce) of</span>
                 </div>
-                <div style={{ marginBottom: 2 }}>
-                  <label htmlFor="street">MAILING ADDRESS:</label>
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "80.6%" }} type="text" id="street" />
+                <div style={{marginRight:"31px"}}>
+                  <input type="checkbox" style={{ marginRight: 5 }} />
+                  <span style={{ fontStyle: "7px", }}>Marriage</span>
+                </div> 
+                <div style={{marginRight:"12px"}}>
+                  <input type="checkbox" style={{ marginRight: 5 }} />
+                  <span style={{ fontStyle: "7px" }}>Domestic partnership</span>
+                </div> 
+              </div>
+              <div style={{ display: "flex",justifyContent:"space-between", fontSize: "14px", letterSpacing: "1px" }}>
+                <div style={{marginLeft:"10px"}}>
+                  <input type="checkbox" style={{ marginRight: 5 }} />
+                  <span style={{ fontStyle: "10px",fontWeight:"bold" }}>Legal Separation of:</span>
                 </div>
-                <div style={{ marginBottom: 2 }}>
-                  <label htmlFor="street">CITY AND ZIP CODE:</label>
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "79.4%" }} type="text" id="street" />
+                <div>
+                  <input type="checkbox" style={{ marginRight: 5 }} />
+                  <span style={{ fontStyle: "7px", }}>Marriage</span>
+                </div> 
+                <div style={{marginRight:"12px"}}>
+                  <input type="checkbox" style={{ marginRight: 5 }} />
+                  <span style={{ fontStyle: "7px" }}>Domestic partnership</span>
+                </div> 
+              </div>
+              <div style={{ display: "flex",justifyContent:"space-between", fontSize: "14px", letterSpacing: "1px" }}>
+                <div style={{marginLeft:"10px"}}>
+                  <input type="checkbox" style={{ marginRight: 5 }} />
+                  <span style={{ fontStyle: "10px",fontWeight:"bold" }}> Nullity of</span>
                 </div>
-                <div style={{ marginBottom: 2 }}>
-                  <label htmlFor="street">BRANCH NAME:</label>
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "84%" }} type="text" id="street" />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                <div style={{ marginBottom: 2 }}>
-                  <label htmlFor="name">PETITIONER:</label>
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "87.6%" }} type="text" id="name" />
-                </div>
-                <div style={{ marginBottom: 2 }}>
-                  <label htmlFor="street">RESPONDENT:</label>
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "86%" }} type="text" id="street" />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                <div style={{ display: "flex", justifyContent: "flex-start" }}>
-                  <div>
-                    <b>PETITION FOR</b>
-                  </div>
-                  <div style={{ marginLeft: "50.2%" }}>
-                    <b>
-                      <input type="checkbox" style={{ marginRight: 5 }} />
-                      AMENDED
-                    </b>
-                  </div>
-                </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
-                  <div>
-                    <b>
-                      {" "}
-                      <input type="checkbox" style={{ marginRight: 5 }} />
-                      Dissolution (Divorce) of:
-                    </b>
-                  </div>
-                  <div style={{ marginLeft: "30.5%" }}>
-                    <input type="checkbox" style={{ marginRight: 5 }} />
-                    Marriage
-                  </div>
-                  <div style={{ marginLeft: "20%" }}>
-                    <input type="checkbox" style={{ marginRight: 5 }} />
-                    Domestic Partnership
-                  </div>
-                </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
-                  <div>
-                    <input type="checkbox" style={{ marginRight: 3 }} />
-                    <span><b> Legal Separation of: </b></span>
-                  </div>
-                  <div style={{ marginLeft: "30.4%" }}>
-                    <input type="checkbox" style={{ marginRight: 5 }} />
-                    Marriage
-                  </div>
-                  <div style={{ marginLeft: "20%" }}>
-                    <input type="checkbox" style={{ marginRight: 5 }} />
-                    Domestic Partnership
-                  </div>
-                </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
-                  <div>
-                    <input type="checkbox" style={{ marginRight: 5 }} />
-                    <b>Nullity of:</b>
-                  </div>
-                  <div style={{ marginLeft: "30.9%" }}>
-                    <input type="checkbox" style={{ marginRight: 5 }} />
-                    Marriage
-                  </div>
-                  <div style={{ marginLeft: "20%" }}>
-                    <input type="checkbox" style={{ marginRight: 5 }} />
-                    Domestic Partnership
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div className="ml">
-                  <label htmlFor="street">CASE NUMBER:</label>
-                  <br />
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "95%" }} type="text" id="street" />
-                </div>
-              </td>
-            </tr>
-          </tbody>
+                <div style={{marginLeft:"11%"}}>
+                  <input type="checkbox" style={{ marginRight: 5 }} />
+                  <span style={{ fontStyle: "7px", }}>Marriage</span>
+                </div> 
+                <div style={{marginRight:"12px"}}>
+                  <input type="checkbox" style={{ marginRight: 5 }} />
+                  <span style={{ fontStyle: "7px" }}>Domestic partnership</span>
+                </div> 
+              </div>
+            </td>
+            <td className='px-2 w-[30%]' style={{ borderTop: "2px solid black", }}>
+              <div style={{ margin: "0px", }}>
+                <label htmlFor="street" style={{ fontSize: "10px" }}>CASE NUMBER:</label>
+                <br />
+                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
+              </div>
+            </td>
+          </tr>
         </table>
+
+
         <div style={{ display: "flex", margin: 20 }}>
           <div>1.</div>
           <div style={{ marginLeft: 10 }}>
@@ -245,13 +265,13 @@ export default function SU100() {
             marriage.This Petition is filed in the county where we married.
           </div>
         </div>
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr"}} >
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }} >
           <div style={{ marginLeft: 7 }}>Petitioner lives in (specify):
             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "60%" }} type="text" id="fax" />
 
           </div>
           <div style={{ marginLeft: 5 }}>Respondent lives in (specify):
-          <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "56%" }} type="text" id="fax" />
+            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "56%" }} type="text" id="fax" />
 
           </div>
         </div>
@@ -265,7 +285,7 @@ export default function SU100() {
           <div style={{ width: "5%", verticalAlign: "top" }} >
             (a)
           </div>
-          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr"}}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
             <div>
               <input type="checkbox" style={{ marginRight: 5 }} />
               (1) Date of marriage (specify):
@@ -273,17 +293,17 @@ export default function SU100() {
 
             </div>
             <div style={{ marginLeft: 5 }}>(2) Date of separation (specify):
-            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "40%" }} type="text" id="fax" />
+              <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "40%" }} type="text" id="fax" />
 
             </div>
           </div>
         </div>
         <div style={{ display: "flex" }}>
-          <div style={{ marginLeft:"11%" }}>
+          <div style={{ marginLeft: "11%" }}>
             (3)Time from date of marriage to date of separation (specify):
           </div>
           <div style={{ marginLeft: 4 }}>Years
-          <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "60%" }} type="text" id="fax" />
+            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "60%" }} type="text" id="fax" />
 
           </div>
           <div style={{ marginLeft: 4 }}>Months <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "4px", width: "73%" }} type="text" id="fax" />
@@ -304,8 +324,8 @@ export default function SU100() {
             Secretary of State or other state equivalent (specify below):
             <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
           </div>
-          <div>(2) Date of separation (specify):      
-                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "56%" }} type="text" id="fax" />
+          <div>(2) Date of separation (specify):
+            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "56%" }} type="text" id="fax" />
           </div>
         </div>
         <div
@@ -320,11 +340,11 @@ export default function SU100() {
             separation (specify):
           </div>
           <div><label> Years</label>
-          <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "56%" }} type="text" />
+            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "56%" }} type="text" />
 
           </div>
           <div><label> Months</label>
-          <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "56%" }} type="text"  />
+            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "56%" }} type="text" />
 
           </div>
         </div>
@@ -401,11 +421,11 @@ export default function SU100() {
         >
           <div>
             <input type="checkbox" style={{ marginLeft: 125 }} />
-           <label  style={{marginLeft:"7px"}}>(1) continued on Attachment 4b.</label>
+            <label style={{ marginLeft: "7px" }}>(1) continued on Attachment 4b.</label>
           </div>
           <div>
             <input type="checkbox" style={{ marginLeft: 50 }} />
-            <label style={{marginLeft:"7px"}}>(2)a child who is not yet born.</label>
+            <label style={{ marginLeft: "7px" }}>(2)a child who is not yet born.</label>
           </div>
         </div>
         <div style={{ display: "flex", marginTop: 10 }}>
@@ -423,7 +443,7 @@ export default function SU100() {
             If there are minor children of Petitioner and Respondent, a completed
             Declaration Under Uniform Child Custody Jurisdiction and Enforcement Act
             (UCCJEA) (form{" "}
-            <a href="FL-105" target="_blank" style={{color:"blue"}}>
+            <a href="FL-105" target="_blank" style={{ color: "blue" }}>
               FL-105
             </a>{" "}
             ) must be attached
@@ -490,12 +510,12 @@ export default function SU100() {
           <div style={{ marginLeft: 45 }}>a.</div>
           <div style={{ marginLeft: 5 }}>
             <input type="checkbox" style={{ marginRight: 5 }} />
-           <label style={{marginLeft:"12px"}}> Divorce</label>
-            <label style={{marginLeft:"10px",marginRight:"15px"}}>or</label>
+            <label style={{ marginLeft: "12px" }}> Divorce</label>
+            <label style={{ marginLeft: "10px", marginRight: "15px" }}>or</label>
           </div>
           <div>
             <input type="checkbox" style={{ marginRight: 5 }} />
-            <label style={{marginLeft:"7px"}}>Legal separation of the marriage or domestic partnership based on (check
+            <label style={{ marginLeft: "7px" }}>Legal separation of the marriage or domestic partnership based on (check
               one):</label>
           </div>
         </div>
@@ -696,12 +716,12 @@ export default function SU100() {
           <div style={{ display: "flex" }}>
             <div style={{ marginLeft: 45 }}>d</div>
             <div style={{ marginLeft: 5 }}>
-                <input type="checkbox" style={{ marginRight: 5 }} />   
+              <input type="checkbox" style={{ marginRight: 5 }} />
             </div>
           </div>
         </div>
         <div style={{ marginLeft: 75 }}>
-          <textarea  placeholder="other (specify) " style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none", width: "96%" }}
+          <textarea placeholder="other (specify) " style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none", width: "96%" }}
             rows={6} />
         </div>
         <div style={{ display: "flex", margin: 20 }}>
@@ -760,11 +780,11 @@ export default function SU100() {
           <div style={{ marginLeft: 5 }}>
             <b>
               <input type="checkbox" style={{ marginRight: 5 }} />
-             
+
             </b>
           </div>
           <textarea placeholder=' Other specify'
-           style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none", width: "89%" }}
+            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none", width: "89%" }}
             rows={4} />
         </div>
 
@@ -793,14 +813,14 @@ export default function SU100() {
           <div>
             <input type="checkbox" style={{ marginLeft: 25 }} />
             Property Declaration (form{" "}
-            <a href="FL-160" target="_blank" style={{color:"blue"}}>
+            <a href="FL-160" target="_blank" style={{ color: "blue" }}>
               FL-160
             </a>
             )
           </div>
           <div>
             <input type="checkbox" style={{ marginLeft: 25 }} />
-            <a href="Attachment 9b" target="_blank" style={{color:"blue"}} >
+            <a href="Attachment 9b" target="_blank" style={{ color: "blue" }} >
               Attachment 9b
             </a>
           </div>
@@ -877,7 +897,7 @@ export default function SU100() {
               id="name"
             />
           </div>
-        </div>  
+        </div>
         <hr style={{ width: "100%" }} />
         <div
           className="footer"
@@ -904,11 +924,11 @@ export default function SU100() {
               <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
                 <div className="ml">
                   <label htmlFor="name">PETITIONER/PLAINTIFF:</label>
-                  <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "4px",width:"77%" }} type="text" id="name" />
+                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "4px", width: "77%" }} type="text" id="name" />
                 </div>
                 <div className="ml">
                   <label htmlFor="street">RESPONDENT/DEFENDANT:</label>
-                  <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"72.5%" }} type="text" id="street" />
+                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "72.5%" }} type="text" id="street" />
                 </div>
               </td>
               <td style={{ border: "2px solid black", borderCollapse: "collapse", width: "30%" }} >
@@ -947,7 +967,7 @@ export default function SU100() {
           <div style={{ marginLeft: 80 }}>
             <input type="checkbox" style={{ marginRight: 5 }} />
             in Property Declaration (form{" "}
-            <a href="FL-160" target="_blank" style={{color:"blue"}}>
+            <a href="FL-160" target="_blank" style={{ color: "blue" }}>
               FL-160
             </a>{" "}
             )
@@ -955,7 +975,7 @@ export default function SU100() {
           <div style={{ marginLeft: 55 }}>
             <input type="checkbox" style={{ marginRight: 5 }} />
             in
-            <a href="attrachement 10b" target="_blank" style={{color:"blue"}}>
+            <a href="attrachement 10b" target="_blank" style={{ color: "blue" }}>
               attrachement 10b
             </a>
           </div>
@@ -963,10 +983,10 @@ export default function SU100() {
         <div style={{ display: "flex", marginTop: 5 }}>
           <div style={{ marginLeft: 80 }}>
             <input type="checkbox" style={{ marginRight: 5 }} />
-            
+
           </div>
-          <textarea placeholder='as follows (specify)' 
-          style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none", width: "93%" }}
+          <textarea placeholder='as follows (specify)'
+            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none", width: "93%" }}
             rows={4} />
         </div>
 
@@ -1002,11 +1022,11 @@ export default function SU100() {
           <div style={{ marginLeft: 45 }}>c.</div>
           <div style={{ marginLeft: 5 }}>
             <input type="checkbox" style={{ marginRight: 5 }} />
-            
+
           </div>
           <div>
-            <textarea  placeholder='Other(specify)'
-            style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none", width: "64rem" }}
+            <textarea placeholder='Other(specify)'
+              style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none", width: "64rem" }}
               rows={4} />
           </div>
         </div>
@@ -1051,7 +1071,7 @@ export default function SU100() {
             <div style={{ marginLeft: 200 }}>
               <div>
                 {" "}
-                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"140%" }} type="text" id="name" />
+                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "140%" }} type="text" id="name" />
               </div>
               <div>(SIGNATURE OF RESPONDENT)</div>
             </div>
@@ -1069,7 +1089,7 @@ export default function SU100() {
         <div style={{ display: "flex", margin: 5, marginLeft: 25 }}>
           <div style={{ marginLeft: 50 }}>
             <div>
-        
+
               <input size={50} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
             </div>
             <div>(TYPE OR PRINT NAME)</div>
@@ -1078,7 +1098,7 @@ export default function SU100() {
             <div style={{ marginLeft: 200 }}>
               <div>
                 {" "}
-                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"100%" }} type="text" id="name" />
+                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "100%" }} type="text" id="name" />
               </div>
               <div>(SIGNATURE OF ATTORNEY FOR PETITIONER)</div>
             </div>
@@ -1086,7 +1106,7 @@ export default function SU100() {
         </div>
         <div
           style={{
-            fontSize:"10px",
+            fontSize: "10px",
             border: "1px solid black",
             padding: 2,
             width: "95%",
@@ -1096,7 +1116,7 @@ export default function SU100() {
           <p style={{ marginLeft: 30 }}>
             <b>FOR MORE INFORMATION:</b> Read Legal Steps for a Divorce or
             Legal Separation (
-            <a href="Form FL-107-INFO" target="_blank" style={{color:"blue"}}>
+            <a href="Form FL-107-INFO" target="_blank" style={{ color: "blue" }}>
               Form FL-107-INFO
             </a>
             ) and visit "Families Change"
@@ -1113,7 +1133,7 @@ export default function SU100() {
             border: "1px solid black",
             padding: 2,
             width: "95%",
-            marginTop:"5px",
+            marginTop: "5px",
             marginLeft: 40
           }}
         >
@@ -1123,7 +1143,7 @@ export default function SU100() {
             </div>
             <div>
               You may redact (black out) social security numbers from any written
-              material filed with the court in this case other than a form 
+              material filed with the court in this case other than a form
               used to collect child, spousal, or partner support.
             </div>
           </div>
@@ -1140,17 +1160,17 @@ export default function SU100() {
           <div style={{ marginLeft: 30 }}>
             <strong>NOTICE—CANCELLATION OF RIGHTS:</strong> Dissolution or legal
             separation may automatically cancel the rights of a domestic partner
-             or spouse under the other domestic partner's or spouse's will,
+            or spouse under the other domestic partner's or spouse's will,
             trust, retirement plan, power of attorney, pay-on-death bank account,
             survivorship rights to any property owned in joint tenancy, and
             any other similar thing. It does not automatically cancel the right of a
             domestic partner or spouse as a beneficiary of the other partner's or
             spouse's life insurance policy. You should review these matters,
-             as well as any credit cards, other credit accounts, insurance
+            as well as any credit cards, other credit accounts, insurance
             policies, retirement plans, and credit reports, to determine whether
             they should be changed or whether you should take any other
             actions. Some changes may require the agreement of your partner or
-             spouse or a court order.
+            spouse or a court order.
           </div>
         </div>
         <hr style={{ width: "100%" }} />

@@ -5,125 +5,182 @@ export default function FL105() {
         <>
             <div style={{ maxWidth: "1100px", margin: "auto" }}>
                 <h3 style={{ display: "flex", marginTop: 0, marginBottom: 0 }}>FL-105/GC-120</h3>
-                <table style={{ width: "96%", marginTop: 10, border: "2px solid black", borderCollapse: "collapse" }}>
-                    <tbody>
-                        <tr>
-                            <td style={{ width: "60%", border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div>
-                                    <label>
-                                        ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and
-                                        address):
-                                    </label>
-                                    <textarea
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",resize:"none"}}
-                                        name=""
-                                        id=""
-                                        cols={99}
-                                        rows={6}
-                                    />
+                <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
+                    <tr className='flex justify-center items-start w-full h-full'>
+                        <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
+                        >
+                            <div style={{ margin: "0px 2px", marginTop: "-4px" }}>
+                                <label style={{ fontSize: "10px" }} >
+                                    ATTORNEY OR PARTY WITHOUT ATTORNEY
+                                    <span style={{ fontStyle: "italic" }}>(Name, State Bar number, and
+                                        address)</span>:
+                                </label>
+                                <textarea
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "-webkit-fill-available", resize: 'none' }}
+                                    name=""
+                                    id=""
+                                    cols={90}
+                                    rows={3}
+                                    defaultValue={""}
+                                />
+                            </div>
+                            <div className=' flex justify-end items-center'>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "1px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='flex justify-end items-center'>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "1px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='flex justify-end items-center w-full'
+                            >
+
+                                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">TELEPHONE NO.:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                                 </div>
-                                <div style={{ display: "grid", gridTemplateColumns:"1fr 1fr" }}>
-                                    <div>
-                                        <label htmlFor="telephone">TELEPHONE NO.:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"65%" }} type="number" id="telephone" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="telephone">FAX NO.:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px",width:"83%" }} type="number" id="telephone" />
-                                    </div>
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">FAX NO. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                                 </div>
-                                <div>
-                                    <label htmlFor="fax">E-MAIL ADDRESS(optional):</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",marginBottom:"2px" ,width:"72.9%" }} type="text" id="fax" />
-                                </div>
-                                <div>
-                                    <label htmlFor="attorney">ATTORNEY FOR (name):</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"76.3%" }} type="email" id="attorney" />
-                                </div>
-                            </td>
-                            <td style={{ textAlign: "center", top: 0, border: "2px solid black", borderCollapse: "collapse" }} rowSpan={3}>
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="fax">E-MAIL ADDRESS <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="attorney">ATTORNEY FOR <span style={{ fontStyle: "italic" }}>(Name)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "71%" }} type="email" id="attorney" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className='relative w-[30%]'
+                        >
+                            <p className='absolute' style={{
+                                top: 10,
+                                left: "21%",
+                                fontSize: "10px",
+                                fontWeight: "bold"
+                            }}>
                                 FOR COURT USE ONLY
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ margin: 0, border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ margin: 2, fontWeight: "bold" }}>
-                                    <label htmlFor="name">SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
-                                    <input
-                                        style={{ width: "56%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
-                                        type="text"
-                                        id="name"
-                                    />
-                                </div>
-                                <div style={{ margin: 0 }}>
-                                    <label htmlFor="street">STREET ADDRESS:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px",width:"82.9%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 0 }}>
-                                    <label htmlFor="street">MAILING ADDRESS:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px",width:"81.6%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 0 }}>
-                                    <label htmlFor="street">CITY AND ZIP CODE:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px",width:"80.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 0 }}>
-                                    <label htmlFor="street">BRANCH NAME:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"84.7%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ textAlign: "center" }}>
-                                    <i>(This section applies only to family law cases.)</i>
-                                </div>
-                                <div style={{ marginLeft: "1.2rem" }}>
-                                    <label htmlFor="name">PETITIONER:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" ,width:"88%"}} type="text" id="name" />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">RESPONDENT:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px",width:"86.3%" }} type="text" id="street" />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">OTHER PARTY:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" ,width:"86%"}} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ textAlign: "center" }}>
-                                    <i>(This section applies only to family law cases.)</i>
-                                </div>
-                                <div>
-                                    GUARDIANSHIP OF (Name):
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"66%" }} type="text" id="street" />
-                                    minor
-                                </div>
-                            </td>
-                            <td>
-                                <div style={{ marginLeft: "1.2rem" }}>
-                                    <label htmlFor="street">CASE NUMBER:</label>
-                                    <br />
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ textAlign: "center", padding: 10, marginLeft: "1.2rem" }}>
-                                    <b>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ margin: 0, padding: 1, paddingBottom: 2, borderCollapse: "collapse", borderTop: "2px solid black", display: "flex", flexDirection: "column", justifyContent: "flex-end", width: "70%", borderRight: "2px solid black" }}>
+                            <div className=' flex justify-end items-center'>
+                                <label htmlFor="name" style={{ fontSize: "10px", fontWeight: "bold" }}>SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+                                <input
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '56%' }}
+                                    type="text"
+                                    id="name"
+                                />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>STREET ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CITY AND ZIP CODE:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>BRANCH NAME:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ borderTop: "2px solid black", borderCollapse: "collapse", padding: 1, paddingBottom: 2, width: "70%", borderRight: "2px solid black", borderBottom: "2px solid black" }}>
+                        <div style={{ display:"flex",justifyContent:"center"}}>
+                                <p style={{ fontSize: "10px" }}>(This section applies only to family law cases.)</p>
+                            </div>
+                            <div className='flex justify-end items-center '>
+                                <label htmlFor="name" style={{ fontSize: "10px" }}>PETITIONER:</label>
+                                <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                                    type="text" id="name" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>RESPONDENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>OTHER:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+
+                        </td>
+                    </tr>
+
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ borderCollapse: "collapse", padding: 1, paddingBottom: 2, width: "70%", borderRight: "2px solid black", borderBottom: "2px solid black" }}>
+                            <div style={{ display:"flex",justifyContent:"center"}}>
+                                <p style={{ fontSize: "10px" }}>(This section applies only to family law cases.)</p>
+                            </div>
+                            <div className='flex justify-end items-center '>
+                                <label htmlFor="name" style={{ fontSize: "10px" }}>GUARDIANSHIP OF (Name)::</label>
+                                <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                                    type="text" id="name" />
+                                    <span style={{fontSize:"10px"}}>minor</span>
+                            </div>
+
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+
+                        </td>
+                    </tr>
+
+
+
+
+
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{
+                            borderCollapse: "collapse", width: "70%",
+                            height: "48px",
+                            borderRight: "2px solid black",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}>
+                            <div style={{ textAlign: "center", fontSize: "14px", letterSpacing: "1px" }}>
+                            <b>
                                         DECLARATION UNDER UNIFORM CHILD CUSTODY
                                         <br />
                                         JURISDICTION AND ENFORCEMENT ACT (UCCJEA)
                                     </b>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
+                            </div>
+                        </td>
+                        <td className='px-2 w-[30%]' style={{ borderTop: "2px solid black", }}>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CASE NUMBER:</label>
+                                <br />
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                    </tr>
                 </table>
+
+
+
                 <div style={{ display: "flex", marginTop: 10 }}>
                     <div style={{ marginLeft: 5 }}>1.</div>
                     <div style={{ marginLeft: 5 }}>
@@ -143,7 +200,7 @@ export default function FL105() {
                     <div style={{ marginLeft: 5 }}>3.</div>
                     <div style={{ marginLeft: 5 }}>
                         There are (specify number):
-                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"21%" }} type="text" id="street" />
+                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "21%" }} type="text" id="street" />
                         minor children who are subject to this proceeding, as follows:
                     </div>
                 </div>
@@ -166,16 +223,16 @@ export default function FL105() {
                     <thead>
                         <tr className="tr">
                             <th style={{ border: "1px solid black", width: 900, padding: 5 }}>
-                               <label> a. Child’s name</label><br />
+                                <label> a. Child’s name</label><br />
                                 <input style={{ backgroundColor: "rgb(225, 243, 243)", width: 50, border: "none", margin: "0px" }} type="text" id="name" />{" "}
                             </th>
                             <th style={{ border: "1px solid black", width: 400, padding: 5 }}>
-                                <label>Place of birth</label><br/>
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", width:"96%", border: "none", margin: "0px" }} type="text" id="name" />{" "}
+                                <label>Place of birth</label><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", width: "96%", border: "none", margin: "0px" }} type="text" id="name" />{" "}
                             </th>
                             <th style={{ border: "1px solid black", width: 400, padding: 5 }}>
-                                <label>Date of birth</label><br/>
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", width:"93%", border: "none", margin: "0px" }} type="text" id="name" />
+                                <label>Date of birth</label><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", width: "93%", border: "none", margin: "0px" }} type="text" id="name" />
                             </th>
                             <th style={{ border: "1px solid black", width: 50, padding: 5 }}>
                                 Sex{" "}
@@ -197,28 +254,28 @@ export default function FL105() {
                         <tr>
                             <td style={{ border: "1px solid black", width: 383 }}>
                                 Period of residence{" "}
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
                                 to present
                             </td>
                             <td style={{ border: "1px solid black" }}>
-                                Address <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"98%" }} type="text" id="street" />
+                                Address <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "98%" }} type="text" id="street" />
                                 <div>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"98%" }} type="text" id="street" />
-                                    <br/>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "98%" }} type="text" id="street" />
+                                    <br />
                                     <input type="checkbox" style={{ marginRight: 5 }} />
-                                   <label> Confidential</label>
-                                   <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"48%" }} type="text" id="street" />
+                                    <label> Confidential</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "48%" }} type="text" id="street" />
 
 
                                 </div>
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Person child lived with (name and complete current address)
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
-                                <br/>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <br />
                                 <input type="checkbox" style={{ marginRight: 5 }} />
-                               <label> Confidential</label>
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"67%" }} type="text"  />
+                                <label> Confidential</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "67%" }} type="text" />
 
                             </td>
                             <td style={{ border: "1px solid black" }}>
@@ -234,13 +291,13 @@ export default function FL105() {
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Child's residence (City, State)
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Person child lived with (name and complete current address)
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
@@ -254,13 +311,13 @@ export default function FL105() {
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Child's residence (City, State){" "}
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />{" "}
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />{" "}
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Person child lived with (name and complete current address)
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
@@ -273,13 +330,13 @@ export default function FL105() {
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Child's residence (City, State)
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Person child lived with (name and complete current address)
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
@@ -293,8 +350,8 @@ export default function FL105() {
                             <td style={{ border: "1px solid black", padding: 5, width: 750 }}>
                                 b. Child’s name
                                 <br />
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"97%"}} type="text" id="street" />
-                                <br/>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "97%" }} type="text" id="street" />
+                                <br />
                                 <i>
                                     <input type="checkbox" style={{ marginRight: 5 }} />
                                     Residence information is the same as given above for child a.
@@ -303,15 +360,15 @@ export default function FL105() {
                                 </i>
                             </td>
                             <td style={{ border: "1px solid black", padding: 5, width: 400 }}>
-                                <label>Place of birth</label><br/>
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" ,width:"98%"}} type="text" id="street" />
+                                <label>Place of birth</label><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "98%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black", padding: 5, width: 400 }}>
-                                <label>Date of birth</label><br/>
+                                <label>Date of birth</label><br />
                                 <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black", padding: 5, width: 50 }}>
-                                <label>Sex</label><br/>
+                                <label>Sex</label><br />
                                 <input size={15} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
                             </td>
                         </tr>
@@ -329,26 +386,26 @@ export default function FL105() {
                                 Address <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
                                 <input type="checkbox" style={{ marginRight: 5 }} />
                                 <label>Confidential</label>
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
 
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Person child lived with (name and complete current address)
                                 <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
                                 <input type="checkbox" style={{ marginRight: 5 }} />
-                               <label> Confidential</label>
-                               <input size={20} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <label> Confidential</label>
+                                <input size={20} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
 
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Relationship
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
                             </td>
                         </tr>
                         <tr>
                             <td style={{ border: "1px solid black", padding: 5 }}>
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" ,width:"45%"}} type="text" id="street" />
-                                to <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"45%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "45%" }} type="text" id="street" />
+                                to <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "45%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Child's residence (City, State)
@@ -364,8 +421,8 @@ export default function FL105() {
                         </tr>
                         <tr>
                             <td style={{ border: "1px solid black", padding: 5 }}>
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"45%" }} type="text" id="street" />
-                                to <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"45%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "45%" }} type="text" id="street" />
+                                to <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "45%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Child's residence (City, State){" "}
@@ -383,8 +440,8 @@ export default function FL105() {
                         </tr>
                         <tr>
                             <td style={{ border: "1px solid black", padding: 5 }}>
-                                <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"45%" }} type="text" id="street" />
-                                to <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"45%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "45%" }} type="text" id="street" />
+                                to <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "45%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Child's residence (City, State){" "}
@@ -742,14 +799,14 @@ export default function FL105() {
                             width: "30%",
                             border: "1px solid black",
                             padding: 15,
-                            marginTop:"10%",
+                            marginTop: "10%",
                             boxSizing: "border-box"
                         }}
                     >
                         <div>a. Name and address of person</div>
-                        <textarea rows={4} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "100%",resize:"none" }}/>
+                        <textarea rows={4} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "100%", resize: "none" }} />
 
-                           <div>
+                        <div>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Has physical custody
                         </div>
@@ -767,12 +824,12 @@ export default function FL105() {
                             width: "30%",
                             border: "1px solid black",
                             padding: 15,
-                            marginTop:"10%",
+                            marginTop: "10%",
                             boxSizing: "border-box"
                         }}
                     >
                         <div>b. Name and address of person </div>
-                        <textarea rows={4} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "100%",resize:"none" }}/>
+                        <textarea rows={4} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "100%", resize: "none" }} />
 
                         <div>
                             <input type="checkbox" style={{ marginRight: 5 }} />
@@ -792,12 +849,12 @@ export default function FL105() {
                             width: "30%",
                             border: "1px solid black",
                             padding: 15,
-                            marginTop:"10%",
+                            marginTop: "10%",
                             boxSizing: "border-box"
                         }}
                     >
                         <div>c. Name and address of person</div>
-                        <textarea rows={4} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "100%",resize:"none" }}/>
+                        <textarea rows={4} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "100%", resize: "none" }} />
                         <div>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Has physical custody
