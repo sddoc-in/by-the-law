@@ -387,7 +387,7 @@ export default function SU115() {
                                 </div>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">RESPONDENT/DEFENDANT:</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px", width: "69.5%" }} type="text" id="street" />
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",marginBottom:"2px", width: "69.5%" }} type="text" id="street" />
                                 </div>
                             </td>
                             <td style={{ width: "30%", border: "2px solid black", borderCollapse: "collapse" }}>

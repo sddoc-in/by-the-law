@@ -129,60 +129,60 @@ export default function SU100() {
           <tr className='flex justify-center items-center w-full'>
             <td style={{
               borderCollapse: "collapse", width: "70%",
-            
+
               borderRight: "2px solid black",
             }}>
-              <div style={{ display: "flex",justifyContent:"space-between", fontSize: "14px", letterSpacing: "1px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", letterSpacing: "1px" }}>
                 <div>
-                 
-                  <span style={{ fontStyle: "10px",fontWeight:"bold", marginLeft:"10px" }}>(PETITION FOR)</span>
+
+                  <span style={{ fontStyle: "10px", fontWeight: "bold", marginLeft: "10px" }}>(PETITION FOR)</span>
                 </div>
-                <div style={{marginRight:"12px"}}>
+                <div style={{ marginRight: "12px" }}>
                   <input type="checkbox" style={{ marginRight: 5 }} />
-                  <span style={{ fontStyle: "10px",fontWeight:"bold" }}>(AMENDED)</span>
-                </div> 
+                  <span style={{ fontStyle: "10px", fontWeight: "bold" }}>(AMENDED)</span>
+                </div>
               </div>
-              <div style={{ display: "flex",justifyContent:"space-between", fontSize: "14px", letterSpacing: "1px" }}>
-                <div style={{marginLeft:"10px"}}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", letterSpacing: "1px" }}>
+                <div style={{ marginLeft: "10px" }}>
                   <input type="checkbox" style={{ marginRight: 5 }} />
-                  <span style={{ fontStyle: "10px",fontWeight:"bold" }}> Dissolution (Divorce) of</span>
+                  <span style={{ fontStyle: "10px", fontWeight: "bold" }}> Dissolution (Divorce) of</span>
                 </div>
-                <div style={{marginRight:"31px"}}>
+                <div style={{ marginRight: "31px" }}>
                   <input type="checkbox" style={{ marginRight: 5 }} />
                   <span style={{ fontStyle: "7px", }}>Marriage</span>
-                </div> 
-                <div style={{marginRight:"12px"}}>
+                </div>
+                <div style={{ marginRight: "12px" }}>
                   <input type="checkbox" style={{ marginRight: 5 }} />
                   <span style={{ fontStyle: "7px" }}>Domestic partnership</span>
-                </div> 
+                </div>
               </div>
-              <div style={{ display: "flex",justifyContent:"space-between", fontSize: "14px", letterSpacing: "1px" }}>
-                <div style={{marginLeft:"10px"}}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", letterSpacing: "1px" }}>
+                <div style={{ marginLeft: "10px" }}>
                   <input type="checkbox" style={{ marginRight: 5 }} />
-                  <span style={{ fontStyle: "10px",fontWeight:"bold" }}>Legal Separation of:</span>
+                  <span style={{ fontStyle: "10px", fontWeight: "bold" }}>Legal Separation of:</span>
                 </div>
                 <div>
                   <input type="checkbox" style={{ marginRight: 5 }} />
                   <span style={{ fontStyle: "7px", }}>Marriage</span>
-                </div> 
-                <div style={{marginRight:"12px"}}>
+                </div>
+                <div style={{ marginRight: "12px" }}>
                   <input type="checkbox" style={{ marginRight: 5 }} />
                   <span style={{ fontStyle: "7px" }}>Domestic partnership</span>
-                </div> 
-              </div>
-              <div style={{ display: "flex",justifyContent:"space-between", fontSize: "14px", letterSpacing: "1px" }}>
-                <div style={{marginLeft:"10px"}}>
-                  <input type="checkbox" style={{ marginRight: 5 }} />
-                  <span style={{ fontStyle: "10px",fontWeight:"bold" }}> Nullity of</span>
                 </div>
-                <div style={{marginLeft:"11%"}}>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "14px", letterSpacing: "1px" }}>
+                <div style={{ marginLeft: "10px" }}>
+                  <input type="checkbox" style={{ marginRight: 5 }} />
+                  <span style={{ fontStyle: "10px", fontWeight: "bold" }}> Nullity of</span>
+                </div>
+                <div style={{ marginLeft: "11%" }}>
                   <input type="checkbox" style={{ marginRight: 5 }} />
                   <span style={{ fontStyle: "7px", }}>Marriage</span>
-                </div> 
-                <div style={{marginRight:"12px"}}>
+                </div>
+                <div style={{ marginRight: "12px" }}>
                   <input type="checkbox" style={{ marginRight: 5 }} />
                   <span style={{ fontStyle: "7px" }}>Domestic partnership</span>
-                </div> 
+                </div>
               </div>
             </td>
             <td className='px-2 w-[30%]' style={{ borderTop: "2px solid black", }}>

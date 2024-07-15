@@ -207,26 +207,6 @@ export default function FL105() {
                     </tr>
                 </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <div>
                     <label> 1 <b>LEGAL RELATIONSHIP </b>(check all that apply):</label>
                     <div>
@@ -276,38 +256,38 @@ export default function FL105() {
                             <b style={{ marginRight: 8 }}>a .</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             (1) Date of marriage (specify):
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px"  }} type="text" id="street" />
                             <b style={{ marginRight: 8, marginLeft: 4 }}>(2)</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Date of separation (specify):
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }} type="text" id="street" />
                             <b style={{ marginRight: 8, marginLeft: 4 }}>(3)</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Time from date of marriage to date of separation (specify):
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px"  }} type="text" id="street" />
                             <label style={{ marginLeft: 4 }}>Year</label>
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px"  }} type="text" id="street" />
                             <label style={{ marginLeft: 4 }}>Months</label>
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px"  }} type="text" id="street" />
 
                         </div>
                         <div style={{ marginLeft: "5%" }}>
                             <b style={{ marginRight: 8 }}>B .</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             (1) Registration date of domestic partnership with the California Secretary of State or other state equivalent (specify below):
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px"  }} type="text" id="street" />
                             <b style={{ marginRight: 8, marginLeft: 4 }}>(2)</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Date of separation (specify):
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px"  }} type="text" id="street" />
                             <b style={{ marginRight: 8, marginLeft: 4 }}>(3)</b>
                             <input type="checkbox" style={{ marginRight: 5 }} />
                             Time from date of registration of domestic partnership to date of separation (specify):
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px"  }} type="text" id="street" />
                             <label style={{ marginLeft: 4 }}>Year</label>
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px"  }} type="text" id="street" />
                             <label style={{ marginLeft: 4 }}>Months</label>
-                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px"  }} type="text" id="street" />
 
 
                         </div>

@@ -358,7 +358,7 @@ export default function FL141() {
                                     <input type="checkbox" style={{ marginRight: 7, marginLeft: "10px" }} />
                                     Other (specify)
                                     <input
-                                        style={{ width: "80%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
+                                        style={{ width: "80%", backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "2px" }}
                                         type="text"
                                         id="name"
                                     />

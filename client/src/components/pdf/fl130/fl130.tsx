@@ -32,139 +32,9 @@ export default function () {
 
 
     return (
-        <div style={{ maxWidth: "1100px", margin: "auto" }}>
+        <div style={{ maxWidth: "1100px", margin: "auto",fontSize:12 }}>
             <>
                 <h3 style={{ display: 'flex', marginBottom: '0' }}>FL-130 </h3>
-                {/* <table style={{ width: "100%",  border: "2px solid black", borderCollapse: "collapse" }}>
-                    <tbody>
-                        <tr>
-                            <td style={{ width: "70%", border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div>
-                                    <label>
-                                        ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and
-                                        address):
-                                    </label>
-                                    <textarea
-                                    name={"AttorneyOrPartyWithoutAttorney"}
-                                    onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",resize:"none" }}                                        cols={80}
-                                    />
-                                </div>
-                                <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr",marginBottom:"5px" }}>
-                                    <div>
-                                        <label htmlFor="telephone">TELEPHONE NO.:</label>
-                                        <input 
-                                        name={"TelephoneNo"}
-                                        onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"60%" }} type="number" id="telephone" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="fax" style={{display:"inline"}}>FAX NO(optional):</label>
-                                        <input
-                                        name={"FaxNo"}
-                                        onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"54%" }} type="text" id="fax" />
-                                    </div>
-                                </div>
-                                    <div style={{marginBottom:"4px"}}>
-                                        <label htmlFor="telephone">E-MAIL ADDRESS (Optional):</label>
-                                        <input
-                                        name={"EmailAddress"}
-                                        onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"67%"}} type="number" id="telephone" />
-                                    </div>
-                                <div>
-                                    <label htmlFor="attorney">ATTORNEY FOR (name):</label>
-                                    <input 
-                                    name={" AttorneyFor"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "5px",width:"71.7%" }} type="email" id="attorney" />
-                                </div>
-                            </td>
-                            <td style={{ textAlign: "center", top: 0, border: "2px solid black", borderCollapse: "collapse" }} rowSpan={3}>
-                                FOR COURT USE ONLY
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="name">SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
-                                    <input
-                                     name={"Countyof"}
-                                     onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                        style={{ width: "48.4%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
-                                        type="text"
-                                        id="name"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">STREET ADDRESS:</label>
-                                    <input
-                                    name={"StreetAddress"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"79.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2, marginBottom: 2 }}>
-                                    <label htmlFor="street">MAILING ADDRESS:</label>
-                                    <input
-                                    name={"MailingAddress"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"78.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="street">CITY AND ZIP CODE:</label>
-                                    <input 
-                                    name={"CityAndZipCode"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"77.2%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="street">BRANCH NAME:</label>
-                                    <input 
-                                    name={"BranchName"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"81.7%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ margin: 2, border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ marginLeft: "1.2rem", marginBottom:"4px"}}>
-                                    <label htmlFor="name">PETITIONER:</label>
-                                    <input 
-                                    name={"Petitioner"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"85.4%" }} type="text" id="name" />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">RESPONDENT:</label>
-                                    <input 
-                                    name={"Respondent"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"83.7%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <h3 style={{ textAlign: "center" }}>
-                                    APPEARANCE, STIPULATIONS, AND WAIVERS
-                                </h3>
-                            </td>
-                            <td>
-                                <div style={{ marginLeft: "1.2rem",marginBottom: "8px" }}>
-                                    <label htmlFor="street">CASE NUMBER:</label>
-                                    <br />
-                                    <input 
-                                    name={"CaseNumber"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"96%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table> */}
-
                 <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
                     <tr className='flex justify-center items-start w-full h-full'>
                         <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
@@ -300,7 +170,7 @@ export default function () {
 
                 <table
                     width="100%"
-                    style={{ pageBreakInside: "auto", marginTop: 5, fontSize: 16, verticalAlign: "top" }}
+                    style={{ pageBreakInside: "auto", marginTop: 5, fontSize: 13, verticalAlign: "top" }}
                     cellPadding={5}
                     cellSpacing={5}
                 >
@@ -319,22 +189,22 @@ export default function () {
                     </tbody>
                 </table>
                 <div
-                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 16 }}
+                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 12 }}
                 >
                     <div style={{ width: "3%", verticalAlign: "top" }} >
-                        {/* Checkbox added here */}
+                      
                         a.
                     </div>
                     <div style={{ width: "98%", verticalAlign: "top" }}>
                         <input
                             name={"AppearanceByRespondent"}
                             onChange={(e) => handleChange(e)}
-                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                            type="checkbox" style={{ marginRight: 5, fontSize: 12 }} />
                         By filing this form, I make a general appearance.
                     </div>
                 </div>
                 <div
-                    style={{ display: "flex", marginBottom: 10, marginLeft: 43, fontSize: 16 }}
+                    style={{ display: "flex", marginBottom: 10, marginLeft: 43, fontSize: 12 }}
                 >
                     <div style={{ width: "3%", verticalAlign: "top" }} >
                         {/* Checkbox added here */}
@@ -345,12 +215,12 @@ export default function () {
                         <input
                             name={"AppearanceByRespondent"}
                             onChange={(e) => handleChange(e)}
-                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />I have
+                            type="checkbox" style={{ marginRight: 5, fontSize: 12 }} />I have
                         previously made a general appearance.
                     </div>
                 </div>
                 <div
-                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 16 }}
+                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 12 }}
                 >
                     <div style={{ width: "3%", verticalAlign: "top" }} >
                         c.
@@ -359,7 +229,7 @@ export default function () {
                         <input
                             name={"AppearanceByRespondent"}
                             onChange={(e) => handleChange(e)}
-                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />{" "}
+                            type="checkbox" style={{ marginRight: 5, fontSize: 12 }} />{" "}
                     </div>
                     <div>
                         {" "}
@@ -376,7 +246,7 @@ export default function () {
                 </div>
                 <table
                     width="100%"
-                    style={{ pageBreakInside: "auto", margin: 0, fontSize: 16, verticalAlign: "top" }}
+                    style={{ pageBreakInside: "auto", margin: 0, fontSize: 12, verticalAlign: "top" }}
                     cellPadding={5}
                     cellSpacing={5}
                 >
@@ -395,7 +265,7 @@ export default function () {
                     </tbody>
                 </table>
                 <div
-                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 16 }}
+                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 12 }}
                 >
                     <div style={{ width: "3%", verticalAlign: "top" }}>
                         {/* Checkbox added here */}
@@ -405,12 +275,12 @@ export default function () {
                         <input
                             name={"AggrementsStipulationsAndWaivers"}
                             onChange={(e) => handleChange(e)}
-                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                            type="checkbox" style={{ marginRight: 5, fontSize: 12 }} />
                         The parties agree that this cause may be decided as an uncontested matter
                     </div>
                 </div>
                 <div
-                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 16 }}
+                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 12 }}
                 >
                     <div style={{ width: "3%", verticalAlign: "top" }} >
                         {/* Checkbox added here */}
@@ -421,7 +291,7 @@ export default function () {
                         <input
                             name={"AggrementsStipulationsAndWaivers"}
                             onChange={(e) => handleChange(e)}
-                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                            type="checkbox" style={{ marginRight: 5, fontSize: 12 }} />
                         The parties waive their rights to notice of trial, a statement of
                         decision, a motion for a new trial, and the right to appeal.
                     </div>
@@ -436,7 +306,7 @@ export default function () {
                         <input
                             name={"AggrementsStipulationsAndWaivers"}
                             onChange={(e) => handleChange(e)}
-                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                            type="checkbox" style={{ marginRight: 5, fontSize: 12 }} />
                         This matter may be decided by a commissioner sitting as a temporary judge
                     </div>
                 </div>
@@ -450,7 +320,7 @@ export default function () {
                         <input
                             name={"AggrementsStipulationsAndWaivers"}
                             onChange={(e) => handleChange(e)}
-                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                            type="checkbox" style={{ marginRight: 5, fontSize: 12 }} />
                     </div>
                     <div>
                         {" "}
@@ -461,7 +331,7 @@ export default function () {
                     </div>
                 </div>
                 <div
-                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 16 }}
+                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 12 }}
                 >
                     <div style={{ width: "3%", verticalAlign: "top" }} >
                         {/* Checkbox added here */}
@@ -471,7 +341,7 @@ export default function () {
                         <input
                             name={"AggrementsStipulationsAndWaivers"}
                             onChange={(e) => handleChange(e)}
-                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                            type="checkbox" style={{ marginRight: 5, fontSize: 12 }} />
                     </div>
                     <div>
                         {" "}
@@ -481,7 +351,7 @@ export default function () {
                     </div>
                 </div>
                 <div
-                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 16 }}
+                    style={{ display: "flex", marginBottom: 5, marginLeft: 43, fontSize: 12 }}
                 >
                     <div style={{ width: "3%", verticalAlign: "top" }} >
                         {/* Checkbox added here */}
@@ -491,7 +361,7 @@ export default function () {
                         <input
                             name={"AggrementsStipulationsAndWaivers"}
                             onChange={(e) => handleChange(e)}
-                            type="checkbox" style={{ marginRight: 5, fontSize: 16 }} />
+                            type="checkbox" style={{ marginRight: 5, fontSize: 12 }} />
                     </div>
                     <div>
                         {" "}
@@ -516,7 +386,7 @@ export default function () {
                                 3.
                             </td>
                             <td width="95%" valign="top">
-                                <div style={{ marginBottom: 5, marginLeft: 10, fontSize: 16 }}>
+                                <div style={{ marginBottom: 5, marginLeft: 10, fontSize: 12 }}>
                                     <b>Other (specify):</b>
                                 </div>
                                 <textarea style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "50px", width: "100%", resize: "none" }} />
@@ -525,7 +395,7 @@ export default function () {
                     </tbody>
                 </table>
                 <div style={{ marginLeft: "5%" }}>
-                    <div style={{ marginTop: 2, fontSize: 16 }}>
+                    <div style={{ marginTop: 2, fontSize: 12 }}>
                         Date: <input
                             name={"Date"}
                             onChange={(e) => handleChange(e)}
@@ -549,7 +419,7 @@ export default function () {
                             <div> (SIGNATURE OF PETITIONER)</div>
                         </div>
                     </div>
-                    <div style={{ marginTop: 5, fontSize: 16 }}>
+                    <div style={{ marginTop: 5, fontSize: 12 }}>
                         Date: <input
                             name={"Date"}
                             onChange={(e) => handleChange(e)}
@@ -573,7 +443,7 @@ export default function () {
                             <div>(SIGNATURE OF RESPONDENT) </div>
                         </div>
                     </div>
-                    <div style={{ marginTop: 5, fontSize: 16 }}>
+                    <div style={{ marginTop: 5, fontSize: 12 }}>
                         Date:<input
                             name={"Date"}
                             onChange={(e) => handleChange(e)}
@@ -598,7 +468,7 @@ export default function () {
                             <div> (SIGNATURE OF ATTORNEY FOR PETITIONER)</div>
                         </div>
                     </div>
-                    <div style={{ fontSize: 16 }}>
+                    <div style={{ fontSize: 12 }}>
                         Date: <input
                             name={"Date"}
                             onChange={(e) => handleChange(e)}
