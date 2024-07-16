@@ -46,7 +46,7 @@ export default function FL145() {
   // console.log(checked)
 
   return (
-    <div style={{ maxWidth: "1100px", margin: "auto" }}>
+    <div style={{ maxWidth: "1100px", margin: "auto",fontSize:12 }}>
       <div>
         <h3
           style={{
@@ -256,7 +256,7 @@ export default function FL145() {
                   </label>
                   <input
                      onChange={(e) => handleFormInterrogatoriesFamilyLaw(e)}
-                     value={details.FormInterrogatoriesFamilyLaw?. SetNo}
+                     value={details.FormInterrogatoriesFamilyLaw?.SetNo}
                      name=" SetNo"
                     style={{
                       backgroundColor: "rgb(225, 243, 243)",
@@ -290,7 +290,7 @@ export default function FL145() {
           </tbody>
         </table>
         
-        <div style={{ display: "flex", width: "100%", fontSize: "1rem",marginTop:"0.4rem"  }}>
+        <div style={{ display: "flex", width: "100%", fontSize: 12,marginTop:"0.4rem"  }}>
           <div style={{ width: "65%" }}>
             <div>
               <label htmlFor="">
@@ -557,7 +557,7 @@ export default function FL145() {
         </h3>
         <br />
         <div style={{ display: "flex", width: "100%" }}>
-          <div style={{ width: "68%", fontSize: "1rem" }}>
+          <div style={{ width: "68%", fontSize: 12 }}>
             <div style={{ display: "flex" }}>
               <div>
                 <input
@@ -569,7 +569,7 @@ export default function FL145() {
                   1.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "1rem" ,fontSize: 12 }}>
                 <b>Personal history.</b>State your full name, current <br />
                 residence address and work address, social security <br />
                 number, any other names you have used, and the <br />
@@ -588,7 +588,7 @@ export default function FL145() {
                   2.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "1rem" ,fontSize: 12 }}>
                 <b>Agreements.</b> Are there any agreements between you <br />
                 and your spouse or domestic partner, made before or <br />
                 during your marriage or domestic partnership or after <br />
@@ -616,7 +616,7 @@ export default function FL145() {
                   3.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
                 <b>Legal actions.</b> Are you a party or do you anticipate{" "}
                 <br />
                 being a party to any legal or administrative proceeding <br />
@@ -637,7 +637,7 @@ export default function FL145() {
                   4.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
                 <b>Persons sharing residence.</b> State the name, age, <br />
                 and relationship to you of each <b>person</b> at your present{" "}
                 <br />
@@ -656,7 +656,7 @@ export default function FL145() {
                   5.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "1rem",fontSize: 12}}>
                 <b>Support provided others.</b> State the name, age, <br />
                 address, and relationship to you of each <b>person</b> for{" "}
                 <br />
@@ -676,7 +676,7 @@ export default function FL145() {
                   6.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "1rem" ,fontSize: 12}}>
                 <b>Support received for others.</b> State the name, age, <br />
                 address, and relationship to you of each <b>person</b> for{" "}
                 <br />
@@ -696,7 +696,7 @@ export default function FL145() {
                   7.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
                 <b>Current income.</b> List all income you received during{" "}
                 <br />
                 the past 12 months, its source, the basis for its <br />
@@ -716,7 +716,7 @@ export default function FL145() {
                   8.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
                 <b>Other income.</b> During the past three years, have you{" "}
                 <br />
                 received cash or other property from any source not <br />
@@ -737,7 +737,7 @@ export default function FL145() {
                   9.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
                 <b>Tax returns. </b> Attach copies of all tax returns and tax{" "}
                 <br />
                 schedules filed by or for you in any jurisdiction for the <br />
@@ -745,7 +745,7 @@ export default function FL145() {
               </div>
             </div>
             
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+            <div style={{ display: "flex", marginTop:"0.5rem" ,fontSize: 12 }}>
               <div>
                 <input
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
@@ -756,7 +756,7 @@ export default function FL145() {
                   10.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
                 <b>Schedule of assets and debts.</b> Complete the <br />
                 <i>Schedule of Assets and Debts</i> (form FL-142) served <br />
                 with these interrogatories.
@@ -774,7 +774,7 @@ export default function FL145() {
                   11.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" }}>
+              <div style={{ marginLeft: "1rem" ,fontSize: "12"}}>
                 <b>Separate property contentions.</b> State the facts that{" "}
                 <br />
                 support your contention that an asset or debt is <br />
@@ -784,7 +784,7 @@ export default function FL145() {
             <br />
           </div>
           <div
-            style={{ width: "65%", marginLeft: "3rem", fontSize: "1rem" }}
+            style={{ width: "65%", marginLeft: "3rem", fontSize: 12 }}
           >
             <div style={{ display: "flex" }}>
               <div>

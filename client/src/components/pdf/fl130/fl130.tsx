@@ -408,7 +408,7 @@ export default function () {
                             <input
                                 name={"TypeOrPrintName"}
                                 onChange={(e) => handleChange(e)}
-                                style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="fax" size={50} />
+                                style={{ backgroundColor: "rgb(225, 243, 243)", borderBottom: "1px solid black", margin: "0px" }} type="text" id="fax" size={70} />
                             <div>(TYPE OR PRINT NAME)</div>{" "}
                         </div>
                         <div>
@@ -432,7 +432,7 @@ export default function () {
                             <input
                                 name={"TypeOrPrintName"}
                                 onChange={(e) => handleChange(e)}
-                                style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="fax" size={50} />
+                                style={{ backgroundColor: "rgb(225, 243, 243)",  borderBottom: "1px solid black", margin: "0px" }} type="text" id="fax" size={70} />
                             <div>(TYPE OR PRINT NAME)</div>{" "}
                         </div>
                         <div>
@@ -457,7 +457,7 @@ export default function () {
                             <input
                                 name={"TypeOrPrintName"}
                                 onChange={(e) => handleChange(e)}
-                                style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", }} type="text" id="fax" size={50} />
+                                style={{ backgroundColor: "rgb(225, 243, 243)",borderBottom: "1px solid black", }} type="text" id="fax" size={70} />
                             <div>(TYPE OR PRINT NAME)</div>{" "}
                         </div>
                         <div>
@@ -481,7 +481,7 @@ export default function () {
                             <input
                                 name={"TypeOrPrintName"}
                                 onChange={(e) => handleChange(e)}
-                                style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", }} type="text" id="fax" size={50} />
+                                style={{ backgroundColor: "rgb(225, 243, 243)", borderBottom: "1px solid black", }} type="text" id="fax" size={70} />
                             <div>(TYPE OR PRINT NAME)</div>{" "}
                         </div>
                         <div>
