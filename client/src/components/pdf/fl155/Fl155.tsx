@@ -33,124 +33,116 @@ export default function () {
     return (
         <div style={{ maxWidth: "1100px", margin: "auto" }}>
             
-            <h3 style={{ display: 'flex', marginBottom: '0' }}>FL-155 </h3>
-                <table style={{ width: "100%",  border: "2px solid black", borderCollapse: "collapse" }}>
-                    <tbody>
-                        <tr>
-                            <td style={{ width: "70%", border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div>
-                                    <label>
-                                        ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and
-                                        address):
-                                    </label>
-                                    <textarea
-                                    name={"AttorneyOrPartyWithoutAttorney"}
-                                    onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",resize:"none" }}
-                                        id=""
-                                        cols={80}
-                                        // rows={4}
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="attorney">ATTORNEY FOR (name):</label>
-                                    <input 
-                                    name={" AttorneyFor"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "5px",width:"71.7%" }} type="email" id="attorney" />
-                                </div>
+            <h3 style={{ display: 'flex', marginBottom: '0',justifyContent:'end' }}>FL-155 </h3>
+            <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
+                    <tr className='flex justify-center items-start w-full h-full'>
+                        <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
+                        >
+                            <div style={{ margin: "0px 2px", marginTop: "-4px" }}>
+                                <label style={{ fontSize: "10px" }} >
+                                    ATTORNEY OR PARTY WITHOUT ATTORNEY
+                                    <span style={{ fontStyle: "italic" }}>(Name, State Bar number, and
+                                        address)</span>:
+                                </label>
+                                <textarea
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "-webkit-fill-available", resize: 'none' }}
+                                    name=""
+                                    id=""
+                                    cols={90}
+                                    rows={3}
+                                    defaultValue={""}
+                                />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="attorney">ATTORNEY FOR <span style={{ fontStyle: "italic" }}>(Name)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "71%" }} type="email" id="attorney" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", border: "4px solid red", borderCollapse: "collapse",width:'329px' }} rowSpan={3}>
+                               <div className="bg-green-200 h-.5 text-center text-red-500">To Keep outher people from seeing what you entered on your from, please press the Clear This Form button at the end of the form when finished</div>
                             </td>
-                            <td style={{ textAlign: "center", top: 0, border: "2px solid black", borderCollapse: "collapse" }} rowSpan={3}>
-                               <div style={{border:'2px solid red',backgroundColor:'#b6acac', margin:'5px', padding:'3px'}}>To Keep outher people from seeing what you entered on your from, please press the Clear This Form button at the end of the form when finished</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="name">SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
-                                    <input
-                                     name={"Countyof"}
-                                     onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                        style={{ width: "48.4%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
-                                        type="text"
-                                        id="name"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">STREET ADDRESS:</label>
-                                    <input
-                                    name={"StreetAddress"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"79.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2, marginBottom: 2 }}>
-                                    <label htmlFor="street">MAILING ADDRESS:</label>
-                                    <input
-                                    name={"MailingAddress"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"78.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="street">CITY AND ZIP CODE:</label>
-                                    <input 
-                                    name={"CityAndZipCode"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"77.2%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="street">BRANCH NAME:</label>
-                                    <input 
-                                    name={"BranchName"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"81.7%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ margin: 2, border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ marginLeft: "1.2rem", marginBottom:"4px"}}>
-                                    <label htmlFor="name">PETITIONER/PLAINTIFF:</label>
-                                    <input 
-                                    name={"Petitioner"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"85.4%" }} type="text" id="name" />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">RESPONDENT/DEFENDANT:</label>
-                                    <input 
-                                    name={"Respondent"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"83.7%" }} type="text" id="street" />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">OTHER PARENT:</label>
-                                    <input 
-                                    name={"Parent"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"83.7%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                        <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div><h3 >
-                                    <b>FINANCIAL STATEMENT (SIMPLIFIED)</b>
-                                </h3>
-                                </div>
-                            </td>
-                            <td>
-                                <div style={{ marginLeft: "1.2rem",marginBottom: "8px" }}>
-                                    <label htmlFor="street">CASE NUMBER:</label>
-                                    <br />
-                                    <input 
-                                    name={"CaseNumber"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"96%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ margin: 0, padding: 1,paddingBottom:2, borderCollapse: "collapse", borderTop: "2px solid black", display: "flex", flexDirection: "column", justifyContent: "flex-end", width: "70%", borderRight: "2px solid black" }}>
+                            <div className=' flex justify-end items-center'>
+                                <label htmlFor="name" style={{ fontSize: "10px", fontWeight: "bold" }}>SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+                                <input
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '56%' }}
+                                    type="text"
+                                    id="name"
+                                />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>STREET ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CITY AND ZIP CODE:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>BRANCH NAME:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ borderTop: "2px solid black", borderCollapse: "collapse", padding: 1,paddingBottom:2, width: "70%", borderRight: "2px solid black", borderBottom: "2px solid black" }}>
+                            <div className='flex justify-end items-center '>
+                                <label htmlFor="name" style={{ fontSize: "10px" }}>PLAINTIFF/PETITIONER:</label>
+                                <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                                    type="text" id="name" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>DEFENDENT/RESPONDENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "83%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>OTHER PARENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{
+                            borderCollapse: "collapse", width: "70%",
+                            height: "48px",
+                            borderRight: "2px solid black",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}>
+                            <div style={{ textAlign: "center", fontSize: "14px", letterSpacing: "1px" }}>
+                                <b>FINANCIAL STATEMENT (SIMPLIFIED)</b>
+                            </div>
+                        </td>
+                        <td className='px-2 w-[30%]' style={{borderTop:"2px solid black",}}>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CASE NUMBER:</label>
+                                <br />
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                    </tr>
                 </table>
+                
                 <div style={{ width: '100%', padding: '20px', fontSize: '14px', lineHeight: '1.5', fontFamily: 'Arial, sans-serif' }}>
       <div style={{ textAlign: 'center', marginBottom: '20px',border:'2px solid black' }}>
         <strong>NOTICE: Read page 2 to find out if you qualify to use this form and how to use it.</strong>
@@ -160,27 +152,26 @@ export default function () {
           <div>
             1.
             <div style={{ display: 'flex', alignItems: 'center', marginLeft: '20px', marginTop: '5px' }}>
-              <input type="checkbox" style={{ marginRight: '5px' }} />
-             a. My only source of income is TANF, SSI, or GA/GR.
+             a. <input type="checkbox" style={{ margin: '5px' }} /> My only source of income is TANF, SSI, or GA/GR.
             </div>
             <div style={{ display: 'flex', alignItems: 'center', marginLeft: '20px', marginTop: '5px' }}>
-              <input type="checkbox" style={{ marginRight: '5px' }} />
-             b.  I have applied for TANF, SSI, or GA/GR.
+              
+             b.<input type="checkbox" style={{ margin: '5px' }} />  I have applied for TANF, SSI, or GA/GR.
             </div>
           </div>
         </div>
         <div style={{ marginBottom: '15px' }}>
-          2. I am the parent of the following number of natural or adopted children from this relationship..................... 
-          <input type="text" style={{ width: '50px', marginLeft: '5px', marginRight: '10px', backgroundColor: 'rgb(225, 243, 243)' }} />
-        </div>
-        <div style={{ marginBottom: '15px' }}>
-          3. The children from this relationship are with me this amount of time..................... 
-          <input type="text" style={{ width: '50px', marginLeft: '5px', marginRight: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />%
-        </div>
-        <div style={{ marginBottom: '15px', marginLeft: '20px' }}>
-          a. The children from this relationship are with the other parent this amount of time..................... 
-          <input type="text" style={{ width: '50px', marginLeft: '5px', marginRight: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />%
-        </div>
+      2. I am the parent of the following number of natural or adopted children from this relationship.................................................................................................
+      <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)', float: 'right' }} placeholder='$' />
+    </div>
+    <div style={{ marginBottom: '15px' }}>
+      3. The children from this relationship are with me this amount of time..................................................................................................................................... 
+      <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)', float: 'right' }} placeholder='%' />
+    </div>
+    <div style={{ marginBottom: '15px', marginLeft: '20px' }}>
+      a. The children from this relationship are with the other parent this amount of time..............................................................................................................
+      <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)', float: 'right' }} placeholder='%'/>
+    </div>
         <div style={{ marginBottom: '15px', marginLeft: '20px' }}>
           b. Our arrangement for custody and visitation is (specify, using extra sheet if necessary):
           <input type="text" style={{ width: '500px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
@@ -195,148 +186,195 @@ export default function () {
           </div>
         </div>
         <div style={{ marginBottom: '15px' }}>
-          5. My current gross income (before taxes) per month is..................... $
-          <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          <div style={{ marginTop: '10px', marginLeft: '20px' }}>
-            This income comes from the following:
-            <div style={{display:'flex'}}>
-                <b style={{width:'15%'}}>Attach 1 copy of pay stubs for last 2 months here (cross out social security numbers)</b>
-                <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '20px', marginTop: '5px' }}>
-              <div style={{ marginBottom: '5px' }}>
-                <input type="checkbox" /> Salary/wages: Amount before taxes per month..................... $
-                <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-              </div>
-              <div style={{ marginBottom: '5px' }}>
-                <input type="checkbox" /> Retirement: Amount before taxes per month..................... $
-                <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-              </div>
-              <div style={{ marginBottom: '5px' }}>
-                <input type="checkbox" /> Unemployment compensation: Amount per month..................... $
-                <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-              </div>
-              <div style={{ marginBottom: '5px' }}>
-                <input type="checkbox" /> Workers' compensation: Amount per month..................... $
-                <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-              </div>
-              <div style={{ marginBottom: '5px' }}>
-                <input type="checkbox" /> Social security: 
-                <input type="checkbox" style={{ marginLeft: '5px' }} /> SSI 
-                <input type="checkbox" style={{ marginLeft: '5px' }} /> Other 
-                Amount per month..................... $
-                <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-              </div>
-              <div style={{ marginBottom: '5px' }}>
-                <input type="checkbox" /> Disability: Amount per month..................... $
-                <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-              </div>
-              <div style={{ marginBottom: '5px' }}>
-                <input type="checkbox" /> Interest income (from bank accounts or other): Amount per month..................... $
-                <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-              </div>
+      5. My current gross income (before taxes) per month is..........................................................................................................................................................
+      <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)', float: 'right' }}placeholder='$' />
+      <div style={{ marginTop: '10px', marginLeft: '20px' }}>
+        This income comes from the following:
+        <div style={{display:'flex'}}>
+          <div style={{width:'14%'}}><b style={{ textAlign: 'right' }}>Attach 1 copy of pay stubs for last 2 months here (cross out social security numbers)</b></div>
+        <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '20px', marginTop: '5px' }}>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '10px', marginBottom: '5px' }}>
+            <div>
+              <input type="checkbox" /> Salary/wages: Amount before taxes per month....................................................................................................................
             </div>
-            </div>
+            <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)' }}placeholder='$' />
           </div>
-          <div style={{ marginLeft: '20px', marginTop: '10px' }}>
-            <input type="checkbox" /> I have no income other than as stated in this paragraph.
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '10px', marginBottom: '5px' }}>
+            <div>
+              <input type="checkbox" /> Retirement: Amount before taxes per month........................................................................................................................
+            </div>
+            <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)' }} placeholder='$'/>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '10px', marginBottom: '5px' }}>
+            <div>
+              <input type="checkbox" /> Unemployment compensation: Amount per month...............................................................................................................
+            </div>
+            <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)' }}placeholder='$' />
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '10px', marginBottom: '5px' }}>
+            <div>
+              <input type="checkbox" /> Workers' compensation: Amount per month.........................................................................................................................
+            </div>
+            <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)' }}placeholder='$' />
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '10px', marginBottom: '5px' }}>
+            <div>
+              <input type="checkbox" /> Social security:
+              <input type="checkbox" style={{ marginLeft: '5px' }} /> SSI
+              <input type="checkbox" style={{ marginLeft: '5px' }} /> Other
+              Amount per month.............................................................................................................
+            </div>
+            <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)' }}placeholder='$' />
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '10px', marginBottom: '5px' }}>
+            <div>
+              <input type="checkbox" /> Disability: Amount per month.................................................................................................................................................
+            </div>
+            <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)' }} placeholder='$'/>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: '10px', marginBottom: '5px' }}>
+            <div>
+              <input type="checkbox" /> Interest income (from bank accounts or other): Amount per month.......................................................................................
+            </div>
+            <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)' }}placeholder='$' />
           </div>
         </div>
+        </div>
+      </div>
+      <div style={{ marginLeft: '20px', marginTop: '10px' }}>
+        <input type="checkbox" /> I have no income other than as stated in this paragraph.
+      </div>
+    </div>
         <div style={{ marginBottom: '15px' }}>
-          6. I pay the following monthly expenses for the children in this case:
-          <div style={{ marginLeft: '20px', marginTop: '5px' }}>
-            a. Day care or preschool to allow me to work or go to school..................... $
-            <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          </div>
-          <div style={{ marginLeft: '20px', marginTop: '5px' }}>
-            b. Health care not paid for by insurance..................... $
-            <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          </div>
-          <div style={{ marginLeft: '20px', marginTop: '5px' }}>
-            c. School, education, tuition, or other special needs of the child..................... $
-            <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          </div>
-          <div style={{ marginLeft: '20px', marginTop: '5px' }}>
-            d. Travel expenses for visitation..................... $
-            <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          </div>
+      6. I pay the following monthly expenses for the children in this case:
+      <div style={{ marginLeft: '20px', marginTop: '5px', display: 'grid', gridTemplateColumns: 'auto 1fr', alignItems: 'center', gap: '10px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+          a.<input type="checkbox" style={{ margin: '5px' }} /> Day care or preschool to allow me to work or go to school..........................................................................................................................................
         </div>
+        <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)', justifySelf: 'end' }}placeholder='$' />
+
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+          b.<input type="checkbox" style={{ margin: '5px' }} /> Health care not paid for by insurance...........................................................................................................................................................................
+        </div>
+        <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)', justifySelf: 'end' }} placeholder='$'/>
+
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+          c.<input type="checkbox" style={{ margin: '5px' }} /> School, education, tuition, or other special needs of the child......................................................................................................................................
+        </div>
+        <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)', justifySelf: 'end' }} placeholder='$'/>
+
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+          d.<input type="checkbox" style={{ margin: '5px' }} /> Travel expenses for visitation.......................................................................................................................................................................................
+        </div>
+        <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)', justifySelf: 'end' }}placeholder='$' />
+      </div>
+    </div>
+
         <div style={{ marginBottom: '15px' }}>
           7. There are (specify number)
           <input type="text" style={{ width: '50px', marginLeft: '5px', marginRight: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          other minor children of mine living with me. Their monthly expenses that I pay are..................... $
-          <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
+          other minor children of mine living with me. Their monthly expenses that I pay are..................................................... 
+          <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)', justifySelf: 'end' }}placeholder='$' />
         </div>
         <div style={{ marginBottom: '15px' }}>
-          8. I spend the following average monthly amounts (please attach proof):
-          <div style={{ marginLeft: '20px', marginTop: '5px' }}>
-            <div style={{ marginBottom: '5px' }}>
-              a. Job-related expenses that are not paid by my employer (specify reasons for expenses on separate sheet)..................... $
-              <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-            </div>
-            <div style={{ marginBottom: '5px' }}>
-              b. Required union dues..................... $
-              <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-            </div>
-            <div style={{ marginBottom: '5px' }}>
-              c. Required retirement payments (not social security, FICA, 401k or IRA)..................... $
-              <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-            </div>
-            <div style={{ marginBottom: '5px' }}>
-              d. Health insurance costs $
-              <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-            </div>
-            <div style={{ marginBottom: '5px' }}>
-              e. Child support I am paying for other minor children of mine who are not living with me..................... $
-              <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-            </div>
-            <div style={{ marginBottom: '5px' }}>
-              f. Spousal support I am paying because of a court order for another relationship...................... $
-              <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-            </div>
-            <div style={{ marginBottom: '5px' }}>
-              g. Monthly housing costs: 
-              <input type="checkbox" style={{ marginLeft: '5px' }} /> rent or 
-              <input type="checkbox" style={{ marginLeft: '5px' }} /> mortgage..................... $
-              <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-            </div>
-            <div style={{ marginBottom: '5px' }}>
-              If mortgage: interest payments $
-              <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-              real property taxes $
-              <input type="text" style={{ width: '100px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-            </div>
-          </div>
-        </div>
-        <div style={{ marginBottom: '15px' }}>
-          9. Information concerning my current employment
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px', marginTop: '5px' }}>
-            Employer:
-            <input type="text" style={{ width: '300px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
-            Address:
-            <input type="text" style={{ width: '300px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
-            Telephone number:
-            <input type="text" style={{ width: '150px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
-            My Occupation:
-            <input type="text" style={{ width: '300px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
-            Date work started:
-            <input type="text" style={{ width: '300px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
-            Date work stopped <i>(if applicable)</i>:
-            <input type="text" style={{ width: '300px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
-            What was your gross income (before taxes) before work stopped?
-            <input type="text" style={{ width: '150px', marginLeft: '5px', backgroundColor: 'rgb(225, 243, 243)' }} />
-          </div>
-        </div>
+  8. I spend the following average monthly amounts (please attach proof):
+  <div style={{ marginLeft: '20px', marginTop: '5px', display: 'grid', gridTemplateColumns: 'auto auto', gap: '10px' }}>
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+      a.<input type="checkbox" style={{ margin: '5px' }} /> Job-related expenses that are not paid by my employer (specify reasons for expenses on separate sheet).............................................................
+    </div>
+    <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }}placeholder='$' />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+      b.<input type="checkbox" style={{ margin: '5px' }} /> Required union dues....................................................................................................................................................................................................
+    </div>
+    <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }}placeholder='$' />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+      c.<input type="checkbox" style={{ margin: '5px' }} /> Required retirement payments (not social security, FICA, 401k or IRA) ....................................................................................................................
+    </div>
+    <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }}placeholder='$' />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+      d.<input type="checkbox" style={{ margin: '5px' }} /> Health insurance costs.................................................................................................................................................................................................
+    </div>
+    <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)' ,height:'21px'}}placeholder='$' />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+      e.<input type="checkbox" style={{ margin: '5px' }} /> Child support I am paying for other minor children of mine who are not living with me................................................................................................
+    </div>
+    <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)' ,height:'21px'}} placeholder='$'/>
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+      f.<input type="checkbox" style={{ margin: '5px' }} /> Spousal support I am paying because of a court order for another relationship...........................................................................................................
+    </div>
+    <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)' ,height:'21px'}}placeholder='$' />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+      g.<input type="checkbox" style={{ margin: '5px' }} /> Monthly housing costs: 
+      <input type="checkbox" style={{ marginLeft: '5px' }} /> rent or 
+      <input type="checkbox" style={{ marginLeft: '5px' }} /> mortgage.............................................................................................................................................................
+    </div>
+    <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }}placeholder='$' />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+      If mortgage: interest payments ............................................................................................................................................................................................
+    </div>
+    <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }} placeholder='$'/>
+    
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+      real property taxes ................................................................................................................................................................................................................
+    </div>
+    <input type="text" style={{ width: '100px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }} placeholder='$'/>
+  </div>
+</div>
+
+        <div style={{ display: 'flex', justifyContent: 'flex', marginBottom: '15px' }}>
+  <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '10px' }}>
+    <div>
+      Information concerning:
+      <input type="checkbox" style={{ margin: '5px' }} /> my current employment
+      <input type="checkbox" style={{ margin: '5px' }} /> my most recent employment
+    </div>
+    <div></div>
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px', marginTop: '5px' }}>
+      Employer:
+    </div>
+    <input type="text" style={{ width: '300px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }} />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
+      Address:
+    </div>
+    <input type="text" style={{ width: '300px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }} />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
+      Telephone number:
+    </div>
+    <input type="text" style={{ width: '300px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }} />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
+      My Occupation:
+    </div>
+    <input type="text" style={{ width: '300px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }} />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
+      Date work started:
+    </div>
+    <input type="text" style={{ width: '300px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }} />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
+      Date work stopped <i>(if applicable)</i>:
+    </div>
+    <input type="text" style={{ width: '300px', backgroundColor: 'rgb(225, 243, 243)',height:'21px' }} />
+
+    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px', marginLeft: '20px' }}>
+      What was your gross income (before taxes) before work stopped?
+    </div>
+    <input type="text" style={{ width: '300px', backgroundColor: 'rgb(225, 243, 243)' ,height:'21px'}} />
+  </div>
+</div>
+
       </form>
     </div>
                 
@@ -526,7 +564,7 @@ export default function () {
                         <div> www.courtinfo.ca.gov</div>
                     </div>
                     <div style={{ listStyle: "none", fontWeight: "bold",fontSize:'15px' }}>
-                    <li>Page 1 of 2</li>
+                    <li>Page 2 of 2</li>
                     </div>
                 </div>
                 </div>

@@ -33,131 +33,179 @@ export default function () {
     return (
         <div style={{ maxWidth: "1100px", margin: "auto" }}>
             
-            <h3 style={{ display: 'flex', marginBottom: '0' }}>FL-170 </h3>
-            <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse" }}>
-                    <tbody>
-                        <tr>
-                            <td style={{ width: "64%", border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ marginBottom: 10 }}>
-                                    <label>
-                                        ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and
-                                        address):
-                                    </label>
-                                    <textarea
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"99%" ,resize:"none"}}
-                                        name=""
-                                        id=""
-                                        rows={4}
-                                        defaultValue={""}
-                                    />
+            <h3 style={{ display: 'flex', marginBottom: '0',alignContent:'end' }}>FL-170 </h3>
+            <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
+                    <tr className='flex justify-center items-start w-full h-full'>
+                        <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
+                        >
+                            <div style={{ margin: "0px 2px", marginTop: "-4px" }}>
+                                <label style={{ fontSize: "10px" }} >
+                                    ATTORNEY OR PARTY WITHOUT ATTORNEY
+                                    <span style={{ fontStyle: "italic" }}>(Name, State Bar number, and
+                                        address)</span>:
+                                </label>
+                                <textarea
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "-webkit-fill-available", resize: 'none' }}
+                                    name=""
+                                    id=""
+                                    cols={90}
+                                    rows={3}
+                                    defaultValue={""}
+                                />
+                            </div>
+                            <div className=' justify-center items-center w-full mr-9'>
+                                <div className='flex justify-end' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">FIRST NAME:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[25%]' id="telephone" />
                                 </div>
-                                <div style={{ display: "grid",gridTemplateColumns:"1fr 1fr" }}>
-                                    <div style={{ marginBottom: 2 }}>
-                                        <label htmlFor="telephone">FIRST NAME:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="Firmname" />
-                                    </div><br />
-                                    <div style={{ marginBottom: 2 }}>
-                                        <label htmlFor="telephone">STREET ADDRESS:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:'71%' }} type="text" id="Streetaddress" />
-                                    </div>
-                                    <div style={{ marginBottom: 2 }}>
-                                        <label htmlFor="telephone">CITY:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="City" />
-                                    </div>
-                                    <div style={{ marginBottom: 2 }}>
-                                        <label htmlFor="telephone">STATE:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="State" />
-                                    </div>
-                                    <div style={{ marginBottom: 2 }}>
-                                        <label htmlFor="telephone">ZIP CODE:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="number" id="telephone" />
-                                    </div>
-                                    <div style={{ marginBottom: 2 }}>
-                                        <label htmlFor="telephone">TELEPHONE NO.:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="number" id="telephone" />
-                                    </div>
-                                    <div style={{ marginBottom: 2 }}>
-                                        <label htmlFor="telephone">FAX NO.:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"75%" }} type="number" id="telephone" />
-                                    </div>
+                            </div>
+                            <div className='flex justify-end items-center w-full m-1'>
+                                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">STREET ADDRESS:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' id="telephone" />
                                 </div>
-                                <div style={{ marginBottom: 2 }}>
-                                    <label htmlFor="fax">E-MAIL ADDRESS(optional):</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"67%" }} type="text" id="fax" />
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">CITY: <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' id="telephone" />
                                 </div>
-                                <div style={{ marginBottom: 2 }}>
-                                    <label htmlFor="attorney">ATTORNEY FOR (name):</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"71%" }} type="name" id="attorney" />
+                            </div>
+                            <div className='flex justify-end items-center w-full m-1'
+                            >
+                                
+                                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">STATE:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' id="telephone" />
                                 </div>
-                            </td>
-                            <td style={{ textAlign: "center", top: 0, border: "2px solid black", borderCollapse: "collapse" }} rowSpan={3}>
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">ZIP CODE: <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
+                                </div>
+                            </div>
+                            <div className='flex justify-end items-center w-full'
+                            >
+                                
+                                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">TELEPHONE NO.:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
+                                </div>
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">FAX NO. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
+                                </div>
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="fax">E-MAIL ADDRESS <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="attorney">ATTORNEY FOR <span style={{ fontStyle: "italic" }}>(Name)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "71%" }} type="email" id="attorney" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className='relative w-[30%]'
+                        >
+                            <p className='absolute' style={{
+                                top: 10,
+                                left: "21%",
+                                fontSize: "10px",
+                                fontWeight: "bold"
+                            }}>
                                 FOR COURT USE ONLY
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ margin: 0, border: "2px solid black", borderCollapse: "collapse", paddingLeft: "1.6rem" }}>
-                                <div  style={{ marginBottom: 2 }}>
-                                    <label><b>SUPERIOR COURT OF CALIFORIA, COUNTY OF</b></label>
-                                    <input
-                                        style={{ width: "46%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
-                                        type="text"
-                                        id="name"
-                                    />
-                                </div>
-                                <div style={{ margin: 0, marginBottom: 2 }}>
-                                    <label htmlFor="street">STREET ADDRESS:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "78.6%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 0, marginBottom: 2 }}>
-                                    <label htmlFor="street">MAILING ADDRESS:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "77.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 0, marginBottom: 2 }}>
-                                    <label htmlFor="street">CITY AND ZIP CODE:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "76%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 0, marginBottom: 2 }}>
-                                    <label htmlFor="street">BRANCH NAME:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "80.8%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ margin: 0, padding: 1,paddingBottom:2, borderCollapse: "collapse", borderTop: "2px solid black", display: "flex", flexDirection: "column", justifyContent: "flex-end", width: "70%", borderRight: "2px solid black" }}>
+                            <div className=' flex justify-end items-center'>
+                                <label htmlFor="name" style={{ fontSize: "10px", fontWeight: "bold" }}>SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+                                <input
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '56%' }}
+                                    type="text"
+                                    id="name"
+                                />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>STREET ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CITY AND ZIP CODE:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>BRANCH NAME:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ borderTop: "2px solid black", borderCollapse: "collapse", padding: 1,paddingBottom:2, width: "70%", borderRight: "2px solid black", borderBottom: "2px solid black" }}>
+                            <div className='flex justify-end items-center '>
+                                <label htmlFor="name" style={{ fontSize: "10px" }}>PETITIONER:</label>
+                                <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                                    type="text" id="name" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>RESPONDENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "83%" }}
+                                    type="text" id="street" />
+                            </div>
+                            
+                            
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
 
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div><b>MARRIAGE OR PARTNERSHIP OF</b></div>
-                                <div style={{ marginBottom: 3, marginLeft: "1.2rem" }}>
-                                    <label htmlFor="name">PETITIONER:</label>
-                                    <input  type="text" id="name" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "85.4%" }} />
-                                </div>
-                                <div style={{ marginBottom: 3 }}>
-                                    <label htmlFor="street">RESPONDENT:</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "83.6%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <h3 style={{ textAlign: "center", padding: 10 }}>
-                                <b>DECLARATION FOR DEFAULT OR UNCONTESTED</b>
-                                </h3>
-                                <div style={{ marginLeft: 5 }}>
-                    <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
-                     <label>DISSOLUTION</label></div>
-                                <div style={{ marginLeft: 5 }}>
-                    <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
-                     <label>LEGAL SEPARATION</label></div>
-                            </td>
-                            <td>
-                                <div style={{ marginLeft: "1.2rem" }}>
-                                    <label htmlFor="street">CASE NUMBER:</label>
-                                    <br />
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "7px",paddingBottom: "5px",width:"97%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table><br />
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{
+                            borderCollapse: "collapse", width: "70%",
+                            height: "100px",
+                            borderRight: "2px solid black",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}>
+                            <div style={{ fontSize: "12px", letterSpacing: "1px" }}>
+                              <b>DECLARATION FOR DEFAULT OR UNCONTESTED</b>
+                                <form >
+                                    <label>
+                                        <input  type="checkbox" /> DISSOLUTION
+                                    </label>
+                                    
+                                </form>
+                                <form >
+                                    <label>
+                                        <input  type="checkbox" /> LEGAL SEPARATION
+                                    </label>
+                                    
+                                </form>
+                            </div>
+                        </td>
+                        <td className='px-2 w-[30%]' style={{borderTop:"2px solid black",}}>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CASE NUMBER:</label>
+                                <br />
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            <br />
                 <div><b>(NOTE: Items 1 through 12 apply to both dissolution and legal separation proceedings.)</b></div>
             <table
                     width="100%"
@@ -313,11 +361,11 @@ export default function () {
                             <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="name">PETITIONER:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"75%" }} type="text" id="name" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"83%" }} type="text" id="name" />
                                 </div>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">RESPONDENT:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"69.5%" }} type="text" id="street" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"75%" }} type="text" id="street" />
                                 </div>
                             </td>
                             <td style={{ width: "30%", border: "2px solid black", borderCollapse: "collapse" }}>
@@ -354,23 +402,23 @@ export default function () {
               <input type="checkbox" className="mr-2" /> has <input type="checkbox" className="ml-2 mr-2" /> has not changed since it was last filed with the court. (If changed, attach updated form.)
             </label>
             <label className="block mb-2">
-              b.<input type="checkbox" className="mr-2" /> There is an existing court order for custody/parenting time in another case in (county): <input type="text" className="border ml-2" placeholder="Specify" />
+              b.<input type="checkbox" className="mr-2" /> There is an existing court order for custody/parenting time in another case in (county): <input style={{backgroundColor: "rgb(225, 243, 243)"}} type="text" className="border ml-2" placeholder="Specify" />
             </label>
             <label className="block mb-2">
-              The case number is (specify): <input type="text" className="border ml-2" placeholder="Specify" />
+              The case number is (specify): <input style={{backgroundColor: "rgb(225, 243, 243)"}} type="text" className="border ml-2" placeholder="Specify" />
             </label>
           </div>
           <label className="block mb-2">
              c. <input type="checkbox" className="mr-2" /> The current custody and visitation (parenting time) previously ordered in this case, or the current schedule is (specify):
           </label>
-          <textarea className="border ml-6 w-full h-16 mb-4"></textarea>
+          <textarea style={{backgroundColor: "rgb(225, 243, 243)"}} className="border ml-6 w-full h-16 mb-4"></textarea>
           <label className="block mb-2">
             <input type="checkbox" className="mr-2" /> Contained on Attachment 6c.
           </label>
           <label className="block mb-2">
              d. <input type="checkbox" className="mr-2" /> The facts that support the requested judgment are (In a default case, state your reasons below):
           </label>
-          <textarea className="border ml-6 w-full h-16 mb-4"></textarea>
+          <textarea style={{backgroundColor: "rgb(225, 243, 243)"}} className="border ml-6 w-full h-16 mb-4"></textarea>
           <label className="block mb-2">
             <input type="checkbox" className="mr-2" /> Contained on Attachment 6d.
           </label>
@@ -386,10 +434,10 @@ export default function () {
           </label>
           <div className="ml-6 mb-4">
             <label className="block mb-2">
-              (1) <input type="checkbox" className="mr-2" /> Child support is being enforced in another case in (county): <input type="text" className="border ml-2" placeholder="Specify" />
+              (1) <input type="checkbox" className="mr-2" /> Child support is being enforced in another case in (county): <input style={{backgroundColor: "rgb(225, 243, 243)"}} type="text" className="border ml-2" placeholder="Specify" />
             </label>
             <label className="block mb-2">
-              The case number is (specify): <input type="text" className="border ml-2" placeholder="Specify" />
+              The case number is (specify): <input style={{backgroundColor: "rgb(225, 243, 243)"}} type="text" className="border ml-2" placeholder="Specify" />
             </label>
             <label className="block mb-2">
               (2) <input type="checkbox" className="mr-2" /> The information in the child support calculation attached to the proposed judgment is correct based on my personal knowledge.
@@ -397,7 +445,7 @@ export default function () {
             <label className="block mb-2">
               (3) <input type="checkbox" className="mr-2" /> I request that this order be based on the <input type="checkbox" className="ml-2 mr-2" /> Petitioner's <input type="checkbox" className="ml-2 mr-2" /> Respondent's earning ability. The facts in support of my estimate of earning ability are (specify):
             </label>
-            <textarea className="border ml-6 w-full h-16 mb-4"></textarea>
+            <textarea style={{backgroundColor: "rgb(225, 243, 243)"}} className="border ml-6 w-full h-16 mb-4"></textarea>
             <label className="block mb-2">
               <input type="checkbox" className="mr-2" /> Contained on Attachment 7a(3).
             </label>
@@ -469,7 +517,7 @@ export default function () {
           <label className="block mb-2">
              f. <input type="checkbox" className="mr-2"  /> Other (specify):
           </label>
-          <textarea className="border ml-6 w-full h-16 mb-4 bg-rgb(225, 243, 243)"></textarea>
+          <textarea style={{backgroundColor: "rgb(225, 243, 243)"}} className="border ml-6 w-full h-16 mb-4 bg-rgb(225, 243, 243)"></textarea>
         </div>
       </div>
     </div><br /><br />  
@@ -525,69 +573,69 @@ export default function () {
                 <br />
                 <div className="p-4">
       {/* Item 9 */}
-      <div className="mb-4 bg-gray-100 p-4">
+      <div className="mb-4 p-4">
         <p className="mb-2">
           <strong>9.</strong> <input type="checkbox" className="mr-2" /> Parentage of the children of the petitioner and respondent born prior to their marriage or domestic partnership should be ordered as set forth in the proposed <em>Judgment</em> (form FL-180).
         </p>
         <div className="ml-4 mb-4">
-          <label className="block mb-2 bg-gray-200 p-2">
+          <label className="block mb-2  p-2">
             <input type="checkbox" className="mr-2" /> a. A voluntary declaration of parentage or paternity is attached.
           </label>
-          <div className="ml-6 mb-4 bg-gray-200 p-2">
+          <div className="ml-6 mb-4 p-2">
             <label className="block mb-2">
-              <input type="checkbox" className="mr-2" /> b. Parentage was previously established by the court in (county): <input type="text" className="border ml-2" placeholder="Specify" />
+              <input type="checkbox" className="mr-2" /> b. Parentage was previously established by the court in (county): <input style={{backgroundColor: "rgb(225, 243, 243)"}} type="text" className="border ml-2" placeholder="Specify" />
             </label>
             <label className="block mb-2">
-              The case number is (specify): <input type="text" className="border ml-2" placeholder="Specify" />
+              The case number is (specify): <input style={{backgroundColor: "rgb(225, 243, 243)"}} type="text" className="border ml-2" placeholder="Specify" />
             </label>
           </div>
-          <label className="block mb-2 bg-gray-200 p-2">
+          <label className="block mb-2  p-2">
             <input type="checkbox" className="mr-2" /> The written agreement of the parties regarding parentage is attached here (Attachment 9b) or to the proposed <em>Judgment</em> (form FL-180).
           </label>
         </div>
       </div>
       {/* Item 10 */}
-      <div className="mb-4 bg-gray-100 p-4">
+      <div className="mb-4  p-4">
         <p className="mb-2">
           <strong>10.</strong> <input type="checkbox" className="mr-2" /> Attorney fees should be ordered as set forth in the proposed <em>Judgment</em> (form FL-180).
         </p>
         <div className="ml-4 mb-4">
-          <label className="block mb-2 bg-gray-200 p-2">
+          <label className="block mb-2  p-2">
             <input type="checkbox" className="mr-2" /> The facts in support of this request are on <em>Request for Attorney's Fees and Costs Attachment</em> (form FL-319).
           </label>
-          <label className="block mb-2 bg-gray-200 p-2">
+          <label className="block mb-2  p-2">
             <input type="checkbox" className="mr-2" /> Other (specify facts below):
           </label>
-          <textarea className="border ml-6 w-full h-16 mb-4 bg-white"></textarea>
+          <textarea style={{backgroundColor: "rgb(225, 243, 243)"}} className="border ml-6 w-full h-16 mb-4"></textarea>
         </div>
       </div>
       {/* Item 11 */}
-      <div className="mb-4 bg-gray-100 p-4">
+      <div className="mb-4  p-4">
         <p className="mb-2">
           <strong>11.</strong> <input type="checkbox" className="mr-2" /> The judgment should be entered nunc pro tunc for the following reasons (specify):
         </p>
-        <textarea className="border ml-6 w-full h-16 mb-4 bg-white"></textarea>
+        <textarea style={{backgroundColor: "rgb(225, 243, 243)"}} className="border ml-6 w-full h-16 mb-4"></textarea>
       </div>
       {/* Item 12 */}
-      <div className="mb-4 bg-gray-100 p-4">
+      <div className="mb-4  p-4">
         <p className="mb-2">
           <strong>12.</strong> <input type="checkbox" className="mr-2" /> Petitioner <input type="checkbox" className="ml-2 mr-2" /> Respondent requests restoration of the former name as set forth in the proposed <em>Judgment</em> (form FL-180) (proceedings for dissolution or nullity of marriage only).
         </p>
       </div>
       {/* Item 13 */}
-      <div className="mb-4 bg-gray-100 p-4">
+      <div className="mb-4 p-4">
         <p className="mb-2">
           <strong>13.</strong> Irreconcilable differences have led to the irremediable breakdown of the marriage or domestic partnership, and there is no possibility of saving the marriage or domestic partnership through counseling or other means.
         </p>
       </div>
       {/* Item 14 */}
-      <div className="mb-4 bg-gray-100 p-4">
+      <div className="mb-4 p-4">
         <p className="mb-2">
           <strong>14.</strong> This declaration may be reviewed by a commissioner sitting as a temporary judge, who may determine whether to grant this request or require my appearance under Family Code section 2336.
         </p>
       </div>
       {/* Dissolution Statement */}
-      <div className="mb-4 bg-white border p-4">
+      <div className="mb-4  p-4">
         <p className="mb-2 font-bold">
           STATEMENTS IN THIS BOX APPLY ONLY TO DISSOLUTIONS
         </p>
@@ -604,7 +652,7 @@ export default function () {
         </div>
       </div>
       {/* Legal Separations Statement */}
-      <div className="mb-4 bg-white border p-4">
+      <div className="mb-4  p-4">
         <p className="mb-2 font-bold">
           THIS STATEMENT APPLIES ONLY TO LEGAL SEPARATIONS
         </p>
@@ -618,11 +666,11 @@ export default function () {
         </div>
       </div>
       {/* Item 19 */}
-      <div className="mb-4 bg-gray-100 p-4">
+      <div className="mb-4 p-4">
         <p className="mb-2">
           <strong>19.</strong> <input type="checkbox" className="mr-2" /> Other (specify):
         </p>
-        <textarea className="border ml-6 w-full h-16 mb-4 bg-white"></textarea>
+        <textarea style={{backgroundColor: "rgb(225, 243, 243)"}} className="border ml-6 w-full h-16 mb-4 "></textarea>
       </div>
       {/* Final Statement */}
       <div className="p-4">

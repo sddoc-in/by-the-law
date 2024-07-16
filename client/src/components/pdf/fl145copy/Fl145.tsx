@@ -6,7 +6,7 @@ export default function SU145copy() {
         <>
             <div style={{ maxWidth: "1100px", margin: "auto" }}>
                 <h3 style={{ display: "flex", justifyContent: "end", marginTop: "0", marginBottom: "0" }}>FL-145copy</h3>
-                <div style={{ fontFamily: 'Arial, sans-serif', fontSize: '15px', lineHeight: '1.5', padding: '20px' }}>
+                <div style={{ fontFamily: 'Arial, sans-serif', fontSize: '15px', lineHeight: '1.5' }}>
                 <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse" }}>
                     <tbody>
                         <tr>
@@ -27,12 +27,12 @@ export default function SU145copy() {
                                 <div style={{ display: "grid",gridTemplateColumns:"1fr 1fr" }}>
                                     <div style={{ marginBottom: 2 }}>
                                         <label htmlFor="telephone">TELEPHONE NO.:</label>
-                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="number" id="telephone" />
+                                        <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:'71%' }} type="number" id="telephone" />
                                     </div>
                                 </div>
                                 <div style={{ marginBottom: 2 }}>
                                     <label htmlFor="attorney">ATTORNEY FOR (name):</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"71%" }} type="name" id="attorney" />
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"83%" }} type="name" id="attorney" />
                                 </div>
                             </td>
                         </tr>
@@ -69,16 +69,16 @@ export default function SU145copy() {
                             <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
                                 <div><b><h1>FORM INTERROGATORIES-FAMILY LAW</h1></b></div>
                                 <div style={{ marginBottom: 3, marginLeft: "1.2rem" }}>
-                                    <label htmlFor="name">Asking Party::</label>
-                                    <input  type="text" id="name" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "85.4%" }} />
+                                    <label htmlFor="name">Asking Party:</label>
+                                    <input  type="text" id="name" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "90.6%" }} />
                                 </div>
                                 <div style={{ marginBottom: 3 }}>
                                     <label htmlFor="street">Answering Party :</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "83.6%" }} type="text" id="street" />
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "88%" }} type="text" id="street" />
                                 </div>
                                 <div style={{ marginBottom: 3 }}>
                                     <label htmlFor="street">Set No.:</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "83.6%" }} type="text" id="street" />
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "94%" }} type="text" id="street" />
                                 </div>
                             </td>
                         </tr>

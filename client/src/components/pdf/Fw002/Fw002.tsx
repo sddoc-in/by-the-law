@@ -33,7 +33,7 @@ export default function () {
      return (
         <div style={{ maxWidth: "1100px", margin: "auto" }}>
             
-            <h3 style={{ display: 'flex', marginBottom: '0',backgroundColor:'balck' }}> <b>FL-330</b> </h3>
+            <h3 style={{ display: 'flex', marginBottom: '0',backgroundColor:'balck' }}> <b>Fw-002</b> </h3>
 
             <h2 style={{display:'flex',justifyContent:'center',alignItems:'center', fontSize:'18px'}}><b>Request to Waive Additional Court Fees (Superior Court)</b></h2>
             <div className='container' style={{width:'80%', height:'30%',display:'flex',justifyContent:'space-between',gap:'4px',margin:'20px'}}>
@@ -95,27 +95,27 @@ export default function () {
                     <div style={{ display: "grid",gridTemplateColumns:"1fr 1fr" ,marginLeft:'30px'}}>
                                     <div style={{ marginBottom: 2 }}>
                                         <label htmlFor="name">Name:</label>
-                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:'65S%' }} type="text" id="Streetaddress" />
+                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "50px",width:'65S%' }} type="text" id="Streetaddress" />
                                     </div>
                                     <div style={{ marginBottom: 2 }}>
                                         <label htmlFor="address">STREET ADDRESS:</label>
-                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="City" />
+                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "50px" }} type="text" id="City" />
                                     </div>
                                     <div style={{ marginBottom: 2 }}>
                                         <label htmlFor="city">CITY:</label>
-                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="City" />
+                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "60px" }} type="text" id="City" />
                                     </div>
                                     <div style={{ marginBottom: 2 }}>
                                         <label htmlFor="state">STATE:</label>
-                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="State" />
+                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "132px" }} type="text" id="State" />
                                     </div>
                                     <div style={{ marginBottom: 2 }}>
                                         <label htmlFor="zipcode">ZIP:</label>
-                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="number" id="telephone" />
+                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "68px" }} type="number" id="telephone" />
                                     </div>
                                     <div style={{ marginBottom: 2 }}>
                                         <label htmlFor="telephone">PHONE NO.:</label>
-                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="number" id="telephone" />
+                                        <input  onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "88px" }} type="number" id="telephone" />
                                     </div>
                                 </div>
                                 <table

@@ -40,15 +40,15 @@ export default function () {
                             <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="name">PETITIONER/PLAINTIFF:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"75%" }} type="text" id="name" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"76%" }} type="text" id="name" />
                                 </div>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">RESPONDENT/DEFENDANT:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"69.5%" }} type="text" id="street" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"71.5%" }} type="text" id="street" />
                                 </div>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">OTHER PARENT:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"69.5%" }} type="text" id="street" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"83%" }} type="text" id="street" />
                                 </div>
                             </td>
                             <td style={{ width: "30%", border: "2px solid black", borderCollapse: "collapse" }}>
@@ -189,15 +189,15 @@ export default function () {
                             <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="name">PETITIONER/PLAINTIFF:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"75%" }} type="text" id="name" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"76%" }} type="text" id="name" />
                                 </div>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">RESPONDENT/DEFENDANT:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"69.5%" }} type="text" id="street" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"71.5%" }} type="text" id="street" />
                                 </div>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">OTHER PARENT:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"69.5%" }} type="text" id="street" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"83%" }} type="text" id="street" />
                                 </div>
                             </td>
                             <td style={{ width: "30%", border: "2px solid black", borderCollapse: "collapse" }}>
@@ -344,7 +344,7 @@ export default function () {
                     <div style={{ listStyle: "none" , fontSize:'10px' }}>
                         <div>Form Approved for Optional Use</div>
                         <div>Judicial Council of California</div>
-                        <div> FL-157 [Ne. January 1, 2012]</div>
+                        <div> FL-158 [Ne. January 1, 2012]</div>
                     </div>
                     <div style={{ }}>
                         <div style={{ marginLeft:"5px" , fontWeight: "bold" }}>

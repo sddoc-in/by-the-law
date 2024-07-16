@@ -33,158 +33,134 @@ export default function () {
     return (
         <div style={{ maxWidth: "1100px", margin: "auto" }}>
             
-            <h3 style={{ display: 'flex', marginBottom: '0' }}>FL-191 </h3>
-                <table style={{ width: "100%",  border: "2px solid black", borderCollapse: "collapse" }}>
-                    <tbody>
-                        <tr>
-                            <td style={{ width: "70%", border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div>
-                                    <label>
-                                        ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and
-                                        address):
-                                    </label>
-                                    <textarea
-                                    name={"AttorneyOrPartyWithoutAttorney"}
-                                    onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",resize:"none" }}
-                                        id=""
-                                        cols={80}
-                                        // rows={4}
-                                    />
+            <h3 style={{ display: 'flex', marginBottom: '0',justifyContent:'end' }}>FL-191 </h3>
+            <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
+                    <tr className='flex justify-center items-start w-full h-full'>
+                        <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
+                        >
+                            <div style={{ margin: "0px 2px", marginTop: "-4px" }}>
+                                <label style={{ fontSize: "10px" }} >
+                                    ATTORNEY OR PARTY WITHOUT ATTORNEY
+                                    <span style={{ fontStyle: "italic" }}>(Name, State Bar number, and
+                                        address)</span>:
+                                </label>
+                                <textarea
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "-webkit-fill-available", resize: 'none' }}
+                                    name=""
+                                    id=""
+                                    cols={90}
+                                    rows={3}
+                                    defaultValue={""}
+                                />
+                            </div>
+                            <div className='flex justify-end items-center w-full'
+                            >
+                                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">TELEPHONE NO.:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                                 </div>
-                                <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr",marginBottom:"5px" }}>
-                                    <div>
-                                        <label htmlFor="telephone">TELEPHONE NO.:</label>
-                                        <input 
-                                        name={"TelephoneNo"}
-                                        onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"60%" }} type="number" id="telephone" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="fax" style={{display:"inline"}}>FAX NO(optional):</label>
-                                        <input
-                                        name={"FaxNo"}
-                                        onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"54%" }} type="text" id="fax" />
-                                    </div>
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">FAX NO. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                                 </div>
-                                <div>
-                                    <label htmlFor="attorney">ATTORNEY FOR (name):</label>
-                                    <input 
-                                    name={" AttorneyFor"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "5px",width:"71.7%" }} type="email" id="attorney" />
-                                </div>
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="fax">E-MAIL ADDRESS <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="attorney">ATTORNEY FOR <span style={{ fontStyle: "italic" }}>(Name)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "71%" }} type="email" id="attorney" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", border: "4px solid red", borderCollapse: "collapse",width:'329px' }} rowSpan={3}>
+                               <div className="bg-green-200 h-.5 text-center text-red-500">To Keep outher people from seeing what you entered on your from, please press the Clear This Form button at the end of the form when finished</div>
                             </td>
-                            <td style={{ textAlign: "center", top: 0, border: "2px solid black", borderCollapse: "collapse" }} rowSpan={3}>
-                               <div style={{border:'2px solid red',backgroundColor:'#b6acac', margin:'5px', padding:'3px'}}>To Keep outher people from seeing what you entered on your from, please press the Clear This Form button at the end of the form when finished</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="name">SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
-                                    <input
-                                     name={"Countyof"}
-                                     onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                        style={{ width: "48.4%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
-                                        type="text"
-                                        id="name"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">STREET ADDRESS:</label>
-                                    <input
-                                    name={"StreetAddress"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"79.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2, marginBottom: 2 }}>
-                                    <label htmlFor="street">MAILING ADDRESS:</label>
-                                    <input
-                                    name={"MailingAddress"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"78.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="street">CITY AND ZIP CODE:</label>
-                                    <input 
-                                    name={"CityAndZipCode"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"77.2%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="street">BRANCH NAME:</label>
-                                    <input 
-                                    name={"BranchName"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"81.7%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ margin: 2, border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ marginLeft: "1.2rem", marginBottom:"4px"}}>
-                                    <label htmlFor="name">PETITIONER/PLAINTIFF:</label>
-                                    <input 
-                                    name={"Petitioner"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"85.4%" }} type="text" id="name" />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">RESPONDENT/DEFENDANT:</label>
-                                    <input 
-                                    name={"Respondent"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"83.7%" }} type="text" id="street" />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">OTHER PARENT:</label>
-                                    <input 
-                                    name={"Parent"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"83.7%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                        <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div><h3 >
-                                    <b>CHILD SUPPORT CASE REGISTRY FORM</b>
-                                </h3>
-                                </div>
-                                <form >
-                                    <label>
-                                        <input onChange={(e) => handleChange(e)} style={{marginLeft:'40px'}} type="checkbox" name="gender" value="male"/> <b>Mother</b>
-                                    </label>
-                                    <label>
-                                        <input onChange={(e) => handleChange(e)} style={{marginLeft:'50px'}} type="checkbox" name="gender" value="female"/> <b>First form completed</b>
-                                    </label>
-                                    
-                                </form>
-                                <form >
-                                    <label>
-                                        <input onChange={(e) => handleChange(e)} style={{marginLeft:'40px'}} type="checkbox" name="gender" value="male"/> <b>Father</b>
-                                    </label>
-                                    <label>
-                                        <input onChange={(e) => handleChange(e)} style={{marginLeft:'50px'}} type="checkbox" name="gender" value="female"/> <b>Change to previous information</b>
-                                    </label>
-                                   
-                                </form>
-                            </td>
-                            <td>
-                                <div style={{ marginLeft: "1.2rem",marginBottom: "8px" }}>
-                                    <label htmlFor="street">CASE NUMBER:</label>
-                                    <br />
-                                    <input 
-                                    name={"CaseNumber"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"96%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ margin: 0, padding: 1,paddingBottom:2, borderCollapse: "collapse", borderTop: "2px solid black", display: "flex", flexDirection: "column", justifyContent: "flex-end", width: "70%", borderRight: "2px solid black" }}>
+                            <div className=' flex justify-end items-center'>
+                                <label htmlFor="name" style={{ fontSize: "10px", fontWeight: "bold" }}>SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+                                <input
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '56%' }}
+                                    type="text"
+                                    id="name"
+                                />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>STREET ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CITY AND ZIP CODE:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>BRANCH NAME:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ borderTop: "2px solid black", borderCollapse: "collapse", padding: 1,paddingBottom:2, width: "70%", borderRight: "2px solid black", borderBottom: "2px solid black" }}>
+                            <div className='flex justify-end items-center '>
+                                <label htmlFor="name" style={{ fontSize: "10px" }}>PLAINTIFF/PETITIONER:</label>
+                                <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                                    type="text" id="name" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>DEFENDENT/RESPONDENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "83%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>OTHER PARENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{
+                            borderCollapse: "collapse", width: "70%",
+                            height: "100px",
+                            borderRight: "2px solid black",
+                            
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}>
+                            <div style={{ textAlign: "center", fontSize: "12px", letterSpacing: "1px" }}>
+                                <b>CHILD SUPPORT CASE REGISTRY FORM</b>
+                            </div><br />
+                            <div> <input type="checkbox" style={{marginLeft:'60px'}} /> <b>Father</b> <input type="checkbox" style={{marginLeft:'69px'}} /> <b>First form completed</b> </div>
+                            <div> <input type="checkbox" style={{marginLeft:'60px'}} /> <b>Mother</b> <input type="checkbox" style={{marginLeft:'60px'}} /> <b>Change to previous information</b> </div>
+                            
+                        </td>
+                        <td className='px-2 w-[30%]' style={{borderTop:"2px solid black",}}>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CASE NUMBER:</label>
+                                <br />
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                    </tr>
                 </table>
+                
                 <div  style={{display:'flex', justifyContent:'center', alignItems:'center', marginLeft:'90px'}}> <h1><b>
                 THIS FORM WILL NOT BE PLACED IN THE COURT FILE. IT WILL BE MAINTAINED IN A CONFIDENTIAL FILE WITH THE STATE OF CALIFORNIA.</b></h1> </div>
                 <div style={{border:'2px solid black', display:'flex', marginLeft:'10px',fontSize:'14px', padding:'8px'}}>
@@ -401,15 +377,15 @@ export default function () {
                             <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="name">PETITIONER/PLAINTIFF:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"75%" }} type="text" id="name" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"77%" }} type="text" id="name" />
                                 </div>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">RESPONDENT/DEFENDANT:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"69.5%" }} type="text" id="street" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"72.6%" }} type="text" id="street" />
                                 </div>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">OTHER PARENT:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"69.5%" }} type="text" id="street" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"84%" }} type="text" id="street" />
                                 </div>
                             </td>
                             <td style={{ width: "30%", border: "2px solid black", borderCollapse: "collapse" }}>
@@ -456,157 +432,161 @@ export default function () {
 
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px',marginLeft:'30px' }}>
         <div>
-          <h5><b><u>5.  Father's name:</u></b></h5>
-          <form>
-            <label>
-              <b>a.</b> Date of birth:
-              <input type="text" name="father_dob"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>b.</b> Social security number:
-              <input type="text" name="father_ssn"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>c.</b> Street address:
-              <input type="text" name="father_street_address"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-              City, state, zip code:
-              <input type="text" name="father_city_state_zip"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>d.</b> Mailing address:
-              <input type="text" name="father_mailing_address" style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}}/>
-            </label>
-            <br />
-            <label>
-              City, state, zip code:
-              <input type="text" name="father_mailing_city_state_zip"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>e.</b> Driver's license number:
-              <input type="text" name="father_driver_license"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-              State:
-              <input type="text" name="father_driver_license_state"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>f.</b> Telephone number:
-              <input type="text" name="father_phone"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>g.</b> Employment status:
-              <input type="checkbox" name="father_employed"style={{margin:'8px'}} /> Employed
-              <input type="checkbox" name="father_not_employed"style={{margin:'8px'}} /> Not employed
-              <input type="checkbox" name="father_self_employed"style={{margin:'8px'}} /> Self-employed
-            </label>
-            <br />
-            <label>
-              Employer's name:
-              <input type="text" name="father_employer_name"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-              Street address:
-              <input type="text" name="father_employer_street"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-              City, state, zip code:
-              <input type="text" name="father_employer_city_state_zip"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-              Telephone number:
-              <input type="text" name="father_employer_phone"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-          </form>
+      <h5><b><u>5. Father's name:</u></b></h5>
+      <form>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>a.</b> Date of birth:</label>
+          <input type="text" name="father_dob" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
         </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>b.</b> Social security number:</label>
+          <input type="text" name="father_ssn" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>c.</b> Street address:</label>
+          <input type="text" name="father_street_address" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>City, state, zip code:</label>
+          <input type="text" name="father_city_state_zip" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>d.</b> Mailing address:</label>
+          <input type="text" name="father_mailing_address" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>City, state, zip code:</label>
+          <input type="text" name="father_mailing_city_state_zip" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>e.</b> Driver's license number:</label>
+          <input type="text" name="father_driver_license" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>State:</label>
+          <input type="text" name="father_driver_license_state" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>f.</b> Telephone number:</label>
+          <input type="text" name="father_phone" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>g.</b> Employment status:</label>
+          <div>
+            <input type="checkbox" name="father_employed" style={{ margin: '8px' }} /> Employed
+            <input type="checkbox" name="father_not_employed" style={{ margin: '8px' }} /> Not employed
+            <input type="checkbox" name="father_self_employed" style={{ margin: '8px' }} /> Self-employed
+          </div>
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>Employer's name:</label>
+          <input type="text" name="father_employer_name" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>Street address:</label>
+          <input type="text" name="father_employer_street" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>City, state, zip code:</label>
+          <input type="text" name="father_employer_city_state_zip" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>Telephone number:</label>
+          <input type="text" name="father_employer_phone" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+      </form>
+    </div>
 
         <div>
           <h5><b><u>6. Mother's name:</u></b></h5>
           <form>
-            <label>
-            <b>a.</b> Date of birth:
-              <input type="text" name="mother_dob"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>b.</b> Social security number:
-              <input type="text" name="mother_ssn"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>c.</b> Street address:
-              <input type="text" name="mother_street_address"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-              City, state, zip code:
-              <input type="text" name="mother_city_state_zip"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>d.</b> Mailing address:
-              <input type="text" name="mother_mailing_address"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-              City, state, zip code:
-              <input type="text" name="mother_mailing_city_state_zip"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>e.</b> Driver's license number:
-              <input type="text" name="mother_driver_license" style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}}/>
-            </label>
-            <br />
-            <label>
-              State:
-              <input type="text" name="mother_driver_license_state"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>f.</b> Telephone number:
-              <input type="text" name="mother_phone"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-            <b>g.</b> Employment status:
-              <input type="checkbox" name="mother_employed"style={{margin:'8px'}} /> Employed
-              <input type="checkbox" name="mother_not_employed" style={{margin:'8px'}}/> Not employed
-              <input type="checkbox" name="mother_self_employed" style={{margin:'8px'}}/> Self-employed
-            </label>
-            <br />
-            <label>
-              Employer's name:
-              <input type="text" name="mother_employer_name" style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}}/>
-            </label>
-            <br />
-            <label>
-              Street address:
-              <input type="text" name="mother_employer_street" style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}}/>
-            </label>
-            <br />
-            <label>
-              City, state, zip code:
-              <input type="text" name="mother_employer_city_state_zip"style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}} />
-            </label>
-            <br />
-            <label>
-              Telephone number:
-              <input type="text" name="mother_employer_phone" style={{ backgroundColor: 'rgb(225, 243, 243)',margin:'4px'}}/>
-            </label>
-          </form>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>a.</b> Date of birth:</label>
+          <input type="text" name="father_dob" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>b.</b> Social security number:</label>
+          <input type="text" name="father_ssn" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>c.</b> Street address:</label>
+          <input type="text" name="father_street_address" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>City, state, zip code:</label>
+          <input type="text" name="father_city_state_zip" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>d.</b> Mailing address:</label>
+          <input type="text" name="father_mailing_address" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>City, state, zip code:</label>
+          <input type="text" name="father_mailing_city_state_zip" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>e.</b> Driver's license number:</label>
+          <input type="text" name="father_driver_license" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>State:</label>
+          <input type="text" name="father_driver_license_state" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>f.</b> Telephone number:</label>
+          <input type="text" name="father_phone" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label><b>g.</b> Employment status:</label>
+          <div>
+            <input type="checkbox" name="father_employed" style={{ margin: '8px' }} /> Employed
+            <input type="checkbox" name="father_not_employed" style={{ margin: '8px' }} /> Not employed
+            <input type="checkbox" name="father_self_employed" style={{ margin: '8px' }} /> Self-employed
+          </div>
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>Employer's name:</label>
+          <input type="text" name="father_employer_name" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>Street address:</label>
+          <input type="text" name="father_employer_street" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>City, state, zip code:</label>
+          <input type="text" name="father_employer_city_state_zip" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label>Telephone number:</label>
+          <input type="text" name="father_employer_phone" style={{ backgroundColor: 'rgb(225, 243, 243)', margin: '4px', width: '200px' }} />
+        </div>
+      </form>
         </div>
       </div>
       </div>

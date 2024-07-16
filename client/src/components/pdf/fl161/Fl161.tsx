@@ -12,15 +12,15 @@ export default function SU161() {
                             <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="name">PETITIONER:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"75%" }} type="text" id="name" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"88%" }} type="text" id="name" />
                                 </div>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">RESPONDENT:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"69.5%" }} type="text" id="street" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"86%" }} type="text" id="street" />
                                 </div>
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">OUTHER PARENT/PARTY:</label>
-                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"69.5%" }} type="text" id="street" />
+                                    <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: "5px",width:"76%" }} type="text" id="street" />
                                 </div>
                             </td>
                             <td style={{ width: "30%", border: "2px solid black", borderCollapse: "collapse" }}>
@@ -71,36 +71,50 @@ export default function SU161() {
         <tbody>
           <tr>
             <td style={{ border: '1px solid black', padding: '8px' }}>1</td>
-            <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}></td>
-            <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}></td>
-            <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>$</td>
-            <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>$</td>
-            <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>$</td>
-            <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>$</td>
-            <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>$</td>
+            <td style={{ border: '1px solid black', padding: '8px',  }}>
+            <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
+            </td>
+            <td style={{ border: '1px solid black', padding: '8px', }}>
+            <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
+            </td>
+            <td style={{ border: '1px solid black', padding: '8px',  }}>$
+            <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
+            </td>
+            <td style={{ border: '1px solid black', padding: '8px', }}>$
+            <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
+            </td>
+            <td style={{ border: '1px solid black', padding: '8px',  }}>$
+            <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
+            </td>
+            <td style={{ border: '1px solid black', padding: '8px',  }}>$
+            <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
+            </td>
+            <td style={{ border: '1px solid black', padding: '8px',  }}>$
+            <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
+            </td>
           </tr>
           {Array.from({ length: 19 }).map((_, index) => (
             <tr key={index + 2}>
               <td style={{ border: '1px solid black', padding: '8px' }}>{index + 2}</td>
-              <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>
+              <td style={{ border: '1px solid black', padding: '8px' }}>
                 <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
               </td>
-              <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>
+              <td style={{ border: '1px solid black', padding: '8px' }}>
                 <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
               </td>
-              <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>
+              <td style={{ border: '1px solid black', padding: '8px' }}>
                 <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
               </td>
-              <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>
+              <td style={{ border: '1px solid black', padding: '8px' }}>
                 <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
               </td>
-              <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>
+              <td style={{ border: '1px solid black', padding: '8px' }}>
                 <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
               </td>
-              <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>
+              <td style={{ border: '1px solid black', padding: '8px' }}>
                 <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
               </td>
-              <td style={{ border: '1px solid black', padding: '8px', backgroundColor: 'rgb(225, 243, 243)' }}>
+              <td style={{ border: '1px solid black', padding: '8px' }}>
                 <textarea style={{ width: '100%', height: '100%', backgroundColor: 'rgb(225, 243, 243)' }}></textarea>
               </td>
             </tr>

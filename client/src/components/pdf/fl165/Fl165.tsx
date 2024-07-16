@@ -33,140 +33,137 @@ export default function () {
     return (
         <div style={{ maxWidth: "1100px", margin: "auto" }}>
             
-            <h3 style={{ display: 'flex', marginBottom: '0' }}>FL-190 </h3>
-                <table style={{ width: "100%",  border: "2px solid black", borderCollapse: "collapse" }}>
-                    <tbody>
-                        <tr>
-                            <td style={{ width: "70%", border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div>
-                                    <label>
-                                        ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and
-                                        address):
-                                    </label>
-                                    <textarea
-                                    name={"AttorneyOrPartyWithoutAttorney"}
-                                    onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",resize:"none" }}
-                                        id=""
-                                        cols={80}
-                                        // rows={4}
-                                    />
+            <h3 style={{ display: 'flex', marginBottom: '0',justifyItems:'end' }}>FL-165 </h3>
+            <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
+                    <tr className='flex justify-center items-start w-full h-full'>
+                        <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
+                        >
+                            <div style={{ margin: "0px 2px", marginTop: "-4px" }}>
+                                <label style={{ fontSize: "10px" }} >
+                                    ATTORNEY OR PARTY WITHOUT ATTORNEY
+                                    <span style={{ fontStyle: "italic" }}>(Name, State Bar number, and
+                                        address)</span>:
+                                </label>
+                                <textarea
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "-webkit-fill-available", resize: 'none' }}
+                                    name=""
+                                    id=""
+                                    cols={90}
+                                    rows={3}
+                                    defaultValue={""}
+                                />
+                            </div>
+                            <div className='flex justify-end items-center w-full'
+                            >
+                                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">TELEPHONE NO.:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                                 </div>
-                                <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr",marginBottom:"5px" }}>
-                                    <div>
-                                        <label htmlFor="telephone">TELEPHONE NO.:</label>
-                                        <input 
-                                        name={"TelephoneNo"}
-                                        onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"60%" }} type="number" id="telephone" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="fax" style={{display:"inline"}}>FAX NO(optional):</label>
-                                        <input
-                                        name={"FaxNo"}
-                                        onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"54%" }} type="text" id="fax" />
-                                    </div>
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">FAX NO. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                                 </div>
-                                <div>
-                                    <label htmlFor="EmailAddress">E-MAIL ADDRESS (Optional):</label>
-                                    <input 
-                                    name={"EmailAddress"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "5px",width:"71.7%" }} type="email" id="attorney" />
-                                </div>
-                                <div>
-                                    <label htmlFor="attorney">ATTORNEY FOR (name):</label>
-                                    <input 
-                                    name={" AttorneyFor"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "5px",width:"71.7%" }} type="email" id="attorney" />
-                                </div>
-                            </td>
-                            <td style={{ textAlign: "center", top: 0, border: "2px solid black", borderCollapse: "collapse" }} rowSpan={3}>
-                            <div style={{position:'initial'}}><b>FOR CORT USE ONLY</b></div>
-                               
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="name"><b>SUPERIOR COURT OF CALIFORIA, COUNTY OF</b></label>
-                                    <input
-                                     name={"Countyof"}
-                                     onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                        style={{ width: "48.4%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
-                                        type="text"
-                                        id="name"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">STREET ADDRESS:</label>
-                                    <input
-                                    name={"StreetAddress"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"79.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2, marginBottom: 2 }}>
-                                    <label htmlFor="street">MAILING ADDRESS:</label>
-                                    <input
-                                    name={"MailingAddress"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"78.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="street">CITY AND ZIP CODE:</label>
-                                    <input 
-                                    name={"CityAndZipCode"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"77.2%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="street">BRANCH NAME:</label>
-                                    <input 
-                                    name={"BranchName"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"81.7%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ margin: 2, border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ marginLeft: "1.2rem", marginBottom:"4px"}}>
-                                    <label htmlFor="name">PETITIONER:</label>
-                                    <input 
-                                    name={"Petitioner"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"85.4%" }} type="text" id="name" />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">RESPONDENT:</label>
-                                    <input 
-                                    name={"Respondent"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"83.7%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <h3 style={{ textAlign: "center" }}>
-                                    <b>REQUEST TO ENTER DEFAULT</b>
-                                </h3>
-                            </td>
-                            <td>
-                                <div style={{ marginLeft: "1.2rem",marginBottom: "8px" }}>
-                                    <label htmlFor="street">CASE NUMBER:</label>
-                                    <br />
-                                    <input 
-                                    name={"CaseNumber"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"96%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table><br />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="fax">E-MAIL ADDRESS <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="attorney">ATTORNEY FOR <span style={{ fontStyle: "italic" }}>(Name)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "71%" }} type="email" id="attorney" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className='relative w-[30%]'
+                        >
+                            <p className='absolute' style={{
+                                top: 10,
+                                left: "21%",
+                                fontSize: "10px",
+                                fontWeight: "bold"
+                            }}>
+                                FOR COURT USE ONLY
+                            </p>
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ margin: 0, padding: 1,paddingBottom:2, borderCollapse: "collapse", borderTop: "2px solid black", display: "flex", flexDirection: "column", justifyContent: "flex-end", width: "70%", borderRight: "2px solid black" }}>
+                            <div className=' flex justify-end items-center'>
+                                <label htmlFor="name" style={{ fontSize: "10px", fontWeight: "bold" }}>SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+                                <input
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '56%' }}
+                                    type="text"
+                                    id="name"
+                                />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>STREET ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CITY AND ZIP CODE:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>BRANCH NAME:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ borderTop: "2px solid black", borderCollapse: "collapse", padding: 1,paddingBottom:2, width: "70%", borderRight: "2px solid black", borderBottom: "2px solid black" }}>
+                            <div className='flex justify-end items-center '>
+                                <label htmlFor="name" style={{ fontSize: "10px" }}>PETITIONER:</label>
+                                <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                                    type="text" id="name" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>RESPONDENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "83%" }}
+                                    type="text" id="street" />
+                            </div>
+                            
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{
+                            borderCollapse: "collapse", width: "70%",
+                            height: "48px",
+                            borderRight: "2px solid black",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}>
+                            <div style={{ textAlign: "center", fontSize: "14px", letterSpacing: "1px" }}>
+                                <b>REQUEST TO ENTER DEFAULT</b>
+                            </div>
+                        </td>
+                        <td className='px-2 w-[30%]' style={{borderTop:"2px solid black",}}>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CASE NUMBER:</label>
+                                <br />
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <br />
                 <div style={{ padding: '32px' }}>
       <ol style={{ listStyleType: 'decimal', marginLeft: '16px' }}>
         <li style={{ marginBottom: '16px' }}>
@@ -223,10 +220,12 @@ export default function () {
             </div>
           </div>
           <div style={{ marginTop: '16px' }}>
-            <p>Date: <input type="text" style={{ borderBottom: '1px solid black', width: '160px', marginLeft: '8px' }} /></p>
-            <p style={{ marginTop: '16px' }}><input type="text" style={{ borderBottom: '1px solid black', width: '50%' }} placeholder="TYPE OR PRINT NAME" /></p>
-            <p style={{ marginTop: '16px' }}><input type="text" style={{ borderBottom: '1px solid black', width: '50%' }} placeholder="SIGNATURE OF ATTORNEY FOR PETITIONER" /></p>
-          </div>
+            <p>Date: <input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', borderBottom: '1px solid black', width: '160px', marginLeft: '8px' }} /></p>
+            <div style={{display:'flex',width:'100%'}}>
+            <div style={{width: '50%'}}><p style={{ marginTop: '16px' }}><input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', borderBottom: '1px solid black', width: '50%' }} placeholder="TYPE OR PRINT NAME" /></p>
+            </div>
+            <div style={{width: '50%'}}><p style={{ marginTop: '16px' }}><input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', borderBottom: '1px solid black', width: '50%' }} placeholder="SIGNATURE OF DECLARANT" /></p></div>
+          </div></div>
         </li>
         <li style={{ marginBottom: '16px' }}>
           <p style={{ fontWeight: 'bold' }}>Declaration</p>
@@ -243,12 +242,17 @@ export default function () {
           </div>
           <div style={{ marginTop: '16px' }}>
             <p>I declare under penalty of perjury under the laws of the State of California that the foregoing is true and correct.</p>
-            <p style={{ marginTop: '16px' }}>Date: <input type="text" style={{ borderBottom: '1px solid black', width: '160px', marginLeft: '8px' }} /></p>
-            <p style={{ marginTop: '16px' }}><input type="text" style={{ borderBottom: '1px solid black', width: '50%' }} placeholder="TYPE OR PRINT NAME" /></p>
-            <p style={{ marginTop: '16px' }}><input type="text" style={{ borderBottom: '1px solid black', width: '50%' }} placeholder="SIGNATURE OF DECLARANT" /></p>
+            <p style={{ marginTop: '16px' }}>Date: <input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', borderBottom: '1px solid black', width: '160px', marginLeft: '8px' }} /></p>
+            
           </div>
+          
         </li>
       </ol>
+      <div style={{display:'flex',width:'100%'}}>
+            <div style={{width: '50%'}}><p style={{ marginTop: '16px' }}><input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', borderBottom: '1px solid black', width: '50%' }} placeholder="TYPE OR PRINT NAME" /></p>
+            </div>
+            <div style={{width: '50%'}}><p style={{ marginTop: '16px' }}><input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', borderBottom: '1px solid black', width: '50%' }} placeholder="SIGNATURE OF DECLARANT" /></p></div>
+          </div>
       <div style={{ border: '1px solid black', padding: '16px', marginTop: '16px' }}>
         <p style={{ fontWeight: 'bold' }}>FOR COURT USE ONLY</p>
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', marginTop: '16px' }}>
@@ -275,7 +279,7 @@ export default function () {
                     <div style={{ listStyle: "none" , fontSize:'10px' }}>
                         <div>Form Approved for Optional Use</div>
                         <div>Judicial Council of California</div>
-                        <div> FL-190 [Rev. January 1, 2005]</div>
+                        <div> FL-165 [Rev. January 1, 2005]</div>
                     </div>
                     <div style={{ }}>
                         <div style={{ marginLeft:"5px" , fontWeight: "bold" }}>
@@ -351,20 +355,24 @@ export default function () {
           </div>
           <div style={{ marginTop: '16px' }}>
             <p>I declare under penalty of perjury under the laws of the State of California that the foregoing is true and correct.</p>
-            <p style={{ marginTop: '16px' }}>Date: <input type="text" style={{ borderBottom: '1px solid black', width: '160px', marginLeft: '8px' }} /></p>
-            <p style={{ marginTop: '16px' }}><input type="text" style={{ borderBottom: '1px solid black', width: '50%' }} placeholder="TYPE OR PRINT NAME" /></p>
-            <p style={{ marginTop: '16px' }}><input type="text" style={{ borderBottom: '1px solid black', width: '50%' }} placeholder="SIGNATURE OF DECLARANT" /></p>
-          </div>
+            <p style={{ marginTop: '16px' }}>Date: <input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', borderBottom: '1px solid black', width: '160px', marginLeft: '8px' }} /></p>
+            <div style={{display:'flex',width:'100%'}}>
+            <div style={{width: '50%'}}><p style={{ marginTop: '16px' }}><input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', borderBottom: '1px solid black', width: '50%' }} placeholder="TYPE OR PRINT NAME" /></p>
+            </div>
+            <div style={{width: '50%'}}><p style={{ marginTop: '16px' }}><input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', borderBottom: '1px solid black', width: '50%' }} placeholder="SIGNATURE OF DECLARANT" /></p></div>
+          </div></div>
         </li>
         <li style={{ marginBottom: '16px' }}>
           <p style={{ fontWeight: 'bold' }}>5. Declaration of nonmilitary status</p>
           <p>The respondent is not in the military service of the United States as defined in section 511 et seq. of the Servicemembers Civil Relief Act (50 U.S.C. Appen. § 501 et seq.), and is not entitled to the benefits of such act.</p>
           <div style={{ marginTop: '16px' }}>
             <p>I declare under penalty of perjury under the laws of the State of California that the foregoing is true and correct.</p>
-            <p style={{ marginTop: '16px' }}>Date: <input type="text" style={{ borderBottom: '1px solid black', width: '160px', marginLeft: '8px' }} /></p>
-            <p style={{ marginTop: '16px' }}><input type="text" style={{ borderBottom: '1px solid black', width: '50%' }} placeholder="TYPE OR PRINT NAME" /></p>
-            <p style={{ marginTop: '16px' }}><input type="text" style={{ borderBottom: '1px solid black', width: '50%' }} placeholder="SIGNATURE OF DECLARANT" /></p>
-          </div>
+            <p style={{ marginTop: '16px' }}>Date: <input type="text" style={{ backgroundColor: 'rgb(225, 243, 243)',borderBottom: '1px solid black', width: '160px', marginLeft: '8px' }} /></p>
+            <div style={{display:'flex',width:'100%'}}>
+            <div style={{width: '50%'}}><p style={{ marginTop: '16px' }}><input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', borderBottom: '1px solid black', width: '50%' }} placeholder="TYPE OR PRINT NAME" /></p>
+            </div>
+            <div style={{width: '50%'}}><p style={{ marginTop: '16px' }}><input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', borderBottom: '1px solid black', width: '50%' }} placeholder="SIGNATURE OF DECLARANT" /></p></div>
+          </div></div>
         </li>
       </ol>
     </div>
@@ -389,7 +397,7 @@ export default function () {
                     <div style={{ listStyle: "none" , fontSize:'10px' }}>
                         <div>Form Approved for Optional Use</div>
                         <div>Judicial Council of California</div>
-                        <div> FL-190 [Rev. January 1, 2005]</div>
+                        <div> FL-165 [Rev. January 1, 2005]</div>
                     </div>
                     <div style={{ }}>
                         <div style={{ marginLeft:"5px" , fontWeight: "bold" }}>
