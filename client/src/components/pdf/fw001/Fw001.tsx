@@ -23,49 +23,53 @@ export default function () {
           <div>
             <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>1. Your Information <span style={{ fontWeight: 'normal' }}>(person asking the court to waive the fees):</span></div>
             <div style={{ marginLeft: '10px', marginBottom: '10px' }}>
-              <div>
-                <span>Name:</span>
-                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '100%', height: '20px' }} />
-              </div>
-              <div>
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+              <span style={{ marginRight: '10px' }}>Name:</span>
+              <textarea style={{backgroundColor: 'rgb(225, 243, 243)',width: '95%',height: '20px'}}/>
+            </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <span>Street or mailing address:</span>
-                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '100%', height: '20px' }} />
+                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '79%', height: '20px' }} />
               </div>
-              <div>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <span>City:</span>
-                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '25%', height: '20px' }} />
-                <span> State:</span>
-                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '10%', height: '20px' }} />
-                <span> Zip:</span>
-                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '15%', height: '20px' }} />
+                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '30%', height: '20px',marginTop:'5px' }} />
+                <span style={{margin:'10px'}}> State:</span>
+                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '30%', height: '20px',marginTop:'5px' }} />
+                <span style={{margin:'10px'}}> Zip:</span>
+                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '22%', height: '20px',marginTop:'5px' }} />
               </div>
-              <div>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <span>Phone:</span>
-                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '100%', height: '20px' }} />
+                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '93%', height: '20px',marginTop:'6px' }} />
               </div>
             </div>
 
-            <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>2. Your Job, if you have one  <span style={{ fontWeight: 'normal' }}>(job title):<textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '50%', height: '20px' }} /></span></div>
+            <div style={{ fontWeight: 'bold',display: 'flex', alignItems: 'center', marginBottom: '10px' }}>2. Your Job, if you have one 
+              <span style={{ fontWeight: 'normal',display: 'flex', alignItems: 'center', marginBottom: '4px',marginLeft:'5px' }}>(job title):</span>
+              <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '68%', height: '20px' }} />
+            </div>
             <div style={{ marginLeft: '10px', marginBottom: '10px' }}>
-              <div>
-                <span>Name of employer:</span>
-                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '100%', height: '20px' }} />
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                <span >Name of employer:</span>
+                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '84%', height: '20px' }} />
               </div>
-              <div>
-                <span>Employer’s address:</span>
-                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '100%', height: '20px' }} />
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                <span >Employer’s address:</span>
+                <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '83%', height: '20px' }} />
               </div>
             </div>
           </div>
         </div>
 
-        <div style={{ width: '30%', border: '1px solid black', padding: '10px' }}>
-          <div style={{ fontWeight: 'bold', marginBottom: '10px',height:'150px' }}>CONFIDENTIAL</div>
+        <div style={{ width: '33%', border: '1px solid black', padding: '10px' }}>
+          <div style={{ fontWeight: 'bold', marginBottom: '10px',height:'120px' }}>CONFIDENTIAL</div>
           <div style={{ marginBottom: '20px' }}>
             Clerk stamps date here when form is filed.
           </div>
           <div style={{ fontWeight: 'bold', marginBottom: '10px' }}>Fill in court name and street address:</div>
-          <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '100%', height: '100px', marginBottom: '10px' }} />
+          <textarea style={{ backgroundColor: 'rgb(225, 243, 243)', width: '100%', height: '90px', marginBottom: '10px' }} />
           <div style={{ fontWeight: 'bold', marginBottom: '10px' }}>Fill in case number and name:</div>
           <div>
             <span>Case Number:</span>
@@ -79,7 +83,7 @@ export default function () {
       </div>
 
       {/* Second Part */}
-      <div style={{ marginTop: '20px' }}>
+      <div style={{ marginTop: '10px' }}>
         <div>
           <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>3. Your Lawyer, if you have one <span style={{ fontWeight: 'normal' }}>(name, firm or affiliation, address, phone number, and State Bar number):</span></div>
           <div style={{ marginLeft: '10px', marginBottom: '10px' }}>
@@ -195,8 +199,8 @@ export default function () {
         <i><b>I declare under penalty of perjury under the laws of the state of California that the information I have provided on this form and all attachments is true and correct.</b></i>
       </div>
     </div>
-    <div style={{ marginLeft: "5%" }}>
-                    <div style={{ marginTop: 2, fontSize: 16 }}>
+    <div style={{ marginLeft: "5%",padding: '20px', fontFamily: 'Arial, sans-serif', fontSize: '12px' }}>
+                    <div style={{ marginTop: 2 }}>
                         Date: <input
                         name={"Date"}
                         
@@ -224,27 +228,6 @@ export default function () {
                 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
            <br/>
                 <hr style={{ width: "100%" }} />
                 <div
@@ -266,11 +249,9 @@ export default function () {
                         <div> Cal. Rules of Court, rules 3.51, 8.26 and 8.818</div>
                         <div> www.courtinfo.ca.gov</div>
                     </div>
-                    <div style={{ listStyle: "none", fontWeight: "bold",fontSize:'11px' }}>
-                    <li>Page 1 of 2</li>
-                    </div>
-                </div><br /><br />
-                <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse" }}>
+                   
+                </div><br />
+                <table style={{ width: "97%", border: "2px solid black", borderCollapse: "collapse" }}>
                     <tbody>
                         <tr>
                             <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
@@ -434,46 +415,121 @@ export default function () {
                     </div>
                   ))}
                 </div>
-                <div style={{ marginBottom: '10px' }}>
-                  <label>b. Rent or house payment & maintenance:</label>
-                  <input type="text" style={{ backgroundColor: 'rgb(225, 243, 243)',width: '150px', marginLeft: '10px' }} placeholder="$" />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                  <label>c. Food and household supplies:</label>
-                  <input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', width: '150px', marginLeft: '10px' }} placeholder="$" />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                  <label>d. Utilities and telephone:</label>
-                  <input type="text" style={{ backgroundColor: 'rgb(225, 243, 243)',width: '150px', marginLeft: '10px' }} placeholder="$" />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                  <label>e. Clothing:</label>
-                  <input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', width: '150px', marginLeft: '10px' }} placeholder="$" />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                  <label>f. Laundry and cleaning:</label>
-                  <input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', width: '150px', marginLeft: '10px' }} placeholder="$" />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                  <label>g. Medical and dental expenses:</label>
-                  <input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', width: '150px', marginLeft: '10px' }} placeholder="$" />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                  <label>h. Insurance (life, health, accident, etc.):</label>
-                  <input type="text" style={{ backgroundColor: 'rgb(225, 243, 243)',width: '150px', marginLeft: '10px' }} placeholder="$" />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                  <label>i. School, child care:</label>
-                  <input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', width: '150px', marginLeft: '10px' }} placeholder="$" />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                  <label>j. Child, spousal support (another marriage):</label>
-                  <input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', width: '150px', marginLeft: '10px' }} placeholder="$" />
-                </div>
-                <div style={{ marginBottom: '10px' }}>
-                  <label>k. Transportation, gas, auto repair and insurance:</label>
-                  <input type="text" style={{backgroundColor: 'rgb(225, 243, 243)', width: '150px', marginLeft: '10px' }} placeholder="$" />
-                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <label style={{ flex: '1' }}>b. Rent or house payment & maintenance:</label>
+    <input
+      type="text"
+      style={{
+        backgroundColor: 'rgb(225, 243, 243)',
+        width: '150px',
+      }}
+      placeholder="$"
+    />
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <label style={{ flex: '1' }}>c. Food and household supplies:</label>
+    <input
+      type="text"
+      style={{
+        backgroundColor: 'rgb(225, 243, 243)',
+        width: '150px',
+      }}
+      placeholder="$"
+    />
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <label style={{ flex: '1' }}>d. Utilities and telephone:</label>
+    <input
+      type="text"
+      style={{
+        backgroundColor: 'rgb(225, 243, 243)',
+        width: '150px',
+      }}
+      placeholder="$"
+    />
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <label style={{ flex: '1' }}>e. Clothing:</label>
+    <input
+      type="text"
+      style={{
+        backgroundColor: 'rgb(225, 243, 243)',
+        width: '150px',
+      }}
+      placeholder="$"
+    />
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <label style={{ flex: '1' }}>f. Laundry and cleaning:</label>
+    <input
+      type="text"
+      style={{
+        backgroundColor: 'rgb(225, 243, 243)',
+        width: '150px',
+      }}
+      placeholder="$"
+    />
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <label style={{ flex: '1' }}>g. Medical and dental expenses:</label>
+    <input
+      type="text"
+      style={{
+        backgroundColor: 'rgb(225, 243, 243)',
+        width: '150px',
+      }}
+      placeholder="$"
+    />
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <label style={{ flex: '1' }}>h. Insurance (life, health, accident, etc.):</label>
+    <input
+      type="text"
+      style={{
+        backgroundColor: 'rgb(225, 243, 243)',
+        width: '150px',
+      }}
+      placeholder="$"
+    />
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <label style={{ flex: '1' }}>i. School, child care:</label>
+    <input
+      type="text"
+      style={{
+        backgroundColor: 'rgb(225, 243, 243)',
+        width: '150px',
+      }}
+      placeholder="$"
+    />
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <label style={{ flex: '1' }}>j. Child, spousal support (another marriage):</label>
+    <input
+      type="text"
+      style={{
+        backgroundColor: 'rgb(225, 243, 243)',
+        width: '150px',
+      }}
+      placeholder="$"
+    />
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <label style={{ flex: '1' }}>k. Transportation, gas, auto repair and insurance:</label>
+    <input
+      type="text"
+      style={{
+        backgroundColor: 'rgb(225, 243, 243)',
+        width: '150px',
+      }}
+      placeholder="$"
+    />
+  </div>
+</div>
+
+
+
                 <div style={{ marginBottom: '10px' }}>
                   <label>l. Installment payments (list each below):</label>
                   {[1, 2, 3].map((item, index) => (
@@ -502,11 +558,8 @@ export default function () {
         </div>
       </form>
     </div>
-                
-                
-                
-  
-                <hr style={{ width: "100%" }} />
+            <footer>
+            <hr style={{ width: "100%" }} />
                 <div
                     className="footer"
                     style={{ display: "flex", justifyContent: "space-between" }}
@@ -519,17 +572,20 @@ export default function () {
                     <div style={{ }}>
                         <div style={{ marginLeft:"5px" , fontWeight: "bold" }}>
                         Request to Waive Court Fees</div>
-                        {/* <div>Health-Care Costs and Reimbursement Procedures</div> */}
+                        
                     </div>
                     <div style={{ listStyle: "none", fontSize:'10px' }}>
                         <div> Government Code, § 68633,</div>
                         <div> Cal. Rules of Court, rules 3.51, 8.26 and 8.818</div>
                         <div> www.courtinfo.ca.gov</div>
                     </div>
-                    <div style={{ listStyle: "none", fontWeight: "bold",fontSize:'11px' }}>
-                    <li>Page 2 of 2</li>
-                    </div>
-                </div><br /><br />
+                    
+                </div>
+              </footer>    
+                
+                
+  
+                <br />
         </div>
         
     )

@@ -7,7 +7,7 @@ export default function () {
 
     return (
         <div style={{ maxWidth: "1100px", margin: "auto" }}>
-            <h3 style={{ display: 'flex', marginBottom: '0' }}>FL-192 </h3>
+            <h3 style={{ display: 'flex', marginBottom: '0',justifyContent:'end' }}>FL-192 </h3>
             <div style={{display:'flex', textAlign:'center',margin:'8px', justifyContent:'center'}}><h1><b>NOTICE OF RIGHTS AND RESPONSIBILITIES</b></h1></div>
             <div style={{display:'flex', textAlign:'center', justifyContent:'center', fontSize:'17px'}}>Health-Care Costs and Reimbursement Procedures</div><br />
             <div style={{ display:'flex',justifyContent:'center' , alignItems:'center',textAlign:'center' , fontSize:'17px' ,margin:'10px'}}><b>IF YOU HAVE A CHILD SUPPORT ORDER THAT INCLUDES

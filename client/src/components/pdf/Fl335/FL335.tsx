@@ -33,176 +33,146 @@ export default function () {
     return (
         <div style={{ maxWidth: "1100px", margin: "auto" }}>
             
-            <h3 style={{ display: 'flex', marginBottom: '0' }}>FL-330 </h3>
-                <table style={{ width: "100%",  border: "2px solid black", borderCollapse: "collapse" }}>
-                    <tbody>
-                        <tr>
-                            <td style={{ width: "70%", border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div>
-                                    <label>
-                                        ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and
-                                        address):
-                                    </label>
-                                    <textarea
-                                    name={"AttorneyOrPartyWithoutAttorney"}
-                                    onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",resize:"none" }}
-                                        id=""
-                                        cols={80}
-                                        // rows={4}
-                                    />
+            <h3 style={{ display: 'flex', marginBottom: '0',justifyContent:'end' }}>FL-335 </h3>
+            <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
+                    <tr className='flex justify-center items-start w-full h-full'>
+                        <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
+                        >
+                            <div style={{ margin: "0px 2px", marginTop: "-4px" }}>
+                                <label style={{ fontSize: "10px" }} >
+                                    ATTORNEY OR PARTY WITHOUT ATTORNEY
+                                    <span style={{ fontStyle: "italic" }}>(Name, State Bar number, and
+                                        address)</span>:
+                                </label>
+                                <textarea
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "-webkit-fill-available", resize: 'none' }}
+                                    name=""
+                                    id=""
+                                    cols={90}
+                                    rows={3}
+                                    defaultValue={""}
+                                />
+                            </div>
+                            <div className='flex justify-end items-center w-full'
+                            >
+                                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">TELEPHONE NO.:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                                 </div>
-                                <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr",marginBottom:"5px" }}>
-                                    <div>
-                                        <label htmlFor="telephone">TELEPHONE NO.:</label>
-                                        <input 
-                                        name={"TelephoneNo"}
-                                        onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"60%" }} type="number" id="telephone" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="fax" style={{display:"inline"}}>FAX NO(optional):</label>
-                                        <input
-                                        name={"FaxNo"}
-                                        onChange={(e) => handleChange(e)}
-                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"54%" }} type="text" id="fax" />
-                                    </div>
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">FAX NO. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
                                 </div>
-                                <div>
-                                    <label htmlFor="EmailAddress">E-MAIL ADDRESS (Optional):</label>
-                                    <input 
-                                    name={"EmailAddress"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "5px",width:"71.7%" }} type="email" id="attorney" />
-                                </div>
-                                <div>
-                                    <label htmlFor="attorney">ATTORNEY FOR (name):</label>
-                                    <input 
-                                    name={" AttorneyFor"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginBottom: "5px",width:"71.7%" }} type="email" id="attorney" />
-                                </div>
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="fax">E-MAIL ADDRESS <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="attorney">ATTORNEY FOR <span style={{ fontStyle: "italic" }}>(Name)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "71%" }} type="email" id="attorney" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", border: "4px solid red", borderCollapse: "collapse",width:'329px' }} rowSpan={3}>
+                               <div className=" h-.5 text-center text-red-500">To Keep outher people from seeing what you entered on your from, please press the Clear This Form button at the end of the form when finished</div>
                             </td>
-                            <td style={{ textAlign: "center", top: 0, border: "2px solid black", borderCollapse: "collapse" }} rowSpan={3}>
-                            <div style={{position:'initial'}}><b>FOR CORT USE ONLY</b></div>
-                               <div style={{border:'4px solid red', color:'red',margin:'2px', }}>To Keep outher people from seeing what you entered on your from, please press the Clear This Form button at the end of the form when finished</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="name"><b>SUPERIOR COURT OF CALIFORIA, COUNTY OF</b></label>
-                                    <input
-                                     name={"Countyof"}
-                                     onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                        style={{ width: "48.4%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
-                                        type="text"
-                                        id="name"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">STREET ADDRESS:</label>
-                                    <input
-                                    name={"StreetAddress"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"79.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2, marginBottom: 2 }}>
-                                    <label htmlFor="street">MAILING ADDRESS:</label>
-                                    <input
-                                    name={"MailingAddress"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"78.4%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="street">CITY AND ZIP CODE:</label>
-                                    <input 
-                                    name={"CityAndZipCode"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"77.2%" }} type="text" id="street" />
-                                </div>
-                                <div style={{ margin: 2 }}>
-                                    <label htmlFor="street">BRANCH NAME:</label>
-                                    <input 
-                                    name={"BranchName"}
-                                    onChange={(e) => handleSUPERIORCOURTOFCALIFORNIA(e)}
-                                     style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"81.7%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ margin: 2, border: "2px solid black", borderCollapse: "collapse" }}>
-                                <div style={{ marginLeft: "1.2rem", marginBottom:"4px"}}>
-                                    <label htmlFor="name">PETITIONER/PLAINTIFF:</label>
-                                    <input 
-                                    name={"Petitioner"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"85.4%" }} type="text" id="name" />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">RESPONDENT/DEFENDANT:</label>
-                                    <input 
-                                    name={"Respondent"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"83.7%" }} type="text" id="street" />
-                                </div>
-                                <div>
-                                    <label htmlFor="street">OTHER PARENT/PARTY:</label>
-                                    <input 
-                                    name={"Parent"}
-                                    onChange={(e) => handleChange(e)}
-                                   style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"83.7%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
-                                <h3 style={{ textAlign: "center" }}>
-                                    <b>PROOF OF PERSONAL SERVICE</b>
-                                </h3>
-                            </td>
-                            <td>
-                                <div style={{ marginLeft: "1.2rem",marginBottom: "8px" }}>
-                                    <label htmlFor="street">CASE NUMBER:</label>
-                                    <br />
-                                    <input 
-                                    name={"CaseNumber"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"96%" }} type="text" id="street" />
-                                </div>
-                                <div><i>(If applicable, provide):</i></div>
-                                <div style={{ marginLeft: "1.2rem",marginBottom: "8px" }}>
-                                    <label htmlFor="street">HEARING DATE:</label>
-                                    <br />
-                                    <input 
-                                    name={"Date"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"96%" }} type="text" id="street" />
-                                </div>
-                                
-                               
-                                <div style={{ marginLeft: "1.2rem",marginBottom: "8px" }}>
-                                    <label htmlFor="street">HEARING TIME:</label>
-                                    <br />
-                                    <input 
-                                    name={"Time"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"96%" }} type="text" id="street" />
-                                </div>
-                                
-                                
-                                <div style={{ marginLeft: "1.2rem",marginBottom: "8px" }}>
-                                    <label htmlFor="street">DEPT.:</label>
-                                    <br />
-                                    <input 
-                                    name={"Dept"}
-                                    onChange={(e) => handleChange(e)}
-                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"96%" }} type="text" id="street" />
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table><br />
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ margin: 0, padding: 1,paddingBottom:2, borderCollapse: "collapse", borderTop: "2px solid black", display: "flex", flexDirection: "column", justifyContent: "flex-end", width: "70%", borderRight: "2px solid black" }}>
+                            <div className=' flex justify-end items-center'>
+                                <label htmlFor="name" style={{ fontSize: "10px", fontWeight: "bold" }}>SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+                                <input
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '56%' }}
+                                    type="text"
+                                    id="name"
+                                />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>STREET ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CITY AND ZIP CODE:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>BRANCH NAME:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ borderTop: "2px solid black", borderCollapse: "collapse", padding: 1,paddingBottom:2, width: "70%", borderRight: "2px solid black", borderBottom: "2px solid black" }}>
+                            <div className='flex justify-end items-center '>
+                                <label htmlFor="name" style={{ fontSize: "10px" }}>PLAINTIFF/PETITIONER:</label>
+                                <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                                    type="text" id="name" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>DEFENDENT/RESPONDENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "83%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>OTHER PARENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{
+                            borderCollapse: "collapse", width: "70%",
+                            height: "200px",
+                            borderRight: "2px solid black",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}>
+                            <div style={{ textAlign: "center", fontSize: "14px", letterSpacing: "1px" }}>
+                                <b>PROOF OF PERSONAL SERVICE</b>
+                            </div>
+                        </td>
+                        <td className='px-2 w-[30%]' style={{borderTop:"2px solid black",}}>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CASE NUMBER:</label>
+                                <br />
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
+                            </div>
+                            <div style={{borderTop:"2px solid black",}}>
+                            <i>(If applicable, provide):</i>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>HEARING DATE:</label>
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "70%" }} type="text" id="street" />
+                            </div>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>HEARING TIME:</label>
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "70%" }} type="text" id="street" />
+                            </div>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>DEPT.:</label>
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "83%" }} type="text" id="street" />
+                            </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+               <br />
                 <div><b>NOTICE: To serve temporary restraining orders you must use personal service (see form FL-330).</b></div>
                 <table
                     width="100%"
