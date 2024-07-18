@@ -36,17 +36,17 @@ export default function FL145() {
       ...details,
       InstructionsToTheAskingParty: {
         ...details.InstructionsToTheAskingParty,
-        [e.target.name]: e.target.value==="on"?true:false,
+        [e.target.name]: e.target.value === "on" ? true : false,
       },
     });
   }
-  
+
 
   console.log(details);
   // console.log(checked)
 
   return (
-    <div style={{ maxWidth: "1100px", margin: "auto",fontSize:12 }}>
+    <div style={{ maxWidth: "1100px", margin: "auto", fontSize: 12 }}>
       <div>
         <h3
           style={{
@@ -76,22 +76,22 @@ export default function FL145() {
                 colSpan={2}
               >
                 <div>
-                 <div style={{display:"flex"}}>
+                  <div style={{ display: "flex" }}>
                     <div>
-                        <label>
-                          ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number,
-                          and address):
-                        </label> <br />
-                        <input
-                          name={"AttorneyOrPartyWithoutAttorney"}
-                          onChange={(e) => handleChange(e)}
-                          size={97}
-                          style={{
-                            backgroundColor: "rgb(225, 243, 243)",
-                            border: "none",
-                            margin:"0.25rem 0.3rem",
-                          }}
-                            type="text" />
+                      <label>
+                        ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number,
+                        and address):
+                      </label> <br />
+                      <input
+                        name={"AttorneyOrPartyWithoutAttorney"}
+                        onChange={(e) => handleChange(e)}
+                        size={97}
+                        style={{
+                          backgroundColor: "rgb(225, 243, 243)",
+                          border: "none",
+                          margin: "0.25rem 0.3rem",
+                        }}
+                        type="text" />
                     </div>
                     <div style={{ marginLeft: "0rem" }}>
                       <label htmlFor="telephone">
@@ -100,16 +100,16 @@ export default function FL145() {
                       <input
                         name={"AttorneyOrPartyWithoutAttorney"}
                         onChange={(e) => handleChange(e)}
-                        size={42}
+                        size={65}
                         style={{
                           backgroundColor: "rgb(225, 243, 243)",
                           border: "none",
-                          marginTop:"0.25rem"
+                          marginTop: "0.25rem"
                         }}
-                          type="text" />
+                        type="text" />
                     </div>
                   </div>
-                  
+
                   <textarea
                     name={"AttorneyOrPartyWithoutAttorney"}
                     onChange={(e) => handleChange(e)}
@@ -118,19 +118,19 @@ export default function FL145() {
                       border: "none",
                       width: "99%",
                       resize: "none",
-                      marginLeft:"0.3rem"
+                      marginLeft: "0.3rem"
                     }}
                     id=""
                     rows={3}
                   ></textarea>
                 </div>
-                <div style={{ marginTop: "0.2rem" , padding:"0.3rem"}}>
+                <div style={{ marginTop: "0.2rem", padding: "0.3rem" }}>
                   <label htmlFor="attorney">ATTORNEY FOR (name):</label>
                   <input
-                   name={"AttorneyFor"}
-                   onChange={(e) => handleChange(e)}
-                    size={121}
-                    
+                    name={"AttorneyFor"}
+                    onChange={(e) => handleChange(e)}
+                    size={147}
+
                     style={{
                       backgroundColor: "rgb(225, 243, 243)",
                       border: "none",
@@ -143,144 +143,92 @@ export default function FL145() {
             </tr>
             <tr>
               <td
-              style={{
-                width: "70%",
-                border: "2px solid black",
-                borderCollapse: "collapse",
-                padding:"0.3rem"
-              }}  
-              colSpan={2}>
-                <div style={{ fontWeight: "bold" }}>
-                  <label htmlFor="name">
-                    SUPERIOR COURT OF CALIFORIA, COUNTY OF
-                  </label>
-                  <input
-                   name={"SUPERIORCOURTOFCALIFORNIACOUNTYOF"}
-                   onChange={(e) => handleChange(e)}
-                    size={98}
-                    style={{
-                      backgroundColor: "rgb(225, 243, 243)",
-                      border: "none",
-                      marginLeft: "0.3rem"
-
-                    }}
-                    type="text"
-                    id="name"
-                  />
-                  <br />
-                  <input
-                  name={"SUPERIORCOURTOFCALIFORNIACOUNTYOF"}
-                  onChange={(e) => handleChange(e)}
-                    size={145}
-                    style={{
-                      backgroundColor: "rgb(225, 243, 243)",
-                      border: "none",
-                      margin: "0.3rem 0.2rem"
-                     
-                    }}
-                    type="text"
-                    id="name"
-                  />
+                style={{
+                  width: "70%",
+                  border: "2px solid black",
+                  borderCollapse: "collapse",
+                  padding: "0.3rem"
+                }}
+                colSpan={2}>
+                <div>
+                    <div className='mt-1 flex justify-end items-center'>
+                    <label htmlFor="street" style={{ fontSize: "10px" }}>Answering Party:</label>
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                      type="text" id="street" />
+                  </div>
+                  <div className='mt-1 flex justify-end items-center'>
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "100%" }}
+                      type="text" id="street" />
+                  </div>
                 </div>
               </td>
             </tr>
             <tr>
               <td style={{
-                  width: "70%",
-                  border: "2px solid black",
-                  borderCollapse: "collapse",
-                }} colSpan={2}>
-                <label htmlFor="">SHORT TITLE:</label>
-                <br />
+                width: "70%",
+                border: "2px solid black",
+                borderCollapse: "collapse",
+              }} colSpan={3}>                
+              <label htmlFor="">SHORT TITLE:</label>
                 <textarea
-                 name={"ShortTitle"}
-                 onChange={(e) => handleChange(e)}
+                  name={"ShortTitle"}
+                  onChange={(e) => handleChange(e)}
                   style={{
-                    marginLeft: "6rem",
-                    marginTop: "-1.3rem",
+                    marginLeft: "1rem",
                     backgroundColor: "rgb(225, 243, 243)",
                     border: "none",
+                    width:"91%",
+                    resize:"none"
                   }}
-                  cols={136}
-                  rows={3}
+                  rows={2}
                   defaultValue={""}
                 />
               </td>
             </tr>
             <tr>
               <td style={{
-                  width: "70%",
-                  border: "2px solid black",
-                  borderCollapse: "collapse",
-                }}>
+                width: "70%",
+                border: "2px solid black",
+                borderCollapse: "collapse",
+              }}>
                 <div style={{ textAlign: "center", fontSize: "1.25rem" }}>
                   <label htmlFor="">
                     <b>FORM INTERROGATORIES–FAMILY LAW</b>
                   </label>
                 </div>
                 <div style={{ fontSize: "1.15rem" }}>
-                  <label style={{ marginLeft: "4.5rem" }} htmlFor="">
-                    <b>Asking Party:</b>
-                  </label>
-                  <input
-                    style={{
-                      backgroundColor: "rgb(225, 243, 243)",
-                      border: "none",
-                      margin:"2px 6px",
-                      width:"75%"
-                    }}
-                    onChange={(e) => handleFormInterrogatoriesFamilyLaw(e)}
-                    value={details.FormInterrogatoriesFamilyLaw?.AskingParty}
-                    name="AskingParty"
-                    type="text"
-                  />
-                  <br />
-                  <label style={{ marginLeft: "2.35rem" }} htmlFor="">
-                    <b>Answering Party:</b>
-                  </label>
-                  <input
-                   onChange={(e) => handleFormInterrogatoriesFamilyLaw(e)}
-                   value={details.FormInterrogatoriesFamilyLaw?.AnsweringParty}
-                   name="AnsweringParty"
-                    style={{
-                      backgroundColor: "rgb(225, 243, 243)",
-                      border: "none",
-                      margin:"3px 5px",
-                      width:"75%"
-                    }}
-                    type="text"
-                  />
-                  <br />
-                  <label style={{ marginLeft: "7.5rem" }} htmlFor="">
-                    <b>Set No.:</b>
-                  </label>
-                  <input
-                     onChange={(e) => handleFormInterrogatoriesFamilyLaw(e)}
-                     value={details.FormInterrogatoriesFamilyLaw?.SetNo}
-                     name=" SetNo"
-                    style={{
-                      backgroundColor: "rgb(225, 243, 243)",
-                      border: "none",
-                      margin:"3px 5px",
-                      width:"75%"
-                    }}
-                    type="text"
-                  />
-                  <br />
+                  <div className='mt-1 flex justify-end items-center'>
+                    <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                      type="text" id="street" />
+                  </div>
+
+                  <div className='mt-1 flex justify-end items-center'>
+                    <label htmlFor="street" style={{ fontSize: "10px" }}>Answering Party:</label>
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                      type="text" id="street" />
+                  </div>
+
+                  <div className='mt-1 flex justify-end items-center'>
+                    <label htmlFor="street" style={{ fontSize: "10px" }}>Set No.:</label>
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                      type="text" id="street" />
+                  </div>
+
                 </div>
               </td>
               <td>
                 <div>
-                  <label style={{marginLeft:"0.3rem", display:"flex", alignItems:"flex-start"}} htmlFor="street">CASE NUMBER:</label>
+                  <label style={{ marginLeft: "0.3rem", display: "flex", alignItems: "flex-start" }} htmlFor="street">CASE NUMBER:</label>
                   <br />
                   <input
-                   name={"CaseNumber"}
-                   onChange={(e) => handleChange(e)}
+                    name={"CaseNumber"}
+                    onChange={(e) => handleChange(e)}
                     size={38}
                     style={{
                       backgroundColor: "rgb(225, 243, 243)",
                       border: "none",
-                      margin:"2px 5px"
+                      margin: "2px 5px"
                     }}
                     type="text"
                   />
@@ -289,14 +237,14 @@ export default function FL145() {
             </tr>
           </tbody>
         </table>
-        
-        <div style={{ display: "flex", width: "100%", fontSize: 12,marginTop:"0.4rem"  }}>
+
+        <div style={{ display: "flex", width: "100%", fontSize: 12, marginTop: "0.4rem" }}>
           <div style={{ width: "65%" }}>
             <div>
               <label htmlFor="">
                 <b>Sec. 1. Instructions to Both Parties</b>
               </label>
-              
+
               <div style={{ marginTop: "0.2rem" }}>
                 The interrogatories on page 2 of this form are intended to
                 <br />
@@ -309,12 +257,12 @@ export default function FL145() {
                 make any objection. <b>Privileges must be asserted.</b>
               </div>
             </div>
-            
-            <div style={{marginTop:"0.3rem" }}>
+
+            <div style={{ marginTop: "0.3rem" }}>
               <label htmlFor="">
                 <b>Sec. 2. Definitions</b>
               </label>
-              
+
               <div style={{ marginTop: "0.2rem" }}>
                 Words in boldface in these interrogatories are defined as <br />{" "}
                 follows:
@@ -384,12 +332,12 @@ export default function FL145() {
                 </div>
               </div>
             </div>
-            
-            <div style={{marginTop:"0.4rem" }}>
+
+            <div style={{ marginTop: "0.4rem" }}>
               <label htmlFor="">
                 <b>Sec. 3. Instructions to the Asking Party</b>
               </label>
-              
+
               <div style={{ marginTop: "0.2rem" }}>
                 Check the box next to each interrogatory you want the <br />
                 answering party to answer.
@@ -401,7 +349,7 @@ export default function FL145() {
               <label htmlFor="">
                 <b>Sec. 4. Instructions to the Answering Party</b>
               </label>
-              
+
               <div style={{ marginTop: "0.3rem" }}>
                 <div>
                   You must answer these interrogatories under oath within 30{" "}
@@ -446,12 +394,12 @@ export default function FL145() {
                 </div>
               </div>
             </div>
-            
-            <div style={{marginTop:"0.4rem" }}>
+
+            <div style={{ marginTop: "0.4rem" }}>
               <label htmlFor="">
                 <b>Sec. 5. Oath</b>
               </label>
-              
+
               <div style={{ marginTop: "0.3rem" }}>
                 Your answers to these interrogatories must be under oath, <br />
                 dated, and signed. Use the following statement <b>
@@ -489,8 +437,8 @@ export default function FL145() {
                   >
                     <div>
                       <input
-                       name={"Date"}
-                       onChange={(e) => handleChange(e)}
+                        name={"Date"}
+                        onChange={(e) => handleChange(e)}
                         style={{
                           width: "90%",
                           backgroundColor: "rgb(225, 243, 243)",
@@ -516,8 +464,8 @@ export default function FL145() {
             </table>
           </div>
         </div>
-        
-        <hr style={{ width: "100%", marginTop:"0.9rem" }} />
+
+        <hr style={{ width: "100%", marginTop: "0.9rem" }} />
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div style={{ listStyle: "none" }}>
             <li>Form Approved for Optional Use</li>
@@ -561,34 +509,34 @@ export default function FL145() {
             <div style={{ display: "flex" }}>
               <div>
                 <input
-                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                 defaultChecked={details.InstructionsToTheAskingParty?.a}
-                 type="checkbox" name="a" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.a}
+                  type="checkbox" name="a" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   1.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" ,fontSize: 12 }}>
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
                 <b>Personal history.</b>State your full name, current <br />
                 residence address and work address, social security <br />
                 number, any other names you have used, and the <br />
                 dates between which you used each name. <br />
               </div>
             </div>
-            
-            <div style={{ display: "flex" , marginTop:"0.5rem" }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.b}
-                 type="checkbox" name="b" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.b}
+                  type="checkbox" name="b" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   2.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" ,fontSize: 12 }}>
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
                 <b>Agreements.</b> Are there any agreements between you <br />
                 and your spouse or domestic partner, made before or <br />
                 during your marriage or domestic partnership or after <br />
@@ -604,19 +552,19 @@ export default function FL145() {
                 or describe its contents.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.c}
-                 type="checkbox" name="c" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.c}
+                  type="checkbox" name="c" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   3.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
                 <b>Legal actions.</b> Are you a party or do you anticipate{" "}
                 <br />
                 being a party to any legal or administrative proceeding <br />
@@ -625,38 +573,38 @@ export default function FL145() {
                 description of each proceeding.
               </div>
             </div>
-            
-            <div style={{ display: "flex",marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.d}
-               type="checkbox" name="d" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.d}
+                  type="checkbox" name="d" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   4.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
                 <b>Persons sharing residence.</b> State the name, age, <br />
                 and relationship to you of each <b>person</b> at your present{" "}
                 <br />
                 address.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.e}
-                 type="checkbox" name="e" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.e}
+                  type="checkbox" name="e" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   5.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem",fontSize: 12}}>
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
                 <b>Support provided others.</b> State the name, age, <br />
                 address, and relationship to you of each <b>person</b> for{" "}
                 <br />
@@ -664,19 +612,19 @@ export default function FL145() {
                 months and the amount provided per month for each.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.f}
-                 type="checkbox" name="f" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.f}
+                  type="checkbox" name="f" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   6.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" ,fontSize: 12}}>
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
                 <b>Support received for others.</b> State the name, age, <br />
                 address, and relationship to you of each <b>person</b> for{" "}
                 <br />
@@ -684,19 +632,19 @@ export default function FL145() {
                 months and the amount provided per month for each.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
-                <input 
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.g}
-                type="checkbox" name="g" id="" />
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.g}
+                  type="checkbox" name="g" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   7.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
                 <b>Current income.</b> List all income you received during{" "}
                 <br />
                 the past 12 months, its source, the basis for its <br />
@@ -704,19 +652,19 @@ export default function FL145() {
                 each. Attach your last three paycheck stubs.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.h}
-                 type="checkbox" name="h" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.h}
+                  type="checkbox" name="h" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   8.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
                 <b>Other income.</b> During the past three years, have you{" "}
                 <br />
                 received cash or other property from any source not <br />
@@ -725,56 +673,56 @@ export default function FL145() {
                 the nature and value of the property.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.i}
-                 type="checkbox" name="i" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.i}
+                  type="checkbox" name="i" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   9.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
                 <b>Tax returns. </b> Attach copies of all tax returns and tax{" "}
                 <br />
                 schedules filed by or for you in any jurisdiction for the <br />
                 past three calendar years.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem" ,fontSize: 12 }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem", fontSize: 12 }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.j}
-                 type="checkbox" name="j" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.j}
+                  type="checkbox" name="j" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   10.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem",fontSize: 12 }}>
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
                 <b>Schedule of assets and debts.</b> Complete the <br />
                 <i>Schedule of Assets and Debts</i> (form FL-142) served <br />
                 with these interrogatories.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
-                <input 
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.k}
-                type="checkbox" name="k" id="" />
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.k}
+                  type="checkbox" name="k" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   11.
                 </label>
               </div>
-              <div style={{ marginLeft: "1rem" ,fontSize: "12"}}>
+              <div style={{ marginLeft: "1rem", fontSize: "12" }}>
                 <b>Separate property contentions.</b> State the facts that{" "}
                 <br />
                 support your contention that an asset or debt is <br />
@@ -789,9 +737,9 @@ export default function FL145() {
             <div style={{ display: "flex" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.l}
-                 type="checkbox" name="l" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.l}
+                  type="checkbox" name="l" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   12.
@@ -806,13 +754,13 @@ export default function FL145() {
                 answer is yes, <b>identify the document.</b>
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.m}
-                 type="checkbox" name="m" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.m}
+                  type="checkbox" name="m" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   13.
@@ -833,13 +781,13 @@ export default function FL145() {
                 <b>person</b> holding the asset.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.n}
-                 type="checkbox" name="n" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.n}
+                  type="checkbox" name="n" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   14.
@@ -855,13 +803,13 @@ export default function FL145() {
                 custodian of records.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.o}
-                 type="checkbox" name="o" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.o}
+                  type="checkbox" name="o" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   15.
@@ -874,13 +822,13 @@ export default function FL145() {
                 yes, state all supporting facts.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.p}
-                 type="checkbox" name="p" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.p}
+                  type="checkbox" name="p" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   16.
@@ -895,13 +843,13 @@ export default function FL145() {
                 the debt since the separation.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.q}
-                 type="checkbox" name="q" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.q}
+                  type="checkbox" name="q" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   17.
@@ -917,13 +865,13 @@ export default function FL145() {
                 the address.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
-                <input 
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.r}
-                 type="checkbox" name="r" id="" />
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.r}
+                  type="checkbox" name="r" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   18.
@@ -936,13 +884,13 @@ export default function FL145() {
                 state each fact on which you base your answer.
               </div>
             </div>
-            
-            <div style={{ display: "flex",marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
-                <input 
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.s}
-                type="checkbox" name="s" id="" />
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.s}
+                  type="checkbox" name="s" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   19.
@@ -955,13 +903,13 @@ export default function FL145() {
                 cost, and its expected duration.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
                 <input
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.t}
-                 type="checkbox" name="t" id="" />
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.t}
+                  type="checkbox" name="t" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   20.
@@ -974,13 +922,13 @@ export default function FL145() {
                 Describe the billing arrangements.
               </div>
             </div>
-            
-            <div style={{ display: "flex", marginTop:"0.5rem"  }}>
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
               <div>
-                <input 
-                onChange={(e) => handleInstructionsToTheAskingParty(e)}
-                defaultChecked={details.InstructionsToTheAskingParty?.u}
-                type="checkbox" name="u" id="" />
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.u}
+                  type="checkbox" name="u" id="" />
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   21.

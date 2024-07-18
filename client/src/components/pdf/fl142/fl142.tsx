@@ -1303,7 +1303,6 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "5%" }}>
                                 <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom:4,marginTop: 3, width: "93%" }} type="text" /><br />
                                 
-                                {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
                             <td style={{ border: "1px solid black", width: "5%" }}>
                             <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom:4,marginTop: 3, width: "93%" }} type="text" /><br />

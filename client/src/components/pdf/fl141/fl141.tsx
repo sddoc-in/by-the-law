@@ -442,13 +442,13 @@ export default function FL141() {
                             <td width="95%" valign="top">
                                 <div>
                                     {" "}
-                                    <input type="checkbox" style={{ marginRight: 7, marginLeft: "10px" }} />
+                                    <input type="checkbox" style={{ marginRight: 7, marginLeft: 20 }} />
                                     Service of
-                                    <input type="checkbox" style={{ marginRight: 7, marginLeft: "10px" }} />
-                                    Petitioner's <input type="checkbox" style={{ marginRight: 7, marginLeft: "10px" }} />
+                                    <input type="checkbox" style={{ marginRight: 7, marginLeft: 20 }} />
+                                    Petitioner's <input type="checkbox" style={{ marginRight: 7, marginLeft: 20 }} />
                                     Respondent's
-                                    <input type="checkbox" style={{ marginRight: 7, marginLeft: "10px" }} />
-                                    preliminary <input type="checkbox" style={{ marginRight: 7, marginLeft: "10px" }} />
+                                    <input type="checkbox" style={{ marginRight: 7, marginLeft: 20 }} />
+                                    preliminary <input type="checkbox" style={{ marginRight: 7, marginLeft:20 }} />
                                     final declaration of disclosure
                                 </div>
                                 <div>
@@ -478,13 +478,16 @@ export default function FL141() {
                                     <i> (Form FL-144 may be used for this purpose.)</i> The waiver
                                     <input type="checkbox" style={{ marginRight: 7, marginLeft: "10px" }} /> was filed on
                                     (date)
-                                    <input type="checkbox" style={{ marginRight: 7, marginLeft: "10px" }} />
-                                    is being filed at the same time as this form.
                                     <input
-                                        style={{ width: "10%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
+                                        style={{ width: "30%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
                                         type="text"
                                         id="name"
                                     />
+                                   <div>
+                                   <input type="checkbox" style={{ marginRight: 7, marginLeft: "10px" }} />
+                                   is being filed at the same time as this form.
+                                   </div>
+                                    
                                 </div>
                             </td>
                         </tr>
@@ -509,14 +512,13 @@ export default function FL141() {
                                     court has granted the request for voluntary waiver of
                                     <br />
                                     on (date):receipt under Family Code section 2017 on (date):{" "}
-                                </div>
-                                <div>
                                     <input
                                         style={{ width: "20%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
                                         type="text"
                                         id="name"
                                     />
                                 </div>
+                                
                             </td>
                         </tr>
                     </tbody>
@@ -540,13 +542,6 @@ export default function FL141() {
                                     <br />
                                     disclosure requirements under Family Code section 2110.
                                 </div>
-                                <div>
-                                    <input
-                                        style={{ width: "20%", backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
-                                        type="text"
-                                        id="name"
-                                    />
-                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -565,27 +560,27 @@ export default function FL141() {
                 </div>
                 <div style={{ display: "flex", margin: 10 }}>
                     <div style={{ marginLeft: 50 }}>
-                        <input size={40} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                        <input size={40} style={{ backgroundColor: "rgb(225, 243, 243)", borderBottom: "1px solid black", margin: "0px" }} type="text" id="street" />
                         <br />
                         <span>(TYPE OR PRINT NAME)</span>
                     </div>
-                    <div style={{ marginLeft: 100 }}>
+                    <div style={{ marginLeft: "28%" }}>
                         {" "}
                         <input size={40} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
                         <br />
-                        <span>(SIGNATURE OF DECLARANT)</span>
+                        <span style={{marginLeft:"45px"}}>(SIGNATURE OF DECLARANT)</span>
                     </div>
                 </div>
                 <table width="60%" style={{
-                    borderCollapse: "collapse", marginBottom: "5px", border: "2px solid black", fontSize: 18, borderSpacing: 0, marginLeft: 250, borderColor: "#EBF4F5"
+                    borderCollapse: "collapse", marginBottom: "5px", border: "1px solid black", fontSize: 18, borderSpacing: 0, marginLeft: 220
                 }}
                     cellPadding={8}
                 >
                     <thead>
                         <tr>
                             <td width="100px" valign="top"
-                                style={{ border: "1px solid  #000000", textAlign: "center", borderCollapse: "collapse", marginBottom: "5px" }} >
-                                {/* border: "2px solid black" */}
+                                style={{  textAlign: "center", borderCollapse: "collapse", marginBottom: "5px" }} >
+                               
                                 <p>
                                     NOTE: File this document with the court.
                                     <br />
