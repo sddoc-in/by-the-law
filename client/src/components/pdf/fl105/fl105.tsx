@@ -254,92 +254,92 @@ export default function FL105() {
                         <tr>
                             <td style={{ border: "1px solid black", width: 383 }}>
                                 Period of residence{" "}
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px" }} type="text" id="street" />
                                 to present
                             </td>
                             <td style={{ border: "1px solid black" }}>
-                                Address <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "98%" }} type="text" id="street" />
+                                Address <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "95%" }} type="text" id="street" />
                                 <div>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "98%" }} type="text" id="street" />
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "95%" }} type="text" id="street" />
                                     <br />
                                     <input type="checkbox" style={{ marginRight: 5 }} />
                                     <label> Confidential</label>
-                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "48%" }} type="text" id="street" />
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "48%" }} type="text" id="street" />
 
 
                                 </div>
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Person child lived with (name and complete current address)
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "96%" }} type="text" id="street" />
                                 <br />
                                 <input type="checkbox" style={{ marginRight: 5 }} />
                                 <label> Confidential</label>
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "67%" }} type="text" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "64%" }} type="text" />
 
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Relationship
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input size={23} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px" }} type="text" id="street" />
                             </td>
                         </tr>
                         <tr>
                             <td style={{ border: "1px solid black" }}>
                                 {" "}
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                                to <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input size={22} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px" }} type="text" id="street" />
+                                to <input size={22} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Child's residence (City, State)
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "97%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "97%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Person child lived with (name and complete current address)
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "95%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "95%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input size={23} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
                             </td>
                         </tr>
                         <tr>
                             <td style={{ border: "1px solid black" }}>
                                 {" "}
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                                to <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input size={23} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px"}} type="text" id="street" />
+                                to <input size={23} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Child's residence (City, State){" "}
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />{" "}
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",marginLeft: "3px", width: "97%" }} type="text" id="street" />{" "}
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "97%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Person child lived with (name and complete current address)
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "97%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "97%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input size={23} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px" }} type="text" id="street" />
                             </td>
                         </tr>
                         <tr>
                             <td style={{ border: "1px solid black" }}>
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                                to <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input size={23} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px" }} type="text" id="street" />
+                                to <input size={23} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",marginLeft: "3px" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Child's residence (City, State)
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "97%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",marginLeft: "3px", width: "97%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
                                 Person child lived with (name and complete current address)
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
-                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "99%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "96%" }} type="text" id="street" />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px", width: "96%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black" }}>
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input size={23} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "3px" }} type="text" id="street" />
                             </td>
                         </tr>
                     </tbody>
@@ -409,7 +409,7 @@ export default function FL105() {
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Child's residence (City, State)
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"97%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Person child lived with (name and complete current address)
@@ -426,8 +426,8 @@ export default function FL105() {
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Child's residence (City, State){" "}
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"97%" }} type="text" id="street" />
+                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"97%" }} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Person child lived with (name and complete current address)
@@ -445,8 +445,8 @@ export default function FL105() {
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Child's residence (City, State){" "}
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />{" "}
-                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"97%" }} type="text" id="street" />{" "}
+                                <input size={25} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" ,width:"97%"}} type="text" id="street" />
                             </td>
                             <td style={{ border: "1px solid black", padding: 5 }}>
                                 Person child lived with (name and complete current address)
@@ -504,8 +504,11 @@ export default function FL105() {
                         <tr>
                             <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
                                 <div style={{ marginLeft: "1.2rem" }}>
-                                    <label htmlFor="name">SHORT TITLE:</label>
-                                    <input size={74} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" />
+                                   
+                                    <label htmlFor="street" style={{ fontSize: "13px" }}>SHORT TITLE::</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "80%" }}
+                                    type="text" id="street" />
+                                    {/* <input size={73} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="name" /> */}
                                 </div>
                             </td>
                             <td style={{ width: "30%", border: "2px solid black", borderCollapse: "collapse" }}>
