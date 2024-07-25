@@ -42,7 +42,7 @@ export default function SU100() {
               <div className='flex justify-end items-center w-full' >
                 <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
                   <label style={{ fontSize: "10px" }} htmlFor="telephone">TELEPHONE NO.:</label>
-                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
+                  <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[50.7%]' type="number" id="telephone" />
                 </div>
                 <div className='flex justify-end items-center' style={{ width: "inherit" }}>
                   <label style={{ fontSize: "10px" }} htmlFor="telephone">FAX NO. :</label>
