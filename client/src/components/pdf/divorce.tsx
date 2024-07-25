@@ -2,6 +2,8 @@ import React from "react";
 import "./divorce.css";
 import SUdivorce from "./SUdivorce";
 
+// this is Divorce
+
 enum Type {
   client = "client",
   spuse = "spouse",
