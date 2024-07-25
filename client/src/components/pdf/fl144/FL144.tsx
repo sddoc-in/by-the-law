@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 
 export default function FL144() {
@@ -5,6 +6,46 @@ export default function FL144() {
 
     return (
         <>
+=======
+import React from 'react';
+import FL144Interface from "./SU144";
+
+export default function FL144() {
+ 
+    const [details, setDetails] = React.useState<FL144Interface>(
+        {} as FL144Interface
+      );
+    
+      function handleChange(
+        e:
+          | React.ChangeEvent<HTMLInputElement>
+          | React.ChangeEvent<HTMLTextAreaElement>
+      ) {
+        setDetails({
+          ...details,
+          [e.target.name]: e.target.value,
+        });
+      }
+    
+      function handleSUPERIORCOURTOFCALIFORNIA(
+        e: React.ChangeEvent<HTMLInputElement>
+      ) {
+        setDetails({
+          ...details,
+          SUPERIORCOURTOFCALIFORNIA: {
+            ...details.SUPERIORCOURTOFCALIFORNIA,
+            [e.target.name]: e.target.value,
+          },
+        });
+      }
+      
+
+    console.log(details);
+
+    return (
+        <>
+        <div style={{ maxWidth: "1100px", margin: "auto" }}>
+>>>>>>> aman
             <div className='text-black w-full pdf'>
                 <h3 style={{ display: "flex", justifyContent: "end", marginTop: 0, marginBottom: 0 }}>FL-144</h3>
                 <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
@@ -411,6 +452,10 @@ export default function FL144() {
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+            </div>
+>>>>>>> aman
         </>
 
 

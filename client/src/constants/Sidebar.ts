@@ -10,6 +10,12 @@ import Lawyers from "../pages/Lawyers";
 import Clients from "../pages/Clients";
 import Forms from "../pages/Forms";
 import MyAccount from "../pages/MyAccount";
+<<<<<<< HEAD
+=======
+import { GoProjectTemplate } from "react-icons/go";
+import FL145 from "../components/pdf/fl145/fl145";
+
+>>>>>>> aman
 
 export const SidebarData = [
   {
@@ -55,5 +61,10 @@ export const SidebarData = [
     Icon: MdLogout,
     Element: Logout,
   },
+<<<<<<< HEAD
 
 ];
+=======
+];
+
+>>>>>>> aman

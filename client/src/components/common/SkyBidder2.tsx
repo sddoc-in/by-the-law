@@ -14,10 +14,17 @@ export default function SkyBidder2() {
       />
       <div className="p-10 z-40 relative">
         <h1>
+<<<<<<< HEAD
         <span className="text-white text-[32px] font-[900]">ByThe</span>
         <span className="text-[#FFC107] text-[32px] font-[900]">
           Law
         </span>
+=======
+          <span className="text-white text-[40px] font-[900]">Sky</span>
+          <span className="text-[#FFC107] text-[40px] font-[900]">
+            Bidder
+          </span>
+>>>>>>> aman
         </h1>
         <p className="text-white font-[600] text-[24px] w-11/12 ">
           A freelance bidding automation tool for freelancers!

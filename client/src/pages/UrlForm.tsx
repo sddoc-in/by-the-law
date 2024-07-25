@@ -3,7 +3,11 @@ import { useParams } from "react-router-dom";
 import { API_URL } from "../constants/data";
 import axios from "axios";
 import InputPass from "../components/input/InputPass";
+<<<<<<< HEAD
 import Divorce from "../components/pdf/Divorce1";
+=======
+import Divorce from "../components/pdf/divorce";
+>>>>>>> aman
 
 export default function UrlForm() {
   const { url, client_id } = useParams();
@@ -70,7 +74,11 @@ export default function UrlForm() {
           </div>
         </div>
       ) : (
+<<<<<<< HEAD
         <Divorce url={url || ""} />
+=======
+        <Divorce />
+>>>>>>> aman
       )}
     </>
   );

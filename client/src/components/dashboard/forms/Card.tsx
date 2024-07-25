@@ -9,7 +9,10 @@ import { UserClientStatusEnum } from "../../../constants/Status";
 import toTitleCase from "../../../functions/toTitle";
 import { RolesEnum } from "../../../constants/Roles";
 import FormInterface from "../../../interface/Form";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
+=======
+>>>>>>> aman
 
 export default function Card(props: FormInterface) {
   const { user: currentUser } = React.useContext(AppContext);
@@ -130,8 +133,13 @@ export default function Card(props: FormInterface) {
           </div>
           <hr className="w-full h-1 " />
           <div className="flex justify-evenly items-center mt-2">
+<<<<<<< HEAD
             <Link
               to={
+=======
+            <a
+              href={
+>>>>>>> aman
                 "/form/" +
                 props.name +
                 "/client/" +
@@ -141,7 +149,11 @@ export default function Card(props: FormInterface) {
               }
             >
               <FaRegEye className="text-2xl mt-1.5" />
+<<<<<<< HEAD
             </Link>
+=======
+            </a>
+>>>>>>> aman
             <MdDeleteForever
               onClick={openModal}
               className="text-2xl mt-1.5 text-rose-500 cursor-pointer"

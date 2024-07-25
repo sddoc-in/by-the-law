@@ -39,6 +39,7 @@ export default function SU130a() {
         <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse" }}>
           <tbody>
             <tr>
+<<<<<<< HEAD
               <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
                 <div style={{ marginLeft: "1.2rem" ,marginBottom:"4px",marginTop:"10px",fontSize:"12px"}}>
                   <label htmlFor="name">PETITIONER/PLAINTIFF:</label>
@@ -70,11 +71,49 @@ export default function SU130a() {
                   name={" CaseNumber"}
                   onChange={(e) => handleChange(e)}
                       style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",width:"98%" }} type="text" id="street" />
+=======
+              <td style={{ border: "2px solid black", borderCollapse: "collapse", width: "60%" }}>
+
+                <div className=' flex justify-end items-center'>
+                  <label htmlFor="name" style={{ fontSize: "10px", }}>PETITIONER/PLAINTIFF:</label>
+                  <input
+                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "2px 2px", height: "18px", width: '70%' }}
+                    type="text"
+                    id="name"
+                  />
+                </div>
+
+                <div className=' flex justify-end items-center'>
+                  <label htmlFor="name" style={{ fontSize: "10px", }}>RESPONDENT/DEFENDANT:</label>
+                  <input
+                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "2px 2px", height: "18px", width: '70%' }}
+                    type="text"
+                    id="name"
+                  />
+                </div>
+                <div className=' flex justify-end items-center'>
+                  <label htmlFor="name" style={{ fontSize: "10px", }}>OTHER PARTY:</label>
+                  <input
+                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "2px 2px", height: "18px", width: '70%' }}
+                    type="text"
+                    id="name"
+                  />
+                </div>
+
+              </td>
+              
+              <td className='px-2 w-[30%]' style={{ borderTop: "2px solid black", }}>
+                <div style={{ margin: "0px", }}>
+                  <label htmlFor="street" style={{ fontSize: "10px" }}>CASE NUMBER:</label>
+                  <br />
+                  <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
+>>>>>>> aman
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
+<<<<<<< HEAD
         <div style={{ textAlign: "center"}}>
           <b>DECLARATION AND CONDITIONAL WAIVER OF RIGHTS</b>
         </div>
@@ -86,6 +125,19 @@ export default function SU130a() {
         </div>
         <div style={{ border: "2px solid  #000000", textAlign: "center", verticalAlign: "top" , marginLeft:"35px", width: "90%" }}>
         
+=======
+        <div style={{ textAlign: "center" }}>
+          <b>DECLARATION AND CONDITIONAL WAIVER OF RIGHTS</b>
+        </div>
+        <div style={{ textAlign: "center", }}>
+          <b>UNDER THE SERVICEMEMBERS CIVIL RELIEF ACT OF 2003</b>
+        </div>
+        <div style={{ textAlign: "center", fontSize: "12px", }}>
+          <i> Attachment to Appearance, Stipulations, and Waivers (form FL-130)</i>
+        </div>
+        <div style={{ border: "2px solid  #000000", textAlign: "center", verticalAlign: "top", width: "100%" }}>
+
+>>>>>>> aman
           <div>
             <b>Notice to Servicemember</b>
           </div>
@@ -105,7 +157,11 @@ export default function SU130a() {
         </div>
         <table
           width="100%"
+<<<<<<< HEAD
           style={{ borderCollapse: "collapse", borderSpacing: 0, fontSize: 14, borderColor: "#EBF4F5" , marginTop:"10px"  }}
+=======
+          style={{ borderCollapse: "collapse", borderSpacing: 0, fontSize: 14, borderColor: "#EBF4F5", marginTop: "10px" }}
+>>>>>>> aman
 
           cellPadding={8}
         >
@@ -126,7 +182,11 @@ export default function SU130a() {
         </table>
         <table
           width="100%"
+<<<<<<< HEAD
           style={{ pageBreakInside: "auto", fontSize: 14, verticalAlign: "top",marginTop:"10px" }}
+=======
+          style={{ pageBreakInside: "auto", fontSize: 14, verticalAlign: "top", marginTop: "10px" }}
+>>>>>>> aman
           cellPadding={5}
           cellSpacing={5}
         >
@@ -155,7 +215,11 @@ export default function SU130a() {
         </table>
         <table
           width="100%"
+<<<<<<< HEAD
           style={{ pageBreakInside: "auto", fontSize: 14, verticalAlign: "top" ,marginTop:"10px" }}
+=======
+          style={{ pageBreakInside: "auto", fontSize: 14, verticalAlign: "top", marginTop: "10px" }}
+>>>>>>> aman
           cellPadding={5}
           cellSpacing={5}
         >
@@ -206,19 +270,32 @@ export default function SU130a() {
           <div style={{ marginLeft: 40 }}>
             (1).
             <input type="checkbox"
+<<<<<<< HEAD
             name={"a"}
             onChange={(e) => handleThisWaiverIsConditionedAsFollws(e)}
             style={{ marginRight: 5, marginLeft:5 }} />
+=======
+              name={"a"}
+              onChange={(e) => handleThisWaiverIsConditionedAsFollws(e)}
+              style={{ marginRight: 5, marginLeft: 5 }} />
+>>>>>>> aman
           </div>
           <div style={{ marginLeft: 10 }}>Stipulation for Judgment</div>
         </div>
         <div style={{ display: "flex" }}>
           <div style={{ marginLeft: 40 }}>
             (2).
+<<<<<<< HEAD
             <input 
              name={"a"}
              onChange={(e) => handleThisWaiverIsConditionedAsFollws(e)}
             type="checkbox" style={{ marginRight: 5 , marginLeft:5 }} />
+=======
+            <input
+              name={"a"}
+              onChange={(e) => handleThisWaiverIsConditionedAsFollws(e)}
+              type="checkbox" style={{ marginRight: 5, marginLeft: 5 }} />
+>>>>>>> aman
           </div>
           <div style={{ marginLeft: 10 }}>Marital Settlement Agreement</div>
         </div>
@@ -226,9 +303,15 @@ export default function SU130a() {
           <div style={{ marginLeft: 40 }}>
             (3).
             <input
+<<<<<<< HEAD
             name={"a"}
             onChange={(e) => handleThisWaiverIsConditionedAsFollws(e)}
             type="checkbox" style={{ marginRight: 5 , marginLeft:5 }} />
+=======
+              name={"a"}
+              onChange={(e) => handleThisWaiverIsConditionedAsFollws(e)}
+              type="checkbox" style={{ marginRight: 5, marginLeft: 5 }} />
+>>>>>>> aman
           </div>
           <div style={{ marginLeft: 10 }}>Other (specify):</div>
         </div>
@@ -293,7 +376,11 @@ export default function SU130a() {
         </table>
         <table
           width="100%"
+<<<<<<< HEAD
           style={{ pageBreakInside: "auto", fontSize: 14, verticalAlign: "top", marginTop:"10px" }}
+=======
+          style={{ pageBreakInside: "auto", fontSize: 14, verticalAlign: "top", marginTop: "10px" }}
+>>>>>>> aman
           cellPadding={5}
           cellSpacing={5}
         >
@@ -320,6 +407,7 @@ export default function SU130a() {
           California that the foregoing is true and correct.
         </div>
         <div style={{ margin: 5, fontSize: 16 }}>Date:
+<<<<<<< HEAD
         <input
                    name={"Date"}
                    onChange={(e) => handleChange(e)}
@@ -339,6 +427,27 @@ export default function SU130a() {
                    onChange={(e) => handleChange(e)}
                   size={20} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",width:"164%", margin: "2px" }} type="text" id="name" />
           <h4>(SIGNATURE OF RESPONDENT)</h4>
+=======
+          <input
+            name={"Date"}
+            onChange={(e) => handleChange(e)}
+            size={20} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "2px", width: "24%" }} type="text" id="name" />
+        </div>
+        <div style={{ display: "flex", fontSize: 15 }}>
+          <div style={{ marginLeft: 25 }}>
+            <input
+              name={"TypeOrPrintName"}
+              onChange={(e) => handleChange(e)}
+              size={20} style={{ backgroundColor: "rgb(225, 243, 243)", borderBottom: "1px solid black", margin: "2px", width: "194%" }} type="text" id="name" />
+            <h4>(TYPE OR PRINT NAME)</h4>
+          </div>
+          <div style={{ marginLeft: "40%" }}>
+            <input
+              name={"SignatureOfRespondent"}
+              onChange={(e) => handleChange(e)}
+              size={20} style={{ borderBottom: "1px solid black", width: "120%", margin: "2px" }} type="text" id="name" />
+            <h4 style={{paddingLeft:"10px"}}>(SIGNATURE OF RESPONDENT)</h4>
+>>>>>>> aman
           </div>
         </div>
         <div style={{ border: "1px solid  #000000", verticalAlign: "top", borderCollapse: "collapse" }} >

@@ -4,6 +4,7 @@ export default function SU117() {
     return (
 
         <>
+<<<<<<< HEAD
             <div style={{ maxWidth: "1100px", margin: "auto" }}>
                 <h3 className="fl">FL-117</h3>
                 <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse" }}>
@@ -100,6 +101,143 @@ export default function SU117() {
                     </tbody>
                 </table>
                 <div style={{ textAlign: "center", fontSize: 17 }}>
+=======
+            <div style={{ maxWidth: "1100px", margin: "auto",fontSize:"12px" }}>
+                <h3 className="fl">FL-117</h3>
+               
+                <table style={{ width: "100%", border: "2px solid black", borderCollapse: "collapse", }}>
+                    <tr className='flex justify-center items-start w-full h-full'>
+                        <td style={{ width: "70%", margin: 0, padding: 1, borderCollapse: "collapse", height: "100%", borderRight: "2px solid black" }}
+                        >
+                            <div style={{ margin: "0px 2px", marginTop: "4px" }}>
+
+                                <textarea
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", width: "-webkit-fill-available", resize: 'none', fontSize: "10px" }}
+                                    name=""
+                                    id=""
+                                    placeholder="  ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number, and address) "
+                                    cols={90}
+                                    rows={3}
+                                    defaultValue={""}
+                                />
+                            </div>
+                            <div className='flex justify-end items-center w-full'
+                            >
+                                <div className='flex justify-end items-center' style={{ width: "inherit", marginRight: "-45px" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">TELEPHONE NO.:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
+                                </div>
+                                <div className='flex justify-end items-center' style={{ width: "inherit" }}>
+                                    <label style={{ fontSize: "10px" }} htmlFor="telephone">FAX NO. <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", height: "18px", margin: "0px 2px", }} className='w-[46.7%]' type="number" id="telephone" />
+                                </div>
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="fax">E-MAIL ADDRESS <span style={{ fontStyle: "italic" }}>(Optional)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '71%' }} type="text" id="fax" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label style={{ fontSize: "10px" }} htmlFor="attorney">ATTORNEY FOR <span style={{ fontStyle: "italic" }}>(Name)</span>:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "71%" }} type="email" id="attorney" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className='relative w-[30%]'
+                        >
+                            <p className='absolute' style={{
+                                top: 10,
+                                left: "21%",
+                                fontSize: "10px",
+                                fontWeight: "bold"
+                            }}>
+                                FOR COURT USE ONLY
+                            </p>
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ margin: 0, padding: 1, paddingBottom: 2, borderCollapse: "collapse", borderTop: "2px solid black", display: "flex", flexDirection: "column", justifyContent: "flex-end", width: "70%", borderRight: "2px solid black" }}>
+                            <div className=' flex justify-end items-center'>
+                                <label htmlFor="name" style={{ fontSize: "10px", fontWeight: "bold" }}>SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+                                <input
+                                    style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: '56%' }}
+                                    type="text"
+                                    id="name"
+                                />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>STREET ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CITY AND ZIP CODE:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                                    type="text" id="street" />
+                            </div>
+                            <div className='mt-1 flex justify-end items-center'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>BRANCH NAME:</label>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{ borderTop: "2px solid black", borderCollapse: "collapse", padding: 1, paddingBottom: 2, width: "70%", borderRight: "2px solid black", borderBottom: "2px solid black" }}>
+                            <div className='flex justify-end items-center '>
+                                <label htmlFor="name" style={{ fontSize: "10px" }}>PETITIONER:</label>
+                                <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "74.4%" }}
+                                    type="text" id="name" />
+                            </div>
+                            <div className='flex justify-end items-center mt-1'>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>RESPONDENT:</label>
+                                <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "83%" }}
+                                    type="text" id="street" />
+                            </div>
+
+                        </td>
+                        <td style={{ textAlign: "center", top: 0, marginBottom: 10, borderCollapse: "collapse" }}
+                            className=' w-[30%]'
+                        >
+
+                        </td>
+                    </tr>
+                    <tr className='flex justify-center items-center w-full'>
+                        <td style={{
+                            borderCollapse: "collapse", width: "70%",
+                            height: "48px",
+                            borderRight: "2px solid black",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}>
+                            <div style={{ textAlign: "center", fontSize: "14px", letterSpacing: "1px" }}>
+                                <b>STIPULATION AND WAIVER OF FINAL DECLARATION OF DISCLOSURE</b>
+                            </div>
+                        </td>
+                        <td className='px-2 w-[30%]' style={{ borderTop: "2px solid black", }}>
+                            <div style={{ margin: "0px", }}>
+                                <label htmlFor="street" style={{ fontSize: "10px" }}>CASE NUMBER:</label>
+                                <br />
+                                <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", height: "18px", width: "100%" }} type="text" id="street" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+
+
+
+                <div style={{ textAlign: "center", fontSize: 13 }}>
+>>>>>>> aman
                     <i>
                         (Sender completes items 1 through 4 and signs before mailing. Recipient
                         completes items 5 and 6, signs, then returns)
@@ -107,7 +245,11 @@ export default function SU117() {
                 </div>
                 <table
                     width="100%"
+<<<<<<< HEAD
                     style={{ pageBreakInside: "auto", fontSize: 17, verticalAlign: "top" }}
+=======
+                    style={{ pageBreakInside: "auto", fontSize: 12, verticalAlign: "top" }}
+>>>>>>> aman
                     cellPadding={5}
                     cellSpacing={5}
                 >
@@ -119,7 +261,11 @@ export default function SU117() {
                             <td width="95%" valign="top">
                                 <div>
                                     To (name of individual being served):
+<<<<<<< HEAD
                                     <input  style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "38rem" }} type="text" id="street" />
+=======
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "38rem" }} type="text" id="street" />
+>>>>>>> aman
                                 </div>
                             </td>
                         </tr>
@@ -130,7 +276,11 @@ export default function SU117() {
                         border: "2px solid black",
                         padding: 3,
                         boxSizing: "border-box",
+<<<<<<< HEAD
                         fontSize: 17,
+=======
+                        fontSize: 12,
+>>>>>>> aman
                         width: "100%",
                     }} >
                     <div style={{ textAlign: "center" }}>
@@ -154,14 +304,22 @@ export default function SU117() {
                         completed Response form to the court within 30 calendar days.
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div style={{ display: "flex", marginTop: 10, fontSize: 17 }}>
+=======
+                <div style={{ display: "flex", marginTop: 10, fontSize: 12 }}>
+>>>>>>> aman
                     <div style={{ marginLeft: 5 }}>2.</div>
                     <div style={{ marginLeft: 55 }}>
                         Date of mailing (specify):
                         <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div style={{ display: "flex", marginTop: 10, fontSize: 17 }}>
+=======
+                <div style={{ display: "flex", marginTop: 10, fontSize: 12 }}>
+>>>>>>> aman
                     <div style={{ marginLeft: 5 }}>3.</div>
                     <div
                         style={{ display: "flex", justifyContent: "flex-start", fontSize: 12 }}
@@ -181,10 +339,17 @@ export default function SU117() {
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div style={{ textAlign: "center", marginTop: 12, fontSize: 17 }}>
                     <b>ACKNOWLEDGMENT OF RECEIPT</b>
                 </div>
                 <div style={{ display: "flex", marginTop: 10, fontSize: 17 }}>
+=======
+                <div style={{ textAlign: "center", marginTop: 12, fontSize: 12 }}>
+                    <b>ACKNOWLEDGMENT OF RECEIPT</b>
+                </div>
+                <div style={{ display: "flex", marginTop: 10, fontSize: 12 }}>
+>>>>>>> aman
                     <div style={{ marginLeft: 5 }}>4 .</div>
                     <div style={{ marginLeft: 45 }}>I agree I received the following:</div>
                 </div>
@@ -195,7 +360,11 @@ export default function SU117() {
                     <div>
                         <input type="checkbox" style={{ marginLeft: 15, padding: "4px" }} />
                     </div>
+<<<<<<< HEAD
                     <div style={{ marginLeft: "14px" }}>
+=======
+                    <div style={{ marginLeft: "14px",fontSize:12 }}>
+>>>>>>> aman
                         Law: Petition—Marriage/Domestic Partnership (form,
                         <a href="FL-100" target="_blank" style={{ color: "blue", borderBottom: "2px solid blue" }}>
                             FL-100
@@ -207,7 +376,11 @@ export default function SU117() {
                         ), and blank Response— Marriage/Domestic Partnership (form FL-120)
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div style={{ display: "flex", marginLeft: 70, fontSize: 17, marginTop: 10 }}>
+=======
+                <div style={{ display: "flex", marginLeft: 70, fontSize: 12, marginTop: 10 }}>
+>>>>>>> aman
                     <div style={{ width: "5%", verticalAlign: "top" }}>
                         b.
                     </div>
@@ -230,7 +403,11 @@ export default function SU117() {
                         )
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div style={{ display: "flex", marginLeft: 70, fontSize: 17, marginTop: 10 }}>
+=======
+                <div style={{ display: "flex", marginLeft: 70, fontSize: 12, marginTop: 10 }}>
+>>>>>>> aman
                     <div style={{ width: "5%", verticalAlign: "top" }}>
                         c.
                     </div>
@@ -255,54 +432,89 @@ export default function SU117() {
                         )
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div style={{ display: "flex", marginLeft: 70, fontSize: 17, marginTop: 2 }}>
+=======
+                <div style={{ display: "flex", marginLeft: 70, fontSize: 12, marginTop: 2 }}>
+>>>>>>> aman
                     <div>
                         <span>(1)</span>
                         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
                             <div style={{ padding: 2 }}>
                                 <span>(1)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
+<<<<<<< HEAD
                                 <span style={{ marginLeft: "10px" }}>Completed and blank Declaration Under Uniform Child 
                                     Custody Jurisdiction and EnforcementAct (form 
                                     <a href="" target="_blank" style={{color:"blue"}}>FL-105</a> )
+=======
+                                <span style={{ marginLeft: "10px" }}>Completed and blank Declaration Under Uniform Child
+                                    Custody Jurisdiction and EnforcementAct (form
+                                    <a href="" target="_blank" style={{ color: "blue" }}>FL-105</a> )
+>>>>>>> aman
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
                                 <span>(5)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
+<<<<<<< HEAD
                                 <span style={{ marginLeft: "10px" }}>Completed and blank Income and Expense Declaration (form 
                                     <a href="" style={{color:"blue"}}>FL-150</a>)
+=======
+                                <span style={{ marginLeft: "10px" }}>Completed and blank Income and Expense Declaration (form
+                                    <a href="" style={{ color: "blue" }}>FL-150</a>)
+>>>>>>> aman
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
                                 <span>(2)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
+<<<<<<< HEAD
                                 <span style={{ marginLeft: "10px" }}>Completed and blank Declaration of Disclosure (form 
                                     <a href="" style={{color:"blue"}}>FL-140</a>)
+=======
+                                <span style={{ marginLeft: "10px" }}>Completed and blank Declaration of Disclosure (form
+                                    <a href="" style={{ color: "blue" }}>FL-140</a>)
+>>>>>>> aman
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
                                 <span>(6)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                                 <span style={{ marginLeft: "10px" }}>
+<<<<<<< HEAD
                                     Completed and blank Financial Statement (Simplified)(form 
                                     <a href="" style={{color:"blue"}}>FL-155 </a>)
+=======
+                                    Completed and blank Financial Statement (Simplified)(form
+                                    <a href="" style={{ color: "blue" }}>FL-155 </a>)
+>>>>>>> aman
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
                                 <span>(3)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                                 <span style={{ marginLeft: "10px" }}>Completed and blank Schedule of Assets and Debts (form
+<<<<<<< HEAD
                                     <a href="" style={{color:"blue"}}> FL-142</a> )
+=======
+                                    <a href="" style={{ color: "blue" }}> FL-142</a> )
+>>>>>>> aman
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
                                 <span>(7)</span>
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                                 <span style={{ marginLeft: "10px" }}>Request for Order (form FL-300), and
+<<<<<<< HEAD
                                      blank Responsive Declaration to Request for Order (form 
 
                                     <a href="" style={{color:"blue"}}>FL-320</a>)
+=======
+                                    blank Responsive Declaration to Request for Order (form
+
+                                    <a href="" style={{ color: "blue" }}>FL-320</a>)
+>>>>>>> aman
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>
@@ -310,7 +522,11 @@ export default function SU117() {
                                 <input type="checkbox" size={10} style={{ marginLeft: "10px" }} />
                                 <span style={{ marginLeft: "10px" }}> Completed and blank Property Declaration (form
 
+<<<<<<< HEAD
                                     <a href="" style={{color:"blue"}}> FL-160 )</a>
+=======
+                                    <a href="" style={{ color: "blue" }}> FL-160 )</a>
+>>>>>>> aman
                                 </span>
                             </div>
                             <div style={{ padding: 2 }}>

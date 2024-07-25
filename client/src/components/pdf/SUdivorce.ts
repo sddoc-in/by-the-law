@@ -2,9 +2,13 @@ export default interface SUdivorce {
   referredBy: string;
   date: string;
   client: {
+<<<<<<< HEAD
     first: string;
     maiden: string;
     last: string;
+=======
+    name: string;
+>>>>>>> aman
     address: string;
     phone: {
       home: string;
@@ -54,9 +58,13 @@ export default interface SUdivorce {
     healthStatus: string;
   };
   spouse: {
+<<<<<<< HEAD
     first: string;
     maiden: string;
     last: string;
+=======
+    name: string;
+>>>>>>> aman
     address: string;
     phone: {
       home: string;
@@ -85,7 +93,11 @@ export default interface SUdivorce {
       type: {
         annual: string;
         monthly: string;
+<<<<<<< HEAD
         weekly: string;
+=======
+        hourly: string;
+>>>>>>> aman
       };
     };
     socialSecurityNo: string;
@@ -94,6 +106,7 @@ export default interface SUdivorce {
     age: string;
     educationOrTraining: {
       highSchool: {
+<<<<<<< HEAD
         contain: boolean;
         details: string;
       };
@@ -103,6 +116,14 @@ export default interface SUdivorce {
       };
       graduateSchool: {
         contain: boolean;
+=======
+        details: string;
+      };
+      college: {
+        details: string;
+      };
+      graduateSchool: {
+>>>>>>> aman
         details: string;
       };
     };
@@ -138,7 +159,11 @@ export default interface SUdivorce {
       ssn: string[];
       livesWith: string[];
     };
+<<<<<<< HEAD
     currentlyPregnant: boolean;
+=======
+    currentlyPregnant: boolean; //dekhna hai abhi
+>>>>>>> aman
     specialProblems: string;
     spouseAttorney: string[];
     previousDivorceActions: {
@@ -198,15 +223,26 @@ export default interface SUdivorce {
       paymentsPerMonth: string;
       whomakingpayments: string;
       approximatePresentValue: string;
+<<<<<<< HEAD
       balanceOwingOnLien: string;
       estimatedNetValue: string;
     }[];
+=======
+      balanceOwingOnLien:string
+      estimatedNetValue: string;
+    }[];
+
+>>>>>>> aman
     stocksAndBonds: {
       amountTypeCompany: string;
       location: string;
       namedOwner: string;
       valueAsOf: number;
     }[];
+<<<<<<< HEAD
+=======
+
+>>>>>>> aman
     insurancePolicies: {
       company: string;
       policyNumber: number;
@@ -217,12 +253,20 @@ export default interface SUdivorce {
       beneficiary: number;
       cashValue: string;
     }[];
+<<<<<<< HEAD
+=======
+
+>>>>>>> aman
     safeDepositBox: {
       location: string;
       namesOnBox: string;
       whoHasTheKey: string;
       contents: string;
     };
+<<<<<<< HEAD
+=======
+
+>>>>>>> aman
     bankAccounts: {
       location: string;
       balanceAsOf: string;
@@ -231,6 +275,10 @@ export default interface SUdivorce {
       typeOfAccount: string;
       howFundsAcquired: string;
     }[];
+<<<<<<< HEAD
+=======
+
+>>>>>>> aman
     otherAssetsInPossession: {
       description: string;
       estimatedValue: string;
@@ -250,6 +298,10 @@ export default interface SUdivorce {
       forWhat: string[];
       monthlyPayment: string[];
       balanceAsOf: string[];
+<<<<<<< HEAD
+=======
+      
+>>>>>>> aman
     };
     personalLoans: {
       toWhomOwed: string[];
@@ -295,6 +347,10 @@ export default interface SUdivorce {
       husband: string;
       wife: string;
     };
+<<<<<<< HEAD
+=======
+
+>>>>>>> aman
     maintenance: {
       yes: boolean;
       no: boolean;
@@ -339,5 +395,8 @@ export default interface SUdivorce {
   };
   settlementNotes: string[];
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> aman

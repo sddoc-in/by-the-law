@@ -142,7 +142,11 @@ export async function deleteURL(req: Request, res: Response) {
   const url = req.query.url as string;
   const session = req.query.session as string;
   const uid = req.query.uid as string;
+<<<<<<< HEAD
   const token = req.query.access_token as string;
+=======
+  const token = req.query.token as string;
+>>>>>>> aman
 
   try {
     if (url === undefined) {
@@ -269,6 +273,7 @@ export async function getURLs(req: Request, res: Response) {
     console.log(error);
   }
 }
+<<<<<<< HEAD
 
 
 export async function submitURL(req: Request, res: Response) {
@@ -305,3 +310,5 @@ export async function submitURL(req: Request, res: Response) {
     return res.status(500).json({ message: "Internal server error" });  
   }
 }
+=======
+>>>>>>> aman

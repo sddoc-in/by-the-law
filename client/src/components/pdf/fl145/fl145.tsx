@@ -36,17 +36,29 @@ export default function FL145() {
       ...details,
       InstructionsToTheAskingParty: {
         ...details.InstructionsToTheAskingParty,
+<<<<<<< HEAD
         [e.target.name]: e.target.value==="on"?true:false,
       },
     });
   }
   
+=======
+        [e.target.name]: e.target.value === "on" ? true : false,
+      },
+    });
+  }
+
+>>>>>>> aman
 
   console.log(details);
   // console.log(checked)
 
   return (
+<<<<<<< HEAD
     <div style={{ maxWidth: "1100px", margin: "auto" }}>
+=======
+    <div style={{ maxWidth: "1100px", margin: "auto", fontSize: 12 }}>
+>>>>>>> aman
       <div>
         <h3
           style={{
@@ -76,6 +88,7 @@ export default function FL145() {
                 colSpan={2}
               >
                 <div>
+<<<<<<< HEAD
                  <div style={{display:"flex"}}>
                     <div>
                         <label>
@@ -92,6 +105,24 @@ export default function FL145() {
                             margin:"0.25rem 0.3rem",
                           }}
                             type="text" />
+=======
+                  <div style={{ display: "flex" }}>
+                    <div>
+                      <label>
+                        ATTORNEY OR PARTY WITHOUT ATTORNEY (Name, State Bar number,
+                        and address):
+                      </label> <br />
+                      <input
+                        name={"AttorneyOrPartyWithoutAttorney"}
+                        onChange={(e) => handleChange(e)}
+                        size={97}
+                        style={{
+                          backgroundColor: "rgb(225, 243, 243)",
+                          border: "none",
+                          margin: "0.25rem 0.3rem",
+                        }}
+                        type="text" />
+>>>>>>> aman
                     </div>
                     <div style={{ marginLeft: "0rem" }}>
                       <label htmlFor="telephone">
@@ -100,6 +131,7 @@ export default function FL145() {
                       <input
                         name={"AttorneyOrPartyWithoutAttorney"}
                         onChange={(e) => handleChange(e)}
+<<<<<<< HEAD
                         size={42}
                         style={{
                           backgroundColor: "rgb(225, 243, 243)",
@@ -110,6 +142,18 @@ export default function FL145() {
                     </div>
                   </div>
                   
+=======
+                        size={65}
+                        style={{
+                          backgroundColor: "rgb(225, 243, 243)",
+                          border: "none",
+                          marginTop: "0.25rem"
+                        }}
+                        type="text" />
+                    </div>
+                  </div>
+
+>>>>>>> aman
                   <textarea
                     name={"AttorneyOrPartyWithoutAttorney"}
                     onChange={(e) => handleChange(e)}
@@ -118,12 +162,17 @@ export default function FL145() {
                       border: "none",
                       width: "99%",
                       resize: "none",
+<<<<<<< HEAD
                       marginLeft:"0.3rem"
+=======
+                      marginLeft: "0.3rem"
+>>>>>>> aman
                     }}
                     id=""
                     rows={3}
                   ></textarea>
                 </div>
+<<<<<<< HEAD
                 <div style={{ marginTop: "0.2rem" , padding:"0.3rem"}}>
                   <label htmlFor="attorney">ATTORNEY FOR (name):</label>
                   <input
@@ -131,6 +180,15 @@ export default function FL145() {
                    onChange={(e) => handleChange(e)}
                     size={121}
                     
+=======
+                <div style={{ marginTop: "0.2rem", padding: "0.3rem" }}>
+                  <label htmlFor="attorney">ATTORNEY FOR (name):</label>
+                  <input
+                    name={"AttorneyFor"}
+                    onChange={(e) => handleChange(e)}
+                    size={147}
+
+>>>>>>> aman
                     style={{
                       backgroundColor: "rgb(225, 243, 243)",
                       border: "none",
@@ -143,6 +201,7 @@ export default function FL145() {
             </tr>
             <tr>
               <td
+<<<<<<< HEAD
               style={{
                 width: "70%",
                 border: "2px solid black",
@@ -181,11 +240,31 @@ export default function FL145() {
                     type="text"
                     id="name"
                   />
+=======
+                style={{
+                  width: "70%",
+                  border: "2px solid black",
+                  borderCollapse: "collapse",
+                  padding: "0.3rem"
+                }}
+                colSpan={2}>
+                <div>
+                    <div className='mt-1 flex justify-end items-center'>
+                    <label htmlFor="street" style={{ fontSize: "10px" }}>Answering Party:</label>
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                      type="text" id="street" />
+                  </div>
+                  <div className='mt-1 flex justify-end items-center'>
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "100%" }}
+                      type="text" id="street" />
+                  </div>
+>>>>>>> aman
                 </div>
               </td>
             </tr>
             <tr>
               <td style={{
+<<<<<<< HEAD
                   width: "70%",
                   border: "2px solid black",
                   borderCollapse: "collapse",
@@ -203,22 +282,48 @@ export default function FL145() {
                   }}
                   cols={136}
                   rows={3}
+=======
+                width: "70%",
+                border: "2px solid black",
+                borderCollapse: "collapse",
+              }} colSpan={3}>                
+              <label htmlFor="">SHORT TITLE:</label>
+                <textarea
+                  name={"ShortTitle"}
+                  onChange={(e) => handleChange(e)}
+                  style={{
+                    marginLeft: "1rem",
+                    backgroundColor: "rgb(225, 243, 243)",
+                    border: "none",
+                    width:"91%",
+                    resize:"none"
+                  }}
+                  rows={2}
+>>>>>>> aman
                   defaultValue={""}
                 />
               </td>
             </tr>
             <tr>
               <td style={{
+<<<<<<< HEAD
                   width: "70%",
                   border: "2px solid black",
                   borderCollapse: "collapse",
                 }}>
+=======
+                width: "70%",
+                border: "2px solid black",
+                borderCollapse: "collapse",
+              }}>
+>>>>>>> aman
                 <div style={{ textAlign: "center", fontSize: "1.25rem" }}>
                   <label htmlFor="">
                     <b>FORM INTERROGATORIES–FAMILY LAW</b>
                   </label>
                 </div>
                 <div style={{ fontSize: "1.15rem" }}>
+<<<<<<< HEAD
                   <label style={{ marginLeft: "4.5rem" }} htmlFor="">
                     <b>Asking Party:</b>
                   </label>
@@ -267,20 +372,52 @@ export default function FL145() {
                     type="text"
                   />
                   <br />
+=======
+                  <div className='mt-1 flex justify-end items-center'>
+                    <label htmlFor="street" style={{ fontSize: "10px" }}>MAILING ADDRESS:</label>
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                      type="text" id="street" />
+                  </div>
+
+                  <div className='mt-1 flex justify-end items-center'>
+                    <label htmlFor="street" style={{ fontSize: "10px" }}>Answering Party:</label>
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                      type="text" id="street" />
+                  </div>
+
+                  <div className='mt-1 flex justify-end items-center'>
+                    <label htmlFor="street" style={{ fontSize: "10px" }}>Set No.:</label>
+                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px 2px", height: "18px", width: "79.7%" }}
+                      type="text" id="street" />
+                  </div>
+
+>>>>>>> aman
                 </div>
               </td>
               <td>
                 <div>
+<<<<<<< HEAD
                   <label style={{marginLeft:"0.3rem", display:"flex", alignItems:"flex-start"}} htmlFor="street">CASE NUMBER:</label>
                   <br />
                   <input
                    name={"CaseNumber"}
                    onChange={(e) => handleChange(e)}
+=======
+                  <label style={{ marginLeft: "0.3rem", display: "flex", alignItems: "flex-start" }} htmlFor="street">CASE NUMBER:</label>
+                  <br />
+                  <input
+                    name={"CaseNumber"}
+                    onChange={(e) => handleChange(e)}
+>>>>>>> aman
                     size={38}
                     style={{
                       backgroundColor: "rgb(225, 243, 243)",
                       border: "none",
+<<<<<<< HEAD
                       margin:"2px 5px"
+=======
+                      margin: "2px 5px"
+>>>>>>> aman
                     }}
                     type="text"
                   />
@@ -289,14 +426,23 @@ export default function FL145() {
             </tr>
           </tbody>
         </table>
+<<<<<<< HEAD
         
         <div style={{ display: "flex", width: "100%", fontSize: "1rem",marginTop:"0.4rem"  }}>
+=======
+
+        <div style={{ display: "flex", width: "100%", fontSize: 12, marginTop: "0.4rem" }}>
+>>>>>>> aman
           <div style={{ width: "65%" }}>
             <div>
               <label htmlFor="">
                 <b>Sec. 1. Instructions to Both Parties</b>
               </label>
+<<<<<<< HEAD
               
+=======
+
+>>>>>>> aman
               <div style={{ marginTop: "0.2rem" }}>
                 The interrogatories on page 2 of this form are intended to
                 <br />
@@ -309,12 +455,21 @@ export default function FL145() {
                 make any objection. <b>Privileges must be asserted.</b>
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{marginTop:"0.3rem" }}>
               <label htmlFor="">
                 <b>Sec. 2. Definitions</b>
               </label>
               
+=======
+
+            <div style={{ marginTop: "0.3rem" }}>
+              <label htmlFor="">
+                <b>Sec. 2. Definitions</b>
+              </label>
+
+>>>>>>> aman
               <div style={{ marginTop: "0.2rem" }}>
                 Words in boldface in these interrogatories are defined as <br />{" "}
                 follows:
@@ -384,12 +539,21 @@ export default function FL145() {
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{marginTop:"0.4rem" }}>
               <label htmlFor="">
                 <b>Sec. 3. Instructions to the Asking Party</b>
               </label>
               
+=======
+
+            <div style={{ marginTop: "0.4rem" }}>
+              <label htmlFor="">
+                <b>Sec. 3. Instructions to the Asking Party</b>
+              </label>
+
+>>>>>>> aman
               <div style={{ marginTop: "0.2rem" }}>
                 Check the box next to each interrogatory you want the <br />
                 answering party to answer.
@@ -401,7 +565,11 @@ export default function FL145() {
               <label htmlFor="">
                 <b>Sec. 4. Instructions to the Answering Party</b>
               </label>
+<<<<<<< HEAD
               
+=======
+
+>>>>>>> aman
               <div style={{ marginTop: "0.3rem" }}>
                 <div>
                   You must answer these interrogatories under oath within 30{" "}
@@ -446,12 +614,21 @@ export default function FL145() {
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{marginTop:"0.4rem" }}>
               <label htmlFor="">
                 <b>Sec. 5. Oath</b>
               </label>
               
+=======
+
+            <div style={{ marginTop: "0.4rem" }}>
+              <label htmlFor="">
+                <b>Sec. 5. Oath</b>
+              </label>
+
+>>>>>>> aman
               <div style={{ marginTop: "0.3rem" }}>
                 Your answers to these interrogatories must be under oath, <br />
                 dated, and signed. Use the following statement <b>
@@ -489,8 +666,13 @@ export default function FL145() {
                   >
                     <div>
                       <input
+<<<<<<< HEAD
                        name={"Date"}
                        onChange={(e) => handleChange(e)}
+=======
+                        name={"Date"}
+                        onChange={(e) => handleChange(e)}
+>>>>>>> aman
                         style={{
                           width: "90%",
                           backgroundColor: "rgb(225, 243, 243)",
@@ -516,8 +698,13 @@ export default function FL145() {
             </table>
           </div>
         </div>
+<<<<<<< HEAD
         
         <hr style={{ width: "100%", marginTop:"0.9rem" }} />
+=======
+
+        <hr style={{ width: "100%", marginTop: "0.9rem" }} />
+>>>>>>> aman
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div style={{ listStyle: "none" }}>
             <li>Form Approved for Optional Use</li>
@@ -557,6 +744,7 @@ export default function FL145() {
         </h3>
         <br />
         <div style={{ display: "flex", width: "100%" }}>
+<<<<<<< HEAD
           <div style={{ width: "68%", fontSize: "1rem" }}>
             <div style={{ display: "flex" }}>
               <div>
@@ -564,18 +752,32 @@ export default function FL145() {
                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
                  defaultChecked={details.InstructionsToTheAskingParty?.a}
                  type="checkbox" name="a" id="" />
+=======
+          <div style={{ width: "68%", fontSize: 12 }}>
+            <div style={{ display: "flex" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.a}
+                  type="checkbox" name="a" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   1.
                 </label>
               </div>
+<<<<<<< HEAD
               <div style={{ marginLeft: "1rem" }}>
+=======
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
+>>>>>>> aman
                 <b>Personal history.</b>State your full name, current <br />
                 residence address and work address, social security <br />
                 number, any other names you have used, and the <br />
                 dates between which you used each name. <br />
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex" , marginTop:"0.5rem" }}>
               <div>
@@ -583,12 +785,25 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.b}
                  type="checkbox" name="b" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.b}
+                  type="checkbox" name="b" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   2.
                 </label>
               </div>
+<<<<<<< HEAD
               <div style={{ marginLeft: "1rem" }}>
+=======
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
+>>>>>>> aman
                 <b>Agreements.</b> Are there any agreements between you <br />
                 and your spouse or domestic partner, made before or <br />
                 during your marriage or domestic partnership or after <br />
@@ -604,6 +819,7 @@ export default function FL145() {
                 or describe its contents.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -611,12 +827,25 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.c}
                  type="checkbox" name="c" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.c}
+                  type="checkbox" name="c" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   3.
                 </label>
               </div>
+<<<<<<< HEAD
               <div style={{ marginLeft: "1rem" }}>
+=======
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
+>>>>>>> aman
                 <b>Legal actions.</b> Are you a party or do you anticipate{" "}
                 <br />
                 being a party to any legal or administrative proceeding <br />
@@ -625,6 +854,7 @@ export default function FL145() {
                 description of each proceeding.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex",marginTop:"0.5rem"  }}>
               <div>
@@ -632,18 +862,32 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.d}
                type="checkbox" name="d" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.d}
+                  type="checkbox" name="d" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   4.
                 </label>
               </div>
+<<<<<<< HEAD
               <div style={{ marginLeft: "1rem" }}>
+=======
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
+>>>>>>> aman
                 <b>Persons sharing residence.</b> State the name, age, <br />
                 and relationship to you of each <b>person</b> at your present{" "}
                 <br />
                 address.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -651,12 +895,25 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.e}
                  type="checkbox" name="e" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.e}
+                  type="checkbox" name="e" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   5.
                 </label>
               </div>
+<<<<<<< HEAD
               <div style={{ marginLeft: "1rem" }}>
+=======
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
+>>>>>>> aman
                 <b>Support provided others.</b> State the name, age, <br />
                 address, and relationship to you of each <b>person</b> for{" "}
                 <br />
@@ -664,6 +921,7 @@ export default function FL145() {
                 months and the amount provided per month for each.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -671,12 +929,25 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.f}
                  type="checkbox" name="f" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.f}
+                  type="checkbox" name="f" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   6.
                 </label>
               </div>
+<<<<<<< HEAD
               <div style={{ marginLeft: "1rem" }}>
+=======
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
+>>>>>>> aman
                 <b>Support received for others.</b> State the name, age, <br />
                 address, and relationship to you of each <b>person</b> for{" "}
                 <br />
@@ -684,6 +955,7 @@ export default function FL145() {
                 months and the amount provided per month for each.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -691,12 +963,25 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.g}
                 type="checkbox" name="g" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.g}
+                  type="checkbox" name="g" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   7.
                 </label>
               </div>
+<<<<<<< HEAD
               <div style={{ marginLeft: "1rem" }}>
+=======
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
+>>>>>>> aman
                 <b>Current income.</b> List all income you received during{" "}
                 <br />
                 the past 12 months, its source, the basis for its <br />
@@ -704,6 +989,7 @@ export default function FL145() {
                 each. Attach your last three paycheck stubs.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -711,12 +997,25 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.h}
                  type="checkbox" name="h" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.h}
+                  type="checkbox" name="h" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   8.
                 </label>
               </div>
+<<<<<<< HEAD
               <div style={{ marginLeft: "1rem" }}>
+=======
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
+>>>>>>> aman
                 <b>Other income.</b> During the past three years, have you{" "}
                 <br />
                 received cash or other property from any source not <br />
@@ -725,6 +1024,7 @@ export default function FL145() {
                 the nature and value of the property.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -732,18 +1032,32 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.i}
                  type="checkbox" name="i" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.i}
+                  type="checkbox" name="i" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   9.
                 </label>
               </div>
+<<<<<<< HEAD
               <div style={{ marginLeft: "1rem" }}>
+=======
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
+>>>>>>> aman
                 <b>Tax returns. </b> Attach copies of all tax returns and tax{" "}
                 <br />
                 schedules filed by or for you in any jurisdiction for the <br />
                 past three calendar years.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -751,17 +1065,31 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.j}
                  type="checkbox" name="j" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem", fontSize: 12 }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.j}
+                  type="checkbox" name="j" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   10.
                 </label>
               </div>
+<<<<<<< HEAD
               <div style={{ marginLeft: "1rem" }}>
+=======
+              <div style={{ marginLeft: "1rem", fontSize: 12 }}>
+>>>>>>> aman
                 <b>Schedule of assets and debts.</b> Complete the <br />
                 <i>Schedule of Assets and Debts</i> (form FL-142) served <br />
                 with these interrogatories.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -769,12 +1097,25 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.k}
                 type="checkbox" name="k" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.k}
+                  type="checkbox" name="k" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   11.
                 </label>
               </div>
+<<<<<<< HEAD
               <div style={{ marginLeft: "1rem" }}>
+=======
+              <div style={{ marginLeft: "1rem", fontSize: "12" }}>
+>>>>>>> aman
                 <b>Separate property contentions.</b> State the facts that{" "}
                 <br />
                 support your contention that an asset or debt is <br />
@@ -784,14 +1125,24 @@ export default function FL145() {
             <br />
           </div>
           <div
+<<<<<<< HEAD
             style={{ width: "65%", marginLeft: "3rem", fontSize: "1rem" }}
+=======
+            style={{ width: "65%", marginLeft: "3rem", fontSize: 12 }}
+>>>>>>> aman
           >
             <div style={{ display: "flex" }}>
               <div>
                 <input
+<<<<<<< HEAD
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.l}
                  type="checkbox" name="l" id="" />
+=======
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.l}
+                  type="checkbox" name="l" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   12.
@@ -806,6 +1157,7 @@ export default function FL145() {
                 answer is yes, <b>identify the document.</b>
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -813,6 +1165,15 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.m}
                  type="checkbox" name="m" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.m}
+                  type="checkbox" name="m" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   13.
@@ -833,6 +1194,7 @@ export default function FL145() {
                 <b>person</b> holding the asset.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -840,6 +1202,15 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.n}
                  type="checkbox" name="n" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.n}
+                  type="checkbox" name="n" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   14.
@@ -855,6 +1226,7 @@ export default function FL145() {
                 custodian of records.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -862,6 +1234,15 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.o}
                  type="checkbox" name="o" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.o}
+                  type="checkbox" name="o" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   15.
@@ -874,6 +1255,7 @@ export default function FL145() {
                 yes, state all supporting facts.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -881,6 +1263,15 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.p}
                  type="checkbox" name="p" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.p}
+                  type="checkbox" name="p" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   16.
@@ -895,6 +1286,7 @@ export default function FL145() {
                 the debt since the separation.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -902,6 +1294,15 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.q}
                  type="checkbox" name="q" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.q}
+                  type="checkbox" name="q" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   17.
@@ -917,6 +1318,7 @@ export default function FL145() {
                 the address.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -924,6 +1326,15 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.r}
                  type="checkbox" name="r" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.r}
+                  type="checkbox" name="r" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   18.
@@ -936,6 +1347,7 @@ export default function FL145() {
                 state each fact on which you base your answer.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex",marginTop:"0.5rem"  }}>
               <div>
@@ -943,6 +1355,15 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.s}
                 type="checkbox" name="s" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.s}
+                  type="checkbox" name="s" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   19.
@@ -955,6 +1376,7 @@ export default function FL145() {
                 cost, and its expected duration.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -962,6 +1384,15 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.t}
                  type="checkbox" name="t" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.t}
+                  type="checkbox" name="t" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   20.
@@ -974,6 +1405,7 @@ export default function FL145() {
                 Describe the billing arrangements.
               </div>
             </div>
+<<<<<<< HEAD
             
             <div style={{ display: "flex", marginTop:"0.5rem"  }}>
               <div>
@@ -981,6 +1413,15 @@ export default function FL145() {
                 onChange={(e) => handleInstructionsToTheAskingParty(e)}
                 defaultChecked={details.InstructionsToTheAskingParty?.u}
                 type="checkbox" name="u" id="" />
+=======
+
+            <div style={{ display: "flex", marginTop: "0.5rem" }}>
+              <div>
+                <input
+                  onChange={(e) => handleInstructionsToTheAskingParty(e)}
+                  defaultChecked={details.InstructionsToTheAskingParty?.u}
+                  type="checkbox" name="u" id="" />
+>>>>>>> aman
                 <label style={{ marginLeft: "1rem" }} htmlFor="">
                   {" "}
                   21.

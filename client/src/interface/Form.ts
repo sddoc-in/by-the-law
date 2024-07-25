@@ -10,5 +10,9 @@ export default interface FormInterface {
     progress?: number;
     submittedDate?: string;
     client_name?: string;
+<<<<<<< HEAD
     client_username: string;
+=======
+    client_username?: string;
+>>>>>>> aman
 }

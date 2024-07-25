@@ -41,7 +41,10 @@ export default function Forms() {
             return;
           });
         setData(data);
+<<<<<<< HEAD
         console.log(data);
+=======
+>>>>>>> aman
       } catch (err) {}
     };
 
@@ -93,7 +96,11 @@ export default function Forms() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 w-[95%] mx-auto">
           { data
             .filter((user: FormInterface) =>
+<<<<<<< HEAD
               user.client_username.toLowerCase().includes(query.toLowerCase())
+=======
+              user.client_username!.toLowerCase().includes(query.toLowerCase())
+>>>>>>> aman
             ).map((user, index) => {
             return <Card key={index} {...user} />;
           })}

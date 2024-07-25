@@ -31,6 +31,7 @@ export default function FL142() {
                                 <div style={{ display: "flex" }}>
                                     <div>
                                         <div>
+<<<<<<< HEAD
                                             <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
                                              <div>
                                              <h5>ATTORNEY OR PARTY WITHOUT ATTORNEY (Name and Address):</h5>
@@ -49,11 +50,34 @@ export default function FL142() {
                                         </div>
                                     </div>
                                     
+=======
+                                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+                                                <div>
+                                                    <h5>ATTORNEY OR PARTY WITHOUT ATTORNEY (Name and Address):</h5>
+                                                </div>
+                                                <div style={{ marginLeft: "14rem" }}>
+                                                    <span>TELEPHONE NO.:</span>
+                                                    <input
+                                                        style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }}
+                                                        type="text"
+                                                        id="name"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <textarea rows={8} cols={120} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", width: "100%", resize: "none" }} />
+                                        </div>
+                                    </div>
+
+>>>>>>> aman
 
                                 </div>
                                 <div>
                                     <label>ATTORNEY FOR (Name):</label>
+<<<<<<< HEAD
                                     <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"83%" }} type="text" id="fax" />
+=======
+                                    <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "83%" }} type="text" id="fax" />
+>>>>>>> aman
                                 </div>
                             </td>
                         </tr>
@@ -61,12 +85,17 @@ export default function FL142() {
                             <td style={{ margin: 0, border: "2px solid black", borderCollapse: "collapse" }}>
                                 <div style={{ fontWeight: "bold" }}>
                                     <label htmlFor="name">SUPERIOR COURT OF CALIFORIA, COUNTY OF</label>
+<<<<<<< HEAD
                                     <textarea style={{height:"3rem",width:"99.5%",backgroundColor: "rgb(225, 243, 243)", border: "none",resize:"none"}} />
+=======
+                                    <textarea style={{ height: "3rem", width: "99.5%", backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
+>>>>>>> aman
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td style={{ border: "2px solid black", borderCollapse: "collapse" }}>
+<<<<<<< HEAD
                                 <div style={{ marginLeft: "1.2rem",marginBottom:"2px"}}>
                                     <label htmlFor="name">PETITIONER:</label>
                                     <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"91%" }} type="text" id="name" />
@@ -74,6 +103,15 @@ export default function FL142() {
                                 <div>
                                     <label htmlFor="street">RESPONDENT:</label>
                                     <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px",width:"90%" }} type="text" id="street" />
+=======
+                                <div style={{ marginLeft: "1.2rem", marginBottom: "2px" }}>
+                                    <label htmlFor="name">PETITIONER:</label>
+                                    <input size={86} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "91%" }} type="text" id="name" />
+                                </div>
+                                <div>
+                                    <label htmlFor="street">RESPONDENT:</label>
+                                    <input size={85} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", width: "90%" }} type="text" id="street" />
+>>>>>>> aman
                                 </div>
                             </td>
                         </tr>
@@ -102,10 +140,17 @@ export default function FL142() {
                                 </div>
                             </td>
                             <td style={{ width: "30%", border: "2px solid black", borderCollapse: "collapse" }}>
+<<<<<<< HEAD
                                 <div style={{ marginLeft: "1.2rem" }}>
                                     <label htmlFor="street">CASE NUMBER:</label>
                                     <br />
                                     <input size={35} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+=======
+                                <div style={{ marginLeft: "1.2rem", marginBottom: "4px" }}>
+                                    <label htmlFor="street">CASE NUMBER:</label>
+                                    <br />
+                                    <input size={33} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" />
+>>>>>>> aman
                                 </div>
                             </td>
                         </tr>
@@ -130,6 +175,7 @@ export default function FL142() {
                     additional space, use a continuation sheet numbered to show which item is
                     being continued.
                 </div>
+<<<<<<< HEAD
                 <table style={{ fontSize: 18 }}>
                     <thead>
                         <tr className="tr"></tr>
@@ -138,6 +184,16 @@ export default function FL142() {
                             <td style={{ border: "1px solid black" }}><span>SEP. PROP</span> </td>
                             <td style={{ border: "1px solid black" }}><span>DATE</span> </td>
                             <td style={{ border: "1px solid black" }}>
+=======
+                <table style={{ width: "100%", fontSize: 18, borderCollapse: "collapse" }}>
+                    <thead>
+                        <tr className="tr"></tr>
+                        <tr>
+                            <td style={{ border: "1px solid black", width: "99%" }}><span>ITEM NO.ASSETS DESCRIPTION </span> </td>
+                            <td style={{ border: "1px solid black", width: "99%" }}><span>SEP. PROP</span> </td>
+                            <td style={{ border: "1px solid black", width: "99%" }}><span>DATE ACQUIRED</span> </td>
+                            <td style={{ border: "1px solid black", width: "99%" }}>
+>>>>>>> aman
                                 <span>CURRENT GROSS FAIR MARKET VALUE</span>
                             </td>
                             <td style={{ border: "1px solid black" }}>
@@ -145,13 +201,18 @@ export default function FL142() {
                             </td>
                         </tr>
                         <tr className="tr">
+<<<<<<< HEAD
                             <td style={{ border: "1px solid black", fontSize: 14 ,width: "35%"}}>
+=======
+                            <td style={{ border: "1px solid black" }}>
+>>>>>>> aman
                                 <h5>1. REAL ESTATE
                                     <span>
                                         (Give street addresses and attach copies of deeds with legal
                                         descriptions and latest lender's statement.)
                                     </span>
                                 </h5>
+<<<<<<< HEAD
 
                                 <textarea rows={5} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px", resize: "none" }} />
                             </td>
@@ -195,11 +256,113 @@ export default function FL142() {
                             <td style={{ border: "1px solid black" }}>
                                 <textarea rows={6} cols={12} id="street" style={{ backgroundColor: "rgb(225, 243, 243)",resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "2px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "2px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "2px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "2px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "2px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "2px", width: "99%" }} type="text" /><br />
+
+
+                            </td>
+                            <td style={{ border: "1px solid black", padding: "0px", whiteSpace: "collapse" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 4, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "90%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "90%" }} type="text" /><br />
+
+                            </td>
+                        </tr>
+                        <tr className="tr">
+                            <td style={{ border: "1px solid black" }}>
+                                <span>2. HOUSEHOLD FURNITURE, FURNISHINGS, APPLIANCES (Identify.)</span><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" id="street" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" id="street" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" id="street" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" id="street" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" id="street" /> <br />
+
+                            </td>
+                            <td style={{ margin: "0px" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <span>3. JEWELRY, ANTIQUES, ART, COIN COLLECTIONS, etc. (Identify.)</span>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",resize: "none" }} />
                                 {/* <input size={60} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -218,6 +381,45 @@ export default function FL142() {
                             <td style={{ border: "1px solid black"}}>
                                 <textarea rows={5} cols={12} id="street" style={{ backgroundColor: "rgb(225, 243, 243)" ,resize: "none"}} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" id="street" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" id="street" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" id="street" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" id="street" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                     </thead>
@@ -245,7 +447,11 @@ export default function FL142() {
                     <thead>
                         <tr className="tr"></tr>
                         <tr>
+<<<<<<< HEAD
                             <td style={{ border: "1px solid black" }}>
+=======
+                            <td style={{ border: "1px solid black", width: "82%" }}>
+>>>>>>> aman
                                 ITEM NO. ASSETS DESCRIPTION{" "}
                             </td>
                             <td style={{ border: "1px solid black" }}>SEP. PROP </td>
@@ -254,11 +460,16 @@ export default function FL142() {
                                 CURRENT GROSS FAIR MARKET VALUE
                             </td>
                             <td style={{ border: "1px solid black" }}>
+<<<<<<< HEAD
                                  AMOUNT OF MONEY{/* OWED OR ENCUMBRANCE */}
+=======
+                                AMOUNT OF MONEY{/* OWED OR ENCUMBRANCE */}
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
+<<<<<<< HEAD
                                 4. VEHICLES, 
                                 BOATS, TRAILERS (Describe and attach copy of title
                                 document.)
@@ -280,12 +491,67 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "20%" }}>
                                 <textarea rows={9} cols={8} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                4. VEHICLES,
+                                BOATS, TRAILERS (Describe and attach copy of title
+                                document.)
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "18%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5> 5. SAVINGS ACCOUNTS (Account name, account number, bank, and branch.
                                     Attach copy of latest statement.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -304,12 +570,61 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "20%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "18%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5>6. CHECKING ACCOUNTS (Account name and number, bank, and branch.
                                     Attach copy of latest statement.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -328,12 +643,55 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "20%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "18%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5>7. CREDIT UNION, OTHER DEPOSIT ACCOUNTS (Account name and number,
                                     bank, and branch. Attach copy of latest statement.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -352,11 +710,55 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "20%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5> 8. CASH (Give location.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -375,11 +777,51 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "20%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5>9. TAX REFUND</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -398,12 +840,51 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "20%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5> 10. LIFE INSURANCE WITH CASH SURRENDER OR LOAN VALUE (Attach copy of
                                     declaration page for each policy.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -422,6 +903,50 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "20%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                     </thead>
@@ -449,7 +974,11 @@ export default function FL142() {
                     <thead>
                         <tr className="tr"></tr>
                         <tr>
+<<<<<<< HEAD
                             <td style={{ border: "1px solid black" }}>ITEM ASSETS DESCRIPTION</td>
+=======
+                            <td style={{ border: "1px solid black", width: "82%" }}>ITEM ASSETS DESCRIPTION</td>
+>>>>>>> aman
                             <td style={{ border: "1px solid black" }}>SEP. PROP </td>
                             <td style={{ border: "1px solid black" }}>DATE ACQUIRED</td>
                             <td style={{ border: "1px solid black" }}>
@@ -464,6 +993,7 @@ export default function FL142() {
                                 <h5> 11. STOCKS, BONDS, SECURED NOTES, MUTUAL FUNDS (Give certificate
                                     number and attach copy of the certificate or copy of latest
                                     statement.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -482,10 +1012,54 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "20%" }}>
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
+<<<<<<< HEAD
                                 <h5> 11. STOCKS, BONDS, SECURED NOTES, MUTUAL FUNDS (Give certificate
                                     number and attach copy of the certificate or copy of latest
                                     statement.)</h5>
@@ -507,12 +1081,57 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "20%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <h5> 12. STOCKS, BONDS, SECURED NOTES, MUTUAL FUNDS (Give certificate
+                                    number and attach copy of the certificate or copy of latest
+                                    statement.)</h5>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5>13. PROFIT - SHARING, ANNUITIES, IRAS, DEFERRED COMPENSATION (Attach
                                     copy of latest statement.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -531,11 +1150,55 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "20%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5> 14. ACCOUNTS RECEIVABLE AND UNSECURED NOTES (Attach copy of each.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -555,12 +1218,55 @@ export default function FL142() {
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
 
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5>15. PARTNERSHIPS AND OTHER BUSINESS INTERESTS (Attach copy of most
                                     current K-1 form and Schedule C.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
 
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
@@ -584,10 +1290,56 @@ export default function FL142() {
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
 
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
+<<<<<<< HEAD
                                 <h5>OTHER ASSETS</h5>
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
 
@@ -612,11 +1364,52 @@ export default function FL142() {
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
 
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <h5> 16 OTHER ASSETS</h5>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5> 17. TOTAL ASSETS FROM CONTINUATION SHEET</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
 
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
@@ -668,6 +1461,47 @@ export default function FL142() {
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
 
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "15%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                        </tr>
+                        <tr className="tr">
+                            <td style={{ border: "1px solid black" }} colSpan={3}>
+                                <h5> 18. TOTAL ASSETS</h5>
+
+                            </td>
+
+
+
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                            <span>$</span>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",  marginTop: 3, width: "82%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 11, marginBottom: 4, width: "83%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "20%" }}>
+                                <span>$</span>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none",  marginTop: 3, width: "90%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 11, marginBottom: 4, width: "90%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                     </thead>
@@ -698,6 +1532,7 @@ export default function FL142() {
                             <td style={{ border: "1px solid black" }}>
                                 ITEM ASSETS DESCRIPTION NO.{" "}
                             </td>
+<<<<<<< HEAD
                             <td style={{ border: "1px solid black" }}>SEP. PROP </td>
                             <td style={{ border: "1px solid black" }}>DATE ACQUIRED</td>
                             <td style={{ border: "1px solid black" }}>
@@ -706,31 +1541,72 @@ export default function FL142() {
                             <td style={{ border: "1px solid black" }}>
                                 AMOUNT OF MONEY OWED OR ENCUMBRANCE
                             </td>
+=======
+                            <td style={{ border: "1px solid black", width: "7%" }}>SEP. PROP </td>
+                            <td style={{ border: "1px solid black" }}>TOTAL OWING</td>
+                            <td style={{ border: "1px solid black" }}>
+                                DATE INCURRED
+                            </td>
+
+>>>>>>> aman
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5>19. STUDENT LOANS (Give details.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
 
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
                             <td style={{ border: "1px solid black", width: "5%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
+=======
+                                {/* <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} /> */}
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+>>>>>>> aman
 
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
                             <td style={{ border: "1px solid black", width: "5%" }}>
+<<<<<<< HEAD
+                                <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+>>>>>>> aman
+
+                                {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
 
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
                             <td style={{ border: "1px solid black", width: "5%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
-
-                                {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
-                            </td>
-                            <td style={{ border: "1px solid black", width: "5%" }}>
-                                <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+>>>>>>> aman
 
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -738,32 +1614,63 @@ export default function FL142() {
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5> 20. TAXES (Give details.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+>>>>>>> aman
 
                                 {/* <input size={80} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
                             <td style={{ border: "1px solid black", width: "5%" }}>
+<<<<<<< HEAD
+                                <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+>>>>>>> aman
+
+                                {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
 
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
                             <td style={{ border: "1px solid black", width: "5%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
-
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
                             <td style={{ border: "1px solid black", width: "5%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
                             </td>
                             <td style={{ border: "1px solid black", width: "5%" }}>
-                                <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
-                                {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5>21. SUPPORT ARREARAGES (Attach copies of orders and statements.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={50} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -782,12 +1689,45 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "5%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                                {/* <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} /> */}
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5>22. LOANS—UNSECURED (Give bank name and loan number and attach copy of
                                     latest statement.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={50} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -805,6 +1745,42 @@ export default function FL142() {
                             </td>
                             <td style={{ border: "1px solid black", width: "5%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                                {/* <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} /> */}
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                                {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
                         </tr>
@@ -812,6 +1788,7 @@ export default function FL142() {
                             <td style={{ border: "1px solid black" }}>
                                 <h5>23. CREDIT CARDS (Give creditor's name and address and the account
                                     number. Attach copy of latest statement.)</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={50} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -829,12 +1806,49 @@ export default function FL142() {
                             </td>
                             <td style={{ border: "1px solid black", width: "5%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                                {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                                {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5>24. OTHER DEBTS (Specify.):</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={50} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -853,11 +1867,59 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "5%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: "4px", width: "99%" }} type="text" /><br />
+
+                            </td>
+
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+                                {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+
+                                {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginTop: 3, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, width: "93%" }} type="text" /><br />
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom: 4, width: "93%" }} type="text" /><br />
+
+>>>>>>> aman
                             </td>
                         </tr>
                         <tr className="tr">
                             <td style={{ border: "1px solid black" }}>
                                 <h5> 25. TOTAL DEBTS FROM CONTINUATION SHEET</h5>
+<<<<<<< HEAD
                                 <textarea rows={4} cols={85} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={50} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
                             </td>
@@ -899,6 +1961,38 @@ export default function FL142() {
                             <td style={{ border: "1px solid black", width: "5%" }}>
                                 <textarea rows={4} cols={3} id="street" style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", resize: "none" }} />
                                 {/* <input size={10} style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", margin: "0px" }} type="text" id="street" /> */}
+=======
+                               
+                            </td>
+
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                                <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom:4,marginTop: 3, width: "93%" }} type="text" /><br />
+                                
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom:4,marginTop: 3, width: "93%" }} type="text" /><br />
+
+                                </td>
+                            <td style={{ border: "1px solid black", width: "5%" }}>
+                            <input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginLeft: 2, marginBottom:4,marginTop: 3, width: "93%" }} type="text" /><br />
+
+                                 </td>
+                        </tr>
+                        <tr className="tr">
+                            <td style={{ border: "1px solid black" }} colSpan={2}>
+                                <h5>26. TOTAL DEBTS</h5>
+
+                            </td>
+
+
+
+                            <td style={{ border: "1px solid black", width: "5%" }} >
+                              <span>$</span><input style={{ backgroundColor: "rgb(225, 243, 243)", border: "none", marginTop: 3, marginBottom: 4, width: "80%" }} type="text" />
+
+                            </td>
+                            <td style={{ border: "1px solid black", width: "5%" }} >
+
+>>>>>>> aman
                             </td>
                         </tr>
                     </thead>

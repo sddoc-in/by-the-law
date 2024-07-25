@@ -10,24 +10,34 @@ import FormInterface from "../../../interface/Form";
 import URLInterface from "../../../interface/URL";
 import UserInterface from "../../../interface/NewUser";
 import ClientInterface from "../../../interface/NewClient";
+<<<<<<< HEAD
 import { IoMdAdd } from "react-icons/io";
 import CreateuserPopup from "../forms/CreateuserPopup";
+=======
+>>>>>>> aman
 
 export default function ClientDetails() {
   const { client_id } = useParams();
   const { user: currentUser } = React.useContext(AppContext);
+<<<<<<< HEAD
     const [isPopupOpen, setIsPopupOpen] = React.useState(false);
     const [data, setData] = React.useState<{
+=======
+  const [data, setData] = React.useState<{
+>>>>>>> aman
     client: ClientInterface;
     lawyer: UserInterface;
     urls: URLInterface[];
     forms: FormInterface[];
   } | null>(null);
+<<<<<<< HEAD
 
   const openPopup = () => {
     setIsPopupOpen(true);
   };
 
+=======
+>>>>>>> aman
   const getClientAllDetails = React.useRef(() => {});
 
   getClientAllDetails.current = async () => {
@@ -52,6 +62,7 @@ export default function ClientDetails() {
     } catch (err) {}
   };
 
+<<<<<<< HEAD
   async function createUrl() {
     try {
       const res = await axios.post(
@@ -78,6 +89,8 @@ export default function ClientDetails() {
     }
   }
 
+=======
+>>>>>>> aman
   React.useEffect(() => {
     getClientAllDetails.current();
   }, [currentUser]);
@@ -126,7 +139,11 @@ export default function ClientDetails() {
               <div className="flex flex-row">
                 <p className="text-lg font-bold">Lawyer ID:</p>
                 <a
+<<<<<<< HEAD
                   className="text-blue-500 hover:underline"
+=======
+                className="text-blue-500 hover:underline"
+>>>>>>> aman
                   href={
                     "/dashboard/lawyer/" + data.client.lawyer_id + "/details"
                   }
@@ -162,6 +179,7 @@ export default function ClientDetails() {
                   />
                 ))
               ) : (
+<<<<<<< HEAD
                 <div
                   className="bg-[#002F53] text-white text-[16px] leading-[20px] rounded-md mt-4 flex justify-center items-center mb-2 w-fit px-4 py-2 cursor-pointer"
                   onClick={createUrl}
@@ -169,12 +187,16 @@ export default function ClientDetails() {
                   <IoMdAdd className="mr-2 text-[20px] " />
                   Create
                 </div>
+=======
+                <p>No URL Found</p>
+>>>>>>> aman
               )}
             </div>
           </div>
 
           <div className="flex flex-col mt-5">
             <h1 className="text-2xl font-bold">Form Details</h1>
+<<<<<<< HEAD
             <div
         className="bg-[#002F53] text-white text-[16px] leading-[20px] rounded-md mt-4 flex justify-center items-center mb-2 w-fit px-4 py-2 cursor-pointer"
         onClick={openPopup}
@@ -182,6 +204,8 @@ export default function ClientDetails() {
         <IoMdAdd className="mr-2 text-[20px] " />
         Create
       </div>
+=======
+>>>>>>> aman
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-2 w-[95%] mx-auto">
               {data.forms.length > 0 ? (
                 data.forms.map((url: any, index: number) => (
@@ -198,11 +222,14 @@ export default function ClientDetails() {
           </div>
         </div>
       )}
+<<<<<<< HEAD
       <CreateuserPopup
         isOpen={isPopupOpen}
         onClose={() => setIsPopupOpen(false)}
         clients={[data?.client || {} as ClientInterface] }
       />
+=======
+>>>>>>> aman
     </>
   );
 }

@@ -2,6 +2,14 @@ import SelectArray from "../interface/SelectArray";
 
 export const Forms: SelectArray[] = [
   {
+<<<<<<< HEAD
+=======
+    id: "1034",
+    name: "1034",
+    value: "1034",
+  },
+  {
+>>>>>>> aman
     id: "fl100",
     name: "fl100",
     value: "fl100",
@@ -11,11 +19,19 @@ export const Forms: SelectArray[] = [
     name: "fl105",
     value: "fl105",
   },
+<<<<<<< HEAD
   // {
   //   id: "fl107info",
   //   name: "fl107info",
   //   value: "fl107info",
   // },
+=======
+  {
+    id: "fl107info",
+    name: "fl107info",
+    value: "fl107info",
+  },
+>>>>>>> aman
   {
     id: "fl110",
     name: "fl110",
@@ -67,6 +83,14 @@ export const Forms: SelectArray[] = [
     value: "fl144",
   },
   {
+<<<<<<< HEAD
+=======
+    id: "fl145 copy",
+    name: "fl145 copy",
+    value: "fl145 copy",
+  },
+  {
+>>>>>>> aman
     id: "fl145",
     name: "fl145",
     value: "fl145",
@@ -111,6 +135,7 @@ export const Forms: SelectArray[] = [
     name: "fl170",
     value: "fl170",
   },
+<<<<<<< HEAD
   // {
   //   id: "fl172",
   //   name: "fl172",
@@ -121,6 +146,18 @@ export const Forms: SelectArray[] = [
   //   name: "fl180",
   //   value: "fl180",
   // },
+=======
+  {
+    id: "fl172",
+    name: "fl172",
+    value: "fl172",
+  },
+  {
+    id: "fl180",
+    name: "fl180",
+    value: "fl180",
+  },
+>>>>>>> aman
   {
     id: "fl182",
     name: "fl182",
@@ -157,6 +194,7 @@ export const Forms: SelectArray[] = [
     value: "fl800",
   },
   {
+<<<<<<< HEAD
     id: "fl1034",
     name: "fl1034",
     value: "fl1034",
@@ -171,6 +209,17 @@ export const Forms: SelectArray[] = [
   //   name: "fw001",
   //   value: "fw001",
   // },
+=======
+    id: "fl810",
+    name: "fl810",
+    value: "fl810",
+  },
+  {
+    id: "fw001",
+    name: "fw001",
+    value: "fw001",
+  },
+>>>>>>> aman
   {
     id: "fw001info",
     name: "fw001info",

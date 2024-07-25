@@ -9,7 +9,10 @@ import { API_URL } from "../../../constants/data";
 import Delete from "../../common/Delete";
 import toTitleCase from "../../../functions/toTitle";
 import FormInterface from "../../../interface/Form";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
+=======
+>>>>>>> aman
 
 export default function FormDetailsCard(props: {
   data: FormInterface;
@@ -101,6 +104,7 @@ export default function FormDetailsCard(props: {
           </div>
           <hr className="w-full h-1 " />
           <div className="flex justify-evenly items-center mt-2">
+<<<<<<< HEAD
             <Link
              to={
               "/form/" +
@@ -113,6 +117,15 @@ export default function FormDetailsCard(props: {
             >
               <FaRegEye className="text-2xl mt-1.5" />
             </Link>
+=======
+            <a
+              href={
+                "/client/" + props.client_id + "/form/" + props.data.form_id
+              }
+            >
+              <FaRegEye className="text-2xl mt-1.5" />
+            </a>
+>>>>>>> aman
 
             <MdDeleteForever
               onClick={openModal}

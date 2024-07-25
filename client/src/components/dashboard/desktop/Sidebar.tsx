@@ -1,7 +1,10 @@
 import React from "react";
 import { AppContext } from "../../../context/Context";
 import { SidebarData } from "../../../constants/Sidebar";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
+=======
+>>>>>>> aman
 
 export default function Sidebar() {
   const { routerPath } = React.useContext(AppContext);
@@ -25,7 +28,11 @@ export default function Sidebar() {
                     highlight ? "bg-white " : "bg-transparent"
                   }`}
                 >
+<<<<<<< HEAD
                   <Link to={item.path} className="flex items-center">
+=======
+                  <a href={item.path} className="flex items-center">
+>>>>>>> aman
                     <item.Icon
                       className={`text-[18px] mr-3 ${
                         highlight ? "text-[#002F53]" : "text-white"
@@ -38,7 +45,11 @@ export default function Sidebar() {
                     >
                       {item.title}
                     </p>
+<<<<<<< HEAD
                   </Link>
+=======
+                  </a>
+>>>>>>> aman
                 </div>
               );
             })}

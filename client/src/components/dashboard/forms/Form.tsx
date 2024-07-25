@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import FL144 from "../../pdf/fl144/FL144";
 import axios from "axios";
 import { API_URL } from "../../../constants/data";
+<<<<<<< HEAD
 import FL1034 from "../../pdf/fl1034/fl1034";
 import SU100 from "../../pdf/fl100/fl100";
 import FL105 from "../../pdf/fl105/fl105";
@@ -32,6 +33,8 @@ import Fw002 from "../../pdf/Fw002/Fw002";
 import Petition from "../../pdf/petition/Petition";
 import Loading from "../../loader/Loading";
 import Fl150 from "../../pdf/fl150/Fl150";
+=======
+>>>>>>> aman
 
 export default function Form() {
   const { client_id, form_id, form_name } = useParams();
@@ -64,6 +67,7 @@ export default function Form() {
   }, []);
 
   if (loading) {
+<<<<<<< HEAD
     return <Loading />;
   }
 
@@ -131,6 +135,38 @@ export default function Form() {
     case "petition":
       return <Petition />;
 
+=======
+    return <div>Loading...</div>;
+  }
+
+  switch (form_name) {
+    case "1034":
+      return <div>1034</div>;
+    case "fl100":
+      return <div>fl100</div>;
+    case "fl105":
+      return <div>fl105</div>;
+    case "fl107info":
+      return <div>fl107info</div>;
+    case "fl110":
+      return <div>fl110</div>;
+    case "fl115":
+      return <div>fl115</div>;
+    case "fl117":
+      return <div>fl117</div>;
+    case "fl120":
+      return <div>fl120</div>;
+    case "fl130":
+      return <div>fl130</div>;
+    case "fl130a":
+      return <div>fl130a</div>;
+    case "fl140":
+      return <div>fl140</div>;
+    case "fl141":
+      return <div>fl141</div>;
+    case "fl144":
+      return <FL144 />;
+>>>>>>> aman
     default:
       return <div>Invalid Form</div>;
   }

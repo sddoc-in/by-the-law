@@ -13,7 +13,10 @@ import Delete from "../../common/Delete";
 import { UserClientStatusEnum } from "../../../constants/Status";
 import toTitleCase from "../../../functions/toTitle";
 import { RolesEnum } from "../../../constants/Roles";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
+=======
+>>>>>>> aman
 
 export default function Card(props: {
   data: UserInterface;
@@ -116,13 +119,22 @@ export default function Card(props: {
             <>
               <hr className="w-full h-1 " />
               <div className="flex justify-evenly items-center mt-2">
+<<<<<<< HEAD
                 <Link
                   to={
+=======
+                <a
+                  href={
+>>>>>>> aman
                     "/dashboard/lawyer/" + props.data.lawyer_id + "/details/"
                   }
                 >
                   <FaRegEye className="text-2xl mt-1.5" />
+<<<<<<< HEAD
                 </Link>
+=======
+                </a>
+>>>>>>> aman
                 <CiEdit
                   onClick={() => setUpdatePopup(true)}
                   className="text-2xl mt-1.5 cursor-pointer"

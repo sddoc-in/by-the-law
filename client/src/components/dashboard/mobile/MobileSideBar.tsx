@@ -2,7 +2,10 @@ import React from "react";
 import { SidebarData } from "../../../constants/Sidebar";
 import { AppContext } from "../../../context/Context";
 import { LuMenu } from "react-icons/lu";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
+=======
+>>>>>>> aman
 
 export default function MobileSideBar(props: { children: React.ReactNode }) {
   const routerPath = React.useContext(AppContext);
@@ -54,7 +57,11 @@ export default function MobileSideBar(props: { children: React.ReactNode }) {
                           highlight ? "bg-white " : "bg-transparent"
                         }`}
                       >
+<<<<<<< HEAD
                         <Link to={item.path} className="flex items-center">
+=======
+                        <a href={item.path} className="flex items-center">
+>>>>>>> aman
                           <item.Icon
                             className={`text-[24px] mr-3 ${
                               highlight ? "text-[#002F53]" : "text-white"
@@ -67,7 +74,11 @@ export default function MobileSideBar(props: { children: React.ReactNode }) {
                           >
                             {item.title}
                           </p>
+<<<<<<< HEAD
                         </Link>
+=======
+                        </a>
+>>>>>>> aman
                       </div>
                     );
                   })}

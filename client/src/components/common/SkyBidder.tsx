@@ -14,8 +14,13 @@ export default function SkyBidder() {
     />
     <div className="p-10 z-40 relative">
       <h1>
+<<<<<<< HEAD
         <span className="text-white text-[32px] font-[900]">ByThe</span>
         <span className="text-[#FFC107] text-[32px] font-[900]">
+=======
+        <span className="text-white text-[40px] font-[900]">By The</span>
+        <span className="text-[#FFC107] text-[40px] font-[900]">
+>>>>>>> aman
           Law
         </span>
       </h1>
